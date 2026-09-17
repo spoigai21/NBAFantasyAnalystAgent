@@ -552,6 +552,65 @@ The calibration table it prints is also where `ml_prob_error` and
 `ml_prob_range` in `config.R` come from. If that table changes on your data,
 those settings must change with it, and 08 will tell you so.
 
+### A forecast built from players, not team form (`R/10_player_projection.R`)
+
+```r
+source("R/10_player_projection.R")
+player_projection_report()
+```
+
+The encompassing test in `08` explained *why* the model loses: it is 88–95%
+collinear with the closing line. Every feature in `02` is team-level history,
+which is what a line is made of, so a better version of the same information
+cannot beat it — Phase 3 proved that by improving accuracy and changing
+nothing.
+
+This file asks the other question: can the same two numbers be built from a
+different input? It projects each team bottom-up —
+
+```
+team points = sum over expected-available players of
+              (expected minutes) x (expected points per minute)
+```
+
+— with every input taken from strictly prior games. Availability comes from the
+team's *previous* game, never tonight's box score, which is the look-ahead this
+whole idea invites: "their centre sat tonight" is worth several points and is
+only knowable afterwards. The calibration from raw projection to points is
+fitted on earlier seasons and applied forward.
+
+**The result, on 10,685 games across nine seasons (2018–2026):**
+
+| | RMSE market | RMSE projection | corr with line | β(model) | 95% CI |
+|---|---|---|---|---|---|
+| total | 18.13 | 19.90 | **0.650** | +0.025 | [−0.031, +0.082] |
+| margin | 13.15 | 14.59 | **0.499** | −0.116 | [−0.205, −0.026] |
+
+The correlation with the line is the interesting number: **0.50–0.65, against
+0.88–0.95 for the team-form model.** This genuinely is a different view of the
+game — and it still carries nothing the line lacks. The total's coefficient sits
+on zero. The margin's clears zero while *negative* and flips sign across seasons
+(+0.22, −0.01, −0.16, +0.02, −0.26, −0.11, −0.28, −0.17, −0.15), so the
+stability check built in Phase 5 rejects it, correctly: a pooled average of
+inconsistent seasons is not a signal.
+
+**Read it as the sharpest negative in the project.** Independent *inputs* are
+not independent *information*. The market already prices minutes and rotations,
+and does it better. What remains untested is the thing this backtest structurally
+cannot see: who is ruled out **tonight**, hours before tip-off. That is exactly
+what `06`/`09` and the forward test exist for, and it is now the only live
+hypothesis left.
+
+It needs player box scores, which are not in the repo:
+
+```r
+source("R/07_usage_model.R")
+saveRDS(load_player_games(seasons = 2017:2026),
+        "data/processed/player_games_multi.rds")
+```
+
+`run_all.R` runs it when that file exists and skips it silently when it does not.
+
 ### Configuration
 
 Every threshold, path and modelling choice lives in `R/config.R` — including

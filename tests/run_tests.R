@@ -898,6 +898,56 @@ ok(within_season_cor(.era, "leaky", "total_points") > 0.9,
    "a genuine leak is still caught within a season")
 
 # ===========================================================================
+section("Player-level projection -- the no-look-ahead properties")
+# ===========================================================================
+# This is the file with the strongest pull toward look-ahead: tonight's box
+# score contains who played and how much, which is most of the forecast. These
+# check that none of it is read.
+
+suppressMessages(suppressWarnings(source("R/10_player_projection.R")))
+
+# One player, five games, scoring exactly his game number in 10 minutes each.
+.pp <- tibble(
+  game_id = 1:5, season = 2025L, date = as.Date("2025-01-01") + 0:4,
+  athlete_id = "a1", player = "A", team = "BOS",
+  minutes = c(10, 10, 10, 10, 10), points = c(1, 2, 3, 4, 5),
+  played = TRUE)
+.pr <- player_rates(.pp, window = 10)
+eq(.pr$gp_prior, 0:4, "prior-game count excludes the current game")
+eq(.pr$min_prior, c(NA, 10, 10, 10, 10), "minutes average over prior games only")
+eq(.pr$ppm_prior[5], mean(c(1, 2, 3, 4)) / 10,
+   "the scoring rate for game 5 uses games 1-4, never game 5")
+
+# Availability comes from the PREVIOUS game, so a player who returns tonight is
+# not counted, and one who sits tonight still is. Reading tonight's status is
+# the look-ahead this guards against.
+.pp2 <- .pp
+.pp2$minutes <- c(10, 0, 10, 10, 10); .pp2$played <- .pp2$minutes > 0
+eq(player_rates(.pp2)$played_prev, c(FALSE, TRUE, FALSE, TRUE, TRUE),
+   "availability is taken from the previous game, not the current one")
+
+# A projection must not inherit roster size: two teams with the same scoring
+# rate must project the same points whether nine or thirteen players are listed.
+.mk <- function(n, tm) tibble(
+  game_id = 99L, season = 2025L, date = as.Date("2025-02-01"),
+  athlete_id = paste0(tm, seq_len(n)), player = paste0(tm, seq_len(n)),
+  team = tm, gp_prior = 20L, played_prev = TRUE,
+  min_prior = rep(20, n), ppm_prior = rep(0.5, n))
+.proj <- suppressMessages(project_team_points(bind_rows(.mk(9, "BOS"), .mk(13, "LAL"))))
+eq(.proj$raw_pts, c(120, 120), "projected points rescale to a 240-minute game")
+
+# Calibration must never see the season it predicts.
+.cal <- tibble(
+  season = rep(c(2024L, 2025L), each = 450),   # above PROJ$min_train_games
+  h_raw = 110, a_raw = 105,
+  total_points = c(rep(200, 450), rep(260, 450)),
+  margin = c(rep(5, 450), rep(-5, 450)))
+.fit <- calibrate_projection(.cal)
+eq(unique(.fit$season), 2025L, "only seasons with a prior season are predicted")
+ok(all(abs(.fit$pred_total - 200) < 1e-6),
+   "the 2025 prediction is fitted on 2024 alone, so it cannot know 2025 scoring")
+
+# ===========================================================================
 section("Preseason check")
 # ===========================================================================
 # It must run before the season starts -- that is the whole point -- and it
