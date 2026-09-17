@@ -31,6 +31,15 @@ source("R/03_model.R")
 source("R/04_backtest.R")
 source("R/08_diagnostics.R")   # where does it fail? -- reads only, changes nothing
 
+# The independent-view test: a forecast built from player minutes and scoring
+# rates rather than team form. Skipped silently when the box scores have not
+# been downloaded, because it needs ~300k rows hoopR does not ship with.
+if (file.exists(file.path(CFG$paths$processed_dir, "player_games_multi.rds")) ||
+    file.exists(file.path(CFG$paths$processed_dir, "player_games.rds"))) {
+  source("R/10_player_projection.R")
+  player_projection <- player_projection_report()
+}
+
 step("Done in ", round(as.numeric(difftime(Sys.time(), t0, units = "secs")), 1), "s")
 info("figures : ", CFG$paths$figures_dir)
 info("bets    : ", file.path(CFG$paths$output_dir, "backtest_bets.csv"))
