@@ -29,6 +29,23 @@ if (!exists("games")) games <- readRDS(CFG$paths$games_rds)
 # Team form is naturally a per-team quantity, so flip the schedule into long
 # form, compute everything there, then fold it back onto the game rows.
 
+# Playoff games are a different population -- shortened rotations, no
+# back-to-backs, a market that prices them separately. Dropping them is a
+# config decision (CFG$model$include_playoffs), applied HERE, once, before form
+# is built: a filter applied later would leave playoff results inside the
+# rolling averages that feed regular-season games.
+#
+# Rows whose type the loader could not determine are kept either way. "Unknown"
+# is not "playoff", and silently dropping a file that simply lacks the column
+# would throw away the whole dataset.
+filter_game_types <- function(g) {
+  if (isTRUE(CFG$model$include_playoffs) || !"is_playoff" %in% names(g)) return(g)
+  drop <- !is.na(g$is_playoff) & g$is_playoff
+  if (!any(drop)) return(g)
+  info("dropping ", sum(drop), " playoff game(s) (CFG$model$include_playoffs = FALSE)")
+  g[!drop, ]
+}
+
 build_team_games <- function(g) {
   played <- g %>% filter(.data$completed)
   home <- played %>%
@@ -274,22 +291,54 @@ FEATURES_TOTAL_MARKET  <- c(FEATURES_TOTAL,  "total_open")
 # A cheap but effective guard: if any feature is suspiciously correlated with
 # the outcome it is meant to predict, something leaked.
 
-audit_leakage <- function(md) {
+# Correlation measured WITHIN each season, then averaged across seasons
+# weighted by games.
+#
+# This exists because the pooled version raised two false alarms. League scoring
+# moved from ~190 points a game in 2008 to ~230 in 2026, so any feature built
+# from recent scoring (pace_sum, form_total_sum) tracks total_points across
+# eighteen seasons at r ~ 0.61 -- entirely through a shared era trend, with no
+# look-ahead anywhere. Inside a single season that same correlation is about
+# half as large, which is the number the threshold was always meant to judge.
+#
+# A real leak does not care about era: a feature carrying the outcome of the
+# game it is predicting correlates just as hard within a season as across all
+# of them, so nothing is lost by de-trending this way.
+within_season_cor <- function(md, f, target) {
+  by_season <- split(md[, c(f, target)], md$season)
+  rs <- vapply(by_season, function(d) {
+    x <- d[[f]]; y <- d[[target]]
+    keep <- is.finite(x) & is.finite(y)
+    if (sum(keep) < 30 || sd(x[keep]) == 0 || sd(y[keep]) == 0) return(NA_real_)
+    suppressWarnings(cor(x[keep], y[keep]))
+  }, numeric(1))
+  ns <- vapply(by_season, nrow, numeric(1))
+  keep <- is.finite(rs)
+  if (!any(keep)) return(NA_real_)
+  sum(rs[keep] * ns[keep]) / sum(ns[keep])
+}
+
+audit_leakage <- function(md, threshold = 0.6) {
   step("Look-ahead audit")
   checks <- list(margin = FEATURES_MARGIN, total_points = FEATURES_TOTAL)
-  worst <- 0
+  worst <- 0; worst_f <- NA_character_; worst_pooled <- 0
   for (target in names(checks)) {
     for (f in checks[[target]]) {
       if (!f %in% names(md)) next
       if (sd(md[[f]], na.rm = TRUE) == 0) next
-      r <- suppressWarnings(cor(md[[f]], md[[target]], use = "complete.obs"))
-      if (!is.na(r) && abs(r) > abs(worst)) worst <- r
-      if (!is.na(r) && abs(r) > 0.6)
+      r <- within_season_cor(md, f, target)
+      if (is.na(r)) next
+      pooled <- suppressWarnings(cor(md[[f]], md[[target]], use = "complete.obs"))
+      if (abs(r) > abs(worst)) { worst <- r; worst_f <- f; worst_pooled <- pooled }
+      if (abs(r) > threshold)
         warn("feature '", f, "' correlates ", round(r, 2), " with ", target,
-             " -- suspiciously strong for a pre-game signal, check for leakage")
+             " within a season -- suspiciously strong for a pre-game signal, ",
+             "check for leakage")
     }
   }
   info("strongest feature/outcome correlation: ", round(worst, 3),
+       if (!is.na(worst_f)) paste0(" (", worst_f, "; pooled across seasons ",
+                                   round(worst_pooled, 3), ")") else "",
        "  (pre-game NBA signals are weak; |r| under ~0.35 is expected)")
   invisible(md)
 }
@@ -299,8 +348,9 @@ audit_leakage <- function(md) {
 # ===========================================================================
 
 step("Building features")
-team_games <- build_team_games(games) %>% add_team_features()
-model_data <- build_model_data(games, team_games) %>% audit_leakage()
+games_modelled <- filter_game_types(games)
+team_games <- build_team_games(games_modelled) %>% add_team_features()
+model_data <- build_model_data(games_modelled, team_games) %>% audit_leakage()
 
 saveRDS(team_games, file.path(CFG$paths$processed_dir, "team_games.rds"))
 saveRDS(model_data, CFG$paths$model_data_rds)

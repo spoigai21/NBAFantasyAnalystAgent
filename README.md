@@ -98,11 +98,12 @@ nba-market-model/
 Rscript tests/run_tests.R
 ```
 
-233 checks over the arithmetic that would be invisible if it were wrong: odds
+247 checks over the arithmetic that would be invisible if it were wrong: odds
 conversion, settlement sign conventions, CLV signs, the no-look-ahead property
 of the rolling features, column detection against real-world header shapes,
 best-price selection across books, magnitude-plus-favourite spread rebuilding,
-the reproducibility guarantees of the LLM extractor, and the append-only
+the reproducibility guarantees of the LLM extractor, the playoff flag and the
+population it lets in, the within-season look-ahead audit, and the append-only
 guarantees of the track record. They run in about a second and
 need no data. Run them before trusting a number.
 
@@ -307,6 +308,7 @@ ODDS_API_KEY=your_key_here
 **In season, use `daily.R`** — see [RUNBOOK.md](RUNBOOK.md):
 
 ```sh
+Rscript daily.R check      # preseason: keys, data, model, news inputs
 Rscript daily.R morning    # results in, grade yesterday, report
 Rscript daily.R log        # predictions, hours before tip-off
 Rscript daily.R close      # closing lines, ~15 min before tip-off
@@ -555,6 +557,16 @@ those settings must change with it, and 08 will tell you so.
 Every threshold, path and modelling choice lives in `R/config.R` — including
 `use_market_features`, which decides whether the model may see the *opening* line.
 The closing line is never an input anywhere; it is evaluation only.
+
+`include_playoffs` decides which games the model is allowed to see at all.
+Playoff games are a different population — shortened rotations, no
+back-to-backs, a market that prices them separately — and they are 6.5% of the
+Kaggle file. `01_load_data.R` now detects a playoff or season-type column and
+carries an `is_playoff` flag through `games.rds`, so the choice is yours rather
+than accidental; the default `TRUE` keeps the behaviour every published number
+here was measured with. Set it to `FALSE` and they are dropped before team form
+is built, not after — a filter applied later would leave playoff results inside
+the rolling averages feeding regular-season games.
 
 The moneyline guards (`ml_shrink_to_market`, `ml_prob_error`, `ml_max_ev_error`,
 `ml_prob_range`) are the one group that should **not** be treated as taste. Each

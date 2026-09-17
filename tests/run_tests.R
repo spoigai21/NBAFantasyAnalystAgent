@@ -836,6 +836,79 @@ if (file.exists(fx)) {
 }
 
 # ===========================================================================
+section("Playoff flag -- the population the model is allowed to see")
+# ===========================================================================
+# 07_usage_model.R has always filtered to the regular season; 01-04 could not,
+# because the game table carried no flag. These check the two shapes public
+# files use to say it, and the rule that "unknown" is never treated as
+# "regular season" -- a file without the column must not be silently emptied.
+
+eq(parse_playoff_flag(c("True", "False")), c(TRUE, FALSE),
+   "a boolean playoff column parses")
+eq(parse_playoff_flag(c("Regular Season", "Playoffs")), c(FALSE, TRUE),
+   "a text season-type column parses")
+eq(parse_playoff_flag(c(2, 3, 4, 5)), c(FALSE, TRUE, TRUE, FALSE),
+   "ESPN season-type codes: 3 and 4 are postseason, 5 (cup) is not")
+ok(all(is.na(parse_playoff_flag(c("", "unknown", NA)))),
+   "anything unreadable stays NA rather than becoming FALSE")
+
+.pf_df <- tibble(
+  date = c("2026-01-05", "2026-05-05"), home_team = c("BOS", "BOS"),
+  away_team = c("LAL", "LAL"), home_score = c(110, 99), away_score = c(100, 95),
+  playoffs = c("False", "True"))
+.pf_map <- suppressMessages(detect_columns(clean_names(.pf_df), overrides = list()))
+eq(.pf_map[["playoffs"]], "playoffs", "a playoffs column is detected")
+.pf_g <- suppressMessages(build_games(clean_names(.pf_df), .pf_map))
+eq(.pf_g$is_playoff, c(FALSE, TRUE), "the flag survives into the game table")
+
+.old_ip <- CFG$model$include_playoffs
+CFG$model$include_playoffs <- FALSE
+eq(nrow(suppressMessages(filter_game_types(.pf_g))), 1L,
+   "include_playoffs = FALSE drops the playoff game")
+eq(nrow(suppressMessages(filter_game_types(
+     mutate(.pf_g, is_playoff = NA)))), 2L,
+   "a file with no playoff column keeps every game")
+CFG$model$include_playoffs <- TRUE
+eq(nrow(filter_game_types(.pf_g)), 2L,
+   "include_playoffs = TRUE keeps them, which is the historical behaviour")
+CFG$model$include_playoffs <- .old_ip
+
+# ===========================================================================
+section("Look-ahead audit is measured within a season")
+# ===========================================================================
+# League scoring moved ~190 -> ~230 points a game across the dataset, so a
+# feature built from recent scoring tracks total_points across eighteen seasons
+# through that shared trend alone. The pooled correlation called that leakage;
+# the within-season one does not, while still catching a real leak.
+
+.era <- tibble(
+  season = rep(2008:2025, each = 60),
+  drift  = rep(seq(190, 230, length.out = 18), each = 60))
+set.seed(11)
+.era$total_points <- .era$drift + rnorm(nrow(.era), 0, 12)
+.era$pace_sum     <- .era$drift + rnorm(nrow(.era), 0, 12)   # same era trend, no leak
+.era$leaky        <- .era$total_points + rnorm(nrow(.era), 0, 1)
+
+.pooled_trend <- cor(.era$pace_sum, .era$total_points)
+.within_trend <- within_season_cor(.era, "pace_sum", "total_points")
+ok(.pooled_trend > 0.5, "the pooled correlation is inflated by the era trend")
+ok(abs(.within_trend) < 0.3,
+   "within a season the same feature is correctly weak")
+ok(within_season_cor(.era, "leaky", "total_points") > 0.9,
+   "a genuine leak is still caught within a season")
+
+# ===========================================================================
+section("Preseason check")
+# ===========================================================================
+# It must run before the season starts -- that is the whole point -- and it
+# must never write anything.
+
+ok(is.function(preseason_check) && is.function(report_preseason_check),
+   "preseason_check() and its report exist")
+ok("check" %in% strsplit(paste(readLines("daily.R"), collapse = " "), '"')[[1]],
+   "daily.R exposes the check mode")
+
+# ===========================================================================
 cat("\n", strrep("-", 62), "\n", sep = "")
 if (.n_fail == 0) {
   cat(sprintf("All %d checks passed.\n", .n_pass))
