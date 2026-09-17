@@ -47,6 +47,18 @@ CFG <- list(
     # Rolling-form window (games).
     form_window = 10,
 
+    # Should playoff games be modelled and bet alongside the regular season?
+    # They are a different population -- shortened rotations, no back-to-backs,
+    # a market that prices them separately -- and they are 6.5% of the Kaggle
+    # file. 07_usage_model.R has always filtered them out; until the game table
+    # carried a flag, 01-04 could not.
+    #
+    # TRUE keeps the historical behaviour (and the -4.87% headline, which was
+    # measured with them in). FALSE drops them everywhere: features, model,
+    # backtest, forward. Requires a playoff or season-type column in the raw
+    # file -- with neither, the flag is NA and nothing is dropped.
+    include_playoffs = TRUE,
+
     # --- opponent-adjusted ratings -------------------------------------------
     # Ridge penalty for the team ratings fitted in 02_features.R. Read it as
     # "how many games of average play a team must post before its rating is
@@ -253,7 +265,7 @@ CFG <- list(
     # NBA seasons are labelled by ending year, so 2026 is the 2025-26 season.
     # Keep this current: a synthetic set that stops two seasons back silently
     # trains and tests the pipeline on an era the live path no longer sees.
-    seasons      = 2023:2026,
+    seasons      = 2024:2027,
     games_per_season = 1230,
     home_advantage   = 2.4,      # points
     margin_sd        = 11.5,

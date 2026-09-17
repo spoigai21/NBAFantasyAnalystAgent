@@ -474,6 +474,132 @@ report_preflight <- function(pf) {
 }
 
 # ===========================================================================
+# 2c. Preseason check -- everything that has to be true before opening night
+# ===========================================================================
+# forward_preflight() answers one question: may I log a bet right now? In
+# October the answer is no, and correctly so -- it needs this season's results
+# and ten games per team, neither of which exists yet.
+#
+# This answers the different question you actually have in September: is the
+# machinery ready, so that when the gate does open nothing is missing? Every
+# item is something that has silently cost a night of the record before: a key
+# that was never added, a model artifact older than the data, the example row
+# still sitting in manual_news.csv.
+#
+# It changes nothing and writes nothing. Run it as  Rscript daily.R check.
+preseason_check <- function(as_of = Sys.Date()) {
+  rows <- list()
+  add <- function(item, state, detail) {
+    rows[[length(rows) + 1]] <<- list(item = item, state = state, detail = detail)
+  }
+
+  # --- keys ---------------------------------------------------------------
+  odds_key <- nzchar(Sys.getenv(CFG$odds_api$key_env, ""))
+  add("odds api key", if (odds_key) "ok" else "blocked",
+      if (odds_key) paste0(CFG$odds_api$key_env, " is set")
+      else paste0("no ", CFG$odds_api$key_env, " in .env -- the forward test cannot ",
+                  "start without it (free tier at the-odds-api.com, 500 req/month)"))
+
+  llm_env <- CFG$llm[[CFG$llm$provider]]$key_env
+  llm_key <- nzchar(Sys.getenv(llm_env, ""))
+  add("llm key (09)", if (llm_key) "ok" else "optional",
+      paste0(llm_env, if (llm_key) " is set" else " is not set -- 09 will return no signals"))
+
+  # --- packages -----------------------------------------------------------
+  has_hoopR <- requireNamespace("hoopR", quietly = TRUE)
+  add("hoopR", if (has_hoopR) "ok" else "blocked",
+      if (has_hoopR) "installed -- results refresh and player box scores available"
+      else 'install.packages("hoopR"): refresh_results() cannot run without it')
+
+  # --- data ---------------------------------------------------------------
+  want <- season_of(as_of)
+  if (file.exists(CFG$paths$games_rds)) {
+    g <- readRDS(CFG$paths$games_rds)
+    newest <- max(g$date, na.rm = TRUE)
+    cur <- sum(g$season == want, na.rm = TRUE)
+    add("games.rds", if (cur > 0) "ok" else "waiting",
+        paste0(nrow(g), " games through ", format(newest), "; season ", want,
+               ": ", cur, " row(s)",
+               if (cur == 0) " -- run `Rscript daily.R morning` from opening night" else ""))
+  } else {
+    add("games.rds", "blocked", "missing -- run run_all.R")
+  }
+
+  # --- model artifact -----------------------------------------------------
+  if (file.exists(CFG$paths$models_rds)) {
+    saved <- readRDS(CFG$paths$models_rds)
+    # Staleness is measured against the RESULTS, not file timestamps: sourcing
+    # 02_features.R rewrites model_data.rds every run, so an mtime comparison
+    # reports stale every time and means nothing.
+    behind <- if (exists("games")) {
+      sum(games$completed & games$date > saved$trained_through, na.rm = TRUE)
+    } else 0L
+    add("models.rds", if (behind > 0) "warn" else "ok",
+        paste0("trained through ", format(saved$trained_through),
+               ", model version ", MODEL_VERSION,
+               if (behind > 0) paste0(" -- ", behind, " completed game(s) since then; ",
+                                      "re-run run_all.R to refit") else ""))
+  } else {
+    add("models.rds", "blocked", "missing -- run run_all.R")
+  }
+
+  # --- the live gate ------------------------------------------------------
+  pf <- forward_preflight(team_games, as_of = as_of)
+  add("forward pre-flight", if (pf$ok) "ok" else "waiting",
+      if (pf$ok) "open -- log_predictions() will run"
+      else paste0(length(pf$issues), " item(s) outstanding: ",
+                  paste(pf$issues, collapse = " | ")))
+
+  # --- track record -------------------------------------------------------
+  tr <- try(read_track_record(), silent = TRUE)
+  if (inherits(tr, "try-error")) {
+    add("track record", "warn", "could not be read")
+  } else {
+    graded <- sum(!is.na(tr$win_loss) & nzchar(as.character(tr$win_loss)))
+    add("track record", "ok",
+        paste0(nrow(tr), " logged, ", graded, " graded",
+               if (nrow(tr) == 0) " -- empty, as expected before the season" else ""))
+  }
+
+  # --- news inputs --------------------------------------------------------
+  if (file.exists(CFG$paths$manual_news)) {
+    mn <- suppressWarnings(readr::read_csv(CFG$paths$manual_news, show_col_types = FALSE))
+    example <- any(grepl("example", tolower(paste(mn$player, mn$note))), na.rm = TRUE)
+    add("manual_news.csv", if (example) "warn" else "ok",
+        if (example) "still contains the example row -- delete it before the season"
+        else paste0(nrow(mn), " row(s)"))
+  } else {
+    add("manual_news.csv", "warn", "missing -- 06 will apply no adjustments")
+  }
+
+  cache <- CFG$llm$cache
+  add("llm cache (09)", "ok",
+      if (file.exists(cache)) paste0(length(readLines(cache, warn = FALSE)),
+                                     " cached extraction(s) in ", cache)
+      else paste0(cache, " not created yet -- it appears on the first extraction"))
+
+  structure(rows, class = "preseason_check")
+}
+
+report_preseason_check <- function(rows = preseason_check()) {
+  step("Preseason check")
+  mark <- c(ok = "ok     ", warn = "check  ", waiting = "waiting", blocked = "BLOCKED",
+            optional = "opt    ")
+  for (r in rows) {
+    line <- paste0("[", mark[[r$state]], "] ", format(r$item, width = 20), " ", r$detail)
+    if (r$state == "blocked") warn(line) else info(line)
+  }
+  blocked <- vapply(rows, function(r) r$state == "blocked", logical(1))
+  if (any(blocked)) {
+    warn("not ready: ", sum(blocked), " blocking item(s) above")
+  } else {
+    info("nothing blocking. Items marked 'waiting' clear on their own once the ",
+         "season is a few weeks old -- see RUNBOOK.md.")
+  }
+  invisible(!any(blocked))
+}
+
+# ===========================================================================
 # 3. Predict and decide
 # ===========================================================================
 

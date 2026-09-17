@@ -171,6 +171,25 @@ FIELD_SPECS <- list(
                 "total_price_under", "under_juice", "odds_under"),
     require = list(c("under", "price"), c("under", "odds"), c("under", "juice")),
     avoid   = c("over", "open", "spread")
+  ),
+
+  # --- game type ------------------------------------------------------------
+  # Playoff games are a different population: shorter rotations, no back-to-
+  # backs, a market that prices them separately. 07_usage_model.R has always
+  # filtered them out; the game table had no way to say which rows they were,
+  # so 01-04 could not. Detected here as a flag rather than acted on, because
+  # whether to model them is a config decision (CFG$model$include_playoffs).
+  playoffs = list(
+    exact   = c("playoffs", "playoff", "is_playoff", "is_playoffs",
+                "playoff_game", "postseason", "is_postseason"),
+    require = list(c("playoff"), c("postseason")),
+    avoid   = c("seed", "round", "series", "odds", "prob")
+  ),
+  season_type = list(
+    exact   = c("season_type", "game_type", "type", "stage", "season_stage",
+                "seasontype", "gametype"),
+    require = list(c("season", "type"), c("game", "type"), c("stage")),
+    avoid   = c("odds", "price", "team", "player")
   )
 )
 
@@ -295,6 +314,36 @@ parse_number <- function(x) {
   chr <- gsub("[^0-9eE+.-]", "", chr)
   chr[chr %in% c("", "+", "-", ".")] <- NA
   suppressWarnings(as.numeric(chr))
+}
+
+# Is this row a playoff game?
+#
+# Public files say it two ways: a boolean playoff column, or a season-type
+# column holding either text ("Regular Season" / "Playoffs") or ESPN's numeric
+# codes (2 = regular, 3 = playoffs, 4 = play-in, 5 = in-season tournament).
+# Anything it cannot read comes back NA rather than FALSE -- "unknown" and
+# "regular season" are different claims, and only one of them is safe to filter
+# on. Play-in games count as playoffs: they are single elimination with playoff
+# rotations, which is the property that matters here.
+parse_playoff_flag <- function(x) {
+  if (is.null(x)) return(NA)
+  if (is.logical(x)) return(as.logical(x))
+
+  if (is.numeric(x)) {
+    out <- rep(NA, length(x))
+    out[x %in% c(2, 1)] <- FALSE       # ESPN 2, or a plain 1 = regular season
+    out[x %in% c(3, 4)] <- TRUE        # playoffs, play-in
+    out[x == 5] <- FALSE               # in-season tournament: regular-season games
+    return(out)
+  }
+
+  s <- tolower(trimws(as.character(x)))
+  out <- rep(NA, length(s))
+  out[s %in% c("true", "t", "yes", "y", "1")] <- TRUE
+  out[s %in% c("false", "f", "no", "n", "0")] <- FALSE
+  out[grepl("playoff|postseason|play-?in|finals|conference semi|first round", s)] <- TRUE
+  out[grepl("regular|preseason|pre-season|in-?season tournament|cup", s)] <- FALSE
+  out
 }
 
 # ===========================================================================
@@ -450,6 +499,14 @@ build_games <- function(df, map) {
            else as.character(df[[map[["favourite"]]]])
   )
 
+  # Playoff flag: a dedicated column first, a season-type column second, NA if
+  # the file says neither.
+  g$is_playoff <- if (!is.na(map[["playoffs"]])) {
+    parse_playoff_flag(df[[map[["playoffs"]]]])
+  } else if (!is.na(map[["season_type"]])) {
+    parse_playoff_flag(df[[map[["season_type"]]]])
+  } else NA
+
   g$season <- if (!is.na(map[["season"]])) {
     s <- parse_number(df[[map[["season"]]]])
     # "2021" for a 2021-22 season -> store the ending year, 2022
@@ -475,9 +532,9 @@ build_games <- function(df, map) {
     distinct(.data$game_id, .keep_all = TRUE) %>%
     select("game_id", "date", "season", "home_team", "away_team",
            "home_score", "away_score", "total_points", "margin", "home_win",
-           "completed", "spread_close", "total_close", "ml_home", "ml_away",
-           "spread_open", "total_open", "price_spread_home", "price_spread_away",
-           "price_over", "price_under")
+           "completed", "is_playoff", "spread_close", "total_close", "ml_home",
+           "ml_away", "spread_open", "total_open", "price_spread_home",
+           "price_spread_away", "price_over", "price_under")
 }
 
 # ===========================================================================
@@ -603,6 +660,15 @@ validate_games <- function(g) {
   info("missing rates -- spread ", scales::percent(miss$spread_close, 0.1),
        ", total ", scales::percent(miss$total_close, 0.1),
        ", moneyline ", scales::percent(miss$ml_home, 0.1))
+
+  if (all(is.na(g$is_playoff))) {
+    info("no playoff/season-type column found -- every game is modelled as one ",
+         "population (set CFG$column_overrides$playoffs if your file has one)")
+  } else {
+    info("playoff games: ", scales::percent(mean(g$is_playoff, na.rm = TRUE), 0.1),
+         if (isTRUE(CFG$model$include_playoffs)) " (included; CFG$model$include_playoffs)"
+         else " (excluded; CFG$model$include_playoffs = FALSE)")
+  }
 
   g
 }

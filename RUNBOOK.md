@@ -28,6 +28,28 @@ you can also just let the gate open on its own.
 
 ---
 
+## Before the season: `daily.R check`
+
+```sh
+Rscript daily.R check
+```
+
+`forward_preflight()` answers "may I log a bet right now?", and in October the
+answer is correctly no. This answers the question you actually have in
+September: **is anything missing that will still be missing in November?** It
+reads everything and writes nothing.
+
+| line | means |
+|---|---|
+| `[ok]` | done |
+| `[waiting]` | correct for the date; clears on its own once the season is under way (this season's results, ten games a team) |
+| `[check]` | worth a look: the model is behind the results, or `manual_news.csv` still holds its example row |
+| `[BLOCKED]` | the forward test cannot start: no `ODDS_API_KEY`, no `hoopR`, or `run_all.R` has never been run |
+
+Run it once now, and again the week the season starts.
+
+---
+
 ## The daily loop
 
 ```sh

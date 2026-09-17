@@ -1,6 +1,7 @@
 # ---------------------------------------------------------------------------
 # daily.R -- the in-season loop, in the order it has to happen
 # ---------------------------------------------------------------------------
+#   Rscript daily.R check     preseason readiness -- keys, data, model, news
 #   Rscript daily.R morning   results in, grade yesterday, report
 #   Rscript daily.R log       predictions for tonight  (a few hours before tip)
 #   Rscript daily.R close     capture closing lines    (~15 min before tip)
@@ -19,7 +20,12 @@ mode <- if (length(args)) args[1] else "morning"
 
 suppressMessages(source("R/05_forward.R"))
 
-if (mode == "morning") {
+if (mode == "check") {
+  # Reads everything, changes nothing. Safe to run any time, and the one to
+  # run in the weeks before opening night.
+  quit(status = if (isTRUE(report_preseason_check())) 0L else 1L)
+
+} else if (mode == "morning") {
   # Fold in last night's results FIRST, so team form is current before
   # anything is predicted from it, then grade what those results settle.
   refresh_results()
@@ -37,5 +43,5 @@ if (mode == "morning") {
   record_closing_lines()
 
 } else {
-  stop("usage: Rscript daily.R [morning|log|close]", call. = FALSE)
+  stop("usage: Rscript daily.R [check|morning|log|close]", call. = FALSE)
 }
