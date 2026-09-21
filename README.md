@@ -635,3 +635,18 @@ at. Change them when the evidence changes, not when the ROI disappoints.
 
 `news$max_abs_impact` caps a hand-entered read; anything past it is clamped with
 a warning, on the theory that if you are writing −9 you are guessing.
+
+## License
+
+MIT — see [LICENSE](LICENSE). Copyright (c) 2026 Shayan Poigai.
+
+The licence covers the code in this repository. It does not cover the data the
+code reads: the Kaggle betting file carries whatever terms its dataset page
+sets, and the play-by-play and box scores come from ESPN via
+[hoopR](https://hoopr.sportsdataverse.org/) under that package's own terms.
+Neither is redistributed here — `data/` holds nothing but what you download
+yourself, and the cached LLM extractions in `data/llm_news_cache.jsonl` are
+derived from public ESPN articles.
+
+Nothing here is betting advice. The headline result of this project is that the
+market beat the model by 4.77 percentage points of ROI.
