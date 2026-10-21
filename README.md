@@ -94,7 +94,96 @@ hurt — which matters a lot when deciding whether to trade two players for one.
 
 ---
 
-## 2. What Claude has been trained on
+## 2. The team
+
+**The Freaky Alien Clubhouse** — drafted from slot 3 of 9, snake, 30 September 2026.
+
+### Draft results
+
+| Round | Pick | Player | Pos |
+|---|---|---|---|
+| 1 | 3 | Victor Wembanyama | C |
+| 2 | 16 | Tyrese Haliburton | PG/SG |
+| 3 | 21 | Amen Thompson | SF/SG |
+| 4 | 34 | Lauri Markkanen | PF/SF |
+| 5 | 39 | Anthony Davis | C/PF |
+| 6 | 52 | Dejounte Murray | SG/PG |
+| 7 | 57 | Brandon Miller | SF/SG |
+| 8 | 70 | Paul George | SF/PF |
+| 9 | 75 | Matas Buzelis | SF/PF |
+| 10 | 88 | Keegan Murray | PF/SF |
+| 11 | 93 | Cedric Coward | SF/SG |
+| 12 | 106 | Zach Edey | C |
+| 13 | 111 | Nic Claxton | C |
+
+Picks in a 9-team snake from slot 3 land at 3, 16, 21, 34, 39, 52, 57, 70, 75, 88, 93,
+106 and 111. The gaps alternate 13 then 5, so every odd round is a short turn.
+
+### Trades
+
+**1. Haliburton + Markkanen → Giannis Antetokounmpo** *(with Top G)*
+
+| Out | Lloyd's ESPN points rank | In | Rank |
+|---|---|---|---|
+| Tyrese Haliburton | 11 | **Giannis Antetokounmpo** | **4** |
+| Lauri Markkanen | outside top 25 | | |
+
+Why it was made:
+
+- Giannis is **4th in ESPN points** and his value is rising — Miami takes him from 29 to
+  32-33 minutes with his assist rate up and 37% usage intact. He was already 10th in
+  fantasy scoring on a part-time workload.
+- Haliburton was the **widest-variance player on the roster** (best case 8th, worst case
+  55th) and his season is front-loaded with rust: back-to-backs off, poor efficiency
+  until roughly Christmas.
+- Markkanen was the one genuine reach of the draft — taken at 34, ADP 71 — with a
+  ceiling capped because three or four Jazz players will clear 20 points.
+- It kept Amen and Anthony Davis, who are the second and third biggest steals-and-blocks
+  sources on the roster.
+
+Effect on the starting ten: **+12.1 projected fantasy points per slate.**
+
+### Adds and drops
+
+| | Player |
+|---|---|
+| Added | Zach LaVine, Collin Murray-Boyles |
+| Dropped | Nic Claxton |
+
+### Current roster
+
+**Starters**
+
+| Slot | Player | Team |
+|---|---|---|
+| PG | Dejounte Murray | NO |
+| SG | Amen Thompson | HOU |
+| SF | Cedric Coward | MEM |
+| PF | Giannis Antetokounmpo | MIA |
+| C | Victor Wembanyama | SA |
+| G | Brandon Miller | CHA |
+| F | Anthony Davis | WSH |
+| UTIL | Paul George | BOS |
+| UTIL | Matas Buzelis | CHI |
+| UTIL | Keegan Murray | SAC |
+
+**Bench:** Zach Edey (MEM), Zach LaVine (SAC), Collin Murray-Boyles (TOR)
+
+### Known weaknesses
+
+- **Only one point-guard-eligible player.** Dejounte is it. If he sits, the PG slot is
+  forfeited, and a zero at a starting slot costs more than any bench player gains.
+- **Top-heavy.** Wemby, Giannis and Anthony Davis are roughly 40% of the projected
+  output. The bench is replacement level, so an absence at the top costs 25-35 points a
+  game with nothing to absorb it.
+- **Anthony Davis is the single biggest risk.** He is the second-largest block of
+  production and carries the longest injury history on the roster.
+- **Zach LaVine is a bad fit for this scoring** — the biggest loser in the format
+  adjustment, because of the field-goal-attempt penalty.
+
+---
+
+## 3. What Claude has been trained on
 
 "Trained on" here means: transcripts were pasted into Claude, and Claude wrote them up
 into permanent notes files. Claude did not learn these as a model — it reads the notes
@@ -139,12 +228,12 @@ anything about Miami's supporting cast is out of date.
 
 ---
 
-## 3. How to run it
+## 4. How to run it
 
 Everything runs through **Claude Code** in the terminal.
 
 ```bash
-cd ~/Desktop/nba-betting-market-analysis
+cd ~/Desktop/nba-fantasy-analyst-agent
 claude
 ```
 
@@ -181,12 +270,12 @@ other teams' lineups.
 ### Memory
 
 Claude keeps notes about this project between sessions in
-`~/.claude/projects/-Users-shayan-Desktop-nba-betting-market-analysis/memory/`.
+`~/.claude/projects/-Users-shayan-Desktop-nba-fantasy-analyst-agent/memory/`.
 Things like the scoring rules, which sources to trust, and mistakes not to repeat.
 
 ---
 
-## 4. Rules Claude follows
+## 5. Rules Claude follows
 
 These were learned the hard way during the draft. They are written down so the same
 mistakes do not happen again.
@@ -226,7 +315,7 @@ right in a 9-team league, because the empty spot gets filled from a deep waiver 
 
 ---
 
-## 5. Repo layout
+## 6. Repo layout
 
 | Path | What it is |
 |---|---|
