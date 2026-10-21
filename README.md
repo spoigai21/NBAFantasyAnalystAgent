@@ -10,6 +10,10 @@ live data. It is used to rank players, plan drafts, judge trades, and compare ro
 > lives here — see [BETTING.md](BETTING.md). The headline result was an **ROI of
 > −4.77%**, meaning the model found no edge against the market. The project has since
 > been repurposed for fantasy basketball, which is what this README covers.
+>
+> The betting pipeline may be revisited later using the season logs in `fantasy/` as an
+> input — but not until there is enough of a sample to show real trends. See
+> [Future: feeding the logs back into betting](#future-feeding-the-logs-back-into-betting).
 
 ---
 
@@ -123,11 +127,6 @@ Picks in a 9-team snake from slot 3 land at 3, 16, 21, 34, 39, 52, 57, 70, 75, 8
 
 **1. Haliburton + Markkanen → Giannis Antetokounmpo** *(with Top G)*
 
-| Out | Lloyd's ESPN points rank | In | Rank |
-|---|---|---|---|
-| Tyrese Haliburton | 11 | **Giannis Antetokounmpo** | **4** |
-| Lauri Markkanen | outside top 25 | | |
-
 Why it was made:
 
 - Giannis is **4th in ESPN points** and his value is rising — Miami takes him from 29 to
@@ -142,13 +141,6 @@ Why it was made:
   sources on the roster.
 
 Effect on the starting ten: **+12.1 projected fantasy points per slate.**
-
-### Adds and drops
-
-| | Player |
-|---|---|
-| Added | Zach LaVine, Collin Murray-Boyles |
-| Dropped | Nic Claxton |
 
 ### Current roster
 
@@ -320,14 +312,39 @@ right in a 9-team league, because the empty spot gets filled from a deep waiver 
 | Path | What it is |
 |---|---|
 | `README.md` | This file — the fantasy project |
+| `fantasy/` | Season logs — every game line and every matchup result |
 | `BETTING.md` | The old betting-market project, complete and still runnable |
 | `R/` | R code for the betting pipeline |
 | `data/`, `output/` | Data and results for the betting pipeline |
 | `tests/` | Tests for the betting pipeline |
 | `RUNBOOK.md` | In-season runbook for the betting pipeline |
 
-The fantasy work has no code. It is notes files, a published draft board, and Claude
-Code reading them.
+The fantasy work has no code. It is notes files, a published draft board, the season
+logs in `fantasy/`, and Claude Code reading them.
+
+**Keeping the logs current matters.** Claude has no memory of a game it is not told to
+write down. Ask it to **log last night's games** regularly, or the season's trends
+cannot be reconstructed later.
+
+---
+
+## Future: feeding the logs back into betting
+
+Not now — the game log needs months of data before it means anything. Noting the plan so
+it is not lost.
+
+`BETTING.md`'s pipeline already has the piece this would plug into: `R/10_player_projection.R`
+builds a team's projected points from **per-player minutes times scoring rate**, which is
+the same shape as `fantasy/game-log.csv`. That module exists because the betting model's
+real problem was never accuracy — it was that every feature was team-level history, which
+is exactly what a betting line is already made of. A forecast built from players up is a
+genuinely different input.
+
+One design rule to protect now, while the log is still being filled: **a row must only
+ever be used to predict games that came after it.** The log records what already happened,
+which is fine for spotting trends, but any model built on it has to use strictly prior
+games or it is reading the answer. That is the rule the whole betting project was built
+around and it is easy to break by accident.
 
 ---
 
