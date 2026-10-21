@@ -29,3 +29,7 @@ output/diagnostics_segments.csv
 # Working notes from build sessions -- handoff context, not part of the repo's
 # public story. README.md and RUNBOOK.md carry what a reader actually needs.
 SESSION_CONTEXT.md
+
+# ESPN session cookies — never commit these
+.espn-fantasy.env
+*.env
