@@ -31,6 +31,21 @@ assistant. Read `README.md` for the full league and roster picture before non-tr
 6. **No waiver or free-agent suggestions** unless the player would genuinely change the
    season. One good game is noise.
 7. **Do not commit.** Leave changes in the working tree.
+8. **Valuing a player in full league scoring.** ESPN's `appliedAverage` on a *projection*
+   is base scoring + GP only — it has no OREB, DD, TD or TW in it. Recover those by taking
+   the player's **last-season actual** `appliedAverage` and subtracting the hand-computed
+   base + GP; the remainder is their measured bonus rate per game. Add it to the
+   projection. Worked example in `fantasy/lloyd-daily-notes.md` (22 Oct 2026).
+9. **Compare players on value over replacement, never on season totals.** A missed game
+   is not a zero — the bench backfills it at ~30-32 in this scoring. Multiplying
+   points-per-game by projected games played silently prices absences at zero and badly
+   overweights durability. Use `(full/g − replacement/g) × games`. Got this wrong on the
+   AD/LaMelo question, 22 Oct 2026.
+10. **Do not present a derived gap smaller than the method's own error as an edge.** The
+   bonus rate is last season's applied to this season's projection, so a sub-2-point/game
+   difference is noise — especially for a player who changed teams or role.
+11. **Answer the question asked.** If asked to compare two players, compare those two.
+   A third name is scope creep unless it is asked for.
 
 ## Files
 
