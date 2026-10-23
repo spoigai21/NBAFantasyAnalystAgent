@@ -77,6 +77,7 @@ assistant. Read `README.md` for the full league and roster picture before non-tr
 | `fantasy/game-log.csv` | Per-player game lines with fantasy points |
 | `fantasy/matchup-log.csv` | Weekly matchup results |
 | `fantasy/lloyd-daily-notes.md` | Lloyd's recap opinions, with caveats |
+| `fantasy/watchlist.md` | Open questions with a dated trigger — check this each session |
 | `~/Desktop/lloyd_team_preview_notes.md` | All 30 team previews |
 | `~/Desktop/lloyd_positional_tiers.md` | Tiers, variance bands, corrections |
 | `BETTING.md` | The archived betting project. Not current work. |
