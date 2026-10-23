@@ -46,6 +46,29 @@ assistant. Read `README.md` for the full league and roster picture before non-tr
    difference is noise — especially for a player who changed teams or role.
 11. **Answer the question asked.** If asked to compare two players, compare those two.
    A third name is scope creep unless it is asked for.
+12. **Never build a comparison on one game.** Use last season's actual per-game rates
+   (with their games-played count stated) plus this season's projection. A single box
+   score is a usability check, not evidence — quote it only as colour, and say how many
+   games it is. Lloyd's own rule: *"Players have a really poor opening night efficiency
+   wise... it happens a lot at this time of year, so don't overreact."* The user has
+   called me out on this twice: 23 Oct 2026.
+13. **Per-minute rate and total are different questions.** A player can be clearly better
+   per minute and still the wrong start, because minutes are the bigger term. State which
+   one is driving the answer.
+14. **Check Lloyd's rank before answering any who-is-better question.** Grep
+   `~/Desktop/lloyd_positional_tiers.md` and `~/Desktop/lloyd_team_preview_notes.md` for
+   both names *first*. On LaVine vs Murray-Boyles I reasoned from ESPN projections and
+   recommended LaVine — Lloyd has CMB at 78-80 and LaVine **off the board entirely**
+   ("keep him there", worst format penalty on the board). 23 Oct 2026.
+15. **Never use projected games played in a single-night start/sit.** Both players are
+   active or they are not. Durability is a season-long and trade question only.
+16. **Minutes trend beats last season's minutes.** For a young player on the rise, last
+   season's mpg and a flat ESPN projection both understate him — use Lloyd's forward
+   minutes call (e.g. CMB "22 → 25-26 mpg, closes most games"). Do not accept a rising
+   projection for an aging player while anchoring a young one to last year.
+17. **In this format, high usage is a cost, not an asset, unless it converts.** Price it:
+   FGA + FTA + 2×TOV per game is the nightly toll. LaVine −21.5/g vs Murray-Boyles
+   −10.0/g. This is what drives Lloyd's −15 rank penalty on volume scorers.
 
 ## Files
 
