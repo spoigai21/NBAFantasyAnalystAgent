@@ -231,3 +231,361 @@ essentially his full projected load.
 objection that needs to hold for 25+ games to erase a 366-point edge is a monitoring item.
 Re-check in two weeks: if Kyrie is still at 24-26 minutes in mid-November, the edge is gone
 and holding George was right.
+
+---
+
+## Mailbag — 22 Oct 2026 (Lloyd + Adam King, on the 21 Oct slate)
+
+Mostly waiver-wire questions. Four items touch my roster. Nothing on Kyrie, LaMelo or
+Paul George, so the two trade evaluations above are unchanged by this show.
+
+### Cedric Coward — the real concern
+
+Lloyd, unprompted and at length: *"He was bad yesterday... I had a criticism of Coward
+last season. Why is this bloke, whenever anything happens, why is he never able to ramp
+up what he does? Why is he always just sitting doing the same thing? Here's 14 and five
+and three assists and maybe a steal every four games. Nothing ever seemed to change...
+I thought in year two we'd see a little bit more empowerment, or him trying not to look
+like **year four Keegan Murray**, and be a little bit more active. But I'm a little
+worried about that passivity coming across again."*
+
+King's counterweight: 28 minutes, a comfortable win, Ty Jerome going off so *"maybe there
+was some deferral there."* He would *"hold him, definitely give him another few games,"*
+but notes Coward was a top-100 draft pick and *"anyone kind of beyond that range is
+somewhat expendable."*
+
+⚠️ **This matters beyond Coward himself.** I used **~32/g as replacement level** in
+both the LaMelo and the Kyrie evaluations, and Coward is the player that number is built
+on. If the passivity read is right, replacement level is lower than 32. Mechanically a
+lower replacement level *raises* value over replacement for both sides of a trade, and
+slightly favours the higher-games player (−68/unit for a 68-game player vs −61 for a
+61-game one) — so it does not flip either verdict, but it does make the bench thinner
+than I assumed. **Re-measure replacement level off actual games played, not projections,
+once there are ~10 games of data.**
+
+### Zach Edey — 21 minutes, with a dated checkpoint
+
+Asked about the 21 minutes while Tuohy gave 30+ to two others. King: it was *"always a
+concern coming into the season with Edy and the injury that he's had, so it wasn't
+surprising. I'm not too concerned at the moment."* Then the specific trigger:
+**"If he's still playing minutes in the low 20s in two or three weeks, then I would start
+to kind of wonder if this is a bit of a trend that's going to continue."**
+
+→ **Checkpoint: ~12 November 2026.** Low-20s minutes then is a real downgrade, not a ramp.
+(Lloyd separately prefers Edey to J. Pöltl in a points league.)
+
+### Collin Murray-Boyles — mildly encouraging, context not a cap
+
+Lloyd pushing back on people souring on him: *"People are ready to jump on — 'oh, I
+thought Murray-Boyles was going to be a breakout.' Okay man, he played 20 minutes in a
+game where Kawhi played 24. I think we're going to be okay in that sort of situation."*
+He also lists him among players who simply shot badly on opening night and would otherwise
+have had a much fuller line. So the 20 minutes was a league-wide opening-night /
+blowout-and-ramp artifact, not a role ceiling. He put up 30 in those 20 minutes anyway.
+
+### Anthony Davis — the risk restated, the role confirmed
+
+King, in passing while discussing Alex Sarr: *"Anthony Davis obviously is a walking injury
+where we're just crossing our fingers every time he steps on the court."* Lloyd's whole
+case for fading Sarr is that **AD is there** — Sarr plays further from the basket and
+contests fewer shots because of him. That confirms AD as Washington's effective interior
+anchor, which is what protects his rebounds and blocks. Risk unchanged; **hold stands.**
+
+### Keegan Murray — third separate confirmation
+
+Lloyd now uses *"year four Keegan Murray"* as shorthand for a passive player who never
+ramps up. King: *"Sacramento just — I don't think used Keegan Murray correctly."* Still
+the drop candidate.
+
+### Not answered
+
+A listener asked directly for Lloyd's **Brandon Miller** thoughts and he never answered it
+— he pivoted straight to Isaiah Collier. No read available.
+
+### General principle worth keeping
+
+On opening-night overreactions: *"Players have a really poor opening night efficiency
+wise... it happens a lot at this time of year, so don't overreact,"* and on drop panic:
+*"Anyone dropping a second or third round pick who isn't injured after one game has lost
+their mind."* (Does not shield Keegan Murray, who was pick 88.)
+
+---
+
+## Friday preview — 22 Oct 2026, and a deep dive on Matas Buzelis
+
+Lloyd's four things to watch on Friday 23 Oct: **Buzelis's role**, **Kyrie's possible
+minutes restriction**, **Edey's playing time**, and Alex Sarr's role in Washington. Three
+of the four are directly my business.
+
+### The Buzelis / Caleb Wilson usage question
+
+Lloyd's new worry, a reversal of his own pre-season read: *"Is Matas Buzelis a bit of an
+odd man out? He ended up with an okay line the other day, but it was largely because he
+put up big numbers when that game was out of hand. **Caleb Wilson is going to take every
+shot in the world.**"* His September preview said the opposite about Wilson —
+*"they will bring him along slowly on offence."*
+
+**Game 1 (21 Oct, Chicago lost 135-92 to Toronto). Caleb Wilson is on TanTheMan's roster.**
+
+| | MIN | FGA | FG% | TOV | AST | **Our FPTS** |
+|---|---|---|---|---|---|---|
+| **Buzelis** | 25 | 8 | 25% | 3 | 0 | **20.0** |
+| **Caleb Wilson** | 32 | 21 | 33% | **9** | 0 | **15.0** |
+
+✅ **The usage worry is real on the surface and backwards in this format.** Wilson took
+**21 shots to Buzelis's 8** and played **7 more minutes** — and produced *less*. At
+FGA −1 and TOV −2, Wilson's 21 attempts and 9 turnovers are **−39 points of pure
+negatives** before anything good counts. Toronto **outscored Chicago by 45 with Wilson on
+the floor**. Usage only hurts me when it converts; a rookie chucking at 33% with nine
+turnovers is not a threat to Buzelis's value, and that minutes share is not safe.
+
+### What actually worries me about the game, and it is not Wilson
+
+- **Zero assists.** The entire Lloyd buy-case was *"more ball-handling... touted as a
+  modern point forward."* Same failure pattern as the Giannis assist bet — the specific
+  thing being bet on did not appear.
+- **His field goals netted exactly zero fantasy points:** 4 points scored + 2 FGM (+4)
+  − 8 FGA (−8) = **0**. All 20 came from free throws, 6 rebounds and 2 blocks.
+- **13-of-16 from the line is not repeatable.** He is a career ~3.1 FTA player and he took
+  16. Normalise that and the 20 becomes roughly 10-12. Lloyd is right that the line was
+  inflated — by free throws more than by garbage time.
+- **25 minutes against 30.5 projected** and Lloyd's pre-season 33-34.
+
+### What is in his favour
+
+- **The 43-point blowout flattened everyone.** Giddey scored **4.00 fantasy points**
+  (2 pts on 1-of-10, 5 TOV). Lloyd's own mailbag used this game to excuse Pöltl's minutes.
+  Nobody on either side of that floor is a usable data point.
+- **Nic Claxton is out** (finger/hamstring; unrostered in our league). Chicago's acquired
+  starting centre is unavailable, which pushes Buzelis minutes **up** at the 4/5, not down.
+- **Training-camp reporting has Wilson at power forward and Buzelis sliding to his natural
+  small forward in a starting role** — they are not competing for one slot.
+- **ESPN projects 33.54/g over 74 games at 30.5 min** — flat against last season's actual
+  34.06/g at 29.2 min over 77 games. And ESPN **under-projected him by 31% last year**
+  (projected 25.94, actual 34.06), so this projection has a history of being too low.
+- **Durability:** 77 games played last season, 74 projected. With GP +1 and a thin bench
+  that is worth real points.
+
+### The threat that is not Wilson
+
+**Dailyn Swain and Jordan Hawkins missed the opener with illness**, and Claxton returns at
+some point. The frontcourt gets **more** crowded, not less. That is the medium-term role
+risk, and it is a bigger one than a rookie shooting 33%.
+
+### Triggers
+
+- **Watch minutes, not shots.** Friday 23 Oct: 30+ minutes means the opener was blowout
+  noise. **25 or fewer with Claxton still out is a genuine role problem.**
+- **Watch assists.** If he sits at 0-1 for a week, the point-forward thesis behind the
+  46-50 ranking is dead and he is a ~28-30/g player, not a 34/g one.
+- **Not a drop candidate.** Keegan Murray is still the drop. Buzelis is the 9th-best
+  starter by projection on a roster with a replacement-level bench.
+
+### Separate flag from the same show — Brandon Miller
+
+Charlotte is missing **both Coby White and Kon Knueppel** (plus Grant Williams), which is
+why Lloyd is streaming Dennis Schröder (35 min, 19/4/6 in his first game). Brandon Miller
+is the main remaining creator in that offence. He shot **7-of-21** in game one, which in
+this format is brutal, but the usage runway just widened. Worth tracking before concluding
+anything from the 19.
+
+---
+
+## Start/sit — 23 Oct 2026: Zach LaVine vs Collin Murray-Boyles. **Start CMB.**
+
+I got this wrong twice before landing on it. Recording the reasoning so it is not redone.
+
+**Lloyd's ranks — check these FIRST, before any projection work:**
+
+| | Lloyd | |
+|---|---|---|
+| **Murray-Boyles** | **86, Lloyd's own read 78-80** | Closes most games; best five is Quickley/Barrett/Kawhi/Barnes/CMB; **"22 → 25-26 mpg"**; second-best Raptor in the Cavs series; plays the 5 in small-ball closing units. Tiers correction: *"he closes and plays 24-26. **If he plays 30 he'll be a top 80 guy.**"* Caveat: *"I do not believe that he starts over Jakob Poeltl."* |
+| **LaVine** | **off the board — "waiver"** | *"**Correctly OFF the board, keep him there.**"* Sacramento *"will simply let the clock run out on his $49M"*; buyout/trade candidate; **my format costs him 15 ranks, the worst penalty on the whole board.** |
+
+**Usage is a cost in this format, and that is the core of it:**
+
+| negatives/g | FGA | FTA | TOV | **nightly toll** |
+|---|---|---|---|---|
+| LaVine | 14.0 | 3.6 | 1.9 | **−21.5** |
+| Murray-Boyles | 6.0 | 1.9 | 1.0 | **−10.0** |
+
+**Rates (2025-26 actuals, 39 and 57 games):** LaVine **30.00** full/g at 31.4 min
+(**0.940**/min). CMB **30.28** full/g at 21.8 min (**1.245**/min) — even in total, 32%
+better per minute, in ten fewer minutes.
+
+**Break-even:** CMB needs `33.5 / 1.245` = **26.9 minutes** to match LaVine's projection.
+Lloyd has him at 25-26 and closing, 30 as upside. At 28 min CMB is **~34.9**.
+
+### My three errors, for the record
+
+1. **Anchored CMB to last season's 21.8 min and ESPN's flat 22.9**, for a second-year
+   player whose whole story is rising minutes — while *accepting* ESPN projecting a
+   31-year-old LaVine **up** (31.4 → 32.8) on a team trying to move him. Indefensible
+   asymmetry.
+2. **Used projected games played in a single-night start/sit.** Irrelevant — both are
+   active tonight. That is a season-long durability argument, imported into the wrong
+   decision.
+3. **Dropped Lloyd's own point that CMB shot 2-of-7** and would have had a much fuller
+   line otherwise — I had logged that in the mailbag notes the same day and then failed
+   to use it. His 30 was a **floor** game, not a ceiling game.
+
+---
+
+## Pre-season draft guide (Lloyd, "ultimate cheat sheet") — read 23 Oct 2026
+
+Recovered after the draft, so the ADP advice is moot, but it carries **per-game valuations
+and an injury doctrine** that change two live calls.
+
+### Collin Murray-Boyles — a big upgrade on what I had
+
+Direct quote, and far stronger than the 86 / "78-80" in my tiers file:
+
+> *"He will not start in Toronto, but **he will close most games**. He will start the games
+> where Jakob Poeltl is injured, and the games where Scottie Barnes is injured, and
+> probably the games where Kawhi Leonard is injured. So **50 starts, 26 minutes minimum**.
+> He's been **unbelievable in preseason**... if I took him in the top 80, while that might
+> take a little off it, **it is possible that Murray-Boyles ends as a top 50 player.**"*
+
+✅ **This retroactively confirms the user's read and my correction.** "26 minutes minimum"
+sits right on my computed break-even of 26.9 min, and "top 50 possible" puts his ceiling
+well past LaVine, who Lloyd keeps **off the board entirely**. Lloyd also lists him as one
+of six preseason standouts. **CMB start call reinforced; treat 26 min as the floor, not
+the 22.9 ESPN projects.**
+
+### ⚠️ Paul George — REVISING MY KYRIE VERDICT
+
+Lloyd names Paul George one of **five players he is ahead of ADP on in every format**:
+
+> *"Paul George is still really good... **I think a top 30 finish is definitely possible.**
+> He's the number two offensive option in Boston. He generates steals, he hits threes, he
+> gets assists... 80 is his Yahoo ADP, 104 on ESPN. **That is literally just free real
+> estate.** You are not wasting anything by taking him."*
+
+And on the injury worry that drives every George discussion:
+
+> *"Half his games missed last season were a suspension. **He doesn't have the ongoing
+> persistent problems like Kawhi and Embiid. So I'm not that worried about him.**"*
+
+Against that, Lloyd's blanket doctrine, which is exactly the user's objection:
+
+> *"Guys who are hurt coming into the season **just fade them**. They often rush to get
+> back, they often get reinjured, there's a ramp-up period, and often the ADPs and ranks
+> of these players do not account for this fact."*
+
+Kyrie is precisely that profile: ACL return, *"somewhat of a knee injury history,"* Lloyd
+*"wouldn't take him inside the top 30"*, and in the Friday preview — *"it's the first of a
+back-to-back, so **I imagine he sits on Saturday**"* — a minutes restriction **and** a
+back-to-back pattern.
+
+→ **I told the user to make this trade. That was too strong.** The per-game projection gap
+(46.4 vs 40.8) stands, and Lloyd does rate Kyrie higher per game (*"a top 15 per game
+player"* vs George's *"top 30 possible"*). But Lloyd's own injury doctrine and his active
+enthusiasm for George both push the other way, and the user's ramp objection is now backed
+by Lloyd's stated rule rather than just one 24-minute game. **Revised: hold Paul George
+unless Kyrie's minutes normalise to ~30.** The user was right to hesitate.
+
+### Matas Buzelis — the real competition is named, and it is not Caleb Wilson
+
+Lloyd is still a buyer in principle (uses him as the example of a pick-80 player who
+*"could be top 50"*). But the named threat is **Leonard Miller**, unrostered in our league:
+
+> *"Leonard Miller has been **ridiculous** in Chicago. The problem with him is **the same
+> position as Matas Buzelis and Caleb Wilson**. Now with Nic Claxton out, maybe they have
+> to squeeze things across... **if they don't find a way to get him 26 minutes a night**
+> and completely get rid of Patrick Williams out of that rotation, they're doing something
+> very wrong. He's been awesome... that first game when we see that rotation, **you are
+> jumping on him immediately if he's getting six-man minutes.**"*
+
+→ Corrects my earlier note, which named Swain and Hawkins as the medium-term crowding
+risk. **Leonard Miller is the specific threat to Buzelis's minutes.** Watch Chicago's
+rotation on Friday.
+
+### Anthony Davis — hold confirmed
+
+*"I'd probably give him about a 10-spot discount... could go at 12 to 15 and I'd take him
+in the middle of round three."* He is also one of only **three** injury-risk players Lloyd
+would consider inside the top 40 (with Kyrie and Kawhi). A 10-spot discount is mild.
+
+### LaMelo Ball — the injury discount is small
+
+*"Played most of the games last season... I actually don't think there's too much of a
+concern with Ball to be honest. **I would knock him down five to six slots maybe.**"*
+Smaller discount than AD's 10, but not enough to flip the AD hold — and it does not touch
+the points-league fit objection (*"35th in points leagues last season"*).
+
+### Brandon Miller — bullish, and it clashes with the Charlotte preview
+
+*"I like Brandon Miller a lot in round three. **I'll go early on him.**"* Noticeably warmer
+than the Charlotte team preview, where Walker's read was unflattering (handle stalls,
+passing never developed). With Coby White and Knueppel both out, the usage is there.
+
+### Dejounte Murray
+
+*"I love drafting Dejonte Murray."* Consistent with the recap praise.
+
+---
+
+## Thursday recap + Friday news — 23 Oct 2026 (2-game slate: CLE/PHI, DEN/OKC)
+
+### 🚨 Cedric Coward is listed DOUBTFUL for Friday
+
+> *"The chicken Cedric Coward listed **doubtful**. Not great. Now, he was obviously
+> completely uninvolved in the game on Wednesday. If he is out, I expect **Jeremy Grant
+> will start**. It'll be probably a little bit more for GG Jackson as well, probably a
+> little bit more for Scotty Pippen... **It's not great for Coward and I would hold just
+> to see where this goes.**"*
+
+Two consequences:
+1. **Lineup:** assume Coward is out tonight. He was the body I identified as the G-slot
+   filler when Dejounte sits, so that cover is gone for now.
+2. **The drop question:** Lloyd says **hold** and wait for information. This is an injury
+   question now, not the passivity question from the mailbag. Do not drop a player while
+   his status is unresolved — there is nothing to learn from dropping him today.
+
+### 🚨 Friday has an EARLY START — 4:00 pm Eastern, because of the World Series
+
+Lineups lock earlier than usual. Set them before 4pm ET.
+
+### De'Aaron Fox is OUT for San Antonio (Tobias Harris out again too)
+
+Bullish for **Wembanyama's usage**. Lloyd: *"Fox is out. That means Julian Champagnie,
+Devin Vassell, and of course Harper and Castle get a chance to do a lot more."* With both
+Fox and Harris out, Wemby is even more clearly the entire offence.
+
+### ⚠️ My free-agent table from earlier today needs revising
+
+I listed Hartenstein (36.3) and Gafford (33.6) as upgrades on the back of my roster. Lloyd
+has now soured on both, and on Hartenstein he is **format-specific**:
+
+- **Isaiah Hartenstein** — 6 pts / 6 reb / 2 ast, no foul trouble to excuse the minutes.
+  *"**If you're in a points league, you don't need to bother with this**, right? You can
+  move on if you want. They've just got so many guys they can rotate through."* He groups
+  Hartenstein with Cason Wallace and Ajay Mitchell as *"not looking like they're going to
+  be good enough."* → **Strike him off my list.**
+- **Daniel Gafford** — *"**I do think he's washed. I do.** Not to the degree that Klay
+  Thompson is, but... a little bit washed."* → **Strike him off.**
+- **Mitchell Robinson** — lukewarm defence of him, not an endorsement: *"what he delivered
+  wasn't that crazily bad... it wasn't good, but maybe I just wasn't expecting good."*
+  Keep on the list but demote.
+- **Egor Demin** — Lloyd thinks dropping him now is *"bad process"* with Brooklyn's weekend
+  back-to-back coming; only Brooklyn and Philadelphia have it.
+- **Day'Ron Sharpe** remains the one Lloyd actively likes from the draft guide
+  (*"at least 25 to 26 minutes... love what he's doing"*, 70-80 zone). Not mentioned today.
+
+### ⚠️ Caveat on quoting Lloyd's "expected" stats
+
+He explained the xStats methodology. They use a **league baseline, not a player baseline**
+(except free-throw %), so a good shot-blocker *should* look like he outperforms. He is
+explicit about reliability: happy with **assists and rebounds**, still working on
+**steals, blocks and turnovers** — steals was *"probably the hardest one... I'm still not
+100% happy with it."*
+→ I cited "expected steals 2.5 vs 5 actual" on Paul George's 73-point game as if it were
+settled. **Treat his expected steals and turnovers as the softest numbers he publishes.**
+
+### Other notes
+
+- **Jokic put up 33 fantasy points** on a bad night (13/7/5, 27% usage, 26% shooting) in a
+  96-84 game. Useful floor reference for the standings comparison.
+- Lloyd's four Friday watch items are unchanged and three are mine: **Buzelis's role**
+  (*"is Caleb Wilson going to just dribble around and lose handle all the time and Buzelis
+  does nothing?"*), **Kyrie's minutes restriction**, **Edey pushing past 21 minutes**.
