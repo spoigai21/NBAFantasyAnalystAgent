@@ -34,3 +34,8 @@ SESSION_CONTEXT.md
 .espn-fantasy.env
 *.env
 __pycache__/
+
+# Josh Lloyd / Locked On transcripts — third-party content, not ours to MIT-license.
+# Kept on disk because lloyd.sh, verify.py quote and the alias expansion all read from
+# here; just not redistributed. README.md stays tracked so the directory is documented.
+fantasy/transcripts/*.txt
