@@ -166,6 +166,22 @@ assistant. Read `README.md` for the full league and roster picture before non-tr
    anything he has retracted, or on a single-game reaction. Distinguish "explicit about
    draft value" from "explicit about tonight" — they are different questions.
 
+27. **Grade every game against the player's OWN expected level, and keep rate separate
+   from role.** `python3 fantasy/grade.py` (needs the env) rebuilds `game_grades` and
+   `player_form` for every rostered player in the league. Baseline is the player's own
+   projected points-per-minute times the minutes they actually played — because 30 fpts is
+   an ELITE night for Murray-Boyles and an AWFUL one for Giannis, so a league-wide grade is
+   useless for buy-low / sell-high. Grades are ELITE / GOOD / NORMAL / POOR / AWFUL at
+   ±0.5 and ±1.5 SD, and the SD is **measured** from the league's own games
+   (2.175 on resid/sqrt(expected) over 308 games), not assumed. Alongside it a **minutes**
+   grade (ROLE-UP / MINS+ / MINS-OK / MINS-DOWN / BENCHED) as a ratio of projected mpg.
+   **The two must stay separate:** rate above own level regresses, borrowed minutes
+   disappear when the starter returns, and a rate collapse with the role intact is the only
+   true buy-low. Collapsing them into one number hides which one you are buying.
+   **`game_grades.fpts` is ESPN's own `appliedTotal`** — authoritative, formula-free, and
+   it supersedes `game-log.csv`, whose hand-computed values were off by ±1 on seven lines.
+   Rebuilt 26 Oct 2026 at the user's request.
+
 ## Files
 
 | Path | What it is |
@@ -179,6 +195,7 @@ assistant. Read `README.md` for the full league and roster picture before non-tr
 | `fantasy/transactions-log.{csv,md}` | Full league transaction history |
 | `./fantasy/lloyd.sh "<player>"` | **Everything Lloyd said, newest first.** FTS over all 2,501 passages / 291k words; auto-expands caption manglings via `name_aliases` |
 | `python3 fantasy/verify.py` | **Pre-claim checks.** `quote "..."` proves a quote is real; `score` gives the LIVE matchup score and whether it closed; `slate` says if games are still running |
+| `fantasy/grade.py` → `game_grades`, `player_form` | **Per-game ELITE/GOOD/NORMAL/POOR/AWFUL vs the player's own level, plus a separate minutes grade and a SELL HIGH / BUY LOW / HOLD / AVOID signal.** Uses ESPN `appliedTotal` |
 | `fantasy/analysts.md` | **Who to read and who not to.** Tiers, the STL/BLK calibration trap, ESPN exclusion |
 | `fantasy/transcripts/` | **Raw Lloyd transcripts — grep HERE first.** 1.8MB, 22 team previews |
 | `~/Desktop/lloyd_team_preview_notes.md` | Summaries of 22 teams, written 30 Sep. Lossy and stale |
