@@ -184,6 +184,42 @@ mostly absorbed by the bench. The only case for LaMelo is the tail where AD play
 ~50 games — a real risk (20 last season) made worse by a replacement-level bench, but not
 the base case. Top G needs a big; do not sell them one at a discount.
 
+### Re-asked 23 Oct 2026 — verdict unchanged, margin wider
+
+The 22 Oct numbers all re-derived identically from the API (and the method self-checked:
+*both* players' projection rows returned a measured bonus of exactly **0.00**, confirming
+rule 8 — projections carry no OREB/DD/TD/TW).
+
+**What changed is LaMelo's minutes, via the lesson learned on Buzelis the same night.**
+ESPN projects him **up** to 32.9 mpg; he played **28.0** last season and is at **26.0**
+through two games (29, then 23). Minutes are the largest term in his value, so:
+
+| LaMelo at | full /g | VOR vs 32 | AD break-even |
+|---|---|---|---|
+| 32.9 mpg (ESPN proj) | 49.4 | 1,183 | **49 games** |
+| 28.0 mpg (last season) | ~42.3 | 700 | **29 games** |
+| 26.0 mpg (actual so far) | ~39.4 | 503 | **21 games** |
+
+Caveat: scaling base scoring linearly with minutes is crude — per-minute rate is not
+constant and assists may not scale with playing time. Directional, not precise.
+
+**AD's minutes are tracking fine** — 30.0 mpg over two games vs 32.2 projected and 31.2
+last season. That asymmetry is the argument: AD's projection is credible, LaMelo's is not.
+
+- **PG insurance, priced.** LaMelo is PG/G eligible and Dejounte is the only PG, so a
+  Dejounte absence scores **zero** in that slot. Worth roughly
+  `games Dejounte misses × 32` ≈ **320 points at 10 games.** That nearly cancels AD's
+  287-point edge *if LaMelo hits 32.9 mpg*; it does not touch the ~770-point gap at
+  28 mpg. This is the only serious argument for the deal.
+- **The AD tail is still real.** At 20 games (last season) his VOR is ~482 and LaMelo wins
+  in every minutes scenario. Expected value says AD; variance says LaMelo.
+- **Evidence gap, restated:** still no Lloyd preview for Minnesota or Washington — two of
+  the eight teams missing from the notes, and the only two that matter for this trade. His
+  sole AD remark is incidental, inside the Alex Sarr discussion.
+- Colour only, two games: both sat at exactly **37.0/g**. On 23 Oct AD went 26 min / 9 pts
+  / 3-11 / 0 ast / 4 TOV while LaMelo went 23 min / 12 pts / 5 ast / 2 stl. AD opened with
+  a 68 and followed it with this — high variance, not a trend. Do not act on it.
+
 ---
 
 ## Trade evaluation — 22 Oct 2026: Paul George for Kyrie Irving (Top G), 1-for-1
@@ -589,3 +625,143 @@ settled. **Treat his expected steals and turnovers as the softest numbers he pub
 - Lloyd's four Friday watch items are unchanged and three are mine: **Buzelis's role**
   (*"is Caleb Wilson going to just dribble around and lose handle all the time and Buzelis
   does nothing?"*), **Kyrie's minutes restriction**, **Edey pushing past 21 minutes**.
+
+
+---
+
+## 23 Oct 2026 — raw transcripts recovered, and the AD/LaMelo verdict revised
+
+The user asked whether I had stored the transcripts they pasted. **I had not.** They were
+recovered from the Claude Code session log and written to `fantasy/transcripts/` (1.8MB,
+17 files, 22 team previews). Both Washington and Minnesota were in there the whole time —
+the two previews I had twice called missing while evaluating this exact trade.
+
+### Lloyd / Locked On Wizards on Anthony Davis — materially worse than I had
+
+- **"In his time in Dallas, he failed to even play five games in a row before he found
+  himself on the shelf."** This is far more damning than the bare "20 games last season."
+- **He is 33.** "Davis is 33." Perimeter work "declining year-over-year"; he has "forgotten
+  how to shoot threes or really anything that's not at the rim."
+- Usage is capped above him: **"Trae Young is going to have the ball in his hands the most,
+  that's not really a question here."** AD "will have to get his touches" but is "not as
+  demanding of the ball" and "able to scale down to a degree."
+- Supporting the +4 categories: **he led the league in shots contested at the rim per game
+  "by a substantial margin."**
+- The front office line is "we brought Davis here because we want him to play," and he is
+  in their plans at least for the first half. Golden State trade noise was real but dead.
+- DeAndre Ayton was signed specifically because "you have absolutely no depth behind Alex
+  Sarr and Anthony Davis, two players that have been injured pretty often recently."
+
+### Lloyd on LaMelo — the minutes cap is now documented, with a cause
+
+- **The 27-minute restriction was Charlotte front-office policy, not circumstance.** Jeff
+  Peterson owned it publicly: *"I'm the one that is leading the charge on LaMelo sitting
+  and then trying to maximize him in the fourth quarter so we don't have to go over that
+  27 minute a game restriction and still get him in closing time."* Charles Lee took the
+  public heat for it.
+- **The cause is chronic and travels with him: ankle impingement.** *"He has a ton of ankle
+  injuries, man. He's got impingement. Go look at the ankle injury history. It's crazy."*
+- Locked On Wolves' own read: *"My biggest question, and I think the biggest fair question,
+  is related to health and things could go sideways."*
+- Minnesota is a new front office with no obligation to keep Charlotte's cap — but through
+  two games he is at **26.0 mpg (29, then 23)**, i.e. being managed the same way.
+- Usage is shared: Edwards is option one, McDaniels' usage has risen three years running,
+  Gobert's ticks up. LaMelo is a second primary, not the whole offense he was in Charlotte.
+
+### Revised verdict: still hold AD, but the margin is much thinner than I said
+
+Both sides got worse. Taking LaMelo at the documented **27 mpg** cap:
+
+`47.43 × (27 / 32.9) + 1.94 =` **40.9 full/g** → VOR **8.9/g** → 603 over 68 GP
+(532 if he plays 60; he has gone 72, 47, 36, 22 in four seasons)
+plus PG insurance ≈ 320 → **LaMelo ≈ 850-920**
+
+At AD's **+24.1 VOR/g**, break-even is **≈ 36-38 games.**
+
+| AD plays | AD VOR | vs LaMelo ~885 |
+|---|---|---|
+| 61 (ESPN proj) | 1,470 | AD wins clearly |
+| 40 | 964 | roughly even |
+| 36-38 | 870-915 | **break-even** |
+| 20 (last season) | 482 | LaMelo wins decisively |
+
+**Hold — but this is a genuine bet, not the comfortable call I made on 22 Oct.** My
+estimates of the break-even have moved 60 → 51 → 49 → 36-38 as evidence arrived, and every
+revision moved toward LaMelo. The deciding question is simply whether a 33-year-old who
+could not string five games together in Dallas reaches ~37 games. ESPN says 61; last season
+said 20. If AD misses significant time early, revisit immediately rather than riding it.
+
+---
+
+## 25 Oct 2026 — deep dive: Davis, Brandon Miller, Buzelis
+
+Requested after all three underperformed their valuations. Sources: Lloyd transcripts,
+beat reporting (Bulls On SI, ClutchPoints, Wiz of Awes, Yahoo/HEAVY), NBA.com. **Common
+finding: none of the three has a minutes problem. All three are shot-quality or
+shot-location problems, which regress. Minutes do not.**
+
+### Matas Buzelis — worry resolved, and I was wrong in both directions
+
+- **Chicago has a NEW HEAD COACH: Tiago Splitter**, not Billy Donovan. New offense. This
+  was missing from all my earlier analysis and it explains most of what looked alarming.
+- **The 17-minute game on 23 Oct was a genuine benching**, not a short rotation: Splitter
+  rode the second unit through the whole fourth. Giddey sat too.
+- Splitter, asked about it: *"We're making this a bigger deal than we should be. It's just
+  basketball. You're not having a great night; you play a little bit less. Not a big
+  deal."* **Performance-based for one night, not a role change.**
+- Buzelis: *"I stay ready on the bench... I didn't play well. We had a great rotation, and
+  we won the game."*
+- **He answered it immediately: 24 Oct, 35 minutes, 21 points, 5 reb, 7-13 FG, 5-5 FT**
+  — "undoubtedly the most comfortable Buzelis looked in the Bulls' new offense."
+- **Mechanical cause of the cold start:** the new scheme wants him taking *more mid-range*,
+  *"something he didn't do often under Billy Donovan."* He is relearning shot locations.
+- Real competition: **Caleb Wilson** (rookie) is behind only Michael Jordan for total
+  points by a Bulls rookie through three games (30 pts / 14 reb on 24 Oct). Leonard Miller
+  and Okoro took the 4th-quarter minutes in the benching game.
+- **Verdict: start him, hold the 35.1 valuation.** My downgrade to 26-30/g was built on
+  two games and the third refuted it. Also retire the "falling share" framing — the share
+  fell for one night because he was benched for shooting 2-9.
+
+### Brandon Miller — the worst of the three, cause is diagnosable, but there is a real flag
+
+- **9-of-35 from the field, 4-of-25 from three (16%)** across the first two games.
+  Opener: hot start 7-of-12 for 17 points, then **0-of-9 the rest of the way**. Since that
+  start he is **2-of-23**. On 23 Oct: 2-14, 1-11 from three, **−37**, booed at home.
+- **Cause #1 — no supporting cast.** Kon Knueppel (hamstring), Coby White (calf) and Grant
+  Williams (hamstring) have all missed every game. Miller is the only scoring threat on
+  the floor and defences load up accordingly. Charlotte shot 11-of-51 from three as a team
+  with 25 turnovers. **No return timeline for Knueppel or White as of 21 Oct** — Charles
+  Lee: *"there's still no timeline on those guys."* Dennis Schröder is covering point.
+- **Cause #2 — the shoulder, and this is the one to actually watch.** Surgery in **May 2026
+  for left shoulder instability**, after missing 13 straight games the prior season with a
+  left shoulder subluxation and playing the rest of that year in a wrap. **He was still not
+  cleared for basketball activities on 28 August 2026.** That is a very compressed ramp.
+  (It is his off/guide hand — he shoots right-handed — so this is a caution, not a
+  diagnosis. No reporting ties it to his mechanics.)
+- Mitigating: career-best **38.3% from three** last season; usage and volume are intact
+  (21 and 14 attempts; 31.7 mpg); Lee publicly backing him — *"going to hit them at a
+  higher clip."* Charlotte went 41-24 with him and 3-14 without last season.
+- The boos were about the LaMelo trade, not him — he signed 5yr/$209M days earlier and
+  inherited the anger.
+- **Verdict: hold, keep starting.** 0.73 applied points per minute is the worst on my
+  roster, but it is entirely shooting and the minutes are unthreatened.
+  **Trigger: Knueppel/White returning is when the load lightens — watch for that, not for
+  a hot night.**
+
+### Anthony Davis — least concerning; a matchup, already answered
+
+- Opener: **34 points, 12 rebounds** in a win over Milwaukee. Not a slow start.
+- 23 Oct (9 pts, 3-12): **Toronto fronted him in the post** and put Scottie Barnes and
+  Kawhi Leonard on him — "two of the best defenders in the world." Beat write-up's point
+  is that Washington failed to *get him the ball*: *"He needs more than 12 shots, and the
+  Wizards have to get him easier looks."* A delivery problem, not a decline.
+- **24 Oct: 19 points in a win.** Bulls' own writers credit Davis and Trae Young with the
+  third-quarter run that broke the game (Washington 10-12 in the paint that quarter).
+- Context: **AJ Dybantsa, the #1 overall pick, has missed every game.** His return adds
+  spacing and takes creation load off Kyshawn George, who is badly overtaxed (8 turnovers
+  vs Toronto). Trae Young is also shooting poorly (4-of-16 from three) and getting by on
+  free throws — the offence is not yet synced.
+- Lloyd, unchanged: *"a walking injury where we're just crossing our fingers every time he
+  steps on the court,"* but also one of only three injury risks he'd take inside the top 40.
+- **Verdict: no action. 32.3 mpg is right at projection.** The AD question remains games
+  played, not production — exactly as priced in the LaMelo evaluation.
