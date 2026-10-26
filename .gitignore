@@ -39,3 +39,6 @@ __pycache__/
 # Kept on disk because lloyd.sh, verify.py quote and the alias expansion all read from
 # here; just not redistributed. README.md stays tracked so the directory is documented.
 fantasy/transcripts/*.txt
+# Transcript index built from those transcripts — same reason, same rule.
+# Reproduce locally with: python3 fantasy/index_lloyd.py
+fantasy/lloyd.db

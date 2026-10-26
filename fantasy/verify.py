@@ -13,22 +13,24 @@ Exists because on 25 Oct 2026 I (a) attributed a fabricated quote to Lloyd,
 import sqlite3, sys, json, subprocess, os, datetime, re
 
 DB = "fantasy/league.db"
+LLOYD_DB = "fantasy/lloyd.db"   # gitignored: Lloyd's transcripts, not ours to redistribute
 
 def quote(s):
     con = sqlite3.connect(DB)
+    con.execute(f"ATTACH DATABASE '{LLOYD_DB}' AS lloyddb")
     words = [w for w in re.findall(r"[A-Za-z']+", s) if len(w) > 2]
-    exact = con.execute("SELECT COUNT(*) FROM lloyd_fts WHERE lloyd_fts MATCH ?", (f'"{s}"',)).fetchone()[0]
+    exact = con.execute("SELECT COUNT(*) FROM lloyddb.lloyd_fts WHERE lloyd_fts MATCH ?", (f'"{s}"',)).fetchone()[0]
     print(f'exact phrase "{s}"  ->  {exact} hit(s)')
     if exact:
-        for r in con.execute("""SELECT s.show_date,s.source_file,s.text FROM lloyd_fts f
-              JOIN lloyd_segments s ON s.id=f.rowid WHERE lloyd_fts MATCH ?
+        for r in con.execute("""SELECT s.show_date,s.source_file,s.text FROM lloyddb.lloyd_fts f
+              JOIN lloyddb.lloyd_segments s ON s.id=f.rowid WHERE lloyd_fts MATCH ?
               ORDER BY s.show_date DESC LIMIT 3""", (f'"{s}"',)):
             print(f"\n  [{r[0]} {r[1]}]\n  {r[2][:420]}")
         return 0
     print("\n  *** NOT FOUND. Do not attribute this to Lloyd. ***")
     if words:
         loose = " OR ".join(f'"{w}"' for w in words[:6])
-        n = con.execute("SELECT COUNT(*) FROM lloyd_fts WHERE lloyd_fts MATCH ?", (loose,)).fetchone()[0]
+        n = con.execute("SELECT COUNT(*) FROM lloyddb.lloyd_fts WHERE lloyd_fts MATCH ?", (loose,)).fetchone()[0]
         print(f"  (loose match on its words: {n} passages — check them before paraphrasing)")
     return 1
 

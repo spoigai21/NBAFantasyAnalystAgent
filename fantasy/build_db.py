@@ -16,9 +16,11 @@ SCRATCH = sys.argv[1] if len(sys.argv) > 1 else "/private/tmp/claude-502/-Users-
 DB = "fantasy/league.db"
 
 con = sqlite3.connect(DB)
+# Lloyd's words live in a separate, gitignored db — his content, not ours to ship.
+con.execute("ATTACH DATABASE 'fantasy/lloyd.db' AS lloyddb")
 con.executescript("""
 DROP TABLE IF EXISTS players;
-DROP TABLE IF EXISTS lloyd_quotes;
+DROP TABLE IF EXISTS lloyddb.lloyd_quotes;
 DROP TABLE IF EXISTS game_log;
 DROP TABLE IF EXISTS transactions;
 DROP TABLE IF EXISTS research;
@@ -27,7 +29,7 @@ CREATE TABLE players(
   gp INT, total REAL, per_game REAL, mpg REAL, pts_per_min REAL,
   proj_base REAL, measured_bonus REAL, proj_full REAL, proj_mpg REAL,
   bonus_sample_gp INT, delta REAL);
-CREATE TABLE lloyd_quotes(
+CREATE TABLE lloyddb.lloyd_quotes(
   player TEXT, show_date TEXT, score INT, quote TEXT, source_file TEXT);
 CREATE TABLE game_log(
   date TEXT, player TEXT, pro_team TEXT, opp TEXT, result TEXT, min INT,
@@ -38,7 +40,7 @@ CREATE TABLE transactions(
   item_type TEXT, player TEXT, from_team TEXT, to_team TEXT, txid TEXT);
 CREATE TABLE research(
   player TEXT, topic TEXT, asof TEXT, finding TEXT, source TEXT);
-CREATE INDEX idx_q ON lloyd_quotes(player);
+CREATE INDEX lloyddb.idx_q ON lloyd_quotes(player);
 CREATE INDEX idx_g ON game_log(player);
 CREATE INDEX idx_r ON research(player);
 """)
@@ -102,7 +104,7 @@ for r in rows:
                 if len(s) > 500: s = s[:497].rsplit(' ', 1)[0] + '…'
                 if s[:90] in seen: continue
                 seen.add(s[:90])
-                con.execute("INSERT INTO lloyd_quotes VALUES (?,?,?,?,?)", (r['name'], date, score, s, fname))
+                con.execute("INSERT INTO lloyddb.lloyd_quotes VALUES (?,?,?,?,?)", (r['name'], date, score, s, fname))
                 nq += 1
 
 # ---------------- game log ----------------

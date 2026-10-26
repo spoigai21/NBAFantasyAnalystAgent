@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
-"""Index EVERY word Josh Lloyd has said into fantasy/league.db, newest first.
+"""Index EVERY word Josh Lloyd has said into fantasy/lloyd.db, newest first.
+
+This lives in its OWN database, separate from league.db, and is gitignored:
+the transcripts are Josh Lloyd's copyrighted work, not ours to redistribute under
+this repo's MIT licence. Everything here is reproducible from fantasy/transcripts/,
+which is likewise local-only. league.db carries our own data and stays tracked.
 
 Builds two tables:
   lloyd_segments  every passage from every transcript, with show_date + ordinal
@@ -10,7 +15,7 @@ always be checked against the actual words. Rebuild: python3 fantasy/index_lloyd
 """
 import sqlite3, glob, os, re, sys
 
-DB = "fantasy/league.db"
+DB = "fantasy/lloyd.db"
 con = sqlite3.connect(DB)
 con.executescript("""
 DROP TABLE IF EXISTS lloyd_segments;

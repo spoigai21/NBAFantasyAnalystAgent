@@ -36,6 +36,6 @@ for p,t,f,s in R:
 con.commit()
 n=con.execute("SELECT COUNT(*) FROM research").fetchone()[0]
 print(f"research rows: {n}")
-for t in ('players','lloyd_quotes','game_log','transactions','research'):
+for t in ('players','game_log','transactions','research'):
     print(f"  {t:<14}{con.execute(f'SELECT COUNT(*) FROM {t}').fetchone()[0]:>6}")
 con.close()

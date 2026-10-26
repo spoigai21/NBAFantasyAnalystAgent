@@ -1,7 +1,10 @@
 #!/bin/bash
 # Query the league DB.  ./fantasy/q.sh "SELECT ..."   or no args for the cheat sheet
 [ -z "$1" ] && { cat <<'H'
-fantasy/league.db — tables: players, lloyd_quotes, game_log, transactions, research
+fantasy/league.db  — players, game_log, transactions, research, game_grades,
+                     player_form, name_aliases
+fantasy/lloyd.db   — lloyd_segments, lloyd_fts, lloyd_quotes  (GITIGNORED: Lloyd's
+                     own words; attached below as lloyddb so queries still work)
 
   ./fantasy/q.sh "SELECT name,per_game,proj_full,delta FROM players
                   WHERE fantasy_team='The Freaky Alien' ORDER BY delta"
@@ -12,4 +15,6 @@ fantasy/league.db — tables: players, lloyd_quotes, game_log, transactions, res
                   GROUP BY 1 ORDER BY t DESC"
 H
 exit 0; }
-sqlite3 -header -column fantasy/league.db "$1"
+ATT=""
+[ -f fantasy/lloyd.db ] && ATT="ATTACH DATABASE 'fantasy/lloyd.db' AS lloyddb;"
+sqlite3 -header -column fantasy/league.db "$ATT$1"

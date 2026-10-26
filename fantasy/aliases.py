@@ -55,6 +55,7 @@ ALIASES = {
  'Anthony Davis':['Anthony Davis','Anthony Tony Davis'],  # NOT 'AD' — collides with waiver 'add'/'ad'
 }
 con=sqlite3.connect("fantasy/league.db")
+con.execute("ATTACH DATABASE 'fantasy/lloyd.db' AS lloyddb")  # gitignored transcript index
 con.executescript("""
 DROP TABLE IF EXISTS name_aliases;
 CREATE TABLE name_aliases(player TEXT, alias TEXT, hits INT);
@@ -65,7 +66,7 @@ for player,als in ALIASES.items():
     for a in als:
         q=a.replace('"','')
         try:
-            hits=con.execute("SELECT COUNT(*) FROM lloyd_fts WHERE lloyd_fts MATCH ?",
+            hits=con.execute("SELECT COUNT(*) FROM lloyddb.lloyd_fts WHERE lloyd_fts MATCH ?",
                              (f'"{q}"',)).fetchone()[0]
         except Exception:
             hits=0
@@ -76,7 +77,7 @@ print(f"{n} aliases stored")
 print("\nplayers whose REAL name finds nothing but an alias does (the trap):")
 for p,als in ALIASES.items():
     sur=p.split()[-1]
-    real=con.execute("SELECT COUNT(*) FROM lloyd_fts WHERE lloyd_fts MATCH ?",(f'"{sur}"',)).fetchone()[0]
+    real=con.execute("SELECT COUNT(*) FROM lloyddb.lloyd_fts WHERE lloyd_fts MATCH ?",(f'"{sur}"',)).fetchone()[0]
     best=con.execute("SELECT alias,hits FROM name_aliases WHERE player=? ORDER BY hits DESC LIMIT 1",(p,)).fetchone()
     if real==0 and best and best[1]>0:
         print(f"   {p:<26} '{sur}' -> 0 hits,  '{best[0]}' -> {best[1]}")
