@@ -85,7 +85,19 @@ assistant. Read `README.md` for the full league and roster picture before non-tr
    and treated it as unfixable, while answering an Anthony-Davis-for-LaMelo trade. Both
    previews existed. Never present a summary's silence as the absence of evidence.
    **And when the user pastes source material, write it to disk in that same turn.**
-19. **Read `totalPointsLive`, never `totalPoints`.** ESPN's `totalPoints` on a matchup
+19. **Verify before you claim — the tools exist, use them.**
+   - Quoting Lloyd? `python3 fantasy/verify.py quote "<the words>"`. Zero hits means **do not
+     attribute it**, no matter how certain it feels. Searching a player? `./fantasy/lloyd.sh
+     <name>` — never a bare grep, because **21 of the league's biggest names return zero hits
+     on their real surname** (Wembanyama, Doncic, Giannis, Haliburton, Edey, Maxey, Shai…).
+     The captioner writes "Bazales" for Buzelis and "Edy" for Edey. **A silent zero-hit search
+     looks identical to "he never said anything" — that is exactly how I invented a LaVine
+     quote on 23 Oct and acted on it for two days.**
+   - Reporting a score or a slate? `python3 fantasy/verify.py` (needs the env sourced).
+   - A framework (LangChain etc.) does not help here and the user asked: every failure this
+     session was a *verification* failure, not an orchestration one. Checks at the point of
+     claim are the fix.
+20. **Read `totalPointsLive`, never `totalPoints`.** ESPN's `totalPoints` on a matchup
    **lags by a day** — it excludes the current scoring period entirely. `totalPointsLive`
    is the real score, and `winner` ("UNDECIDED" vs a team id) is the only reliable signal
    that a matchup has closed. On 25 Oct 2026 I reported the week as a 1134-995 win by 139;
@@ -97,13 +109,13 @@ assistant. Read `README.md` for the full league and roster picture before non-tr
    **And normalise team abbreviations** — the fantasy API says WAS/SAS/NOP/GSW/UTA/NYK, the
    public scoreboard says WSH/SA/NO/GS/UTAH/NY. Mismatches silently drop players from
    "who plays today."
-20. **Judge a trade only by its effect on MY roster.** What the other team needs, what
+21. **Judge a trade only by its effect on MY roster.** What the other team needs, what
    they are short of, whether they are "desperate," and whether I could extract more
    elsewhere are all irrelevant to whether a given 1-for-1 helps me. The only inputs are:
    points into my starting ten, slot and position coverage, and injury risk to my own
    lineup. User called this out 23 Oct 2026 — I had padded the AD/LaMelo answer with
    "Top G needs a big" and an unasked-for note about Paul George. Both noise. See rule 11.
-21. **Audit the minutes inside any projection before quoting a value built on it.** Print
+22. **Audit the minutes inside any projection before quoting a value built on it.** Print
    projected mpg next to last season's actual mpg and this season's to date. ESPN's
    projections routinely assume a minutes *jump* that the rotation is not delivering, and
    minutes are the largest term in the valuation — so the error flows straight through.
@@ -121,6 +133,11 @@ assistant. Read `README.md` for the full league and roster picture before non-tr
 | `fantasy/matchup-log.csv` | Weekly matchup results |
 | `fantasy/lloyd-daily-notes.md` | Lloyd's recap opinions, with caveats |
 | `fantasy/watchlist.md` | Open questions with a dated trigger — check this each session |
+| `fantasy/league.db` | **SQLite — the store. Query it first.** `players` (all 126 rostered, value + rates + Δ), `lloyd_quotes` (287, scored, verbatim), `game_log`, `transactions` (1173, incl. trade contents), `research` (my findings). Helper: `./fantasy/q.sh "SELECT ..."`. Rebuild: `python3 fantasy/build_db.py && python3 fantasy/load_research.py` |
+| `fantasy/player-dossier.md` | Rendered view of the DB. The DB is the source of truth |
+| `fantasy/transactions-log.{csv,md}` | Full league transaction history |
+| `./fantasy/lloyd.sh "<player>"` | **Everything Lloyd said, newest first.** FTS over all 2,501 passages / 291k words; auto-expands caption manglings via `name_aliases` |
+| `python3 fantasy/verify.py` | **Pre-claim checks.** `quote "..."` proves a quote is real; `score` gives the LIVE matchup score and whether it closed; `slate` says if games are still running |
 | `fantasy/transcripts/` | **Raw Lloyd transcripts — grep HERE first.** 1.8MB, 22 team previews |
 | `~/Desktop/lloyd_team_preview_notes.md` | Summaries of 22 teams, written 30 Sep. Lossy and stale |
 | `~/Desktop/lloyd_positional_tiers.md` | Tiers, variance bands, corrections |

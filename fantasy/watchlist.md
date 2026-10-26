@@ -1,62 +1,49 @@
-# Watchlist — dated checkpoints
+# Watchlist — open questions with a dated trigger
 
-Open questions with a specific trigger and a date. Update or delete as they resolve.
-Last updated 23 October 2026.
+## Monday 26 October — one night answers four questions
 
-## Tonight — Friday 23 October (12 games, all 13 of my players have one)
-
-| Player | Game | What decides it |
+| game | my players | what to watch |
 |---|---|---|
-| **Matas Buzelis** | ~~CHI @ MIL 4:00pm ET~~ **ANSWERED — badly** | **17 minutes through three and a half quarters of a game Chicago was WINNING** (led MIL 112-106, 7:57 left in the 4th). 2-9 FG, 0-4 from three, 3 PF, **−10 — worst on the roster** — for 14.0 fantasy points. The blowout excuse from the opener is gone: this is a rotation decision. Assists did come (3), so the point-forward read is not dead; the minutes are the problem. **Leonard Miller went 6-7 for 17 points in the same 17 minutes at +10**, and Essengue was +14. Caleb Wilson got 27. New trigger below. |
-| **Zach Edey** | MEM @ GS 10:00pm | Does he push past the **21 minutes** from the opener? |
-| **Cedric Coward** | MEM @ GS 10:00pm | **DAY_TO_DAY / doubtful.** If out, Jeremy Grant starts. Lloyd: *"not great for Coward and I would hold just to see where this goes."* |
-| **Collin Murray-Boyles** | TOR @ WSH 7:00pm | **26 minutes is Lloyd's stated floor** ("50 starts, 26 minutes minimum"). At 30 he is a *"top 50 guy."* Note he is rebounding against **my own Anthony Davis**. |
-| *Kyrie Irving* | DAL @ IND 7:00pm | Not my player, but the **Paul George trade hinges on it.** 30 minutes = the trade is back on. Still ~24 = hold George. |
+| **WSH @ CHA 7:00** | **Anthony Davis + Brandon Miller** | Davis: rebounds and FG% (41.5% on 17.7 attempts; his six boards on 24 Oct were a season low). Miller: **free throw attempts** — Rubin's point, 3 FTA in two games then 12 on 24 Oct, and a made FT is +2 net here |
+| **CHI @ BOS 7:30** | **Matas Buzelis + Paul George** | Buzelis: **three-point rate and stocks** — 0.33 stl / 1.00 blk vs 0.70 / 1.51 last season, the two levers Rotoworld named. George: whether the 73 was real |
+| DAL @ MIA 7:30 | Giannis | **minutes** — 29.3 mpg vs 33.6 projected, the quiet problem nobody is tracking |
+| ATL @ HOU 8:30 | Amen Thompson | running 26% above projection per minute; just confirm it holds |
+| **MEM @ UTAH 9:00** | **Zach Edey** + Coward | **Does he clear 25 minutes?** Sat the FIRST leg of the back-to-back, which is the tell he plays the second. **Verify the injury report before lock.** |
 
-## ~6 November — two-week reads
+Idle Monday: Wemby, LaVine, Dejounte, Paul Reed, Murray-Boyles, Keegan (OUT).
+Seven or eight startable for ten slots — three go empty regardless.
 
-- **Cedric Coward.** If healthy and still ~25 fpts with no assists and no ramp, revisit the
-  drop. Lloyd's worry is passivity — *"trying not to look like year four Keegan Murray."*
-- **Matas Buzelis's SHARE of Chicago's minutes — not his raw minutes.** Corrected 23 Oct:
-  raw minutes are the wrong unit for this team. Chicago runs a flat 10-13 man rotation and
-  **nobody has played above 32 per 48 in either game** (Caleb Wilson 32 on 21 Oct, Powell
-  32.3 on 23 Oct). Against that ceiling, 17 minutes is not a benching.
-  - 21 Oct: 25 of 240 = **10.4%, 3rd on the team**
-  - 23 Oct: 17 of 208 = **8.2%, 9th of 10** (19.6 per 48)
-  So the share did fall, and that is the thing to track. **Two more games under ~9% is a
-  role problem. Back toward 11-12% and the opener was the truth.**
-- **The 35.1 full/g valuation on Buzelis is too high, independent of these two games.** It
-  rests on an ESPN projection of ~31 mpg, and *this rotation does not give anyone 31 mpg.*
-  At last season's 1.167 applied-points-per-minute (77 GP, 2248 min, 2623 applied) the
-  realistic band is **26-30/g at 22-26 mpg.** Re-price him there, not at 35.
-- **Matas Buzelis assists.** Largely answered: 3 on 23 Oct after the 0-assist opener.
+**Lloyd's Monday recap covers all four questions in one show.** Pull it as soon as it posts,
+then `./fantasy/lloyd.sh` each name.
 
 ## ~12 November — Edey's hard trigger
 
-Adam King's exact words: *"**If he's still playing minutes in the low 20s in two or three
-weeks**, then I would start to kind of wonder if this is a bit of a trend that's going to
-continue."* Low-20s on this date is a downgrade, not injury ramp.
+Lloyd's exact words, 23 Oct: *"If he's still playing minutes in the low 20s in two or three
+weeks, then I would start to kind of wonder if this is a bit of a trend."* He is at 21.5 mpg
+on 1.651 fp/min — **the highest rate on my roster.** Purely a minutes and availability
+question. He also ranks Edey over Poeltl outright: *"I'd prefer Edy over Purle."*
 
-## Ongoing, no date
+## Standing
 
-- **Giannis assists.** The entire premise of the Haliburton + Markkanen trade was a rising
-  assist rate. He had **1** in the opener at 39% usage. Track it specifically.
-- **Anthony Davis games played.** Break-even vs LaMelo Ball is **~51 games** (value over
-  replacement, not season totals). ESPN projects 61; he played 20 last season.
-- **Leonard Miller (Chicago, unrostered).** Lloyd: *"ridiculous in preseason... same
-  position as Buzelis and Caleb Wilson... you are jumping on him immediately if he's
-  getting six-man minutes."* The real threat to Buzelis's minutes — not Caleb Wilson.
-  **23 Oct: 17 min, 6-7 FG, 2-3 from three, 3-3 FT, 17 points, +10 — the same minutes as
-  Buzelis and more than double the production.** That is Lloyd's trigger being met. Still
-  unrostered. One game is not a signal, but if he holds this rotation spot he is the
-  Keegan Murray replacement, and the player who makes Buzelis droppable.
-- **Dejounte Murray availability.** Still the **only PG-eligible player**. LaVine and
-  Coward cover SG and G but **not PG**, so the slot is forfeited if he sits.
+- **Brandon Miller — Knueppel and Coby White returning** is the real trigger, not a hot
+  night. Rubin: *"Miller is going to continue to get as many shots as he wants until Kon
+  Knueppel returns."* No timeline on either as of 21 Oct. Separately, his **left shoulder**
+  (surgery May 2026, not cleared for basketball until after 28 Aug) is the one flag.
+- **Paul George — do not plan around 53.5/g.** That is 73 and 34. The 73 had seven threes
+  and five steals. True level is likely 42-48; Lloyd's "top 30 possible" is the bull case.
+- **Dejounte is still the only PG-eligible player.** If he sits, the slot is forfeited.
+- **Start LaVine over Murray-Boyles.** 42.3/g on 37.7 mpg vs 23.7/g on 19.0. CMB's blocker
+  is fouls — 10 in 57 minutes, 6.3 per 36.
 - **Keegan Murray** remains the drop when a spot is needed.
+- **Anthony Davis** — the question is games played, not production. Break-even on the
+  LaMelo trade is ~36-38 games.
 
-## Free agents worth a spot, after Lloyd's revisions
+## Method — run these before claiming anything
 
-Kept: **Day'Ron Sharpe** (*"at least 25-26 minutes... love what he's doing"*),
-**Jakob Pöltl**, **Neemias Queta**. Demoted: **Mitchell Robinson** (lukewarm).
-**Struck off:** Hartenstein (*"if you're in a points league, you don't need to bother"*)
-and Gafford (*"I do think he's washed"*).
+```
+python3 fantasy/verify.py quote "<words>"   # zero hits = do not attribute to Lloyd
+python3 fantasy/verify.py score             # LIVE score; totalPoints lags a full day
+python3 fantasy/verify.py slate             # are games still running?
+./fantasy/lloyd.sh <player>                 # newest first, expands caption manglings
+./fantasy/q.sh "SELECT ..."                 # the database
+```
