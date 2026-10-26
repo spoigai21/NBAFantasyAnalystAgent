@@ -125,6 +125,47 @@ assistant. Read `README.md` for the full league and roster picture before non-tr
    49 games to 29). Also normalise raw minutes to **share of team minutes** before calling
    anything a benching — team pace and rotation depth set the scale.
 
+23. **Any question about a player gets outside analyst research, unasked.** Standing
+   instruction from the user, 26 Oct 2026: "implicitly yiu should do this whenever i ask
+   u abt a player." So the sequence on every player question is (a) the DB and
+   `game_log`, (b) `./fantasy/lloyd.sh <name>`, (c) **a web search for what other
+   analysts are saying**, dated and attributed. Do not wait to be asked for step (c).
+   **Check the publication date on everything** — a July or last-season piece reads as
+   current in search results and three of the first six hits on Wembanyama's slow start
+   were from 2024 or preseason. Roster the analysts in
+   `fantasy/analysts.md` and record findings in the `research` table.
+24. **Not all "points league" rankings describe THIS points league.** ESPN default pays
+   **STL +4 and BLK +4** — the highest of any mainstream points format. Yahoo-style
+   points leagues pay 2 and often less, which is why RotoWire can write that in points
+   leagues "the blocks that make him a category-league cheat code are worth less here."
+   That is true of their format and **false of ours.** A ranking built on generic points
+   scoring systematically **undervalues shot-blockers and steal men** for us, and our
+   DD/TD/OREB/GP/TW bonuses are in nobody's list. Always say which scoring a borrowed
+   rank was built in. Best practice: we already
+   compute real applied points for all 126 rostered players in our exact scoring, so
+   **use analysts for mechanism — role, minutes, usage, injury — and never for ranks.**
+25. **Do not cite ESPN's fantasy analysts.** User, 26 Oct 2026: "no dont follow espn
+   rankings. i dont like there analysts at all so lets find someone else." That rules out
+   Snellings, Moody, Karabell, McCormick, Alexander and Florio, including ESPN's H2H
+   Points rankings and points draft tiers. ESPN's **API and projections** are still the
+   data source — this is about their written analysis and ranks. The replacement bench is
+   `fantasy/analysts.md`: Josh Lloyd first, then Raphielle Johnson and Noah Rubin
+   (Rotoworld) for per-player mechanism, Dan Titus (Yahoo/NBA.com) and Jacob Dunne
+   (FantraxHQ) for points-specific reads.
+
+26. **Source weighting — resolution order.** User, 26 Oct 2026: "if lloyd explcitiy says
+   something follow that. if its left vague use these analysts and rank em based on the
+   best or more accurate in general." So: **(0)** hard data from `league.db` always first —
+   opinion sets direction, data sets size; **(1) Lloyd explicit** — a verbatim dated quote
+   that greps clean and is *on the actual question* — follow it; **(2) Lloyd implicit** —
+   he addressed the situation but not the question, use as a strong prior and say it is
+   inference; **(3) weighted analyst consensus** — full table in `fantasy/analysts.md`,
+   led by Raphielle Johnson and Noah Rubin (Rotoworld) because both have given a
+   *mechanism* our own numbers later confirmed; **(4) my own calc, labelled as mine.**
+   Lloyd does **not** get tier 1 on our bonus scoring (he does not know our settings), on
+   anything he has retracted, or on a single-game reaction. Distinguish "explicit about
+   draft value" from "explicit about tonight" — they are different questions.
+
 ## Files
 
 | Path | What it is |
@@ -138,6 +179,7 @@ assistant. Read `README.md` for the full league and roster picture before non-tr
 | `fantasy/transactions-log.{csv,md}` | Full league transaction history |
 | `./fantasy/lloyd.sh "<player>"` | **Everything Lloyd said, newest first.** FTS over all 2,501 passages / 291k words; auto-expands caption manglings via `name_aliases` |
 | `python3 fantasy/verify.py` | **Pre-claim checks.** `quote "..."` proves a quote is real; `score` gives the LIVE matchup score and whether it closed; `slate` says if games are still running |
+| `fantasy/analysts.md` | **Who to read and who not to.** Tiers, the STL/BLK calibration trap, ESPN exclusion |
 | `fantasy/transcripts/` | **Raw Lloyd transcripts — grep HERE first.** 1.8MB, 22 team previews |
 | `~/Desktop/lloyd_team_preview_notes.md` | Summaries of 22 teams, written 30 Sep. Lossy and stale |
 | `~/Desktop/lloyd_positional_tiers.md` | Tiers, variance bands, corrections |

@@ -33,3 +33,4 @@ SESSION_CONTEXT.md
 # ESPN session cookies — never commit these
 .espn-fantasy.env
 *.env
+__pycache__/
