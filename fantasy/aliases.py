@@ -53,6 +53,10 @@ ALIASES = {
  'Karl-Anthony Towns':['Karl-Anthony Towns','Carlton Towns','KAT','Towns'],
  'Josh Giddey':['Giddey','Josh Giddey'],
  'Anthony Davis':['Anthony Davis','Anthony Tony Davis'],  # NOT 'AD' — collides with waiver 'add'/'ad'
+ 'Amen Thompson':['Amen Thompson','a men Thompson','Aymen'],  # 'Amen' alone matches the word "amen"
+ 'Tari Eason':['Tari E','Trey Een','Tari Eason'],
+ 'Fred VanVleet':['Van Vleet','Vanble','Van Vele','VanVleet','Fleet'],
+ 'Jabari Smith Jr.':['Jabari Smith','Jabar Smith'],
 }
 con=sqlite3.connect("fantasy/league.db")
 con.execute("ATTACH DATABASE 'fantasy/lloyd.db' AS lloyddb")  # gitignored transcript index

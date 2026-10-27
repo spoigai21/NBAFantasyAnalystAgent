@@ -137,7 +137,7 @@ def collect():
     """One request per scoring period; returns per-game lines for every rostered player."""
     status = fetch(BASE + "?view=mSettings").get("status", {})
     latest = status.get("latestScoringPeriod") or 1
-    rows, teams, usg_proj = [], {}, {}
+    rows, teams, usg_proj, injury = [], {}, {}, {}
     for sp in range(1, latest + 1):
         d = fetch(BASE + f"?view=mRoster&view=mTeam&scoringPeriodId={sp}")
         for t in d.get("teams", []):
@@ -147,6 +147,8 @@ def collect():
             for e in t.get("roster", {}).get("entries", []):
                 p = e.get("playerPoolEntry", {}).get("player", {})
                 name = p.get("fullName")
+                # Later periods overwrite earlier ones, so this ends up current.
+                injury[name] = p.get("injuryStatus") or "ACTIVE"
                 for st in p.get("stats", []):
                     # statSourceId 1 on the full-season split is ESPN's projection. It
                     # carries FGA/FTA/TOV, so a projected usage rate is recoverable.
@@ -175,11 +177,11 @@ def collect():
                     })
         print(f"  period {sp} ({game_day}): {len(rows)} lines so far", file=sys.stderr)
     print(f"  projected usage recovered for {len(usg_proj)} players", file=sys.stderr)
-    return rows, latest, usg_proj
+    return rows, latest, usg_proj, injury
 
 
 def main():
-    rows, latest, usg_proj = collect()
+    rows, latest, usg_proj, injury = collect()
     con = sqlite3.connect(DB)
     proj = {n: (pf, pm) for n, pf, pm in con.execute(
         "SELECT name, proj_full, proj_mpg FROM players WHERE proj_mpg > 0")}
@@ -271,7 +273,7 @@ def main():
         CREATE TABLE player_form(
           player TEXT PRIMARY KEY, fantasy_team TEXT, games INT, fpts_pg REAL,
           expected_pg REAL, form_z REAL, min_ratio REAL,
-          usg_pct REAL, usg_proj REAL, usg_ratio REAL,
+          usg_pct REAL, usg_proj REAL, usg_ratio REAL, injury TEXT,
           best TEXT, worst TEXT, grades TEXT, signal TEXT, note TEXT);
     """)
     by_player = {}
@@ -309,17 +311,24 @@ def main():
             sig, note = "BUY (usage up)", "touches climbing ahead of the box score"
         else:
             sig, note = "HOLD", "within noise of own expectation"
+        # Injury is not a fourth axis — it is the confounder that makes the other three
+        # unreadable. A hurt player shows rate down with role and touches intact, which
+        # is exactly the BUY LOW signature, but the rate does not regress while he is
+        # hurt. Flag it rather than trusting the signal.
+        inj = injury.get(name, "ACTIVE")
+        if inj != "ACTIVE":
+            note = f"{note}  ⚠ {inj}: injury confounds all three axes — verify before acting"
         form.append((name, gs[0]["fantasy_team"], len(gs),
                      round(sum(g["fpts"] for g in gs) / len(gs), 1),
                      round(sum(g["expected"] for g in gs) / len(gs), 1),
                      round(fz, 2), round(mr, 3),
                      None if upct is None else round(upct, 1),
-                     None if upj is None else round(upj, 1), round(ur, 3),
+                     None if upj is None else round(upj, 1), round(ur, 3), inj,
                      max(gs, key=lambda x: x["z"])["grade"],
                      min(gs, key=lambda x: x["z"])["grade"],
                      " ".join(g["grade"][0] + ("+" if g["z"] >= 1.5 else "") for g in gs),
                      sig, note))
-    con.executemany("INSERT INTO player_form VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)", form)
+    con.executemany("INSERT INTO player_form VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)", form)
     con.commit()
 
     print(f"\ngame_grades: {len(rows)} lines   player_form: {len(form)} players")

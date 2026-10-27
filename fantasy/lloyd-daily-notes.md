@@ -765,3 +765,106 @@ shot-location problems, which regress. Minutes do not.**
   steps on the court,"* but also one of only three injury risks he'd take inside the top 40.
 - **Verdict: no action. 32.3 mpg is right at projection.** The AD question remains games
   played, not production — exactly as priced in the LaMelo evaluation.
+
+---
+
+# 27 Oct 2026 — Lloyd's Monday recap (26 Oct, 9 games) + outside analysts
+
+Transcript on disk: `fantasy/transcripts/2026-10-27_recap-monday.txt` (79 KB, 101 passages,
+indexed into `lloyd.db`). Eight of my fourteen played. Lloyd covered seven of the eight.
+
+**Scoring reminder up front (rule 24):** Lloyd scored Davis's 29/10 at **44 fantasy points**.
+Ours is **50.0** — the gap is DD +3 and OREB, which are in nobody's numbers. Edey he scored
+at 13.6 vs our 14.0. Do not import his totals.
+
+## Where Lloyd is EXPLICIT (tier 1 — follow it)
+
+| Player | Lloyd's call | Verbatim |
+|---|---|---|
+| **Zach Edey** | **BUY LOW** | *"it is going to be a slow ramp up, it seems. I'm still pretty excited about what he can do, but this complete lack of usage is a bit confusing. **It is a clear by low to me, but it's painful.**"* |
+| **Matas Buzelis** | **HOLD — do not drop** | *"I am not dropping Giddy. I am not dropping Bales. And if you ask me that question, I will just tell you no, don't do it... **Please do not drop them. I beg you.**"* |
+| **Brandon Miller** | **HOLD, bullish season, usage hit coming** | *"he is taking every shot possible. And today they all went in... He's not going to be this good... **But I think we're in for a pretty big season from Brandon Miller.**"* |
+| **Paul George** | **Still a target** | *"he still remains a top 40 player on the season so far. And I feel pretty good about him being a guy to target."* Attributes the 25 minutes to **foul trouble.** |
+
+## Where Lloyd is VAGUE or silent (tiers 2-4)
+
+- **Amen Thompson** — *"they just went a different direction. I can't I couldn't see any real
+  reason why... So I'm not I'm not worried about it, but it's a little interesting."* He gives
+  no cause. **The cause is published elsewhere — see below.**
+- **Giannis** — pure box-score read on the 29/15/11: *"I'd love him to do a little bit more
+  with the defensive stats, but we're back up now seventh in points leagues."* No action.
+- **Cedric Coward** — **not mentioned once.** Verified absence: Lloyd went through Memphis
+  player by player (Jerome, Boozer, Wells, Stewart, Edey) and skipped him, despite 16/11/3 for
+  **43.0** (GOOD, +0.57). Newest Coward hit in `lloyd.sh` is still the 23 Oct mailbag.
+
+## The one real finding — Amen Thompson was not demoted, he was capped
+
+The user's guess ("maybe a change of strategy?") is **supported, and there is a dated quote
+behind it.** Udoka said *before the season* he wanted a **10-man rotation**, with *"a focus on
+keeping Kevin Durant and Amen Thompson's minutes down from the previous year"* (The Dream Shake,
+Udoka interview). On 26 Oct both dropped on the **same night**:
+
+| | 21 Oct | 23 Oct | 24 Oct | 26 Oct |
+|---|---|---|---|---|
+| Durant | 37 | 37 | 37 | **30** |
+| Amen Thompson | 33 | 36 | 39 | **28** |
+| Jabari Smith Jr. | 36 | 34 | 33 | **39** ← season high |
+| Sengun | 30 | 36 | 33 | **37** ← season high |
+| VanVleet | 30 | 32 | *out* | 29 |
+
+Tari Eason (unrostered here) took **33 off the bench** with Smart and Adams out. So the minutes
+went up the frontcourt and to the bench wing, not to a guard taking Amen's job.
+
+**Our three axes say the same thing:** `min_ratio 0.77 MINS-DOWN` but `usage 21.6% / ratio 1.08
+USG+`. **Touches per minute went UP.** A benching for performance costs you touches too; this
+cost only floor time. Also note the 39 was the outlier, not the 28 — VanVleet missed 24 Oct.
+Blanco (RotoWire via NBA.com, 26 Oct, pre-game) adds the positional half: Thompson *"has moved
+to the two-guard spot behind returning point guard Fred VanVleet."*
+
+Caveat kept honest: 28 is still **5-8 minutes below** his baseline of 33/36 in games VanVleet
+played, so load management explains the direction, not the whole size. One game.
+
+## The one thing that changes a signal — Edey's ankle
+
+Rotoworld, **24 Oct 2026**: *"Zach Edey (ankle) ruled out vs. Sacramento"* — **left ankle,
+injury management**, which is why he sat the first leg of the back-to-back. RotoWire's preseason
+note: *"some managers are concerned about recurring ankle injuries."* Kleiman had cleared him
+for full-speed work 29 Sep. **ESPN still reads ACTIVE.**
+
+This is rule 27's confounder landing on a live call. Edey reads rate-down with minutes and
+touches suppressed; Lloyd calls it a clear buy low **without mentioning the ankle**. A managed
+ankle does not regress on its own. Lloyd's tier-1 buy-low stands on direction; the **size** of
+it is unpriced until the ankle is clear.
+
+## Davis — Lloyd says wrist, the beat said hand, nobody else wrote it up at all
+
+Noah Rubin's Rotoworld recap of the 29/10 game **does not mention the hand, the wrist, or any
+injury** — it ends on Davis looking to keep it going in Cleveland Wednesday. Lloyd is the only
+one who flagged it, and he says **wrist**:
+
+> *"he looked to be shaking his wrist a bit. When asked after the game, he just said, 'No, it's
+> cuz I was just so hot hitting my shots that I was just trying to cool off.' So, I don't know
+> how true that is. **It probably isn't**... But of course, it's Anthony Davis, so we got to be
+> a little bit concerned."*
+
+Coach Keefe said **hand** (*"I think he got hit in the hand"*). Lloyd and the beat disagree on
+which limb; both disbelieve Davis's own explanation. **Date-check trap:** a Rotoworld "related
+news" item quoting Keefe that Davis *"(hand) isn't expected to play again this season"* is from
+the **2025-26 shutdown**, not now.
+
+## Lloyd's other dated triggers worth carrying
+
+- **Brandon Miller:** Knueppel and White back *"maybe end of the week"*, and the usage hit is
+  *"without doubt"* coming — to Miller **and** to Moussa Diabaté / Nass Reed.
+- **Chicago blowout rule:** *"when the Bulls get blown out, all the starters sit apart from
+  Caleb Wilson."* So Buzelis's 22 minutes is partly a blowout artifact, not only Splitter.
+- **Utah:** Markkanen *"had a wrist problem"* per Lloyd (reported elsewhere as hand), Jaren
+  Jackson a knee issue; Lloyd: *"I think Jiren's probably at risk of missing, but I don't know."*
+
+## Stale results caught (rule 23)
+
+1. RotoWire *"Fantasy Basketball Week 2: Trade Targets & Sell High Candidates"* — surfaced as a
+   current hit, actually **29 Oct 2025, Mike Barner**. Its Amen Thompson note is built on
+   VanVleet being *injured*, the opposite of now.
+2. A Rotoworld Buzelis item — right ankle sprain, *"his season may be over"* — undated on the
+   page and **not current**; he played 22 minutes on 26 Oct and reads ACTIVE.

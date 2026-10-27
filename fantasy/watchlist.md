@@ -77,3 +77,75 @@ python3 fantasy/verify.py slate             # are games still running?
 Towns **+10.9**/g, Haliburton **+9.4**, Garland +2.6, Markkanen +2.2, JJJ +0.3.
 Everything below Haliburton is inside the method's error (rule 10) — the Markkanen
 version is a wash on points and rests entirely on the PG fix and the 20-GP durability swap.
+
+## Zach Edey's left ankle — opened 27 Oct 2026
+
+**New information that was not in any of our notes.** Rotoworld, 24 Oct 2026: *"Zach Edey
+(ankle) ruled out vs. Sacramento"* — **left ankle, injury management.** That is why he sat
+the first leg of the back-to-back, and it is a better explanation of the 21 minutes / **two
+shot attempts** than Iisalo's "very conservative" line alone. RotoWire's preseason note
+flags *"recurring ankle injuries."* **ESPN reads ACTIVE** — rule 27's blind spot again.
+
+Lloyd is **explicitly** a buy-low here (*"It is a clear by low to me, but it's painful"*) and
+**does not mention the ankle**, so his call is priced without it.
+
+**Trigger:**
+1. Memphis's next injury report for "Edey" with an ankle designation. Clean → Lloyd's buy-low
+   is live at full size.
+2. If he plays: watch **FGA, not minutes.** Two attempts in 21 minutes is the whole problem
+   (usg 14.3%, ratio 0.77 USG-DOWN). A ramp shows up as attempts before it shows as points.
+3. Lloyd's own earlier date, **~12 Nov**, stands as the point at which a still-suppressed role
+   stops being a ramp and becomes the role.
+4. Note the per-minute rate is **the best on my roster at 1.674** — this is purely a
+   usage-and-availability question, not an ability question.
+
+## Amen Thompson's 28 minutes — REOPENED and re-diagnosed, 27 Oct 2026
+
+**My first answer was wrong and the user caught it.** I offered Udoka's preseason *"10-man
+rotation... keeping Kevin Durant and Amen Thompson's minutes down"* as the mechanism. The
+play-by-play (ESPN event `401909874`) refutes it:
+
+- Houston did **not** play a 10-man rotation — **seven** players cleared 13 minutes; Tate,
+  Crawford and Thornton got 1 minute each in the final 1:22.
+- I used Durant's drop to 30 as corroboration. It is **not independent** — Durant and Thompson
+  came out in the *same substitution* at Q4 12:00, and Durant never returned. One fact, counted
+  twice.
+- The user's objection is simply correct: Thompson played **33 and 36** in the two games
+  VanVleet was active, and his 39 came with VanVleet **out**. Neither VanVleet nor a season cap
+  explains 28.
+
+**What actually happened — the whole shortfall is the fourth quarter.** Pulled at **Q4 12:00**
+with Houston up 91-85. Did **not return until 2:56 at 118-103**, out again at 1:22. By quarter:
+10:05 / 6:52 / 9:01 / **1:34**. Through three quarters he was at 25:58 against 37:33 on 23 Oct —
+and that night he came back at Q4 8:17 because the game stayed close (114-110) and **he closed
+it**. Houston went **+9 in the nine minutes he sat** (91-85 → 118-103; 106-93 by 7:47) with
+Sengun / Jabari / Eason / VanVleet / Sheppard-Bogdanovic.
+
+**Not foul trouble — ONE personal foul in 28 minutes.** Not garbage time he rested in — a
+6-point game at the quarter break. He was also the **only Houston starter with a negative
+plus-minus (−3)** against Sengun +29, and had 5 of the team's turnovers.
+
+**Best reading:** a routine quarter-break substitution that became a nine-minute absence because
+the replacement unit broke the game open while he sat. **Score-dependent, not role-dependent** —
+but he was on the bench for the decisive stretch, which is what the user said from the start.
+
+**The pattern that IS real:** Udoka pulls him early in **every** fourth quarter; only the
+re-entry varies, and it varies with the score. 21 Oct out 9:54 / back 7:00. 23 Oct out 12:00 /
+back 8:17, closed. 24 Oct out 8:49 / back 6:51, closed. 26 Oct out 12:00 / back 2:56, did not
+close. **He has closed two of four.** He is at 34.0 mpg against 37.39 last season and a 36.5
+projection — down ~3.4.
+
+**Trigger:** a **second competitive fourth quarter spent on the bench.** That, not a low point
+total, is what would re-rate him. Also watch **Marcus Smart's return** — he was active 21/23
+Oct and out 24/26, so the bench group that closed Monday changes when he is back.
+
+## AD's hand — amendment, 27 Oct 2026
+
+**Lloyd says wrist, not hand**, and he is the only outside voice who mentioned it at all:
+*"he looked to be shaking his wrist a bit... I don't know how true that is. It probably isn't...
+But of course, it's Anthony Davis, so we got to be a little bit concerned."* Noah Rubin's
+Rotoworld recap of the same game **does not mention any injury.** Keefe said hand. Two
+observers, two limbs, both skeptical of Davis's "cooling off" explanation.
+
+**Date-check trap for this thread:** a Rotoworld related-news item quoting Keefe that Davis
+*"(hand) isn't expected to play again this season"* is from the **2025-26 shutdown**, not now.

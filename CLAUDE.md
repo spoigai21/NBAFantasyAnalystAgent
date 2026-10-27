@@ -176,9 +176,24 @@ assistant. Read `README.md` for the full league and roster picture before non-tr
    (2.175 on resid/sqrt(expected) over 308 games), not assumed. Alongside it a **minutes**
    grade (ROLE-UP / MINS+ / MINS-OK / MINS-DOWN / BENCHED) as a ratio of projected mpg,
    and a **usage** grade (FED / USG+ / USG-OK / USG-DOWN / FROZEN) as a ratio of the
-   player's own projected USG%. **All three must stay separate:** rate above own level
-   regresses, borrowed minutes disappear when the starter returns, and touches are the
-   coach's to take back at any time.
+   player's own projected USG%. **All three must stay separate** — and the reason is *who
+   controls each one*, because that is what decides whether it reverts:
+
+   | Axis | Measures | Controlled by | Reverts on its own? |
+   |---|---|---|---|
+   | **Rate** | pts/min vs own projection | the player | **yes** — the only one that does |
+   | **Minutes** | mpg vs projected mpg | the coach | no |
+   | **Usage** | USG% vs own projected USG% | the coach | no |
+   | **Injury** | ESPN `injuryStatus` | nobody | **no — and it invalidates the other three** |
+
+   **Injury is not a fourth axis, it is the confounder.** A hurt player shows rate down
+   with minutes and touches intact — *precisely* the BUY LOW signature — but the rate will
+   not regress while he is hurt, so the signal reads backwards exactly when it costs most.
+   `player_form.injury` carries the flag and appends a warning to `note`. **Its blind spot
+   is the dangerous part: it only knows what ESPN has published.** On 26 Oct 2026 Anthony
+   Davis read `ACTIVE` while his own coach was telling reporters "I think he got hit in
+   the hand" and the medical staff were evaluating him. **A clean `ACTIVE` is not evidence
+   of health** — check the beat before trusting a BUY LOW on anyone with injury history.
    **Usage is the axis that breaks ties when minutes look fine.** User asked for it,
    26 Oct 2026: "i think u should factor usage as well... usage is a stat as well."
    ESPN publishes no usage rate but carries the inputs on *both* the actual and the
