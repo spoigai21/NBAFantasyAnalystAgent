@@ -166,18 +166,41 @@ assistant. Read `README.md` for the full league and roster picture before non-tr
    anything he has retracted, or on a single-game reaction. Distinguish "explicit about
    draft value" from "explicit about tonight" — they are different questions.
 
-27. **Grade every game against the player's OWN expected level, and keep rate separate
-   from role.** `python3 fantasy/grade.py` (needs the env) rebuilds `game_grades` and
+27. **Grade every game against the player's OWN expected level, and keep minutes, rate
+   and usage separate.** `python3 fantasy/grade.py` (needs the env) rebuilds `game_grades` and
    `player_form` for every rostered player in the league. Baseline is the player's own
    projected points-per-minute times the minutes they actually played — because 30 fpts is
    an ELITE night for Murray-Boyles and an AWFUL one for Giannis, so a league-wide grade is
    useless for buy-low / sell-high. Grades are ELITE / GOOD / NORMAL / POOR / AWFUL at
    ±0.5 and ±1.5 SD, and the SD is **measured** from the league's own games
    (2.175 on resid/sqrt(expected) over 308 games), not assumed. Alongside it a **minutes**
-   grade (ROLE-UP / MINS+ / MINS-OK / MINS-DOWN / BENCHED) as a ratio of projected mpg.
-   **The two must stay separate:** rate above own level regresses, borrowed minutes
-   disappear when the starter returns, and a rate collapse with the role intact is the only
-   true buy-low. Collapsing them into one number hides which one you are buying.
+   grade (ROLE-UP / MINS+ / MINS-OK / MINS-DOWN / BENCHED) as a ratio of projected mpg,
+   and a **usage** grade (FED / USG+ / USG-OK / USG-DOWN / FROZEN) as a ratio of the
+   player's own projected USG%. **All three must stay separate:** rate above own level
+   regresses, borrowed minutes disappear when the starter returns, and touches are the
+   coach's to take back at any time.
+   **Usage is the axis that breaks ties when minutes look fine.** User asked for it,
+   26 Oct 2026: "i think u should factor usage as well... usage is a stat as well."
+   ESPN publishes no usage rate but carries the inputs on *both* the actual and the
+   projected (`statSourceId: 1`) stat line, so `FGA + 0.44*FTA + TOV` is recoverable;
+   the team denominator comes from the **public box score** (`summary?event=<id>`,
+   one call per game, 52 to backfill a week) giving a real
+   `USG% = 100*(player_SE * teamMIN/5)/(MIN * team_SE)`. **Read it against 20.0%, which
+   is league average by definition.** Two known limits, measured 26 Oct 2026 against a
+   published USG% column: the fantasy API **rounds minutes to whole numbers** (Davis
+   played 35:31, reported as 36, which alone moved him 30.4 -> 30.0), and the published
+   column cannot be reproduced from box-score totals at all — solving backwards needs a
+   team denominator of 103.2 for Davis but 98.2 for Sarr, so public columns are built on
+   **on-court possessions**. Ours lands within ~1.4 points. Do not claim an exact match.
+   What the axis buys:
+   a player **missing shots he is still being given** regresses (true BUY LOW); a player
+   who has quietly **stopped being given them** does not (`FADE (usage)`). Those two look
+   *identical* on rate and minutes alone. It also demotes a rate spike that rides inflated
+   touches to `SELL HIGH (usage)`, and surfaces `BUY (usage up)` when touches climb ahead
+   of the box score. Caught on 26 Oct: Paul George's +1.02 rate was on 1.182 usage (not
+   skill), AD's collapse was 1.169 usage at 44.0% FG (efficiency, not role — so a real
+   buy-low), Coward's only broken axis was usage at 0.600 and climbing, and Buzelis was
+   being *fed* at 1.35-1.40 while underperforming.
    **`game_grades.fpts` is ESPN's own `appliedTotal`** — authoritative, formula-free, and
    it supersedes `game-log.csv`, whose hand-computed values were off by ±1 on seven lines.
    Rebuilt 26 Oct 2026 at the user's request.
@@ -195,7 +218,7 @@ assistant. Read `README.md` for the full league and roster picture before non-tr
 | `fantasy/transactions-log.{csv,md}` | Full league transaction history |
 | `./fantasy/lloyd.sh "<player>"` | **Everything Lloyd said, newest first.** FTS over all 2,501 passages / 291k words; auto-expands caption manglings via `name_aliases` |
 | `python3 fantasy/verify.py` | **Pre-claim checks.** `quote "..."` proves a quote is real; `score` gives the LIVE matchup score and whether it closed; `slate` says if games are still running |
-| `fantasy/grade.py` → `game_grades`, `player_form` | **Per-game ELITE/GOOD/NORMAL/POOR/AWFUL vs the player's own level, plus a separate minutes grade and a SELL HIGH / BUY LOW / HOLD / AVOID signal.** Uses ESPN `appliedTotal` |
+| `fantasy/grade.py` → `game_grades`, `player_form` | **Per-game ELITE/GOOD/NORMAL/POOR/AWFUL vs the player's own level, on three separate axes — rate, minutes, usage — plus a SELL HIGH / BUY LOW / FADE / HOLD / AVOID signal.** Uses ESPN `appliedTotal` |
 | `fantasy/analysts.md` | **Who to read and who not to.** Tiers, the STL/BLK calibration trap, ESPN exclusion |
 | `fantasy/transcripts/` | **Raw Lloyd transcripts — grep HERE first.** 1.8MB, 22 team previews |
 | `~/Desktop/lloyd_team_preview_notes.md` | Summaries of 22 teams, written 30 Sep. Lossy and stale |
