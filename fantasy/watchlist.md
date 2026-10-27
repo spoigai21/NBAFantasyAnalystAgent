@@ -99,6 +99,47 @@ Lloyd is **explicitly** a buy-low here (*"It is a clear by low to me, but it's p
 4. Note the per-minute rate is **the best on my roster at 1.674** — this is purely a
    usage-and-availability question, not an ability question.
 
+### Amendment — the minutes themselves, from play-by-play (27 Oct 2026)
+
+**21 / 22 / 21 is a fixed script, not variance.** All three games: pulled at Q1 7:07 / 7:33 /
+7:41, back at **Q2 12:00 every game**, **Q3 12:00 every game**, **Q4 12:00** both games he was
+needed. Four stints of ~5 minutes = the first ~4:30-5:00 of each quarter.
+
+**And he CLOSES.** 23 Oct: in at Q4 4:17, finished a **3-point game**. 26 Oct: in at Q4 5:40,
+finished a **5-point game carrying five fouls**. 21 Oct: in at 3:36, out at 1:32 — a 20-point
+blowout, pure rest. **Two of three, both the close ones.** A coach who caps a man at 21 and plays
+him in the last five minutes of a one-possession game is managing load, not demoting him.
+
+**26 Oct was fouls.** Five in ~15 minutes of floor time, one ending each stint (Q1 10:14,
+Q2 11:29, Q2 8:54 → pulled, Q3 11:25 offensive foul, Q3 9:18 → pulled instantly). He fouled five
+times, turned it over three times, shot 0-for-2 — **and still got 21 minutes and closed.** The 21
+is behaving like a **floor**, not a performance ceiling.
+
+**Q4 is his biggest quarter in every game, and it is growing.** Stint reconstruction:
+
+| | Q1 | Q2 | Q3 | **Q4** | Total |
+|---|---|---|---|---|---|
+| 21 Oct | 4:53 | 4:16 | 4:15 | **7:41** | 21 |
+| 23 Oct | 4:27 | 4:30 | 5:23 | **8:06** | 22 |
+| 26 Oct | 4:19 | 3:26 | 2:42 | **10:08** | 21 |
+
+Memphis **rests him through the first three quarters and spends him at the end.** On the night he
+committed five fouls he got his **longest fourth quarter of the season**, in a 5-point game. The
+fouls cost ~2:48 across Q2+Q3 and the fourth quarter gave all of it back — which is why the total
+still landed on 21. This reverses the natural reading of "MINS-DOWN every night."
+
+**⚠ Correction to my own usage read.** `usg_ratio` climbed 0.51 → 0.62 → **0.77** and looked like
+a clean ramp. Decomposed, it isn't: **FGA went 5 → 6 → 2.** The 26 Oct rise is 4 free throws and
+3 turnovers, not shots. For a low-volume big the usage axis must be decomposed before it is read —
+Lloyd was right on *attempts* and our headline metric flattered him.
+
+**For him to reach his 26.4 projection, minutes must come off Quinten Post (19/20/12) or Isaiah
+Stewart (0/16/15).** Memphis is splitting 48 centre minutes three ways. That is the thing to watch,
+not his point totals.
+
+**Data-quality note:** `players.status` reads `OUT` for Edey and is **stale** (captured during the
+25 Oct DNP). Live ESPN returns `injured=False / ACTIVE`. Use `player_form.injury`.
+
 ## Amen Thompson's 28 minutes — REOPENED and re-diagnosed, 27 Oct 2026
 
 **My first answer was wrong and the user caught it.** I offered Udoka's preseason *"10-man
