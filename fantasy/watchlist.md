@@ -47,3 +47,33 @@ python3 fantasy/verify.py slate             # are games still running?
 ./fantasy/lloyd.sh <player>                 # newest first, expands caption manglings
 ./fantasy/q.sh "SELECT ..."                 # the database
 ```
+
+## AD right hand + Markkanen hand — opened 26 Oct 2026
+
+**Two separate hand events the same night, one on each side of a proposed trade.**
+
+- **Anthony Davis (WAS), right/shooting hand.** User watched it get hit **at the end** of
+  WSH @ CHA (Final, CHA 110-103). He had already banked 36 min / 50.0 applied fpts
+  (29/10/0, 11-22 FG, 4-4 FT) — the hit does not show in the line. **Nothing reported**
+  as of this writing; he was absent from the game's injury node entirely.
+  Note his *other* hand carries history: left (non-shooting) hand ligament damage, hurt
+  8 Jan 2026 vs Utah as a Maverick, **surgery declined** in favour of ~6-week rehab after
+  a second opinion with Dr. Steven Shin, never fully resolved — shut down for the season
+  with hand + groin at **20 GP**, debuted for Washington 21 Oct 2026.
+- **Lauri Markkanen (UTA), hand.** Left MEM @ UTAH early — hand caught between Cameron
+  Boozer and Jaren Jackson Jr. **6 minutes, did not return**, ESPN flag Day-To-Day / GTD
+  type "Hand". Game was still in the 2nd quarter when checked; **post-game X-rays pending.**
+
+**Trigger — before accepting or sending LaMelo Ball + Markkanen for AD:**
+1. Markkanen's X-ray result. Contusion/sprain → deal is live. Fracture or ligament → swap
+   the second piece (see below).
+2. Washington's next injury report, for "Davis" with a hand or finger designation.
+3. If AD plays: watch **FG% and FT%, not minutes.** A bad shooting hand suppresses rate
+   while the role holds — the *identical* signature to his current `BUY LOW` flag
+   (form_z -1.18, min_ratio 1.004), but it does **not** regress upward. Treat that
+   buy-low signal as unreliable until the hand is clarified.
+
+**Second piece matters more than the deal.** Gain to the starting ten vs AD out:
+Towns **+10.9**/g, Haliburton **+9.4**, Garland +2.6, Markkanen +2.2, JJJ +0.3.
+Everything below Haliburton is inside the method's error (rule 10) — the Markkanen
+version is a wash on points and rests entirely on the PG fix and the 20-GP durability swap.
