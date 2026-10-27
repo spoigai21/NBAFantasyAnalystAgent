@@ -74,9 +74,31 @@ assistant. Read `README.md` for the full league and roster picture before non-tr
    season's mpg and a flat ESPN projection both understate him — use Lloyd's forward
    minutes call (e.g. CMB "22 → 25-26 mpg, closes most games"). Do not accept a rising
    projection for an aging player while anchoring a young one to last year.
-17. **In this format, high usage is a cost, not an asset, unless it converts.** Price it:
-   FGA + FTA + 2×TOV per game is the nightly toll. LaVine −21.5/g vs Murray-Boyles
-   −10.0/g. This is what drives Lloyd's −15 rank penalty on volume scorers.
+17. **CORRECTED 27 Oct 2026 — shot volume is an ASSET here, not a toll. The old version of
+   this rule was mechanically wrong and I acted on it for days.** It said "high usage is a
+   cost… FGA + FTA + 2×TOV per game is the nightly toll." That prices FGA at −1 while
+   **ignoring FGM +2**, which this league pays on top of the points. ESPN exposes the real
+   weights in `appliedStats` on every stat line; derived across all 67 rostered players on
+   26 Oct 2026, every per-unit value is single-valued and exact:
+
+   | | PTS | **FGM** | FGA | **FTM** | FTA | 3PM | REB | OREB | AST | STL | BLK | TOV | GP | DD | TD | TW | EJ | FF |
+   |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+   | per unit | +1 | **+2** | −1 | **+1** | −1 | +1 | +1 | +1 | +2 | +4 | +4 | −2 | +1 | +3 | +5 | +1 | −2 | −1 |
+
+   So the true economics of a shot are:
+   **made two = +3, made three = +5, missed FG = −1, made FT = +1, missed FT = −1.**
+   Break-even is **25% on twos and 16.7% on threes** — i.e. *every* NBA rotation player adds
+   value per attempt. **Losing attempts is a straight loss; gaining them is a gain.** Price
+   usage as `(points from FG) + 2×FGM + 3PM − FGA`, never as `−(FGA + FTA)`.
+   Consequences: the "LaVine −21.5/g toll" was one-sided accounting, and it is part of why I
+   benched him on 23 Oct (see rule 14). A −15 rank penalty on volume scorers is **not**
+   supported by this scoring and must not be attributed to Lloyd.
+   Worked use: Buzelis lost **8.15 pts/g** off last season's rate from the field-goal bundle
+   alone — 65% of his entire −12.57 collapse — split −4.25 from **fewer attempts** (12.5 → 9.0)
+   and −3.87 from **worse conversion** (+1.21 → +0.78 per attempt). Free throws were a *gain*
+   of +2.98 despite FTA −1, because he converts them.
+   **How to check this yourself:** `appliedStats` is on every `mRoster` stat line next to
+   `appliedTotal`. Use it instead of hand-computing; it is ESPN's own arithmetic, per category.
 18. **Grep `fantasy/transcripts/` before ever saying a Lloyd read is missing.** The raw
    transcripts are on disk — 1.8MB, 22 team previews, recovered 23 Oct 2026 from the
    session log where they had sat unsaved since September. The `~/Desktop/lloyd_*.md` files

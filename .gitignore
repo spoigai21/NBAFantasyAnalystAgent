@@ -42,3 +42,6 @@ fantasy/transcripts/*.txt
 # Transcript index built from those transcripts — same reason, same rule.
 # Reproduce locally with: python3 fantasy/index_lloyd.py
 fantasy/lloyd.db
+
+# quarantined non-Lloyd text stripped out of the transcripts (user prompt text)
+fantasy/transcripts_quarantine.txt
