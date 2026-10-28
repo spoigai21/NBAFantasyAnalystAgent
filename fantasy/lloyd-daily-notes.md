@@ -868,3 +868,54 @@ the **2025-26 shutdown**, not now.
    VanVleet being *injured*, the opposite of now.
 2. A Rotoworld Buzelis item — right ankle sprain, *"his season may be over"* — undated on the
    page and **not current**; he played 22 minutes on 26 Oct and reads ACTIVE.
+
+---
+
+# 28 Oct 2026 — Lloyd's Tuesday recap (27 Oct, 4 games)
+
+`fantasy/transcripts/2026-10-28_recap-tuesday.txt` — 54 KB, 75 passages, indexed (corpus now
+2,672 passages).
+
+## The injury wave, and it lands on my next two opponents
+
+| Player | Status | Owner | Proj |
+|---|---|---|---|
+| **Anthony Edwards** | knee surgery, **2+ months**, Lloyd expects January | Yash's Hearty Team | 49.5 |
+| **Jaren Jackson Jr.** | **torn MCL ~8 weeks**, no surgery | **Top G — my MP3 opponent** | 40.5 |
+| **Kawhi Leonard** | OUT | **Why so serious — my current opponent** | 48.6 |
+| **Chet Holmgren** | out again, knee | I Finish Quickley | 42.7 |
+| **Lauri Markkanen** | **fine — day-to-day** | Top G | 42.4 |
+
+All cross-checked against live ESPN `injuryStatus`. On Edwards: *"we're not seeing Ant now
+until January I would guess and then there'll be some limits on minutes."*
+
+⚠️ `players.status` read **ACTIVE** for Edwards while the live API said **OUT**. The table is a
+snapshot — always re-pull `mRoster` for status.
+
+## My four who played
+
+- **Wembanyama** — *"29 and 10… five blocks with two steals. Shot 67%… excellent as per usual.
+  **And it still doesn't feel like he's had any big games. He only played 27 minutes here.**"*
+  Two things: he independently flags the 27 minutes, matching what the play-by-play showed me
+  (34 → 32 → 29 → 27). And **"doesn't feel big" is a raw-box-score read** — in our scoring that
+  was **86.0, his season high by 33 and the best line in our league that night by 21.** Five
+  blocks are +20 here and the zero turnovers avoid −10. Rule 24: don't import his sense of size.
+- **Paul Reed** — explicit: *"he just has to be rostered while Duran is out… Has to be."* Also
+  *"one of the best per-minute producers in all of the NBA."* Flags the five fouls as why it was
+  only 26 minutes.
+- **Paul George** — *"20 and seven, seven assists, two steals, 50%. **23rd ranked player so
+  far.** Hard to complain considering he was drafted in the 70s."* Answers his own question from
+  the day before about whether George would play the back-to-back — he went 36, a season high.
+- **Zach LaVine** — *"**70% shooting is not going to stick**, but it's been a great year so far
+  from Lavine, who's what, a **top 40 player** so far."* New risk he raises: *"maybe he gets
+  traded or bought out or whatever"* — Sacramento is winless.
+
+**Caveat on both guards:** George's usage was **21.9%** that night against a 29.6 average, and
+LaVine's **20.5%** against 28.9. The `BUY (usage up)` labels on both rest on the earlier,
+higher share — one game, but worth watching.
+
+## Kawhi being a Raptor is the actionable item
+
+See `fantasy/watchlist.md` — ~26 minutes open in Toronto, CMB has the headroom, but Lloyd
+prefers **Jakobe Walter** (unrostered here): *"I hope we get more out of Colinary Boils, but I
+don't know if we will."*

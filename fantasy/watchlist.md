@@ -190,3 +190,34 @@ observers, two limbs, both skeptical of Davis's "cooling off" explanation.
 
 **Date-check trap for this thread:** a Rotoworld related-news item quoting Keefe that Davis
 *"(hand) isn't expected to play again this season"* is from the **2025-26 shutdown**, not now.
+
+## Markkanen's hand — CLOSED 28 Oct 2026
+
+**He's fine.** Lloyd: *"Larry Markin looks to be okay. He's considered day today."* ESPN:
+`injured=False`, `status=DAY_TO_DAY`. The 26 Oct scare (hand caught between Boozer and JJJ,
+6 minutes, X-rays pending) resolved with no structural damage. No action — and note he's
+owned by **Top G**, my matchup-period-3 opponent, so this is not in my favour.
+
+## Murray-Boyles — Kawhi is out, opened 28 Oct 2026
+
+**Kawhi Leonard is a Raptor and ESPN now reads him `OUT`** (26.0 mpg over 2 games, 48.6
+projected in our scoring). That is the first genuine opening for CMB all season. It also
+hurts **Why so serious — my current opponent** — who owns him.
+
+Toronto's wing/forward minutes: **Kawhi OUT**, Barnes 30.3, Barrett 30.7, Quickley 28.3,
+**CMB 19.0** (projected 22.9, `min_ratio` 0.83). So ~26 minutes are up for redistribution and
+CMB is the one with headroom.
+
+**But Lloyd hedges, and he prefers a player we don't roster:** *"we talked about Kawaz.
+**Jacobe Walter is the guy that I like there. I hope we get more out of Colinary Boils, but I
+don't know if we will.**"*
+
+**Trigger — CMB's minutes in Toronto's next game.** 19 → 25+ makes him startable over Buzelis
+or Edey. 19 → 20 means Walter took the minutes and CMB stays a bench body. Watch minutes, not
+points; he's a 23.7/g player whose problem has only ever been floor time.
+
+## Paul Reed — Lloyd explicit, 28 Oct 2026
+
+*"he just has to be rostered while Duran is out. And then we figure it out later on. Has to
+be."* ESPN confirms **Jalen Duren `OUT`**. Our grades agree — two straight `ROLE-UP` + `FED`
+games. Same expiry on both reads: **Duren's return.** Keep him in the C slot until then.
