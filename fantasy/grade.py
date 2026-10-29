@@ -187,20 +187,56 @@ def main():
         "SELECT name, proj_full, proj_mpg FROM players WHERE proj_mpg > 0")}
 
     # Expectation and raw residual. Skip today's period: games may still be running.
+    #
+    # The baseline is a BLEND of ESPN's projected per-minute rate and the rate the player
+    # has actually produced. Grading purely against the projection was measurably biased:
+    # on 29 Oct 2026, over 483 completed games, mean z was -0.167 and 58.0% of all games
+    # landed below expected (unbiased would be 0.000 and ~50%). Every label was shifted
+    # roughly a sixth of an SD toward the harsh end, and for a player whose projection is
+    # stale it was far worse - ESPN had Anthony Davis at 1.742 fpts/min while he was
+    # producing 1.240, so each of his games was measured against a bar ~29% too high and
+    # a 43-point night on 34 minutes printed POOR despite being his season average.
+    # User caught this, 29 Oct 2026.
+    #
+    # Shrinkage: weight the player's own games against K games of projection as the prior,
+    # so game 1 is almost pure projection and the demonstrated rate takes over as evidence
+    # accumulates. K=3 is a judgement, not a fit - it is the point where half the weight
+    # has moved after three games.
+    K_PRIOR = 3.0
+    own = {}
+    for r in rows:
+        if r["min"] < 1 or r["period"] >= latest:
+            continue
+        f, m, n = own.get(r["player"], (0.0, 0.0, 0))
+        own[r["player"]] = (f + r["fpts"], m + r["min"], n + 1)
+
     graded = []
     for r in rows:
         pf, pm = proj.get(r["player"], (None, None))
         if not pf or not pm or r["min"] < 1:
             r["expected"] = r["z"] = None
             continue
-        r["fpm_proj"] = pf / pm
+        proj_rate = pf / pm
+        f, m, n = own.get(r["player"], (0.0, 0.0, 0))
+        act_rate = (f / m) if m > 0 else proj_rate
+        r["fpm_proj"] = (n * act_rate + K_PRIOR * proj_rate) / (n + K_PRIOR)
         r["expected"] = r["fpm_proj"] * r["min"]
         r["resid"] = r["fpts"] - r["expected"]
         r["scaled"] = r["resid"] / (r["expected"] ** 0.5) if r["expected"] > 0 else 0.0
+        # The SIGNAL needs a different question answered. The blended baseline asks "was
+        # this a good night FOR HIM, as he is now" - right for a per-game grade, useless
+        # for buy-low, because a player's blended z trends to zero by construction and a
+        # season-long slump becomes invisible. So keep the pure-projection residual too:
+        # that one asks "is he below his TALENT", which is what BUY LOW / SELL HIGH mean.
+        exp_p = proj_rate * r["min"]
+        r["scaled_proj"] = (r["fpts"] - exp_p) / (exp_p ** 0.5) if exp_p > 0 else 0.0
         if r["period"] < latest:
             graded.append(r)
 
     sd = statistics.pstdev([g["scaled"] for g in graded]) or 1.0
+    sd_proj = statistics.pstdev([g["scaled_proj"] for g in graded]) or 1.0
+    for g in graded:
+        g["z_proj"] = g["scaled_proj"] / sd_proj
     print(f"\nmeasured dispersion: SD(resid/sqrt(expected)) = {sd:.3f} "
           f"over {len(graded)} completed games", file=sys.stderr)
 
@@ -284,7 +320,8 @@ def main():
     for name, gs in by_player.items():
         gs.sort(key=lambda x: x["period"])
         zs = [g["z"] for g in gs]
-        fz = sum(zs) / len(zs)
+        fz_play = sum(zs) / len(zs)                 # how he is PLAYING vs his own current level
+        fz = sum(g["z_proj"] for g in gs) / len(gs)  # how he is doing vs his TALENT -> the signal
         mr = sum(g["min_ratio"] for g in gs) / len(gs)
         urs = [g["usg_ratio"] for g in gs if g.get("usg_ratio")]
         ur = sum(urs) / len(urs) if urs else 1.0

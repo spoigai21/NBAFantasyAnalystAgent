@@ -238,6 +238,31 @@ assistant. Read `README.md` for the full league and roster picture before non-tr
    skill), AD's collapse was 1.169 usage at 44.0% FG (efficiency, not role — so a real
    buy-low), Coward's only broken axis was usage at 0.600 and climbing, and Buzelis was
    being *fed* at 1.35-1.40 while underperforming.
+   **⚠ The baseline was BIASED HARSH and the user caught it, 29 Oct 2026.** Grading every
+   game against ESPN's *projected* points-per-minute produced mean z of **−0.167** over 483
+   completed games with **58.0% of all games below expected** — unbiased would be 0.000 and
+   ~50%. Every label sat about a sixth of an SD toward the harsh end. For a player whose
+   projection is stale it was far worse: ESPN had Anthony Davis at **1.742 fpts/min** while
+   he was producing **1.240**, so a 43-point night on 34 minutes printed **POOR** when it was
+   *above* his own season average. User's words: *"anthony davis had 43 fantasy points a
+   couple below his general average but not crazy"* and on Reed, *"bad sure but hes just
+   poor."* **Both were right; the regrade moved AD's night to NORMAL and Reed's to POOR.**
+
+   **The fix is two baselines, because there are two different questions.**
+
+   | Column | Baseline | Answers |
+   |---|---|---|
+   | `game_grades.z` / `grade` | **blend** of projection and the player's own demonstrated rate, shrunk with `K_PRIOR = 3` games | *Was this a good night **for him, as he is now**?* |
+   | `player_form.form_z` → the **signal** | **pure projection** | *Is he below his **talent**?* — which is what BUY LOW / SELL HIGH mean |
+
+   Keeping only the blend would have been wrong in the other direction: a blended z trends
+   to zero by construction, so a season-long slump becomes invisible and **every signal
+   collapses to HOLD** (it did — AD lost his BUY LOW until the split was added). Distribution
+   after the fix: ELITE 6.0 / GOOD 20.5 / NORMAL 40.6 / POOR 25.5 / AWFUL 7.5, against an
+   ideal 6.7 / 24.2 / 38.3 / 24.2 / 6.7.
+   **Residual bias is −0.088, not 0** — about half the original. The rest looks like genuine
+   league-wide underperformance against preseason projections, not a method error.
+
    **`game_grades.fpts` is ESPN's own `appliedTotal`** — authoritative, formula-free, and
    it supersedes `game-log.csv`, whose hand-computed values were off by ±1 on seven lines.
    Rebuilt 26 Oct 2026 at the user's request.
