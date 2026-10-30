@@ -57,6 +57,7 @@ ALIASES = {
  'Tari Eason':['Tari E','Trey Een','Tari Eason'],
  'Fred VanVleet':['Van Vleet','Vanble','Van Vele','VanVleet','Fleet'],
  'Jabari Smith Jr.':['Jabari Smith','Jabar Smith'],
+ 'Dejounte Murray':['Dejonte','Dejante','Dejonte Murray','Dejante Murray','Dejonte Mari'],  # real name -> 0 hits
 }
 con=sqlite3.connect("fantasy/league.db")
 con.execute("ATTACH DATABASE 'fantasy/lloyd.db' AS lloyddb")  # gitignored transcript index

@@ -919,3 +919,102 @@ higher share — one game, but worth watching.
 See `fantasy/watchlist.md` — ~26 minutes open in Toronto, CMB has the headroom, but Lloyd
 prefers **Jakobe Walter** (unrostered here): *"I hope we get more out of Colinary Boils, but I
 don't know if we will."*
+
+## 2026-10-30 recap (covers Thursday 29 Oct, 3 games)
+
+Source: `fantasy/transcripts/2026-10-30_recap-thursday.txt`. Every quote below greps clean
+via `python3 fantasy/verify.py quote`.
+
+**Cedric Coward — first time Lloyd has been explicit on him, and he's bullish.**
+*"I know that I've been remiss in talking about the chicken. Cedric Coward. But let's talk
+about him because... after a really subpar first game where he was like completely uninvolved,
+he's been really good. 17, eight, and four and three steals, 50% shooting, **top 50 player, 30
+minutes a night.** It looks good. It looks really good."*
+His *"really subpar first game where he was completely uninvolved"* is exactly the **8.5%
+`FROZEN` usage** game our own axis flagged on 21 Oct — he arrived at the mechanism
+independently. **Tier 1** under rule 26. (He says 17/8/4; ESPN has 17p/7r/4a — quote ESPN.)
+
+**Zach LaVine — an explicit price, which is rare.**
+*"I had him in the 80s heading into the season. I've adjusted that to **top 65**. If you wanted
+to sell him high, **unless you get a top 40 guy back, just ride it, man.**"* He called tonight
+*"a pretty stereotypical Lavine game"* — our grade agreed at **z −0.04**, the most
+on-expectation game on the roster. Caveat per rule 24: that rank is general points/category
+scoring, so use the direction, not the number.
+
+**Zach Edey — Lloyd corrected me, and the box score backs him.** I said garbage time; he said
+*"He had foul trouble again. He played 19 minutes. It's frustrating."* **Four fouls in 19
+minutes** and a **−4** in a game Memphis won by 21. Action call is explicit **hold**: *"the
+answer to that is literally nothing... if someone drops him, add immediately. And if you've got
+him, just suck it up, big boy."* See the correction note below — neither of us had it whole.
+
+**Dejounte Murray — the reason, which no outlet had.**
+*"Dejonte Murray was out for personal reasons. **He and his partner had a child.**"* That is a
+short, defined, zero-physical absence — his rate is uninjured and his return is a scheduling
+question. Jeremiah Fears went 22/8/13/2stl/4blk in his place and Lloyd refuses to read it:
+*"It is one game. It is the only signal we have. But it doesn't mean that that sticks."* He
+flags **Herb Jones** (32 min after sub-20 all season, team-best +27) as the real complication.
+
+**Schedule trap — plan ahead for this one.** *"Next week to start the week, we have three days
+in a row that are absolute no streaming days. **a 15 game Monday, a zero game Tuesday, and a
+14 game Wednesday.**"* In a 10-slot daily league a 15-game and a 14-game day both mean the cap
+**binds hard** — the exact condition that cost me matchup period 1. Set 2 Nov and 4 Nov in
+advance.
+
+**Not mine but worth knowing:** Sabonis a *"top five fantasy player"* on low usage (The Big
+Chin, who just beat me); Lillard *"a pretty clear buy low"* and Toumani Camara *"a huge sell
+high"* (both Top G / Sparsh); Darius Acuff 64 fantasy points and *"40th in points leagues"*
+(Top G).
+
+## 2026-10-29 LIVE MAILBAG (recorded before Thursday's games)
+
+Source: `fantasy/transcripts/2026-10-29_mailbag.txt`. Recorded 6:20am AEST = Thursday
+afternoon ET, so it **precedes** the Thursday recap. All quotes verified via `verify.py`.
+Five of my own players came up, four of them unprompted by me.
+
+**Paul George — he prices him in the top 40, and loves him.** Someone asked about trading
+George for Buzelis: *"No, no, you wouldn't do that... What are the chances that Paul George has
+a better season than Matis Bzales? **It's pretty bloody high.** I had him projected higher...
+**Bzalis's value is in the toilet. You do not need to give up a top 40 player to get him.**"*
+And separately: *"What do you do with Paul George? **You just bloody love it.** You got him
+probably pick 80 and he's been pretty good."* I own **both** players in that question.
+
+**LaVine — same price as the recap, now with the mechanism.** *"Would I sell Zack Lavine for a
+top 70 player? No. **Would I sell Zack Lavine for a top 40 player? Yes.**"* Why: *"What he's
+doing at the moment **does not seem ridiculously unsustainable**... everybody took the ball out
+of his hands [last season]. And at the moment, **there's just three of those guys.** It's him,
+it's Sabonis, and it's Auff. And Sabonis is really low usage."* Two independent statements, same
+number, and our own axis agrees from the other side — usage settled to ~22-23 on high minutes,
+which is "what he's always done," not a spike that must revert.
+
+**CMB — he has firmed from hedge to hold, and dropped the Walter preference.** Three times:
+*"I think you just got to hold him. Early fouls yesterday."* · *"Just just hold on it, man...
+**let's see where the minutes go.**"* · and refusing Malik Thomas/Tyson over him: *"**Murray
+Boils is a guy that should be closing games and playing 25 minutes a night.**"* On 28 Oct he
+preferred Ja'Kobe Walter; asked here, *"I think I'd probably take Precious."* **This validates
+keeping CMB.** His buy-low tell: *"the way you can know that it's a buy low is that **every
+person in here is talking about dropping him.**"*
+
+**Edey — he reached our arithmetic independently.** *"Edy **could be a top 30 player if he
+played 30 minutes a night but I don't think he's going to get there.**"* That is exactly the
+two-part read: elite per-minute, capped floor time. ⚠️ **Not attributing** the *"if he still
+hasn't cracked more than 21 minutes. Then we move on"* line to Edey — it sits inside a merged
+CMB/Poeltl answer where Edey isn't named. His safe general stance: *"at least close to
+Thanksgiving or at least 3 weeks or so."*
+
+**Dejounte — a real negative turn, and it's about the situation, not a box score.** *"**Deonte
+Murray actually isn't playing well and he's hampering the other guys.**"* And on trade value:
+*"**The Pelicans fans hate him at the moment**... **It's not looking great.**"* This does not
+contradict his *"not particularly concerned"* line from the Wednesday recap — that was about one
+game, this is about role and fit. Both are his, same day. Matters more for me than for anyone
+else because he's my **only PG-eligible player**.
+
+**Paul Reed — the window may be half what I logged.** On Duren: *"you absolutely **keep a top 40
+player in IIL if he might be back in a week.**"* My watchlist had Duren at ≥2 weeks. Re-check
+Detroit's report.
+
+**On early losses — true, but it does not cover what happened to us.** *"**I don't really care
+that much if I take an L in week one or week two** because I like to see some things settle"* ·
+*"**Stop panicking. Stop making snap decisions off one game.**"* That is a correct argument
+against **roster** churn on early results. It is **not** a defence of matchup 1 — that was lost
+to ~54 points of avoidable bench leakage, not to variance or a bad roster. His patience applies
+to who you hold; it says nothing about whether you set the lineup.

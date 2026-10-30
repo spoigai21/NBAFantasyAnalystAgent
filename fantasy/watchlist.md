@@ -216,8 +216,171 @@ don't know if we will.**"*
 or Edey. 19 → 20 means Walter took the minutes and CMB stays a bench body. Watch minutes, not
 points; he's a 23.7/g player whose problem has only ever been floor time.
 
+**✅ UPDATED 29 Oct — Lloyd has firmed from hedge to hold, and dropped the Walter preference.
+Keeping CMB was the right call.** Three times in the mailbag: *"I think you just got to hold
+him. Early fouls yesterday."* · *"Just just hold on it, man... **let's see where the minutes
+go.**"* · and refusing Malik Thomas/Tyson over him: *"**Murray Boils is a guy that should be
+closing games and playing 25 minutes a night.**"* Asked directly whether Walter or Achiuwa is
+the better points-league pickup, he no longer picks Walter: *"I think I'd probably take
+Precious."* The thesis is now simply **19 actual vs the 25 Lloyd says he should play.**
+
 ## Paul Reed — Lloyd explicit, 28 Oct 2026
 
 *"he just has to be rostered while Duran is out. And then we figure it out later on. Has to
 be."* ESPN confirms **Jalen Duren `OUT`**. Our grades agree — two straight `ROLE-UP` + `FED`
 games. Same expiry on both reads: **Duren's return.** Keep him in the C slot until then.
+
+**⚠ UPDATED 29 Oct — the window may be half what I logged.** Lloyd in the mailbag: *"you
+absolutely keep a top 40 player in IIL **if he might be back in a week.**"* I had Duren at
+**≥2 weeks** (hamstring). Lloyd is working from **one week**. Re-check Detroit's own injury
+report rather than trusting my figure, and **do not plan the C slot past next week on Reed.**
+
+## ⚠ LINEUP — three starters sitting on the bench, opened 29 Oct 2026
+
+**Lineup lock is `INDIVIDUAL_GAME`** (confirmed in `mSettings`), so slots must be set *every
+day*, per tipoff. Tonight nothing was lost — SAS, MIA and TOR were all off — but the slate
+flips immediately.
+
+| Date | My players who play | Currently benched among them |
+|---|---|---|
+| **30 Oct** | 8: Amen, B. Miller, Reed, Davis, George, Buzelis, **Giannis**, **CMB** | **Giannis 58.5/g, CMB 18.0/g** |
+| **31 Oct** | 6–7: Amen, Miller, Coward, Edey, LaVine, **Wemby** (+Dejounte if cleared) | **Wembanyama 69.8/g** |
+| **1 Nov** | 2: George, **CMB** | **CMB 18.0/g** |
+
+Eight players for ten slots on the 30th, so **everyone who plays fits** — there is no tradeoff
+to weigh. On the 31st **Wemby goes in the `C` slot**, which is free because Reed's Detroit is off.
+
+**Trigger — before each day's first tipoff.** Leaving it alone costs **164.3 points** across the
+three days and flips matchup period 2 from a projected **+119.6 win to a −44.7 loss**. Re-check
+the day's slate against `proTeamId` each morning; this is now the highest-value recurring action
+in the week.
+
+## Dejounte Murray — out for PERSONAL reasons, opened 29 Oct 2026
+
+**Not an injury**, despite ESPN reading `DAY_TO_DAY`. FantasyPros has him a **late scratch**,
+ruled out Thursday; CBS lists the reason as **personal** and expects him out **through at least
+31 Oct** — which is New Orleans' only remaining game this matchup period (ATL @ NO).
+
+Two consequences: **(a)** rule 27's injury confounder does **not** apply, so do not read his form
+as injury-suppressed — his weak 28 Oct (27.0 in 30 min, 0.90 fpts/min, usage down to 20.1 from
+27.4/26.5) is just a bad game, and Lloyd agrees: *"Dejonte Murray not great 108 and five has
+been pretty good though so I'm not particularly concerned about that."* **(b)** He is my **only
+PG-eligible player**, so the slot is simply forfeited — there is no internal fix.
+
+**Trigger — New Orleans' 31 Oct injury report.** If he is out again the PG slot is dead for the
+week; the standing weakness is now a realised cost, not a hypothetical.
+
+## Coward's usage — ARRIVED, closing the 26 Oct thread, 29 Oct 2026
+
+Four games, monotonic on **both** axes: usage **8.5 → 18.6 → 20.1 → 24.0** (`FROZEN` → `USG+`)
+and fpts/min **0.89 → 1.31 → 1.39 → 1.70**. Tonight **46.0 in 27 minutes**, z +1.28, on *flat*
+minutes (28/32/31/27, `MINS-OK`). Every bit of the gain is touches and efficiency rather than
+floor time — the configuration that actually holds.
+
+**One thing still has not improved: zero FTA**, again. No free-throw floor means every miss is a
+clean −1. That is the cap on him, not the role.
+
+## Edey — the cap is real, but the role is growing inside it, 29 Oct 2026
+
+Minutes **21/22/21/19**, `MINS-DOWN` in all four. Usage climbing anyway: **9.5 → 11.5 → 14.3 →
+17.1**. Tonight 29.0 in 19 min, 13p/7r on 6-of-8, 1.53 fpts/min.
+
+**This is a different finding from 26 Oct and a better one.** Then the usage rise was FTA + TOV
+while FGA *fell* 5 → 6 → 2. Tonight it is **8 FGA, his highest** — the rise is now real shot
+volume. Minutes caveat: MEM won by 21 at Portland, so the 4th was garbage time; 19 minutes in a
+blowout is not a demotion. At 30 minutes his current rate is ~46/g.
+
+**Web search found nothing current** — every ankle hit was 2025 or early 2026 (two surgeries, a
+stress reaction). The management premise stands unrefuted but also unconfirmed.
+
+**CORRECTED same night, from Lloyd's recap.** I said garbage time. Lloyd said *"He had foul
+trouble again. He played 19 minutes."* The box score is **4 PF in 19 minutes** and a **−4** in
+a 21-point win — he sat because he was in trouble, not because it was over.
+
+**But the full foul series shows neither read was whole.** PF by game: **3, 2, 5, 4** in
+21/22/21/19 minutes. Two and three fouls cannot explain the first two 21-minute games, so the
+~21-minute baseline really is a **coaching cap** (my original read); the last two games at 5
+and 4 fouls are why he can't even reach it (Lloyd's read). Correct synthesis: **the coach set a
+21–22 minute ceiling and Edey's fouls have recently kept him under it.** Watch fouls per 36,
+not just minutes — and note **Coward also had 5 fouls** in 27 minutes tonight.
+
+**Lloyd's action call is explicit hold:** *"the answer to that is literally nothing... if
+someone drops him, add immediately. And if you've got him, just suck it up, big boy."*
+
+## Matchup period 1 — FINAL, a 3-POINT LOSS, and it was the lineup, opened 29 Oct 2026
+
+**The Big Chin 1276.0 — The Freaky Alien 1273.0.** ESPN revised the opponent *down* from 1278
+to 1276 after stat corrections and it still wasn't enough. **Record is 0-1, not 1-0** — I had
+been reporting it wrong all week.
+
+**The cause was leakage, not talent:**
+
+| | |
+|---|---|
+| My roster **generated** (periods 1–6) | **1358.0** |
+| What actually **counted** | **1273.0** |
+| Forced by the 10-slot cap | ~31 (21 Oct: 11 played, drop Keegan 7 · 23 Oct: 12 played, drop Buzelis 15 + Miller 9) |
+| **Avoidable** | **~54** |
+| **Margin of defeat** | **3** |
+
+I checked slot eligibility on both crowded days — all ten fit, so the cap genuinely only forced
+~31. *(Caveat: Naji Marshall's 24.0 on 24 Oct may not have been available if his 18:58 drop beat
+tipoff; that makes it ~30 avoidable, still ten times the margin.)*
+
+**And I lead the entire league in points scored — 2207.0**, ahead of Skywalking 2183 and
+TanTheMan 2078. Best offence in the league, 0-1. **The roster is not the problem; the daily
+lineup is.** This is the same failure as the Giannis/Wemby bench entry above, and it has now
+cost a week.
+
+## ⚠ 2 Nov / 4 Nov — the cap will bind hard, opened 29 Oct 2026
+
+Lloyd: *"a 15 game Monday, a zero game Tuesday, and a 14 game Wednesday."* So **2 Nov = 15
+games, 3 Nov = ZERO, 4 Nov = 14 games.** On a 15- and a 14-game day far more than ten of my
+players are active, so for the first time the 10-slot cap forces real **choices** rather than
+just "start whoever plays" — the exact condition that lost matchup period 1.
+
+**Trigger — build the 2 Nov and 4 Nov lineups the night before**, not in the morning. The
+zero-game Tuesday is dead for both teams, so no edge either way.
+
+## Paul George — Lloyd prices him top 40, which changes a trade shape, 29 Oct 2026
+
+Unprompted, in answer to someone else's *George-for-Buzelis* question: *"**It's pretty bloody
+high**"* that George outperforms Buzelis, *"**Bzalis's value is in the toilet. You do not need
+to give up a top 40 player to get him.**"* And: *"What do you do with Paul George? **You just
+bloody love it.**"* I own **both** names in that question.
+
+**Consequence for the open LaMelo work.** On 29 Oct I offered two acceptable shapes: *Coward
+straight up* or *George straight up*. Lloyd's top-40 tag raises George's cost, and he separately
+refuses to call LaMelo a drop (*"only if you're in a coma"*), so George-for-LaMelo is roughly
+**top-40 for top-40** — exactly the trade he says to skip: *"if a trade doesn't work out in a
+way where you feel confident in it, don't do it."* **The Coward shape is now the cleaner of the
+two.** Still never send both.
+
+## Dejounte — Lloyd turns negative on the situation, 29 Oct 2026
+
+*"**Deonte Murray actually isn't playing well and he's hampering the other guys.**"* · *"**The
+Pelicans fans hate him at the moment**... **It's not looking great.**"* Plus live trade
+speculation, and **Herb Jones** back in the starting five at 32 minutes (after sub-20 all
+season) with a team-best **+27**.
+
+This does **not** contradict his *"not particularly concerned"* line from the Wednesday recap —
+that was about one box score, this is about role, fit and trade risk. Both same day, both his.
+
+**Why it hits me harder than anyone:** he is my **only PG-eligible player.** A trade to a worse
+spot, or Jones/Fears eating his minutes, forfeits the slot with no internal fix. Our numbers
+already show it: 28 Oct was 0.90 fpts/min on usage **down to 20.1** from 27.4/26.5 — that drop
+now has an opinion attached to it.
+
+**Trigger — whether he starts, and at what usage, in New Orleans' next two games.**
+
+## ⚠ Lloyd's "don't panic" does NOT cover matchup 1, noted 29 Oct 2026
+
+*"I don't really care that much if I take an L in week one or week two because I like to see
+some things settle."* · *"Stop panicking. Stop making snap decisions off one game."*
+
+**He is right, and it is about the wrong thing.** That is a sound argument against churning the
+**roster** on early results — and I should apply it (don't drop Buzelis, don't chase Walter,
+hold CMB and Edey). It is **not** a defence of the matchup-1 loss: that was **~54 points of
+avoidable bench leakage**, not variance and not a bad roster, on a team that leads the league in
+points scored. **Patience applies to who you hold. It says nothing about whether you set the
+lineup.** Don't let one launder the other.
