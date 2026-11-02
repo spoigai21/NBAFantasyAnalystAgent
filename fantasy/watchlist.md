@@ -1,5 +1,70 @@
 # Watchlist — open questions with a dated trigger
 
+## 2 November — buy-low trade targets, with the gate
+
+**The gate: my 10th starter is LaVine at 34.7/g.** A target whose *recovered* level (`proj_adj`)
+is under ~35 cannot improve the starting ten however cheap he is. That rules out Naz Reid (34.8)
+and makes Gobert (37.1) and Ware (35.3) marginal before any other argument.
+
+| target | team | pos | now | recovered | my rank if recovered | verdict |
+|---|---|---|---|---|---|---|
+| **Darius Garland** | Top G | **PG** | 29.8 | **38.8** | #7 | **#1 target** — deficit is turnovers, minutes + usage both up |
+| **SGA** | I Finish Quickley | **PG** | 45.2 | **53.9** | **#3** | **best player, worst price** — already #3 while slumping |
+| Desmond Bane | TanTheMan | SG/SF | 30.3 | 37.1 | #8 | **window closed** — last 4 = 38.5/g |
+| Rudy Gobert | Skywalking | C | 25.5 | 37.1 | #9 | **skip** — usage frozen, blocks gone at 34 |
+| Kel'el Ware | TanTheMan | C | 30.7 | 35.3 | #10 | watch, not target — minutes unlock |
+| Naz Reid | The Big Chin | PF/C | 30.0 | 34.8 | — | **fails the gate** |
+
+**Trigger — Bane, now or never.** His −6.8 is one foul-out (0.0 applied, 23 Oct). Last four are
+39/34/44/37 and his minutes are up to 39-40. Any price built on 30/g is already stale; by the
+weekend his season average will have caught up and the discount disappears.
+
+**Trigger — Garland's health, before any offer.** Turf toe (left foot, summer surgery), separate
+right-foot injury Jan 2026, 45 GP last season, and **zero 2026-27 injury reporting found** —
+every search hit was ~9 months old. Check the Cavs report before committing. Minutes being *up*
+is the main evidence he is fine.
+
+**What goes out — CORRECTED same day, do not use the earlier version of this line.**
+I had written "Paul George, usage 1.14, surplus is fragile." **That was wrong.** His 1.14 is the
+season opener alone (FED, 1.60); ex-opener his usage ratio is **1.048** and over his last three
+games **1.043** — at projection — while his scoring went *up* to **50.0/g**. FG% is **up** (43.9%
+→ 46.3% on more attempts), minutes are flat (30.6 → 31.0), and he has played **all six** of
+Boston's games. He is a durability **hedge** only (36 years old, **78 games in his
+last two seasons combined**) plus a soft steals component (+2.63/g of the gain, 31% of it).
+⚠ **And Lloyd never called him a sell-high** — I misread a garbled caption twice. His actual
+words are "absolutely cooking", "a top 20 player per game", "still really really good", "the
+doubts about ability are gone", Tatum "ranked behind Paul George this season", and on selling
+that there is not "enough of a gap". His one negative is injury risk at 36.
+⚠ **Specifically do NOT send George for Garland** — that trades durability *down*: Garland has
+turf toe, summer surgery, 45 GP last season and produces 16 fewer points a game. If durability
+is the whole reason to move George, the return has to be **durable and better**, or hold him.
+Edey (25.2/g, both axes down at 0.77 / 0.74) is the throw-in for a Garland-type deal instead.
+**Do not send Coward** — usage 0.84 and climbing from 0.600.
+
+## 2 November — Matas and Amen triggers (set today)
+
+**Amen Thompson — watch ONE thing: minutes in a close game.** The 28-minute nights are margin
+and back-to-back artefacts (38.0 mpg in the three games decided by ≤7, above his 36.5
+projection; 30.5 in the four decided by ≥10, and Houston is 6-1). Per-minute rate is down only
+−3.7%. **Trigger: the next game Houston plays inside 7 points. If he is under 34 minutes in a
+close game, the Udoka minutes cap ("we want to get Amen and Kevin's minutes down", media day)
+is real and the projection needs cutting. Otherwise there is nothing here.** Secondary: blocks,
+0.61 → 0.29/g, worth −1.29 applied at BLK +4. Do NOT re-flag his assists — that is the
+off-ball role Udoka described, and his FG% and turnovers both say he is fine.
+
+**Matas Buzelis — the drop clock, but it is NOT a minutes clock.** 61% of his collapse is rate,
+not minutes, and 30+ minutes does not fix him: 0.897 fpts/min in his 30+ games vs 0.881 under
+30, i.e. identical. At his current rate he needs 34 mpg to reach 30.2/g, under his 31.7
+corrected projection. **Trigger is FG% and blocks, not playing time: 40.0% from the field (was
+46.3%) and 0.67 blocks/g (was 1.51). Give it through ~9 Nov / four more games. If FG% is still
+under 43% and blocks under 1.0, the hold has no basis left** — and Lloyd's own hold
+(*"Please do not drop them. I beg you"*, 27 Oct) is the only thing keeping him. The one genuine
+positive: FTA **doubled** to 6.17/g at 81%, worth +2.06/g. Usage is fine (1.152, FED in 3 of 6)
+— Chicago is feeding him; he is missing.
+**Blocker is Caleb Wilson** (34.0 mpg, 41.0/g, +8.5 over projection, Chicago's leading scorer),
+rostered by TanTheMan — not a waiver option, so there is no move that fixes the minutes.
+
+
 ## Monday 26 October — one night answers four questions
 
 | game | my players | what to watch |

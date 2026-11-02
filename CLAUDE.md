@@ -164,11 +164,45 @@ assistant. Read `README.md` for the full league and roster picture before non-tr
    49 games to 29). Also normalise raw minutes to **share of team minutes** before calling
    anything a benching — team pace and rotation depth set the scale.
 
-23. **Any question about a player gets outside analyst research, unasked.** Standing
-   instruction from the user, 26 Oct 2026: "implicitly yiu should do this whenever i ask
-   u abt a player." So the sequence on every player question is (a) the DB and
-   `game_log`, (b) `./fantasy/lloyd.sh <name>`, (c) **a web search for what other
-   analysts are saying**, dated and attributed. Do not wait to be asked for step (c).
+23. **Any question about a player starts with `./fantasy/p.sh <name>`, then outside
+   analysts, unasked.** Two standing instructions, both from the user.
+   **(a) 2 Nov 2026: "when i ask u abt a player you should get general idea or trend about
+   players via our small db. so use it please dont keep reading from the notes."** So step
+   one is **always** `./fantasy/p.sh <name>` — one local call, ~0.03s, no API round-trip,
+   which prints WHO / LEVEL / AXES / TREND / SPLIT / LLOYD / OURS. It resolves nicknames
+   and caption manglings (`wemby`, `edey`, `cmb`, `bales`), marks the matched alias inline
+   with `>>...<<`, and ranks Lloyd hits by **bm25 relevance** as short snippets instead of
+   700-character blobs. Steer it with `--q "<terms>"` when the question is specific
+   ("turnovers", "minutes", "shoulder") and widen with `--lloyd N`.
+   **Do not read `fantasy/lloyd-daily-notes.md` to answer a player question** — the notes
+   are a paraphrase of what `p.sh` reads straight from the DB, and a paraphrase is how
+   rule 14 happens. Notes are for *writing* to, not for retrieving from. Only drop to
+   `./fantasy/lloyd.sh <name>` for the full passage once a snippet looks load-bearing,
+   and to `q.sh` to read a `research.finding` in full.
+   **(b) 26 Oct 2026: "implicitly yiu should do this whenever i ask u abt a player."** So
+   after `p.sh`, always **a web search for what other analysts are saying**, dated and
+   attributed. Do not wait to be asked.
+   **Measured 2 Nov 2026, one player question end to end:** 0.94s → **0.070s** (13x),
+   5 shell calls → **1**, 1 ESPN API call → **0**, 1.61 MB of JSON parsed → **0**. Across
+   all 14 roster players: 13.2s / 70 calls / 22.5 MB → **0.38s / 14 calls / 0 MB**.
+   On Lloyd retrieval, answer-in-top-K over 8 verified questions: the old date-ordered
+   `lloyd.sh` scored **5/8 on 20,989 chars**; `p.sh` scores **7/8 on 15,488** — recall
+   **+25pp on 26% less text**, 47% less text per answer found.
+   ⚠ **And the thing that nearly shipped as an improvement made it worse.** My first
+   rewrite returned bm25-ranked 380-char question-centred *snippets*: 85% less text and
+   **4/8 recall — worse than the old tool.** A 700-char passage is already a snippet, so
+   windowing throws the answer away while retrieval had found the right passage all along.
+   **The win came from ranking, not from trimming.** Measure recall, never just volume:
+   a token saving with a recall regression is a worse tool that looks like a better one.
+   Also validate a gold label *twice* — mine initially tested "Buzelis + 30 plus minutes",
+   and that phrase is Lloyd talking about **Giddey**, with Buzelis entering as "the other
+   guy." A snippet is a WINDOW, not a sentence: read the full passage before quoting.
+   ⚠ `--q` is not optional politeness — it is how you find things. On 2 Nov,
+   `./fantasy/p.sh garland --q turnovers` surfaced, in a transcript already on disk, that
+   Lloyd had both **confirmed the turnover mechanism** ("his turnovers are are huge...
+   averaging before today five turnovers a game") and reported that Garland **"banged up
+   his shoulder"** on 1 Nov — while ESPN still read `ACTIVE`. I had told the user minutes
+   earlier that no current injury reporting existed. An unsteered search had not found it.
    **Check the publication date on everything** — a July or last-season piece reads as
    current in search results and three of the first six hits on Wembanyama's slow start
    were from 2024 or preseason. Roster the analysts in
@@ -332,7 +366,9 @@ assistant. Read `README.md` for the full league and roster picture before non-tr
 | `fantasy/league.db` | **SQLite — the store. Query it first.** `players` (all 126 rostered, value + rates + Δ), `lloyd_quotes` (287, scored, verbatim), `game_log`, `transactions` (1173, incl. trade contents), `research` (my findings). Helper: `./fantasy/q.sh "SELECT ..."`. Rebuild: `python3 fantasy/build_db.py && python3 fantasy/load_research.py` |
 | `fantasy/player-dossier.md` | Rendered view of the DB. The DB is the source of truth |
 | `fantasy/transactions-log.{csv,md}` | Full league transaction history |
-| `./fantasy/lloyd.sh "<player>"` | **Everything Lloyd said, newest first.** FTS over all 2,501 passages / 291k words; auto-expands caption manglings via `name_aliases` |
+| `./fantasy/p.sh <name>` | **START HERE for any player question.** One local call: WHO / LEVEL / AXES / TREND / SPLIT / LLOYD / OURS. Resolves nicknames, bm25-ranks Lloyd snippets, `--q` to steer, `--lloyd N` to widen |
+| `./fantasy/lloyd.sh "<player>"` | **Full passages**, newest first — the drill-down once a `p.sh` snippet matters. FTS over all 2,995 passages / 349k words; auto-expands caption manglings via `name_aliases` |
+| `fantasy/build_stats.py` → `stat_lines`, `stat_items` | **Cached ESPN stat lines for all 130 rostered players, both seasons, actual + projected.** This is what makes `SPLIT` a DB read instead of an API call. Rebuild after a roster change |
 | `python3 fantasy/verify.py` | **Pre-claim checks.** `quote "..."` proves a quote is real; `score` gives the LIVE matchup score and whether it closed; `slate` says if games are still running |
 | `fantasy/refresh_players.py` | **Refresh `players` in place from the API** — averages, projections, rule-8 bonus. Self-contained; UPSERTs, never drops |
 | `fantasy/grade.py` → `game_grades`, `player_form` | **Per-game ELITE/GOOD/NORMAL/POOR/AWFUL vs the player's own level, on three separate axes — rate, minutes, usage — plus a SELL HIGH / BUY LOW / FADE / HOLD / AVOID signal.** Uses ESPN `appliedTotal` |

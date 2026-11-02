@@ -40,6 +40,12 @@ for f in sorted(glob.glob("fantasy/transcripts/*.txt"), reverse=True):
     fn = os.path.basename(f)
     date = fn[:10]
     raw = open(f, errors="replace").read()
+    # DROP our own provenance header: every transcript starts with '#'-prefixed lines
+    # that WE wrote (source, coverage, headline items for my roster). They were being
+    # indexed as Lloyd passages, so ./fantasy/lloyd.sh returned my own summary notes
+    # with 'kind = mailbag' next to them -- exactly the rule-14 failure mode, a
+    # paraphrase of mine wearing Lloyd's attribution. Found 2 Nov 2026.
+    raw = "\n".join(ln for ln in raw.split("\n") if not ln.lstrip().startswith("#"))
     # strip the auto-caption timestamp noise, keep the words
     txt = re.sub(r'\d+:\d+\s*\d*\s*(seconds?|minutes?,?\s*\d*\s*seconds?|minute)?', ' ', raw)
     txt = re.sub(r'[ \t]+', ' ', txt)

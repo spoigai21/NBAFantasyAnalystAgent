@@ -9,7 +9,7 @@ import sqlite3, re
 
 ALIASES = {
  'Matas Buzelis':['Bazales','Bazala','Bazale','Buzelis','Matas Bala','Bazalis','Bisellis','Bales','Bisales','Bzalis'],
- 'Collin Murray-Boyles':['Murray Boils','Colin Murray Boils','Murray Boyles','Murray-Boyles'],
+ 'Collin Murray-Boyles':['Murray Boils','Colin Murray Boils','Murray Boyles','Murray-Boyles','CMB'],  # CMB is MY shorthand, 0 FTS hits by design
  'Giannis Antetokounmpo':['Jiannis','Giannis','Antetokounmpo'],
  'Victor Wembanyama':['Wembanyama','Wemby','Wemi','Victoryama','Yama'],
  'Nikola Jokic':['Jokic','Jokich','Joker'],

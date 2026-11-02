@@ -1268,23 +1268,51 @@ The −5.9/g total splits ~55% minutes (−3.24) and ~45% rate (−2.67).
 **Adopting Lloyd's trigger: 2 Nov and 4 Nov.** He already sits on the bench in the optimal
 Monday lineup, so nothing changes operationally today.
 
-### Paul George — Lloyd now says look into selling
+### Paul George — ⚠ CORRECTED 2 Nov: Lloyd did NOT call him a sell-high
 
-> *"absolutely cooking... 33 minutes, 44 fantasy points. **He's a top 20 player per game**."*
-> *"poor George is still really really good... **the doubts about ability are gone**."*
-> *"The injury stuff is still a concern at age 36. **So I would be looking into it without
-> question**."*
+**The user caught this and the user is right.** I wrote this section as "Lloyd now says look
+into selling." He does not say that. Read in order, the segment is a **bull case with one
+caveat**:
 
-**Our data agrees on the mechanism:** +9.3 over his corrected projection, but usage ratio
-**1.14** with minutes **down** (31.0 vs 33.2 projected). The surplus is usage-driven — exactly
-the 31 Oct read — and usage is coach-controlled, so it is not durable.
+> *"Let's talk about a guy that is **absolutely cooking** to start this year, and that is Paul
+> George... **He's a top 20 player per game**."*
+> *"...there were people like no Pton Pritches their second best player. George is washed. He's
+> a 3 and D guy only. I was like you sure about that? I mean I was sure about that that **that
+> was garbage** but I think it's really clear now poor George is **still really really good**."*
+> *"I don't know if it's done enough to convince people that he's good **or to create enough of
+> a gap** that takes in terms of a sell high that you've got the injury risk still there but
+> **the doubts about ability are gone**. The injury stuff is still a concern at age 36. So I
+> would be looking into it without question."*
+> *"He's actually **ranked behind Paul George** in fantasy for this season."* — on Tatum
 
-**⚠ This reverses what I told the user on 31 Oct.** I said the *Coward* shape was the cleaner
-one for a LaMelo-type deal, because George's top-40 tag raised his cost. With Lloyd now at
-"top 20 per game" *and* explicitly suggesting a sale, **George is the better piece to move.**
-His surplus is fragile, he is 36 with real injury risk, and his value is peaking. Coward is
-the opposite case — beating projection on a usage ratio of just **0.837** (0.65 on 31 Oct,
-0.600 on 26 Oct), i.e. the upside whose touches are still arriving. **Still never send both.**
+Two things I got wrong:
+
+1. On selling, his actual words are that **not enough of a gap has been created** — he raises
+   the idea and dismisses it. I read the garbled clause as a recommendation.
+2. *"I would be looking into **it**"* follows directly from *"The injury stuff is still a concern
+   at age 36,"* so **"it" is the injury, not a trade.**
+
+The later line — *"we talked sell high and Paul George, but it's probably a buy low on Derek
+White"* — is him referring back to having **raised** the topic in order to contrast it with
+Derrick White, not a verdict. **Lloyd's only negative on George is injury risk at 36.**
+
+**ROOT CAUSE, worth more than the call itself:** that clause is mangled by the auto-captioner,
+and I resolved the ambiguity **toward a conclusion I was already arguing** instead of toward the
+plain reading. No fabricated quote this time — a real string bent to fit my prior, which is the
+same family as rule 14. **New rule: when a captioned sentence is garbled, never resolve it in
+the direction of a position I already hold. Read the surrounding sentences and take the plain
+meaning, or report it as ambiguous.**
+
+**And the data case I built on top of it was also wrong** — see the 2 Nov entry below. His usage
+ratio of 1.14 is the season opener alone (FED, 1.60); ex-opener it is **1.048** and over his last
+three games **1.043**, while his scoring rose to **50.0/g**. FG% is **up** (43.9% → 46.3% on more
+attempts), minutes are flat (30.6 → 31.0), and he has played **all six** of Boston's games.
+
+**Net: HOLD.** The only genuine concern Lloyd and our numbers share is the 36-year-old body —
+**78 games across his last two seasons combined.** That is a durability hedge, not a sell-high,
+and ⚠ **it specifically rules out sending him for Garland**, who is more fragile and 16 points
+a game worse. The 31 Oct read stands after all: **Coward is still the cleaner piece**, beating
+projection on a usage ratio of just 0.837 (0.65 on 31 Oct, 0.600 on 26 Oct). Never send both.
 
 ⚠ Calibration: Lloyd said **44** fantasy points; ESPN applied **52.0** in our scoring. Do not
 borrow his totals or ranks (rule 24).
@@ -1315,3 +1343,121 @@ games with White active.
   every team plays 2 Nov and 14 play 4 Nov, so a bench slot costs nothing those days.
 - Lloyd's own points league: *"The league medium was 1,200 points. I only got 1056."* Our 1687
   in matchup 2 is a different league and scoring — not comparable, noted only as colour.
+
+---
+
+## 2 November 2026 — Matas and Amen, asked for by name
+
+Both play tonight: **CHI @ PHI 7:30** and **BOS @ HOU 8:30**. Neither is a Lloyd recap item —
+Houston did not play 1 Nov and Chicago did not play 31 Oct or 1 Nov, so the newest Lloyd words
+on either are 29 Oct.
+
+### Amen Thompson — the worry is the wrong worry
+
+**Date correction:** the 28-minute game was **31 Oct**, not 1 Nov. Houston was idle 1 Nov.
+
+Two benign reasons for that night, both verifiable: it was the **second leg of a back-to-back**
+(39 minutes at Dallas on 30 Oct) and Houston **won it by 21** (119-98 over OKC).
+
+The pattern over all seven games is a margin effect, not a demotion:
+
+| games | n | mpg | fpts/g | fpts/min |
+|---|---|---|---|---|
+| decided by ≤7 | 3 | **38.0** | **50.0** | 1.316 |
+| decided by ≥10 | 4 | 30.5 | 32.0 | 1.049 |
+
+In close games he is **above** his 36.5 projected mpg. Houston is **6-1** in his games — he is
+losing minutes to winning. His **per-minute rate is intact: 1.223 → 1.178, −3.7%.** The −6.03/g
+decline is 75% minutes, 25% rate.
+
+**The real change is that he is off the ball**, and the decomposition says so unambiguously:
+
+| line item | applied/g change |
+|---|---|
+| **Assists** (5.32 → 3.71 raw, −23% per minute) | **−3.20** |
+| Field goals (volume −1.10, efficiency −0.51) — FG% 53.3% → 52.3% | −1.61 |
+| Rebounds (REB + OREB) | −1.46 |
+| **Blocks** (0.61 → 0.29 raw) | **−1.29** |
+| Free throws (77.9% → 75.8%) | −0.62 |
+| Steals | −0.32 |
+| **Turnovers** (2.41 → 1.57) | **+1.67** |
+| **Double-doubles + team wins** | **+0.77** |
+| **total** | **−6.04** |
+
+Assists alone outweigh the entire field-goal bundle, while his FG% is flat and his turnovers
+are *better*. Udoka said at media day he wants "Amen and Kevin's minutes down" and that
+Thompson will play **off-ball more** to spend energy on defence; VanVleet is back and takes
+ball-handling. Fewer assists + same FG% + fewer turnovers is exactly that, not a decline.
+
+**One genuine flag:** blocks −1.29/g. At BLK +4 our format charges roughly double a
+Yahoo-style points league for that (rule 24).
+
+**Verdict: hold, no action.** 39.7/g against a corrected projection of 41.0 is −1.3 — noise.
+
+### Matas Buzelis — the user's read is right, and the buy-low case fails
+
+−11.56/g against last season, and the split is the **inverse of Amen's: 61% rate, 39% minutes.**
+Per minute he is down **−23.9%** (1.167 → 0.888).
+
+| line item | applied/g change |
+|---|---|
+| **Field goals** — volume −3.04 (12.51 → 10.00 FGA), efficiency −3.11 (**FG% 46.3% → 40.0%**) | **−6.15** |
+| **Blocks** (1.51 → 0.67 raw) | **−3.36** |
+| Rebounds | −1.32 |
+| Turnovers (2.06 → 2.67/g, *worse on fewer minutes*) | −1.20 |
+| Steals | −0.81 |
+| Threes | −0.75 |
+| Assists | −0.43 |
+| DD + TW | −0.35 |
+| **Free throws** — FTA **doubled** 3.09 → 6.17/g at **81.0%** | **+2.06** |
+| **total** | **−11.56** |
+
+**Rotowire's buy-low fails a per-minute test.** Their case (rank 158, Week 2) is "he played well
+in the two games he got 30-plus minutes." Per minute those games are **0.897 fpts/min** against
+**0.881** in the sub-30 games — identical. Only the raw totals differ, so that is a minutes
+artefact, not evidence he is fine when played.
+
+What minutes actually buy, at his current rate:
+
+| mpg | at current rate | at last season's rate |
+|---|---|---|
+| 28 | 24.9 | 32.7 |
+| 30 | 26.6 | 35.0 |
+| 32 | 28.4 | 37.3 |
+| 34 | 30.2 | 39.7 |
+
+He needs **34 mpg** — which nobody on Chicago gets — just to reach 30.2, still under his 31.7
+corrected projection.
+
+**Usage is not the problem.** usg_ratio **1.152**, graded FED in 3 of 6 (26.1, 28.8, 26.5 against
+a 20.9 projection). Chicago is giving him *more* of the offence than projected. He is missing.
+
+**Caleb Wilson is the structural problem** — 34.0 mpg, 41.0 fpts/g, **+8.5** over his own
+corrected projection, leading Chicago in minutes in 5 of Buzelis's 6 games while Buzelis sits at
+25.3. Chicago's leading scorer at 21.7 ppg. **Rostered by TanTheMan**, so not a waiver option.
+This is the 23 Oct worry confirmed.
+
+Chicago is **1-5** in these six games with losses by 43, 35 and 14, which caps garbage-time
+minutes — but unlike Amen, his **close-game minutes are not secure either**: 17, 35, 33 in the
+three games decided by ≤7. The 17 was a fourth-quarter benching that coach **Tiago Splitter**
+called "not a big deal" (SI, 25 Oct).
+
+**Lloyd is an explicit hold (tier 1):** *"I am not dropping Giddy. I am not dropping Bales. And
+if you ask me that question, I will just tell you no, don't do it. Some of you will. Please don't
+do that. Please do not drop them. I beg you."* (27 Oct). His 29 Oct line — *"Bzalis's value is in
+the toilet. You do not need to give up a top 40 player to get him"* — is about **acquisition
+cost**, not about his floor, and must not be read as a sell.
+
+**The one real reason to hold is the free throws**, not the shooting. FTA doubled at 81%; in
+rule-17 economics a made FT is net +1 and a miss net −1, so that is +2.06/g of repeatable value
+sitting underneath a field-goal collapse. If the shooting reverts at all, the FT rate is pure
+upside.
+
+### Method fix — my own notes were being returned as Lloyd
+
+Every transcript opens with `#`-prefixed header lines **I wrote** (source, coverage, "headline
+items for MY roster" with my conclusions in it). `index_lloyd.py` never stripped them, so
+`./fantasy/lloyd.sh "Buzelis"` returned **my own bullet list** labelled `kind = mailbag` as the
+top hit — and `verify.py quote` would have confirmed it as a real string in `transcripts/`.
+That is the rule-14 failure mode with the verification tool *agreeing*. Fixed: the indexer now
+drops every line whose first non-space character is `#`. Corpus 3007 → 2995 passages.
