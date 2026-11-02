@@ -1018,3 +1018,300 @@ that much if I take an L in week one or week two** because I like to see some th
 against **roster** churn on early results. It is **not** a defence of matchup 1 — that was lost
 to ~54 points of avoidable bench leakage, not to variance or a bad roster. His patience applies
 to who you hold; it says nothing about whether you set the lineup.
+
+---
+
+## 31 Oct 2026 — data catch-up: period 11 recorded, projections recalibrated
+
+**Why this entry exists.** The DB had nothing after 29 Oct (period 10). Pulled period 11
+(30 Oct, all 10 games confirmed `STATUS_FINAL` first) and the partial period 12 for every
+rostered player in the league. `game_grades` 528 -> **651 lines**; `player_form` 119 -> **120**;
+`lloyd_quotes` 287 -> **329**; `players` refreshed and now **129 rostered** (13 added, 10 kept
+as stale). Measured dispersion SD 2.055 over 570 completed games.
+
+### 30 Oct — the lineup was fixed, and it mattered
+
+The Giannis/Murray-Boyles bench problem I flagged **had been corrected before tipoff**.
+Slot audit for period 11 shows all nine players who played sitting in scoring slots and
+only non-playing players on `BE`. **Zero leakage.** 361.0 points on the day.
+
+| Slot | Player | fpts | Grade |
+|---|---|---|---|
+| UTIL | Giannis Antetokounmpo | **93.0** | ELITE (z +2.07) |
+| PF | Paul George | 52.0 | GOOD |
+| F | Anthony Davis | 51.0 | NORMAL |
+| SG | Amen Thompson | 43.0 | NORMAL — but `FROZEN`, 16.7% usage on 39 min |
+| G | Brandon Miller | 31.0 | POOR |
+| UTIL | Collin Murray-Boyles | 27.0 | NORMAL, `FED` |
+| UTIL | Ja'Kobe Walter | 23.0 | newly rostered |
+| C | Paul Reed | 21.0 | AWFUL (z −1.71) despite `ROLE-UP` |
+| SF | Matas Buzelis | 20.0 | NORMAL |
+
+Giannis's 93 was **the single best game in the league** that night, on only 31 minutes.
+Matchup 2 live: **1533.0 — 1361.0, +172**, still `UNDECIDED` with 1 Nov to come.
+Was +48 on 29 Oct.
+
+### ESPN's projections are inflated by 9.5% — measured, not asserted
+
+Across 104 rostered players with ≥5 GP, actual minus `proj_full` averages **−3.95/g**, and
+**77 of 104 are below projection**. Decomposed, it splits almost evenly and the two halves
+mean opposite things:
+
+| Source | Effect | Controlled by | Reverts? |
+|---|---|---|---|
+| Minutes shortfall | −1.88/g (47.5%) | the coach | **no** |
+| Rate shortfall | −2.07/g (52.5%) | the player | **yes** |
+
+(−1.88 + −2.07 = −3.95 exactly.) Mean minutes error is **−1.42 mpg**, with 76 of 104 below
+projected mpg — rule 22 confirmed at league scale.
+
+**The correction that survived testing.** Fitted a single multiplier on periods 1–9 only,
+then tested on periods 10–11: **k = 0.905**, MAE 13.924 -> 13.546, **+2.7% out of sample**.
+Refit on all games gives 0.907, and every individual period lands in 0.855–0.995 — *never*
+above 1.0. Stored as `players.proj_adj`. Mean error **−3.95 -> −0.10**; beat/miss **25/104 -> 51/104**.
+
+This closes the open question in rule 27: the leftover −0.088 grading bias is **genuine
+league-wide underperformance against preseason projections**, not a method artefact.
+
+**What failed, so nobody rebuilds it.** Per-player corrections from a player's own prior
+games are *worse* than leaving ESPN alone at every setting: rate-only −2.5%, K=3/3 −1.9%,
+K=5/2 −0.5%, pure actuals −18.7%. Single-game fpts carry MAE ~12.7 against a ~40 mean, so a
+5-game sample adds more variance than bias it removes. Only the league-wide constant works,
+because it costs no variance.
+
+### Why my players are off their projections — one axis each
+
+Read against `proj_adj`. The axis that is broken is the whole story, because it decides
+whether the number comes back.
+
+- **Paul Reed +13.4** — *minutes only*. 26.8 mpg vs 13.8 projected (1.94×), usage 0.98,
+  rate 1.32. Nothing about him improved; Duren's absence handed him a role. Doesn't revert,
+  but **expires on Duren's return** — and Lloyd's "back in a week" framing is shorter than
+  the ≥2 weeks I had logged.
+- **Cedric Coward +5.0** — *rate, on suppressed usage*. Usage ratio **0.65**, the lowest among
+  my healthy regulars, and climbing from 0.600. Beating projection without the touches is
+  the bullish combination.
+- **Paul George +8.1** — *usage*. Ratio 1.17 with minutes **down** (30.6 vs 33.2). Same pattern
+  as 26 Oct. Not durable if Boston redistributes.
+- **Giannis +4.5** — *rate carrying a minutes shortfall*. 1.96 fpts/min against 31.5 mpg vs
+  33.6 projected. The 2.1-minute gap is still the quiet tax on his ceiling.
+- **Brandon Miller +3.3** — *usage*, hard. 34.3% usage, ratio 1.23. In this format volume is
+  an asset (rule 17), so this is a feature.
+- **Anthony Davis −7.8** — *efficiency only*. Minutes **above** projection (33.5 vs 32.2),
+  usage 1.06. A real `BUY LOW`, not the injury-masquerade trap. Health caveat stands.
+- **Matas Buzelis −9.3** — *rate only*, 0.89 fpts/min, while usage is **1.15**. The only axis
+  the player controls and the only one that reverts. Supports Lloyd's buy-low framing.
+- **Zach Edey −13.7** — *both coach axes broken*: 18.6 vs 26.4 mpg (0.70) and usage **0.55**.
+  Not a buy-low; a role verdict. Lloyd: "I don't think he's going to get there."
+- **Collin Murray-Boyles −4.0** — *minutes constrained, usage trusted* (19.0 vs 22.9 mpg,
+  ratio 1.23). Exactly the gap Lloyd names at "25 minutes a night."
+- **Amen Thompson −4.0** — ⚠ *both coach axes down*. 30.7 vs 36.5 mpg (−5.8, my largest
+  shortfall) and usage **0.64**; 39 minutes on 30 Oct still graded `FROZEN`. Neither reverts.
+  Needs a Houston rotation read before he is a trusted weekly starter.
+
+### Two method traps caught today
+
+1. **ESPN season totals absorb in-progress games.** During a live slate `players.per_game`
+   understates anyone playing: Wemby read 60.3/g vs a 65.4 completed-games average, Coward
+   34.6 vs 39.0, LaVine 34.0 vs 39.8, Amen 37.0 vs 43.2, Edey 22.6 vs 28.8. Brandon Miller
+   was the reverse (39.7 vs 38.0) because his game had gone final. **Rule 20 applies to
+   averages, not just matchup scores.**
+2. **`build_db.py` was a data-destroying landmine.** It read `players` from a scratchpad JSON
+   with no producer in the repo, and DROPped five tables *before* reading it — so the
+   documented rebuild emptied `players`, `research`, `game_log`, `transactions` and
+   `lloyd_quotes`, then crashed. `load_research.py` also only ever held **29 of 136** research
+   rows, so the documented pair would have lost 107 findings. Fixed: `fantasy/refresh_players.py`
+   now produces the rows from the API and UPSERTs; `build_db.py` pre-flight-checks every input
+   before dropping anything and no longer drops `players` or `research`.
+
+---
+
+## 1 Nov 2026 — matchup 2 won on the floor; 31 Oct + 1 Nov recorded
+
+Caught the DB up through **period 13**. `game_grades` 651 → **675 lines**, `player_form` 120 →
+**133**, `players` **130 rostered**. Both days confirmed all-final before quoting.
+
+### Matchup 2 (26 Oct – 1 Nov) — +144, every game final
+
+**The Freaky Alien 1687.0 — Why so serious 1543.0.** ESPN `winner` still `UNDECIDED`
+pending certification, but there are no games left in the period. **1687 was the highest
+score any team posted in matchup 2** (TanTheMan 1629, Yash 1497, Skywalking 1393). Record
+goes to **1-1**, and I lead the league in points scored at **2960.0** (Skywalking 2916,
+TanTheMan 2900).
+
+| Day | Starters | Left on bench |
+|---|---|---|
+| 30 Oct | 361.0 | **0.0** |
+| 31 Oct | 203.0 | **0.0** |
+| 1 Nov | 69.0 | **0.0** |
+
+Three clean days running, against ~54 points of leakage that lost matchup 1 by 3.
+
+**31 Oct:** Wembanyama **85.0** on 34 min at **49.6% usage** (`FED`) — the C-slot move paid.
+Brandon Miller 50.0 (`FED`, 34.2% usage). Then the SAC@MEM blowout (105–136) cut Coward to
+23 min, Edey to 18 and LaVine to 21 — all three `MINS-DOWN`.
+**1 Nov:** only George (52.0) and Murray-Boyles (17.0) had games; both had been moved up to
+UTIL. Correct.
+
+### ⚠ Zach LaVine — elbow soreness, game-time decision Monday
+
+Lloyd's newest LaVine material is 30 Oct (*"adjusted that to top 65"*), i.e. **before this**,
+so he is silent on it. Outside sources: **CBS Sports, 1 Nov — elbow soreness, questionable
+for Monday vs Dallas**; a second report calls it a game-time decision. His 21-minute night on
+31 Oct is ambiguous — elbow, or a 31-point blowout. ESPN now flags him `DAY_TO_DAY`.
+⚠ **Date-check caught a trap:** the top search hit was a *season-ending right-hand surgery*
+story that is ~261 days old, from 2025-26. Not current. Rule 23 working as intended.
+
+### The projection multiplier holds — refit, no change
+
+k refit on all 13 periods / 668 games = **0.901** vs the stored 0.905; MAE identical to three
+decimals (12.196), so nothing changed. Honest holdout retested: train on periods 1–11 →
+k=0.909, and on periods 12–13 MAE goes 12.955 → 11.931, **+7.9% out of sample** — better than
+the +2.7% measured on 31 Oct. Periods 1–7 give 0.906, periods 8–13 give 0.893, so it is
+**not** trending toward 1.0 and is not expiring yet.
+⚠ **Do not use `players.delta_adj` as the calibration check.** It reads +1.31 because it
+averages per *player* off ESPN season totals, and `players.gp` counts games played before a
+player joined a roster (Reed: 6 GP, 4 graded). On the per-game basis the fit uses, mean error
+is **+0.41** over 668 games, against ESPN raw **−2.51**.
+
+### ⚠⚠ Bug found: in-progress games corrupt the USAGE axis
+
+`grade.py` builds `k = 100*(team minutes/5)/team shot equivalents` from the public box score,
+and each player's `k_mean` pools **all** his games. A game still in progress has only partial
+team totals, so its denominator is small and `k` comes out enormous — inflating that player's
+`usg_proj` and deflating every usage ratio he has.
+
+Measured by comparing my 31 Oct mid-slate read against the same players once final:
+
+| Player | usage ratio mid-slate | once final |
+|---|---|---|
+| Amen Thompson | 0.64 `FROZEN` | **0.985** |
+| Victor Wembanyama | 0.82 | **1.083** |
+| Cedric Coward | 0.65 | **0.837** |
+| Zach Edey | 0.55 | **0.741** |
+
+**The whole axis shifts, so any FED/FROZEN label read mid-slate is suspect.** Fixed:
+`team_context()` now skips games whose `status.type.completed` is false and reports the count;
+those games get a blank usage instead of a wrong one. **Rule 20 now has a third face —
+scores, averages, and the usage axis.**
+
+Also added `grade.py --final`, which grades the latest period too. Use it **only** when
+`verify.py slate` reports every game final; 24 real results were being withheld today as
+`PARTIAL` hours after the slate ended.
+
+### Monday 2 Nov — the cap binds, and the lineup is wrong right now
+
+Lloyd's schedule call was exact: **2 Nov = 15 games with all 30 teams playing, 3 Nov = ZERO,
+4 Nov = 14.** So every active player has a game Monday and only 10 of 13 can score.
+
+**Dejounte Murray is `ACTIVE` but parked in an IR slot — he cannot score from there, and he is
+the only PG-eligible player on the roster.** The `PG` slot is currently empty. Carrying today's
+lineup into Monday starts 9 players for **371.6** and leaves **103.5 on the bench**.
+
+Solved under real ESPN slot eligibility, the optimum is **449.8** — so doing nothing costs
+**~78 points**. Three moves in, two out:
+
+| | Move |
+|---|---|
+| **IN** | Dejounte Murray **IR → PG** (+43.8), Anthony Davis **BE → PF** (+43.0), Paul Reed **BE → UTIL** (+35.3) |
+| **OUT** | Matas Buzelis (22.5), Collin Murray-Boyles (21.3) → BE |
+| also | Giannis PF → UTIL, Coward SG → G, Amen G → SG, George F→UTIL, LaVine → UTIL |
+
+**If LaVine is ruled out before tip:** Zach Edey → UTIL in his place (449.8 → 440.4).
+**4 Nov needs the same exercise** — 14 games, cap binds again.
+
+---
+
+## 1 Nov 2026 — Lloyd's Sunday recap (saved as `2026-11-02_recap-sunday.txt`)
+
+4 games: BOS 108-97 ORL, BKN 98-90 IND, LAC 112-124 GSW, TOR 125-131 LAL. Index now
+**3,007 passages**, `lloyd_quotes` **338**. All quotes below greped clean via `verify.py`.
+
+### Murray-Boyles — Lloyd has flipped, and our own data backs him
+
+Three days ago he was a hold (*"should be closing games and playing 25 minutes a night"*).
+Now:
+
+> *"it's been horrible. like horrible."*
+> *"if Colin BS remains a 20-minute a night guy and nothing budges in the next two games,
+> **I'll happily get rid of him**."*
+> *"Again, I am I'm **dropping projections** on Mari Boils."*
+
+**The two standing excuses were both absent on 1 Nov** — no foul trouble (3 fouls) and
+**no Poeltl** (scratched, shoulder soreness) — and he still played exactly 20 minutes while
+Jamal Shead and Trey Jackson-Davis took the rest. Minutes by game: 20, 18, 19, 15, 23, 20.
+
+**Every number he cited reproduces from our API data:**
+
+| | Last season | Now | Lloyd said |
+|---|---|---|---|
+| Blocks | 0.93/g (53 in 57) | **0.33/g** (2 in 6) | "two blocks in six games" ✓ |
+| FG% | 57.9% | **45.9%** | "down from 58 to 46" ✓ |
+| mpg | 21.8 | **19.2** | "three minutes per game lower" ✓ |
+
+⚠ **The block collapse is the single biggest line item in OUR scoring:** applied blocks
+**3.72/g → 1.33/g = −2.39 fpts/g**, against −1.45 from the entire field-goal bundle and
+−0.21 from lost double-doubles, partly offset by steals being *up* (+1.02). At BLK +4 this
+costs us roughly **double** what it would in a Yahoo-style points league (rule 24).
+The −5.9/g total splits ~55% minutes (−3.24) and ~45% rate (−2.67).
+
+**⚠ Our `BUY (usage up)` signal on him is too generous — two structural reasons.**
+1. The minutes band is a ratio of *ESPN projected* mpg, and ESPN projected him at only
+   **22.9** — so 20 real minutes grades `MINS-OK`. Lloyd benchmarks against his **27 mpg in
+   last season's playoffs**, which is the better read on what the coach thinks. A *low*
+   projection makes a real role shortfall look fine; **rule 16 cuts both ways.**
+2. Usage% is per-minute normalised, so a 1.21 ratio on 19 minutes is a bigger share of a
+   *smaller* allocation, not evidence of trust. And a block rate falling 0.93 → 0.33 is
+   scheme, not shooting variance — so "rate reverts" does not apply to the largest part of
+   the loss.
+
+**Adopting Lloyd's trigger: 2 Nov and 4 Nov.** He already sits on the bench in the optimal
+Monday lineup, so nothing changes operationally today.
+
+### Paul George — Lloyd now says look into selling
+
+> *"absolutely cooking... 33 minutes, 44 fantasy points. **He's a top 20 player per game**."*
+> *"poor George is still really really good... **the doubts about ability are gone**."*
+> *"The injury stuff is still a concern at age 36. **So I would be looking into it without
+> question**."*
+
+**Our data agrees on the mechanism:** +9.3 over his corrected projection, but usage ratio
+**1.14** with minutes **down** (31.0 vs 33.2 projected). The surplus is usage-driven — exactly
+the 31 Oct read — and usage is coach-controlled, so it is not durable.
+
+**⚠ This reverses what I told the user on 31 Oct.** I said the *Coward* shape was the cleaner
+one for a LaMelo-type deal, because George's top-40 tag raised his cost. With Lloyd now at
+"top 20 per game" *and* explicitly suggesting a sale, **George is the better piece to move.**
+His surplus is fragile, he is 36 with real injury risk, and his value is peaking. Coward is
+the opposite case — beating projection on a usage ratio of just **0.837** (0.65 on 31 Oct,
+0.600 on 26 Oct), i.e. the upside whose touches are still arriving. **Still never send both.**
+
+⚠ Calibration: Lloyd said **44** fantasy points; ESPN applied **52.0** in our scoring. Do not
+borrow his totals or ranks (rule 24).
+
+### Brandon Miller — usage compression incoming
+
+> *"neither is Kobe White. So Jacobe White is back."*
+
+Coby White is on **Charlotte** (confirmed in our table; rostered by Yash's) and had missed
+every game, alongside Knueppel and Grant Williams. Miller's 34.3% usage / 1.23 ratio is
+substantially scarcity. His minutes are fine (34.1 vs 34.0 projected), so **the usage edge is
+the whole question** and White's return should compress it. Trigger: Charlotte's next two
+games with White active.
+
+### Also noted
+
+- **LaVine** — *"Lavine is questionable"*, independent of CBS. Corroborates the listing only;
+  no Lloyd read on severity.
+- **Ja'Kobe Walter** — ⚠ **not on our roster any more.** Lloyd gave him a positive note
+  (*"another start... the minutes are really strong... I think I'd probably hold him"*, 33 min)
+  and I nearly reported it as ours. Added ~30 Oct, since dropped.
+  ⚠ **`fantasy/transactions-log.csv` is STALE** — newest row is 2026-10-25, so the Walter add
+  and drop are not in it.
+- **Alex Sarr questionable** — *"If Sar is out, it just means more for Bard, more for George"*
+  (Kyshawn), *"Deeper league is more for Aton."* Washington's frontcourt, i.e. marginal upside
+  for Anthony Davis if Sarr sits.
+- **Schedule** — Lloyd: *"we have a free swing Monday and a free swing Wednesday"*, because
+  every team plays 2 Nov and 14 play 4 Nov, so a bench slot costs nothing those days.
+- Lloyd's own points league: *"The league medium was 1,200 points. I only got 1056."* Our 1687
+  in matchup 2 is a different league and scoring — not comparable, noted only as colour.

@@ -12,19 +12,51 @@ Rebuild:  python3 fantasy/build_db.py
 """
 import json, re, glob, os, sqlite3, csv, datetime, collections, sys
 
-SCRATCH = sys.argv[1] if len(sys.argv) > 1 else "/private/tmp/claude-502/-Users-shayan-Desktop-nba-fantasy-analyst-agent/39edd093-5167-4a79-910a-32b5cd1386ee/scratchpad"
+# Default to the repo copy, not a session scratchpad. The old default pointed at a
+# scratchpad dir with no producer in the repo, so this script became unrunnable the
+# moment that session ended -- and since it DROPs before reading, running it emptied
+# five tables and crashed. Produce the input with: python3 fantasy/refresh_players.py
+SCRATCH = sys.argv[1] if len(sys.argv) > 1 else "fantasy"
 DB = "fantasy/league.db"
+
+# ---- PRE-FLIGHT: never DROP a table before every input is known to be readable. ----
+REQUIRED = [f"{SCRATCH}/dossier_rows.json", "fantasy/game-log.csv"]
+missing = [f for f in REQUIRED if not os.path.exists(f)]
+if missing:
+    sys.exit("build_db.py aborted BEFORE touching the database; nothing was dropped.\n"
+             "  missing input(s): " + ", ".join(missing) + "\n"
+             "  dossier_rows.json is produced by:  python3 fantasy/refresh_players.py\n"
+             "  (that script also refreshes `players` in place, which is usually all\n"
+             "   you need -- build_db.py is only required to rebuild lloyd_quotes,\n"
+             "   game_log and transactions from the files on disk.)")
+if not os.path.exists("fantasy/transcripts") or not glob.glob("fantasy/transcripts/*.txt"):
+    sys.exit("build_db.py aborted BEFORE touching the database; nothing was dropped.\n"
+             "  fantasy/transcripts/*.txt is empty -- rebuilding would wipe lloyd_quotes.")
+
+# ---- Parse every input UP FRONT. The pre-flight existence check was not enough: on
+# 1 Nov 2026 the players INSERT failed on a column-count mismatch AFTER the DROPs had
+# already run, emptying lloyd_quotes, game_log and transactions a second time. Existence
+# is not readability, and executescript() issues an implicit COMMIT so the DROPs cannot
+# be rolled back. So: load and parse first, destroy second.
+rows = json.load(open(f"{SCRATCH}/dossier_rows.json"))
+if not isinstance(rows, list) or not rows:
+    sys.exit("dossier_rows.json is empty or not a list; nothing was dropped.")
+_gl = list(csv.DictReader(open('fantasy/game-log.csv')))
+_tx = (list(csv.DictReader(open('fantasy/transactions-log.csv')))
+       if os.path.exists('fantasy/transactions-log.csv') else [])
+_tr = sorted(glob.glob("fantasy/transcripts/*.txt"), reverse=True)
+_tr_text = {f: open(f, errors="replace").read() for f in _tr}
+print(f"inputs parsed: {len(rows)} players, {len(_gl)} game-log rows, "
+      f"{len(_tx)} transactions, {len(_tr)} transcripts")
 
 con = sqlite3.connect(DB)
 # Lloyd's words live in a separate, gitignored db — his content, not ours to ship.
 con.execute("ATTACH DATABASE 'fantasy/lloyd.db' AS lloyddb")
 con.executescript("""
-DROP TABLE IF EXISTS players;
 DROP TABLE IF EXISTS lloyddb.lloyd_quotes;
 DROP TABLE IF EXISTS game_log;
 DROP TABLE IF EXISTS transactions;
-DROP TABLE IF EXISTS research;
-CREATE TABLE players(
+CREATE TABLE IF NOT EXISTS players(
   name TEXT PRIMARY KEY, fantasy_team TEXT, nba_team TEXT, status TEXT,
   gp INT, total REAL, per_game REAL, mpg REAL, pts_per_min REAL,
   proj_base REAL, measured_bonus REAL, proj_full REAL, proj_mpg REAL,
@@ -38,28 +70,43 @@ CREATE TABLE game_log(
 CREATE TABLE transactions(
   dt TEXT, sp INT, type TEXT, status TEXT, acting_team TEXT,
   item_type TEXT, player TEXT, from_team TEXT, to_team TEXT, txid TEXT);
-CREATE TABLE research(
+CREATE TABLE IF NOT EXISTS research(
   player TEXT, topic TEXT, asof TEXT, finding TEXT, source TEXT);
 CREATE INDEX lloyddb.idx_q ON lloyd_quotes(player);
 CREATE INDEX idx_g ON game_log(player);
-CREATE INDEX idx_r ON research(player);
+CREATE INDEX IF NOT EXISTS idx_r ON research(player);
 """)
 
 # ---------------- players ----------------
-rows = json.load(open(f"{SCRATCH}/dossier_rows.json"))
+# UPSERT, no DROP: a player who was dropped from a roster still has rows in
+# game_grades and research that are easier to read with his name resolvable.
+# None-safe throughout -- a player with 0 GP has no avg/mpg/ppm yet.
+rnd = lambda v, n: None if v is None else round(v, n)
 for r in rows:
-    con.execute("INSERT OR REPLACE INTO players VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)", (
-        r['name'], r['team'], r['pro'], r['inj'] or 'ACTIVE', int(r['gp']),
-        round(r['avg']*r['gp'],1), round(r['avg'],2), round(r['mpg'],1), round(r['ppm'],3),
-        round((r['full']-r['bonus']),2) if r['full'] else None, round(r['bonus'],2),
-        round(r['full'],1) if r['full'] else None, round(r['projmpg'],1),
-        int(r.get('hgp') or 0),
-        round(r['avg']-r['full'],1) if (r['full'] and r['gp']) else None))
+    # ON CONFLICT, not INSERT OR REPLACE: REPLACE deletes the whole row and re-inserts
+    # it, so any column this statement does not name is silently reset to NULL. On
+    # 1 Nov 2026 that wiped proj_adj/delta_adj (rule 28) on 130 of 140 players.
+    con.execute("""INSERT INTO players
+        (name, fantasy_team, nba_team, status, gp, total, per_game, mpg, pts_per_min,
+         proj_base, measured_bonus, proj_full, proj_mpg, bonus_sample_gp, delta)
+        VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+        ON CONFLICT(name) DO UPDATE SET
+          fantasy_team=excluded.fantasy_team, nba_team=excluded.nba_team,
+          status=excluded.status, gp=excluded.gp, total=excluded.total,
+          per_game=excluded.per_game, mpg=excluded.mpg,
+          pts_per_min=excluded.pts_per_min, proj_base=excluded.proj_base,
+          measured_bonus=excluded.measured_bonus, proj_full=excluded.proj_full,
+          proj_mpg=excluded.proj_mpg, bonus_sample_gp=excluded.bonus_sample_gp,
+          delta=excluded.delta""", (
+        r['name'], r['team'], r['pro'], r['inj'] or 'ACTIVE', int(r['gp'] or 0),
+        rnd(r.get('total'), 1), rnd(r['avg'], 2), rnd(r['mpg'], 1), rnd(r['ppm'], 3),
+        rnd(r.get('base'), 2), rnd(r['bonus'], 2), rnd(r['full'], 1),
+        rnd(r['projmpg'], 1), int(r.get('hgp') or 0), rnd(r.get('delta'), 1)))
 
 # ---------------- lloyd quotes (ALL good ones, not just the best) ----------------
 docs = []
-for f in sorted(glob.glob("fantasy/transcripts/*.txt"), reverse=True):
-    t = re.sub(r'\d+:\d+\s*\d*\s*(seconds?|minutes?,?\s*\d*\s*seconds?)?', '', open(f, errors="replace").read())
+for f in _tr:
+    t = re.sub(r'\d+:\d+\s*\d*\s*(seconds?|minutes?,?\s*\d*\s*seconds?)?', '', _tr_text[f])
     t = re.sub(r'Chapter \d+[^.]{0,80}', '', t)
     docs.append((os.path.basename(f)[:10], os.path.basename(f), " ".join(t.split())))
 
@@ -109,7 +156,7 @@ for r in rows:
 
 # ---------------- game log ----------------
 ng = 0
-for g in csv.DictReader(open('fantasy/game-log.csv')):
+for g in _gl:
     if g.get('fantasy_team') != 'FreakyAlien' or not g.get('fpts'): continue
     I = lambda k: int(g[k]) if (g.get(k) or '').strip().lstrip('-').isdigit() else 0
     con.execute("INSERT INTO game_log VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)", (
@@ -120,8 +167,8 @@ for g in csv.DictReader(open('fantasy/game-log.csv')):
 
 # ---------------- transactions ----------------
 nt = 0
-if os.path.exists('fantasy/transactions-log.csv'):
-    for t in csv.DictReader(open('fantasy/transactions-log.csv')):
+if True:
+    for t in _tx:
         con.execute("INSERT INTO transactions VALUES (?,?,?,?,?,?,?,?,?,?)", (
             t['datetime'], int(t['sp']) if t['sp'].isdigit() else None, t['type'], t['status'],
             t['acting_team'], t['item_type'], t['player'], t['from'], t['to'], t['txid']))

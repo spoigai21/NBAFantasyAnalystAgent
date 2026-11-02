@@ -384,3 +384,113 @@ hold CMB and Edey). It is **not** a defence of the matchup-1 loss: that was **~5
 avoidable bench leakage**, not variance and not a bad roster, on a team that leads the league in
 points scored. **Patience applies to who you hold. It says nothing about whether you set the
 lineup.** Don't let one launder the other.
+
+---
+
+## Opened 31 Oct 2026
+
+### Amen Thompson — both coach-controlled axes are down (NEW, highest priority)
+**Trigger: his next two Houston games.** −4.0/g against his corrected projection, and
+unusually it is *not* efficiency: **30.7 mpg against 36.5 projected** (−5.8, the largest
+minutes shortfall on my roster) with **usage ratio 0.64**. On 30 Oct he played 39 minutes and
+still graded `FROZEN` at 16.7% usage — minutes without touches. Neither axis reverts on its
+own. **What would resolve it:** usage back above ~0.85 of his projected rate, or a Houston
+beat report explaining the touch share (Sengun/VanVleet hierarchy). Until then he is not a
+trusted weekly starter despite the 45.3 preseason projection. No Lloyd read on this yet —
+check the next recap.
+
+### Paul Reed — the window may be half what I logged
+**Trigger: Detroit's next injury report on Jalen Duren.** Reed is my biggest overperformer
+(+13.4) purely on minutes — 26.8 mpg against 13.8 projected. The instant Duren is cleared
+this evaporates, because his usage (0.98) and rate (1.32) are unremarkable. I logged Duren at
+**≥2 weeks**; Lloyd's framing — *"you absolutely keep a top 40 player in IIL if he might be
+back in a week"* — implies **one**. **Do not plan the C slot past next week on Reed.**
+Resolution: pull Detroit's report directly rather than inferring from Lloyd's aside.
+
+### Zach Edey — reclassify from "buy low" to "role verdict"
+**Trigger: a single game above 26 minutes.** Both coach axes are broken: 18.6 mpg vs 26.4
+projected (0.70) and **usage 0.55**. Per-minute is still a fine 1.22. Because neither minutes
+nor usage revert on their own, the earlier buy-low framing was wrong — this is a role
+verdict until Memphis changes it, matching Lloyd: *"could be a top 30 player if he played 30
+minutes a night but I don't think he's going to get there."* Keep holding (Lloyd: *"just suck
+it up, big boy"*), but stop pricing him at his projection.
+
+### Cedric Coward — the one with upside still locked up
+**Trigger: usage ratio crossing 0.85.** Beating his corrected projection by +5.0 on a usage
+ratio of just **0.65** (up from 0.600 on 29 Oct) — producing without the touches. If usage
+normalises at his current 1.34 fpts/min he is a materially bigger player than his 29.6
+corrected projection. This is the cleanest *upside* case on the roster and the reason the
+Coward-for-LaMelo shape deserves a second look before being sent.
+
+### Projection multiplier — refit monthly
+**Trigger: ~30 Nov, or 300 further completed player-games.** `players.proj_adj` uses a fixed
+**k = 0.905** fitted on periods 1–9. The rate half of the miss (52.5%) *should* regress as
+early-season shooting normalises, which would push k back toward 1.0; the minutes half
+(47.5%) should not. If k drifts above ~0.95 the correction has served its purpose and should
+be retired rather than carried. Refit with the backtest method in the 31 Oct notes entry.
+
+---
+
+## Opened 1 Nov 2026
+
+### Zach LaVine — elbow soreness, GTD Monday (NEW, act before tip)
+**Trigger: Sacramento's Monday 2 Nov injury report / game-time decision.** ESPN flags
+`DAY_TO_DAY`; CBS Sports (1 Nov) has elbow soreness, questionable vs Dallas. His 21-minute
+31 Oct line is ambiguous (elbow vs a 31-point blowout). Lloyd is silent — his newest LaVine
+material is 30 Oct, before this. **If ruled out, Edey takes the UTIL slot** (449.8 → 440.4).
+⚠ Ignore the "season-ending hand surgery" search results — that story is ~261 days old from
+2025-26.
+
+### Dejounte Murray — ACTIVE but stranded in an IR slot (NEW, act before Monday)
+**Trigger: immediately.** He is no longer flagged `OUT`, so he is not IR-eligible and
+**cannot score from an IR slot** — while being the **only PG-eligible player** on the roster.
+The `PG` slot sits empty. Moving him to `PG` is worth +43.8 on Monday on its own. Also confirm
+he is actually available: he has not played since 29 Oct (newborn) and NOP played 31 Oct
+without him.
+
+### Amen Thompson — CLOSED, was partly an artefact
+My 31 Oct "both coach axes down" read was contaminated by mid-slate data. True figures:
+**33.7 mpg vs 36.5 projected** (−2.8, not −5.8) and **season usage ratio 0.985**, not 0.64.
+He is 39.7/g, −1.3 vs corrected projection, signal `HOLD`. Residual item worth a glance only:
+a genuine two-game usage dip (0.84 on 30 Oct, 0.695 on 31 Oct). **Not** the role collapse I
+described. Downgraded from top priority.
+
+### 4 Nov — second cap-binding day
+**Trigger: 4 Nov, before first tip.** 14 games after a zero-game 3 Nov. Re-solve the ten slots
+the same way; do not assume Monday's answer carries over, because Memphis, Sacramento and
+Boston may not all play.
+
+---
+
+## Updated 1 Nov 2026 (Lloyd Sunday recap)
+
+### Murray-Boyles — Lloyd's two-game trigger, ADOPTED
+**Trigger: 2 Nov and 4 Nov. If he is still a ~20-minute player after both, cut him.**
+Lloyd flipped from hold to *"I'll happily get rid of him"* and *"I am I'm dropping
+projections."* Decisive detail: on 1 Nov he had **no foul trouble and no Poeltl** and still
+played exactly 20 minutes. Our data confirms every number he cited (blocks 0.93 → 0.33/g,
+FG% 57.9 → 45.9, mpg 21.8 → 19.2).
+⚠ **Our own `BUY (usage up)` signal on him is unreliable here** — the minutes band is a ratio
+of a *low* ESPN projection (22.9), so 20 minutes reads `MINS-OK`; and the biggest loss is
+blocks (−2.39 fpts/g at +4), which is scheme, not shooting variance, so it will not regress.
+Supersedes the 29 Oct "minutes constrained, usage trusted" entry.
+
+### Paul George — SELL-HIGH WINDOW OPEN (supersedes the 31 Oct trade note)
+**Trigger: now, while Lloyd has him at "top 20 player per game."**
+He said *"I would be looking into it without question"* on age-36 injury risk. Our data says
+the surplus is **usage-driven** (ratio 1.14, minutes *down* 31.0 vs 33.2) and therefore not
+durable. ⚠ **This reverses my 31 Oct recommendation** that Coward was the cleaner piece to
+move — George is now the better one. Coward is the upside case (usage 0.837 and climbing from
+0.600). **Never send both.** Lloyd's own selling rule applies: *"don't do it when the players
+are coming back... you've got to find the sweet spot."*
+
+### Brandon Miller — usage compression from Coby White's return
+**Trigger: Charlotte's next two games with White active.** Miller's 34.3% usage / 1.23 ratio
+is largely scarcity (Knueppel, Grant Williams, White all missing). Minutes are fine (34.1 vs
+34.0 projected), so the usage edge is the entire bull case. If the ratio falls below ~1.05 and
+his per-game follows, the `BUY (usage up)` signal is spent.
+
+### ⚠ Rebuild `fantasy/transactions-log.csv`
+**Trigger: before relying on transaction history again.** Newest row is **2026-10-25**, so the
+Ja'Kobe Walter add (~30 Oct) and drop are missing entirely. I nearly treated Walter as still
+rostered off Lloyd's positive note on him.

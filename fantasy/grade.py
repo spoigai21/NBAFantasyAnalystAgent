@@ -93,16 +93,27 @@ def team_context(game_ids):
     landed within 0.7 of the printed figure, the two misses being sub-4-minute stints
     where the displayed seconds dominate.
     """
-    ctx = {}
+    ctx, skipped = {}, []
     for n, gid in enumerate(sorted(game_ids), 1):
         if not gid:
             continue
         j = fetch_public("https://site.api.espn.com/apis/site/v2/sports/basketball/nba"
                          f"/summary?event={gid}")
         box = j.get("boxscore") or {}
+        status = (((j.get("header") or {}).get("competitions") or [{}])[0]
+                  .get("status") or {})
+        # SKIP GAMES THAT ARE NOT FINAL. k = 100*(team minutes/5)/team shot equivalents,
+        # and a game in progress has only partial team totals -- a small denominator makes
+        # k enormous. Because every player's k_mean pools ALL his games, one mid-flight
+        # game poisons his projected-usage baseline and the ratio reads far too low.
+        # Measured 1 Nov 2026: mid-slate, Amen Thompson's usg_proj inflated 19.9 -> ~32,
+        # so his usage ratio printed 0.64 (FROZEN) when the true season figure was 0.985.
+        # I reported that artefact to the user as a real role problem.
+        if not (status.get("type") or {}).get("completed"):
+            skipped.append(gid)
+            continue
         # Overtime adds 5 minutes a period; team minutes scale the usage formula.
-        period = (((j.get("header") or {}).get("competitions") or [{}])[0]
-                  .get("status") or {}).get("period") or 4
+        period = status.get("period") or 4
         team_min = (48 + max(0, period - 4) * 5) * 5
         totals = {}
         for t in box.get("teams", []):
@@ -123,6 +134,9 @@ def team_context(game_ids):
                     ctx[(gid, a["athlete"]["displayName"])] = (team_min, se)
         if n % 10 == 0:
             print(f"  team context: {n}/{len(game_ids)} games", file=sys.stderr)
+    if skipped:
+        print(f"  skipped {len(skipped)} game(s) not yet final — their usage is left "
+              f"blank rather than wrong", file=sys.stderr)
     return ctx
 
 
@@ -181,7 +195,16 @@ def collect():
 
 
 def main():
+    # --final grades the latest scoring period too. Use it ONLY when
+    # `python3 fantasy/verify.py slate` reports every game final; otherwise the
+    # blanket PARTIAL guard is correct and a mid-flight box score gets graded as
+    # if it were a result (rule 20). Added 1 Nov 2026, when all 4 games of a short
+    # slate had finished hours before and 24 real results were being withheld.
+    grade_latest = "--final" in sys.argv
     rows, latest, usg_proj, injury = collect()
+    cutoff = latest + 1 if grade_latest else latest
+    if grade_latest:
+        print("  --final: grading the latest period as complete", file=sys.stderr)
     con = sqlite3.connect(DB)
     proj = {n: (pf, pm) for n, pf, pm in con.execute(
         "SELECT name, proj_full, proj_mpg FROM players WHERE proj_mpg > 0")}
@@ -205,7 +228,7 @@ def main():
     K_PRIOR = 3.0
     own = {}
     for r in rows:
-        if r["min"] < 1 or r["period"] >= latest:
+        if r["min"] < 1 or r["period"] >= cutoff:
             continue
         f, m, n = own.get(r["player"], (0.0, 0.0, 0))
         own[r["player"]] = (f + r["fpts"], m + r["min"], n + 1)
@@ -230,7 +253,7 @@ def main():
         # that one asks "is he below his TALENT", which is what BUY LOW / SELL HIGH mean.
         exp_p = proj_rate * r["min"]
         r["scaled_proj"] = (r["fpts"] - exp_p) / (exp_p ** 0.5) if exp_p > 0 else 0.0
-        if r["period"] < latest:
+        if r["period"] < cutoff:
             graded.append(r)
 
     sd = statistics.pstdev([g["scaled"] for g in graded]) or 1.0
@@ -276,7 +299,7 @@ def main():
         else:
             r["usg"] = r["usg_proj"] = r["usg_ratio"] = None
             r["usg_grade"] = "—"
-        if r["period"] == latest:
+        if r["period"] >= cutoff:
             r["grade"] = "PARTIAL"  # today's slate may be mid-flight
 
     con.executescript("""

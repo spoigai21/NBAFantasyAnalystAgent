@@ -131,6 +131,23 @@ assistant. Read `README.md` for the full league and roster picture before non-tr
    **And normalise team abbreviations** — the fantasy API says WAS/SAS/NOP/GSW/UTA/NYK, the
    public scoreboard says WSH/SA/NO/GS/UTAH/NY. Mismatches silently drop players from
    "who plays today."
+   **This applies to AVERAGES too, not just matchup scores.** ESPN season-total stat lines
+   (`statSourceId: 0`, `statSplitTypeId: 0`) **absorb in-progress games**, so during a live
+   slate `players.per_game` understates everyone currently playing. On 31 Oct 2026 Wembanyama
+   read 60.3/g against a 65.4 completed-games average, Coward 34.6 vs 39.0, LaVine 34.0 vs
+   39.8, Amen Thompson 37.0 vs 43.2, Edey 22.6 vs 28.8 — and Brandon Miller was the reverse
+   (39.7 vs 38.0) because his game had already gone final. Quote completed-games numbers out
+   of `game_grades` whenever a game is running.
+   **And it corrupts the USAGE axis too — the third face.** `grade.py` scales projected
+   volume into a USG%% with `k = 100*(team minutes/5)/team shot equivalents`, and each
+   player's `k_mean` pools **all** his games. A game still in progress has partial team
+   totals, so its denominator is small and `k` comes out enormous, inflating that player's
+   `usg_proj` and deflating every usage ratio he has. Measured 1 Nov 2026 against the same
+   players once final: Amen Thompson 0.64 `FROZEN` -> **0.985**, Wembanyama 0.82 -> 1.083,
+   Coward 0.65 -> 0.837, Edey 0.55 -> 0.741. I had reported Amen's 0.64 to the user as a
+   real role collapse and made it the top watchlist item. `team_context()` now skips games
+   that are not `status.type.completed` — but **never trust a FED/FROZEN label taken
+   mid-slate**, and run `grade.py --final` only once `verify.py slate` says all games are final.
 21. **Judge a trade only by its effect on MY roster.** What the other team needs, what
    they are short of, whether they are "desperate," and whether I could extract more
    elsewhere are all irrelevant to whether a given 1-for-1 helps me. The only inputs are:
@@ -267,6 +284,43 @@ assistant. Read `README.md` for the full league and roster picture before non-tr
    it supersedes `game-log.csv`, whose hand-computed values were off by ±1 on seven lines.
    Rebuilt 26 Oct 2026 at the user's request.
 
+28. **ESPN's projections run 9.5% HIGH in this league — use `players.proj_adj`, not
+   `proj_full`.** Measured 31 Oct 2026 over 104 rostered players with ≥5 GP: actual minus
+   `proj_full` averages **−3.95/g** and **77 of 104** sit below projection. The miss splits
+   almost exactly in half, and the halves mean opposite things:
+
+   | Source | Effect | Controlled by | Reverts? |
+   |---|---|---|---|
+   | Minutes shortfall (mean −1.42 mpg, 76 of 104 below) | −1.88/g (47.5%) | the coach | **no** |
+   | Rate shortfall | −2.07/g (52.5%) | the player | **yes** |
+
+   Fitted a single multiplier on scoring periods 1–9 and tested on 10–11: **k = 0.905**,
+   MAE 13.924 → 13.546, **+2.7% out of sample**. Refit on everything gives 0.907, and every
+   individual period lands in 0.855–0.995 — never above 1.0. Stored as `players.proj_adj`
+   (`delta_adj` is actual minus that). Mean error goes **−3.95 → −0.10**, beat/miss **25/104
+   → 51/104**. This also closes rule 27's open question: the residual −0.088 grading bias
+   is **real league-wide underperformance against preseason projections**, now quantified.
+   ⚠ **Per-player corrections FAIL — do not rebuild them.** Adjusting each player from his
+   own prior games is worse than leaving ESPN alone at every shrinkage tested (rate-only
+   −2.5%, K=3/3 −1.9%, K=5/2 −0.5%, pure actuals −18.7%). Single-game fpts carry MAE ~12.7
+   against a ~40 mean, so a 5-game sample adds more variance than the bias it removes. Only
+   the league-wide constant survives, because it costs no variance.
+
+29. **Refresh data with `refresh_players.py`; `build_db.py` is the heavy, risky path.**
+   `. ~/.espn-fantasy.env && python3 fantasy/refresh_players.py` is self-contained, UPSERTs
+   `players` in place for every rostered player, and reproduces rule 8's valuation exactly
+   (validated 31 Oct: 115 of 116 stored `proj_full` values reproduced, mean |diff| 0.009).
+   Then `python3 fantasy/grade.py` for grades and form.
+   ⚠ **`build_db.py` emptied five tables on 31 Oct 2026.** It read `players` from a session
+   scratchpad JSON that **no script in the repo produced**, and it DROPped
+   players/lloyd_quotes/game_log/transactions/research *before* reading that input — so the
+   documented rebuild wiped all five and crashed. `load_research.py` separately held only
+   **29 of 136** research rows, so the documented `build_db.py && load_research.py` pair
+   would have silently destroyed 107 findings. Both are now fixed (pre-flight input checks
+   before any DROP; `players` and `research` are no longer dropped), but **back up
+   `fantasy/league.db` before any rebuild** and only run `build_db.py` when you actually need
+   `lloyd_quotes`, `game_log` or `transactions` rebuilt from disk.
+
 ## Files
 
 | Path | What it is |
@@ -280,6 +334,7 @@ assistant. Read `README.md` for the full league and roster picture before non-tr
 | `fantasy/transactions-log.{csv,md}` | Full league transaction history |
 | `./fantasy/lloyd.sh "<player>"` | **Everything Lloyd said, newest first.** FTS over all 2,501 passages / 291k words; auto-expands caption manglings via `name_aliases` |
 | `python3 fantasy/verify.py` | **Pre-claim checks.** `quote "..."` proves a quote is real; `score` gives the LIVE matchup score and whether it closed; `slate` says if games are still running |
+| `fantasy/refresh_players.py` | **Refresh `players` in place from the API** — averages, projections, rule-8 bonus. Self-contained; UPSERTs, never drops |
 | `fantasy/grade.py` → `game_grades`, `player_form` | **Per-game ELITE/GOOD/NORMAL/POOR/AWFUL vs the player's own level, on three separate axes — rate, minutes, usage — plus a SELL HIGH / BUY LOW / FADE / HOLD / AVOID signal.** Uses ESPN `appliedTotal` |
 | `fantasy/analysts.md` | **Who to read and who not to.** Tiers, the STL/BLK calibration trap, ESPN exclusion |
 | `fantasy/transcripts/` | **Raw Lloyd transcripts — grep HERE first.** 1.8MB, 22 team previews |

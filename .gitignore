@@ -45,3 +45,6 @@ fantasy/lloyd.db
 
 # quarantined non-Lloyd text stripped out of the transcripts (user prompt text)
 fantasy/transcripts_quarantine.txt
+
+# Derived from the ESPN API by fantasy/refresh_players.py; regenerate, do not ship.
+fantasy/dossier_rows.json
