@@ -1,4 +1,84 @@
+# Watchlist
+
+## 3 Nov 2026 — ⚠ AMEN: I OWE YOU A CORRECTION, LLOYD CAUGHT WHAT I MISSED
+
+I told you the 25 minutes was a blowout artifact and "no action." Lloyd's recap has the
+objection I should have made myself: **"Yeah, they cooked him, BUT SHENUN PLAYED 38."**
+If 25 minutes were pure blowout management, Houston's other star does not play 38 in the
+same game. For that single game my margin explanation fails.
+
+**What still stands:** across 8 games the split is clean — all three games inside 7 points
+he played 36/39/39 (38.0 mpg, 1.316 fpts/min); all five decided by 10+, 29.4 mpg at 1.048.
+Usage was 25.7%, his season high. **What does not stand:** "nothing to see here."
+
+**Lloyd's actual lead is better than mine:** *"He's just not really being used. **His
+blocks haven't returned.** And that was a big thing that drove his value two years ago...
+So while he's a bit of a buy low, I am concerned."*
+**→ NEW ACTION:** check Amen's block rate against his 2024-25 rate. If the blocks are the
+real leak, minutes were never the right axis to watch and the trigger is wrong.
+**Minutes trigger unchanged:** next HOU game inside 7 points, under 34 minutes = real cap.
+
+## 3 Nov 2026 — CMB: Lloyd confirms the hold AND removes my caveat
+
+*"you've got no choice now but to have him on your roster."* And the fact our DB lacked:
+**"with no Yaka Purdle again BOTH GAMES of the back to back."** Poeltl out 1 Nov *and*
+2 Nov, Kawhi out throughout — **identical availability, minutes went 20 → 28.** So the +8
+was a coaching choice, not an availability artifact. My "Poeltl is not the lever" note was
+reasoning from an assumption I could not check; it is now checked and it was wrong in my
+favour. **Hold confirmed.**
+**New watch:** *"Scottie Barnes was questionable... he looked labored... he didn't look
+right but he played."* A Barnes absence is now the live upside case, not a hypothetical.
+
+## 3 Nov 2026 — EDEY: correcting myself, Lloyd DID give the mechanism
+
+Yesterday I said he "never mentions the restriction." True of the buy-low show, **false of
+the recap**: *"I just think that they are he's not fully healthy and that is a concern.
+**Maybe he never gets fully healthy.**"* He goes further than I did. And he sets a
+conditional sell: *"if he's only playing 19 minutes a night the rest of the season, then
+yeah, I don't hold him."* Fouled OUT in 19 min. Log 21/22/21/19/18/19.
+**Trigger:** the restriction lifting is a medical event — watch the injury report, not the
+box score. If 19-20 min persists past mid-November, Lloyd's own condition is met.
+
+## 3 Nov 2026 — CLINGAN: the last objection to the trade target is gone
+
+*"he played 32 minutes in a game that **Robin Williams played**."* His own buy-low segment
+had blamed the minutes shortfall partly on Rob Williams playing well. That is now
+answered. 68 fpts on the night. **Still quote him as 33-39/g, not 38.8** — strip the 68
+and he is 33.0 on minutes of 21/21/26/29/15/32.
+**Before any offer:** slot fit behind Edey / AD / Giannis / Wemby / Reed. Value is proven;
+fit is not.
+
+## 3 Nov 2026 — PAUL GEORGE: trigger fires once
+
+*"they did sit Paul George on the second night of a backto-back. Now, **he played the
+first back to back**, but not this one."* 1 of 2 — ambiguous, not a pattern. Next
+back-to-back is the tiebreak. Lloyd frames that night as Mazzulla mixing lineups
+generally, so it may not be George-specific load management.
+
+
+(prepend failed to find header — see lloyd-daily-notes.md 2 Nov entry)
+
 # Watchlist — open questions with a dated trigger
+
+## TONIGHT 2 Nov — the CMB question finally gets a real test
+
+**Barnes out is the lever. Poeltl out is not — we already tested that one.** On 1 Nov Poeltl
+was scratched with the same shoulder bursitis, CMB had no foul trouble (3 fouls), and he played
+**exactly 20 minutes**. His minutes are inelastic so far: **20, 18, 19, 15, 23, 20**.
+
+**Barnes has played all six games** (26/37/28/31/39/36 min), so Barnes-out has never happened.
+At 47.8/g on a 1.42 usage ratio he is a far bigger vacancy than Poeltl, and Toronto's beat names
+CMB first if he sits. Both are questionable; Kawhi is out multiple weeks.
+
+**Read it tomorrow, and it settles the drop question either way:**
+- **Barnes sits and CMB still plays ~20 min** → decisive. His minutes respond to *nothing*, the
+  "role could open up" bull case is dead, and the cut trigger fires on schedule.
+- **Barnes sits and CMB plays 26+** → pause the cut. He needs 23+ to out-earn Edey at his own
+  1.113 fpts/min, and reaches ~29-31 at 26-28 minutes.
+- **Barnes plays** → no information. Don't read anything into the line either way.
+
+Edey's cap for reference: 21/22/21/19/18, **`MINS-DOWN` in all five, never above 22**, but 1.248
+fpts/min inside it — which is why he is the safer 25.2 and CMB the higher-variance call.
 
 ## 2 November — buy-low trade targets, with the gate
 

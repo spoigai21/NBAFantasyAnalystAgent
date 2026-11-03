@@ -15,7 +15,7 @@ Sections: WHO / LEVEL / AXES / TREND / SPLIT / LLOYD / OURS.
 Nothing here is hand-computed scoring -- SPLIT comes from ESPN's own
 appliedStats, cached by fantasy/build_stats.py.
 """
-import sqlite3, sys, os, argparse, re
+import sqlite3, sys, os, argparse, re, textwrap
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 LEAGUE, LLOYD = os.path.join(HERE, "league.db"), os.path.join(HERE, "lloyd.db")
@@ -76,8 +76,26 @@ def main():
               f"   |  {p['per_game']/p['mpg']:.3f} fpts/min")
 
     # ---------- AXES ----------
+    # HOW MANY GAMES ARE THESE AXES ACTUALLY BUILT ON? grade.py only grades games played
+    # while a player sits on a league roster, so a recent pickup can have ONE graded game
+    # while his season average covers seven. On 3 Nov 2026 I quoted Fears's rate z -1.65,
+    # usage 22.6% and SIGNAL BUY LOW as if they described the player; all three came from
+    # his single worst game, the only one graded. The user caught it: "you are basing it
+    # on the bad one which is completely incorrect." His real split was 11.5/g in a 23-min
+    # role then 47.0/g in a 29-38 min role. So print the sample size NEXT TO the axes and
+    # refuse to let a thin one pass as a level -- rule 12, enforced instead of remembered.
+    ng = con.execute("SELECT COUNT(*) FROM game_grades WHERE player=?", (name,)).fetchone()[0]
+    gp = p['gp'] or 0
     if f:
-        print(f"AXES   rate   z {f['form_z']:+.2f}   (vs pure projection = talent)")
+        if ng < 3 or (gp and ng < 0.6 * gp):
+            print(f"AXES   ⛔ NOT USABLE AS A LEVEL — built on {ng} graded game(s) "
+                  f"but he has played {int(gp)}.")
+            print(f"       grade.py only grades games played while rostered here, so these"
+                  f" axes describe {ng} game(s), not the player.")
+            print(f"       Read TREND/SPLIT below and the public game log instead; do NOT"
+                  f" quote the z, the usage or the SIGNAL.")
+        print(f"AXES   rate   z {f['form_z']:+.2f}   (vs pure projection = talent)"
+              f"   [n={ng} graded]")
         print(f"       mins   {f['min_ratio']:.2f} {bar(f['min_ratio'])}  coach-controlled, does not revert")
         print(f"       usage  {f['usg_ratio']:.2f} {bar(f['usg_ratio'])}  {f['usg_pct']:.1f}% vs {f['usg_proj']:.1f}% proj (20.0 = league avg)")
         print(f"       SIGNAL {f['signal']}   injury {f['injury']}   grades {f['grades']}")
@@ -154,19 +172,74 @@ def main():
         m = " OR ".join(f'"{x}"' for x in als)
         if a.q:
             m = f"({m}) AND ({a.q})"
-        print(f"LLOYD  matching {m[:90]}")
-        # TWO RANKED PASSES, FULL PASSAGES, DEDUPED. Measured 2 Nov 2026 over 8
-        # questions whose answers were verified present in the corpus AND verified
-        # to be about that player:
-        #   old lloyd.sh (4 date-ordered passages)     5/8 recall, 20,989 chars
-        #   bm25 + a 380-char question-centred window  4/8 recall,  4,436 chars
-        #   this (2 relevance + 2 recency, full)       7/8 recall, 15,488 chars
-        # Windowing LOST recall: a 700-char passage is already a snippet, so
-        # compressing it throws away the answer while retrieval was finding the
-        # right passage all along. The win comes from RANKING (fewer, better
-        # passages), not from trimming them. The two passes miss different things
-        # -- relevance surfaces older material that date-ordering buries (Edey's
-        # "low 20s", LaVine's "more usage"), recency catches what bm25 ranks down.
+        # ---- PASS 0: the player's OWN paragraphs, attributed (split_players.py) ----
+        # Lloyd's recaps are strictly player-by-player, so the name boundaries are the
+        # topic boundaries. lloyd_player_notes cuts on those instead of at a blind
+        # 700-char mark, which is what stops a hit for X being half about Y -- the exact
+        # mislabel rule 23 records (my gold set tagged a GIDDEY passage as Buzelis
+        # because the chunk held both names; it now resolves to Giddey).
+        # These are PREFERRED over the windowed segments below, and the windows stay as
+        # the wider sweep: notes only exist for players in name_aliases, and only recap
+        # and buy-low shows are cleanly player-ordered.
+        try:
+            nq = ("SELECT n.show_date d, n.kind k, n.chapter c, n.matched mt, "
+                  "n.ownscore o, n.text t FROM l.lloyd_player_notes n ")
+            if a.q:
+                rows = con.execute(
+                    nq + "JOIN l.lpn_fts f ON f.rowid=n.id WHERE n.player=? "
+                    "AND lpn_fts MATCH ? ORDER BY bm25(lpn_fts), n.show_date DESC LIMIT ?",
+                    (name, a.q, max(2, a.lloyd))).fetchall()
+            else:
+                rows = []
+            seen_n = {(r['d'], r['t'][:40]): r for r in rows}
+            for r in con.execute(nq + "WHERE n.player=? ORDER BY n.show_date DESC, "
+                                 "n.ownscore DESC LIMIT ?", (name, max(2, a.lloyd))):
+                seen_n.setdefault((r['d'], r['t'][:40]), r)
+            if seen_n:
+                print(f"LLOYD  {name} — his own paragraphs, attributed, newest first")
+                for r in sorted(seen_n.values(), key=lambda r: r['d'], reverse=True):
+                    flag = "" if r['o'] >= 0.6 else "  (passing mention)"
+                    print(f"       [{r['d']} {r['k']}] >>{r['mt']}<<{flag}"
+                          + (f"  {r['c'][:52]}" if r['c'] else ""))
+                    for ln in textwrap.wrap(" ".join(r['t'].split()), 92):
+                        print(f"         {ln}")
+        except Exception as e:
+            print(f"       player-notes unavailable ({e}) -- run fantasy/split_players.py")
+
+        print(f"LLOYD-WIDE  matching {m[:90]}")
+        # TWO RANKED PASSES + a question-centred window. Benchmarked twice, and
+        # THE FIRST BENCHMARK WAS WRONG -- worth reading before changing this.
+        #
+        #   n=8 hand-picked cases  -> windowing looked like it cost recall
+        #                             (4/8 vs 5/8), so I shipped full passages.
+        #   n=127 generated cases  -> recall is IDENTICAL (54%) at every window
+        #                             width from 380 to 550 to full passage.
+        # The n=8 result was noise. The 127-case set is built programmatically:
+        # passages containing exactly ONE rostered player's alias (so attribution
+        # is unambiguous), an answer phrase that is unique in the corpus, and query
+        # terms drawn from the passage but NOT from the answer, so it is not
+        # circular. No config had a hand in choosing the cases.
+        #
+        # Measured, n=127 across 45 players:
+        #   old lloyd.sh, 4 date-ordered passages   48/127 (38%)  326,295 chars
+        #   this, K=2 per pass, 380-char window     68/127 (54%)   97,980 chars
+        # i.e. +16pp recall on 70% less text; 6,798 -> 1,441 chars per answer found.
+        #
+        # Both passes stay because they answer DIFFERENT questions: relevance finds
+        # what he said about a topic, recency finds his latest read. The gold set
+        # only scores the first, so the recency pass looks free of benefit here and
+        # is not -- that is a limit of the benchmark, not a reason to drop it.
+        # A WINDOW IS NOT A SENTENCE: read the full passage before quoting (rule 14).
+        def window(txt, terms, width=380):
+            low = txt.lower()
+            ps = [low.find(t.lower()) for t in terms if low.find(t.lower()) >= 0]
+            if not ps:
+                return txt[:width] + (" ..." if len(txt) > width else "")
+            pos, lo = min(ps), 0
+            lo = max(0, min(ps) - width // 3)
+            hi = min(len(txt), min(ps) + 2 * width // 3)
+            return ("... " if lo else "") + txt[lo:hi] + (" ..." if hi < len(txt) else "")
+
         def hits(match, order, k):
             return con.execute(
                 "SELECT s.id, s.show_date d, s.kind k, s.text t FROM l.lloyd_fts "
@@ -182,8 +255,12 @@ def main():
                 seen.setdefault(r['id'], r)
             if not seen:
                 print("       NO HITS -- do not attribute anything to him (rule 19)")
+            qt = (a.q.split() if a.q else []) + als
             for r in sorted(seen.values(), key=lambda r: r['d'], reverse=True):
-                print(f"       [{r['d']} {r['k']}] {' '.join(r['t'].split())}")
+                print(f"       [{r['d']} {r['k']}] {' '.join(window(r['t'], qt).split())}")
+            if seen:
+                print("       !! these are WINDOWS, not sentences -- read the full passage")
+                print(f"          before quoting: ./fantasy/lloyd.sh \"{a.name}\"")
         except Exception as e:
             print(f"       FTS error: {e}")
 

@@ -12,7 +12,15 @@ assistant. Read `README.md` for the full league and roster picture before non-tr
 - **Live data — use the API, not the browser.** `. ~/.espn-fantasy.env && python3
   fantasy/espn_api.py {views|roster|scoreboard|raw <views...>}`. Returns real applied
   fantasy points with every stat including blocks, turnovers and OREB. The Chrome
-  extension is the fallback only; its tables hide the point values and cut off columns.
+  extension is the fallback for NUMBERS — its tables hide point values and cut off
+  columns — **but keep a tab on the team page for what the API does not carry.** Verified
+  3 Nov 2026 after the user suspected the feed: the dashboard's FANTASY PTS AVG column
+  matched `players.per_game` on **all 15** of my players to the decimal, so when a number
+  looks wrong, suspect the QUERY before the feed. What the tab genuinely adds: the Set
+  Lineup day strip with real opponents (empty OPP cells on a zero-game day), DTD/O badges
+  beside each player, **"Matchup Acquisition Limit 1/3"** — the adds budget, which is
+  nowhere in our DB — and a news column that surfaces beat notes rule 27's `injuryStatus`
+  flag misses. Tab is live this session (ESPN already signed in).
   A `401` means the session cookies expired — ask me to refresh them, never read them
   out of Chrome yourself.
 
@@ -182,18 +190,63 @@ assistant. Read `README.md` for the full league and roster picture before non-tr
    **(b) 26 Oct 2026: "implicitly yiu should do this whenever i ask u abt a player."** So
    after `p.sh`, always **a web search for what other analysts are saying**, dated and
    attributed. Do not wait to be asked.
-   **Measured 2 Nov 2026, one player question end to end:** 0.94s → **0.070s** (13x),
-   5 shell calls → **1**, 1 ESPN API call → **0**, 1.61 MB of JSON parsed → **0**. Across
-   all 14 roster players: 13.2s / 70 calls / 22.5 MB → **0.38s / 14 calls / 0 MB**.
-   On Lloyd retrieval, answer-in-top-K over 8 verified questions: the old date-ordered
-   `lloyd.sh` scored **5/8 on 20,989 chars**; `p.sh` scores **7/8 on 15,488** — recall
-   **+25pp on 26% less text**, 47% less text per answer found.
-   ⚠ **And the thing that nearly shipped as an improvement made it worse.** My first
-   rewrite returned bm25-ranked 380-char question-centred *snippets*: 85% less text and
-   **4/8 recall — worse than the old tool.** A 700-char passage is already a snippet, so
-   windowing throws the answer away while retrieval had found the right passage all along.
-   **The win came from ranking, not from trimming.** Measure recall, never just volume:
-   a token saving with a recall regression is a worse tool that looks like a better one.
+   **Measured 2 Nov 2026, 20 timed runs each:** one player question **0.355s → 0.024s
+   (15x)**, 5 shell calls → **1**, 1 ESPN API call → **0**, 1.61 MB of JSON parsed → **0**.
+   ⚠ Be precise about *where* that came from: the old **local** queries were already only
+   0.021s. Essentially the entire gain is deleting the **0.334s** ESPN round-trip. The SQL
+   was never slow and `p.sh` did not make it faster.
+   On Lloyd retrieval, over a **127-case** gold set across 45 players: old date-ordered
+   `lloyd.sh` (4 passages) scored **48/127 (38%) on 326,295 chars**; `p.sh` scores
+   **68/127 (54%) on 97,980** — **+16pp recall on 70% less text**, and 6,798 → 1,441 chars
+   per answer found.
+   ⚠⚠ **THE FIRST VERSION OF THIS BENCHMARK WAS n=8 AND IT LIED.** On 8 hand-picked cases,
+   windowing looked like it cost recall (4/8 vs 5/8), so I ripped it out and shipped full
+   passages — then wrote "the win came from ranking, not trimming" into this rule as a
+   lesson. At n=127 recall is **identical (54%) at every window width from 380 to 550 to
+   full passage**, so the n=8 result was noise and I had removed a free 2-3x saving on the
+   strength of it. **Eight cases cannot separate two configs.** The 127-case set is
+   generated, not hand-picked: passages containing exactly one rostered player's alias
+   (unambiguous attribution), an answer phrase unique in the corpus, and query terms taken
+   from the passage but *not* from the answer, so it is not circular.
+   **2 Nov 2026 — per-player segmentation added, and it is a QUOTE-SAFETY fix, not a
+   recall fix. Be exact about which.** User: *"make sure to organize it based on players
+   and not cram it."* `fantasy/split_players.py` cuts each transcript at **player-name
+   boundaries** instead of a blind 700-char mark, because Lloyd's recaps are strictly
+   player-by-player, so the names ARE the topic boundaries. 961 attributed notes, mean
+   561 chars, in `lloyd_player_notes` + `lpn_fts`. `p.sh` prints these FIRST, then the
+   old windowed segments as `LLOYD-WIDE`.
+   Measured on the same 127-case gold set and the same corpus:
+
+   | Config | Recall | single-subject passages | other players per passage |
+   |---|---|---|---|
+   | OLD `lloyd.sh`, 4 full passages | 68/127 (53.5%) | 59.0% | 0.59 |
+   | `p.sh` 2 segments, 380-char window | 68/127 (53.5%) | 76.7% | 0.27 |
+   | **player notes** | **14/127 (11.0%)** | **96.4%** | **0.05** |
+
+   ⚠ **Notes RECALL 11% vs 53.5% — they are a retrieval REGRESSION and must never replace
+   the segment search.** They cover only ~25% of the corpus (tracked players only, ~561
+   chars each), so most answers are unreachable through them. Adding them to the segment
+   pass gained **zero** recall (still 68/127) at 2.5x the text. What they buy is the thing
+   that has actually cost us: cross-player contamination falls from **23.3% of returned
+   passages to 3.6%** — 5.4x fewer chances to misattribute a quote. **So: notes to READ
+   and QUOTE from, segments to FIND with.** The rule-23 mislabel is now structurally fixed
+   — "30 plus minutes" resolves to **Josh Giddey**, not Buzelis.
+   Three things this got wrong first, all observed:
+   **(1)** auto-adding any 5+ char surname collapsed Jamal/Keegan/**Dejounte** Murray into
+   one player and Klay/Ausar/**Amen** Thompson into another — worse than the chunking it
+   was curing. Curated aliases only now, `hits > 0`.
+   **(2)** these transcripts carry `h:mm:ss` as well as `m:ss` stamps and `index_lloyd.py`
+   only stripped `\d+:\d+`, so timestamp noise rode through.
+   **(3)** chapter headings leaked into bodies, putting Lloyd's **heading** ("Murray-Boyles
+   turns a corner") inside quotable text — an attribution risk, not a cosmetic one.
+   **Rebuild order matters and is easy to get wrong:** `index_lloyd.py` →
+   `aliases.py` → `split_players.py`. Aliases score `hits` against the FTS index, so
+   segmenting before reindexing silently drops every new mangling (it dropped Amen).
+   The script prints any tracked player with no occurring alias — that warning is how
+   `Giddy`, `Zakiti`, `Mari Boils`, `Weby`, `Yani Ant Kmpo` and `a man Thompson` were
+   found, and how it surfaced that **Paul Reed, Paul George and Jeremiah Fears were never
+   in `aliases.py` at all** — three of my own players for whom every search had been
+   silently returning nothing. 161 → 215 aliases.
    Also validate a gold label *twice* — mine initially tested "Buzelis + 30 plus minutes",
    and that phrase is Lloyd talking about **Giddey**, with Buzelis entering as "the other
    guy." A snippet is a WINDOW, not a sentence: read the full passage before quoting.
@@ -314,13 +367,45 @@ assistant. Read `README.md` for the full league and roster picture before non-tr
    **Residual bias is −0.088, not 0** — about half the original. The rest looks like genuine
    league-wide underperformance against preseason projections, not a method error.
 
-   **`game_grades.fpts` is ESPN's own `appliedTotal`** — authoritative, formula-free, and
-   it supersedes `game-log.csv`, whose hand-computed values were off by ±1 on seven lines.
-   Rebuilt 26 Oct 2026 at the user's request.
+   **⚠ A MID-SEASON PICKUP HAS ALMOST NO GRADED GAMES, AND I QUOTED ONE AS A LEVEL.
+   3 Nov 2026.** `grade.py` only grades games played **while the player sits on a roster in
+   this league**, so a fresh pickup's `player_form` can rest on a single game while his
+   season average covers seven. Fears was added 2 Nov; `game_grades` held **one** game — his
+   5-of-17 worst — and I reported `rate z −1.65`, `usage 22.6%`, `SIGNAL BUY LOW` and "below
+   replacement" as if they described him. `p.sh` printed `TREND 1 graded: 19` and I read
+   straight past it. User: *"you are basing it on the bad one which is completely
+   incorrect... be logical."* He was right.
+   Real shape from the public game log: minutes **21/24/23/24/29/31/38** (monotonic) and
+   fpts **6/8/15/17/81/44/16** — first four 11.5/g on 23.0 mpg at 0.500 fpts/min, last three
+   **47.0/g on 32.7 mpg at 1.439**, ~3x per minute. **The 28.3 season average blends two
+   roles and describes neither.** `p.sh` now prints `[n=N graded]` beside the rate and
+   **refuses the axes** when `N < 3` or `N < 0.6 × GP` — rule 12 enforced in code.
+   **Fix still owed:** `grade.py` should backfill games from before a player was rostered.
+   Until then use the public log
+   (`site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/<id>/gamelog`),
+   and **get the id from `mRoster`, never by guessing** — I guessed one for Coward and pulled
+   a different player's season. It also **includes preseason**: count only games from 20 Oct,
+   which is why Fears shows 11 logged and `gp=7` is correct rather than a bug.
 
-28. **ESPN's projections run 9.5% HIGH in this league — use `players.proj_adj`, not
-   `proj_full`.** Measured 31 Oct 2026 over 104 rostered players with ≥5 GP: actual minus
-   `proj_full` averages **−3.95/g** and **77 of 104** sit below projection. The miss splits
+   **`game_grades.fpts` is ESPN's own `appliedTotal`** — authoritative, formula-free, and
+   it supersedes `game-log.csv`'s hand-computed `fpts`. ⚠ **CORRECTED 2 Nov 2026: this rule
+   previously said "off by ±1 on seven lines" and that was wrong on both counts.** Re-ran the
+   join (`game_log` x `game_grades` on player+date, 36 of 37 rows match a graded game):
+   **10 of 36 rows disagree (28%)**, and the errors are **not** all ±1 — they run from
+   **−2 (Davis, 24 Oct) to +4 (Reed, 25 Oct)**, with LaVine +2 on 25 Oct. Seven of the ten
+   are the ±1 cluster on 21 Oct. Never quote a number from this file without re-running the
+   check that produced it. Rebuilt 26 Oct 2026 at the user's request.
+
+28. **ESPN's projections run HIGH in this league — use `players.proj_adj`, not
+   `proj_full`.** ⚠ **The magnitude SHRINKS as the season goes on — re-measure, do not
+   quote this rule's headline.** On 31 Oct over 104 players with ≥5 GP it was **9.5%**
+   (mean −3.95/g, 77 of 104 below). Re-run on 2 Nov over **107** players with 13 periods
+   of data: mean −2.50/g, **68 of 107 (64%)** below, against a mean projection of 40.2/g
+   = **6.2%**. Same direction, two-thirds the size, because players regress toward
+   projection as games accumulate. A fresh temporal holdout run on 2 Nov (fit on periods
+   1–9, 496 games; test on periods 10–13, 172 games, zero overlap) gives **k = 0.939**,
+   cutting out-of-sample MAE **12.094 → 11.681 (+3.4%)** and mean signed error
+   **−2.19 → +0.20**. The stored `proj_adj` still uses k = 0.905 from the 31 Oct fit. The miss splits
    almost exactly in half, and the halves mean opposite things:
 
    | Source | Effect | Controlled by | Reverts? |
@@ -367,6 +452,7 @@ assistant. Read `README.md` for the full league and roster picture before non-tr
 | `fantasy/player-dossier.md` | Rendered view of the DB. The DB is the source of truth |
 | `fantasy/transactions-log.{csv,md}` | Full league transaction history |
 | `./fantasy/p.sh <name>` | **START HERE for any player question.** One local call: WHO / LEVEL / AXES / TREND / SPLIT / LLOYD / OURS. Resolves nicknames, bm25-ranks Lloyd snippets, `--q` to steer, `--lloyd N` to widen |
+| `fantasy/split_players.py` → `lloyd_player_notes` | **One segment per PLAYER, cut at name boundaries — 961 notes, mean 561 chars.** What `p.sh` prints first. 96.4% single-subject vs 76.7% for windows. Quote from these; FIND with the segments. Rebuild AFTER `index_lloyd.py` and `aliases.py` |
 | `./fantasy/lloyd.sh "<player>"` | **Full passages**, newest first — the drill-down once a `p.sh` snippet matters. FTS over all 2,995 passages / 349k words; auto-expands caption manglings via `name_aliases` |
 | `fantasy/build_stats.py` → `stat_lines`, `stat_items` | **Cached ESPN stat lines for all 130 rostered players, both seasons, actual + projected.** This is what makes `SPLIT` a DB read instead of an API call. Rebuild after a roster change |
 | `python3 fantasy/verify.py` | **Pre-claim checks.** `quote "..."` proves a quote is real; `score` gives the LIVE matchup score and whether it closed; `slate` says if games are still running |
@@ -380,6 +466,14 @@ assistant. Read `README.md` for the full league and roster picture before non-tr
 
 ## Standing weaknesses to watch
 
-- **Dejounte is the only PG-eligible player.** If he sits, the slot is forfeited.
+- ~~**Dejounte is the only PG-eligible player.** If he sits, the slot is forfeited.~~
+  ⚠ **FALSE SINCE THE FEARS PICKUP — corrected 3 Nov 2026.** Pulled `eligibleSlots` off
+  `mRoster`: **Jeremiah Fears is PG/SG**, same as Dejounte. There are now **two**
+  PG-eligible players and the slot cannot be forfeited by one absence. Dejounte is also
+  sitting on **IR**, so while he is out he costs no scoring slot at all. The user made
+  this weakness obsolete by accident and it sat wrong in this file for days — re-derive
+  eligibility from the API, never from memory. Full roster: only 6 of 15 are G-eligible
+  (Fears, Dejounte, Amen, Miller, Coward, LaVine), so GUARD depth is the real constraint,
+  not PG specifically.
 - **Anthony Davis is the biggest single risk** — 20 games last season, and GP is +1.
 - Top-heavy: Wemby, Giannis and AD are ~40% of output, with a replacement-level bench.

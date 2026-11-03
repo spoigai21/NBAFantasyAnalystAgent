@@ -1461,3 +1461,288 @@ items for MY roster" with my conclusions in it). `index_lloyd.py` never stripped
 top hit — and `verify.py quote` would have confirmed it as a real string in `transcripts/`.
 That is the rule-14 failure mode with the verification tool *agreeing*. Fixed: the indexer now
 drops every line whose first non-space character is `#`. Corpus 3007 → 2995 passages.
+
+---
+
+## 2 Nov 2026 — Lloyd's BUY LOW show (Monday), and the night it landed on
+
+Transcript saved to `fantasy/transcripts/2026-11-02_buy-low-show.txt` (local only, gitignored).
+Corpus 2,995 → **3,054 passages**, ~356k words. New show kind: `buy-low`.
+Twelve names: 5 in detail (Brunson, Clingan, Franz Wagner, Garland, **Buzelis**), 1 nine-cat
+loser (Avdija), 6 rapid-fire (Rollins, LaMelo, Mikal Bridges, **Edey**, Mikel Brown Jr,
+Darryn Peterson). **Ten of the twelve are rostered in our league. Two are mine.**
+
+### ⚠ READ THE UNITS FIRST — every fpts number in this show is YAHOO POINTS
+
+At 6:57 Lloyd says it outright: *"The next part is Yahoo points and that is how many fantasy
+points I think uh Brunson scores rest of season."* So his "27 fantasy points", "34 to 38",
+"30 to 34" are **not our numbers and are not comparable to ours** (rule 24). Yahoo-style
+points pays STL/BLK at ~2 and has no OREB / DD / TD / GP / TW bonus. Measured against
+`stat_items` for the ten rostered buy-lows, here is what our scoring pays that his does not:
+
+| Player | Ours /g | Our-league premium /g | BLK | STL | OREB | Owner |
+|---|---|---|---|---|---|---|
+| **Donovan Clingan** | **38.8** | **11.5 (30%)** | 2.33 | 0.17 | 4.17 | TanTheMan |
+| **Zach Edey** | 25.7 | 7.8 | 1.50 | 0.17 | 2.67 | **mine** |
+| LaMelo Ball | 35.1 | 6.1 | 0.00 | 1.75 | 1.00 | Top G |
+| Deni Avdija | 42.5 | 5.5 | 0.17 | 0.83 | 1.17 | Sparsh |
+| Franz Wagner | 37.3 | 5.4 | 0.00 | 0.86 | 1.14 | Skywalking |
+| Mikal Bridges | 16.3 | 5.0 | 0.43 | 0.86 | 1.00 | TanTheMan |
+| Jalen Brunson | 36.9 | 4.6 | 0.43 | 0.86 | 0.57 | Yash |
+| **Matas Buzelis** | 20.1 | 4.4 | 0.71 | 0.43 | 1.00 | **mine** |
+| Ryan Rollins | 23.6 | 4.1 | 0.43 | 0.43 | 1.29 | Why so serious |
+| Darius Garland | 28.3 | 3.3 | 0.00 | 0.71 | 0.29 | Top G |
+
+Premium = OREB×1 + DD×3 + TD×5 + GP×1 + TW×1 + (STL+BLK)×2, the last term being the
+**premium over** a 2-point STL/BLK format. The STL/BLK baseline is an assumption — Lloyd's
+exact weights are unknown — so treat the absolute figure as a reconstruction, not a proof.
+
+### Clingan — Lloyd's premise is FALSE in our scoring, which makes him a BIGGER steal
+
+Lloyd: *"Stinking start for Don Klingan... He's 142nd in Durant. He's averaging 27 fantasy
+points"*, *"His rebound numbers are well below projections. His steals are horrible...
+Everything is down"*, and the verdict *"I'm rating him like 60th at 34 to 38 points. So that
+to me is a very clear buy low in a point sleep."*
+
+In our scoring none of that holds. **38.8/g over 6 GP, +1.5 ABOVE bias-adjusted proj_adj
+37.4**, rate z **+0.05** — dead on his own talent — per-minute **1.565 → 1.618, up 3.4%**
+on last season, and blocks **up** 1.69 → 2.33, worth **+2.58 applied/g**. His 11.5 premium
+almost exactly accounts for the 38.8-vs-27 gap (38.8 − 11.5 = 27.3): *consistent with*
+Lloyd's number on the same games, not verified.
+
+⚠ **But do not quote 38.8 as his level.** Game log 24 / 45 / 27 / 47 / 22 / **68** on minutes
+21 / 21 / 26 / 29 / 15 / 32. Strip the 68 and he is **33.0/g**. Call him a **33–39/g player
+with foul-trouble variance**. That still clears my 10th-starter gate (LaVine, 34.7) at the
+midpoint, and his owner is being told by every public points-league source that he stinks.
+Lloyd's asking price: *"You don't even send a top 70 player to get him... Top 90 guy, maybe.
+Top 100 guy. Sure."*
+
+### Buzelis — Lloyd is explicit, and he is one lever short
+
+Tier-1 explicit, verbatim: *"So, I'm not dropping Matas Bazalis. I'm very okay with buying
+him low based on the shot quality of what he's taking. He should be at 47%. Shoot. He's at
+40."* He cut his own range 50-65 → **75-95**, blames the coach (*"Thiago Splitter has not
+used him well at all"*), and names three levers: *"More minutes, higher involvement rate,
+and just better play."* He also confirms our Caleb Wilson read — *"I thought year three
+leap... him and Caleb the real focuses."*
+
+One of the three levers does not exist. Lloyd: *"His minutes are down. His usage is down.
+His production is down."* Minutes ✓ (25.0 vs 30.5 projected, 0.82). Production ✓ (20.1/g vs
+proj_adj 31.7). **Usage ✗ — measured 1.10, i.e. 23.2% against 18-21% projected and a 20.0%
+league average.** He is *being given* the shots and missing them. That is the "true buy low"
+signature on rate alone, but it means only two levers, not three.
+
+And the show aired on the night he went **23 min, 6 fpts, AWFUL, 17.7% usage** — his worst
+line of the year. Signal moved **HOLD → AVOID**, rate z −0.74, last 3 at 18.3/g on
+**0.724 fpts/min and falling**.
+
+### Edey — right direction, wrong mechanism
+
+*"Zack Edi 164th in Durant, 20.7 fantasy points. I don't believe Zakit is going to stay as a
+20-minute a night player. They're going slow on him."* He attributes it to caution plus foul
+trouble and **never mentions the restriction**. Yahoo Sports, late Oct 2026: Edey *"is on a
+minutes restriction as he continues to work his way back from last season's injury"* (ankle
+surgery; 11 GP in 2025-26). Under rule 27 that is the **injury confounder**: the minutes
+revert on a medical clock, not a coaching one, and playing well does not accelerate it.
+
+The cap is rigid, not soft — **21 / 22 / 21 / 19 / 18 / 19** across six games, mpg 20.0 vs
+26.4 projected (0.76). The buy-low case is a **rate** case and it is a good one:
+**1.284 fpts/min**, so 26-28 minutes at the same rate is **33-36/g in our scoring**. With a
+7.8 premium on top, his 20.7 Yahoo points badly understates him here.
+
+🚫 **DO NOT QUOTE** the 29 Oct mailbag line *"in 3 weeks time he won't be playing 28 minutes
+a night and averaging 17 and 11 with two blocks"* — the caption is internally contradictory
+(the "won't" is attached to the good outcome) and resolving it either way is exactly the
+move that produced the Paul George misattribution. The 2 Nov quote says the same thing
+cleanly; use that one.
+
+### Housekeeping from this show
+- Mikal Bridges is a **deep-league-only** buy low: *"in a standard format, Muel Bridges can
+  be dropped."* At 16.3/g he is not a target for us.
+- Avdija is not a buy low at all, he is a **nine-cat optics** play: *"he's been fine. He's
+  rolling as a top 50 player."* Our data agrees — 42.5/g. Nothing to exploit in a points league.
+- Garland: the shoulder is now on the record from Lloyd himself — *"he ced a hit in the
+  shoulder and a bit of a back problem yesterday and anytime he gets a little bit banged up,
+  he struggles a lot."* Confirms the 1 Nov find. Also confirms he is **LAC**: *"We're going to
+  LA."* Turnovers 5.2 actual vs 2.9 expected.
+- New caption manglings added to `aliases.py`: `Buzzales`, `Zakit`/`Zack Edi`/`Zakid`,
+  `Vagnner`/`Frzagna`, plus first-time entries for Garland, Clingan, Avdija, Brunson, LaMelo,
+  Mikal Bridges, Rollins and Darryn Peterson. 161 → 190 aliases.
+
+---
+
+## 3 Nov 2026 — Lloyd's RECAP of the 15-game Monday slate, organised BY PLAYER
+
+Transcript: `fantasy/transcripts/2026-11-03_recap-monday.txt` (local only). Corpus
+3,054 → **3,204 passages**, ~373.5k words. **This is the show that drove the per-player
+segmentation rebuild** — see CLAUDE.md rule 23. Entries below are my roster first, then
+the players I hold a decision on. Each one is Lloyd's own attributed paragraph.
+
+### Collin Murray-Boyles — tier-1 HOLD, and he supplies the fact our DB could not
+> *"let's talk Mari Boils because finally something happened... 18 and seven, two blocks,
+> 28 minutes, 50% shooting... The minutes were there. Now I am not sugar coating this.
+> Purle was out and Kawawaii was out, but at least they gave him the minutes and he looked
+> good... you've got no choice now but to have him on your roster."*
+
+The load-bearing detail: **"with no Yaka Purdle again BOTH GAMES of the back to back."**
+Poeltl was out on 1 Nov *and* 2 Nov, and Kawhi has been out throughout — so **availability
+was identical across the two nights and the minutes went 20 → 28.** That makes the +8 a
+coaching choice, not an availability artifact, which is the *opposite* of what my
+"Poeltl is not the lever" note assumed. Separate flag from the same passage: *"Scottie
+Barnes was questionable... he looked labored for a lot of this game... he didn't look
+right but he played."* Barnes went 38 min / 57 fpts, so no production signal yet.
+
+### Zach Edey — ⚠ CORRECTS MY OWN 2 Nov NOTE
+I wrote that Lloyd "never mentions the restriction" and gives "no mechanism." True of the
+buy-low show, **false of the recap the same day**:
+> *"I had those concerns about Edy coming out of college. But I also watched him play last
+> season and he was dominant... I just think that they are he's not fully healthy and that
+> is a concern. Maybe he never gets fully healthy."*
+
+He names health and goes **further than I did** — raising that it may never resolve. Plus
+an explicit conditional sell: *"if he's only playing 19 minutes a night the rest of the
+season, then yeah, I don't hold him. I just don't believe that'll happen."* The night:
+**fouled out in 19 minutes**, 6/9/2blk, 28 fpts here, MINS-DOWN. Log 21/22/21/19/18/19.
+
+### Amen Thompson — ⚠ LLOYD DISAGREES WITH ME, AND HIS OBJECTION IS GOOD
+> *"You don't hope for this from a man Thompson. 25 minutes only. Yeah, they cooked him,
+> **but Shenun played 38.**... 25 minutes 24 usage. Shooting was great... He's just not
+> really being used. **His blocks haven't returned.** And that was a big thing that drove
+> his value two years ago. Very disappointing start. So while he's a bit of a buy low,
+> I am concerned."*
+
+**The Sengun point is the one I missed.** I filed the 25 minutes as a blowout artifact and
+told the user "no action." If it were pure blowout management, Houston's other star would
+not have played 38 in the same game. That is a direct test of my margin explanation and
+for this one game it fails it.
+What survives: across 8 games the split is still clean — all three games inside 7 points
+he went 36/39/39 (38.0 mpg, 1.316 fpts/min); all five decided by 10+, 29.4 mpg and 1.048.
+What does not survive: "nothing to see." **The blocks are the better lead** and our own
+data supports that over the minutes story.
+
+### Matas Buzelis — second explicit HOLD in one day, and he pre-empts the Claxton worry
+> *"Four points in 23 minutes, a block, four fouls, five turnovers, eight fantasy points.
+> He stinks at the moment... but I just I just wouldn't be dropping him. Here's why...
+> I also know he's not this bad. He's not this poor of a shooter. He's not going to get in
+> this much foul trouble. And he's not going to play these low minutes every game...
+> **Remember, dropping him does not remove the bad performances. It just means you don't
+> get the future ones.**"*
+
+Also, unprompted, on the incoming-centre objection: *"Claxton's coming back now. Yeah,
+cool. That's not an impediment to Bzalis getting usage because Claxton's a low usage
+player than Jaylen Smith. That's how usage works. So Claxton might make it easier for
+Bzelis."* And confirming our Caleb Wilson blocker read from the other side — *"Kayie
+Wilson continues to be a joy. 24-7, four assists, four steals, four threes."*
+⚠ He says **eight** fantasy points; ESPN's `appliedTotal` says **6** in our scoring. His
+number is Yahoo points. Don't mix them.
+
+### Dejounte Murray — Lloyd lands almost exactly where you did
+> *"three games in a row without Dejante Murray. And three victories in a row... It was
+> interesting that **Murray is off the injury report and then gets labeled questionable
+> with personal then he's out.** I know his partner had a child but that's three games in
+> a row and two with that weirdness... it's very very weird for a trade to happen at this
+> point in the season but it is a little it is a little weird."*
+
+Independent corroboration of the off-report-then-ruled-out sequence I had from ESPN
+`lastNewsDate` and the CBS/RotoBaller/Rotowire-vs-NBC split. **The anomaly now has two
+independent observers; the trade remains unsupported inference** — Lloyd explicitly says
+a trade now would be "very very weird." On Fears: *"I still don't know what happens when
+Dejonte Marie returns but I will keep holding him."*
+
+### Donovan Clingan — the buy-low lands, and the Rob Williams objection dies
+> *"our second boow bump cuz Donovan Klingan went crazy. 17 points, 18 rebounds. And
+> what's encouraging here is **he played 32 minutes in a game that Robin Williams played.**
+> He had four blocks... after a real poor poor start to the year, he's back inside the
+> top 100."*
+
+His own buy-low segment had conceded "Rob Williams has been good" as a reason for the
+minutes shortfall. 32 minutes *with* Williams playing removes it. 68 fpts here, his
+season high. Caveat stands: strip the 68 and he is **33.0/g** — quote him as **33-39/g**
+on minutes of 21/21/26/29/15/32.
+
+### Paul George — the rest trigger fires once, not twice
+> *"they did sit Paul George on the second night of a backto-back. Now, **he played the
+> first back to back**, but not this one."*
+
+1 of 2 back-to-backs rested — the ambiguous state the trigger was written for, not a
+pattern. Note Lloyd frames that night as Mazzulla mixing lineups generally (two centres
+in the second half), so the sit may not be George-specific load management.
+
+### Shorter, still mine
+- **Paul Reed** — *"the goat Paul Reed... he just puts up big numbers nearly always. Reed
+  is now a top 60 player."* But the expiry is named: *"obviously Jaylen Duran being out
+  means he's able to do this... I do not think you could have Ausar Thompson, Paul Reed,
+  and Jalen Duren all starting."* 44 fpts, ROLE-UP.
+- **Wembanyama** — *"Is it good? No. Do we care? No. 12, 11 and 5, three blocks. He's been
+  great. Down game, low minutes because they smashed him."* SA won by 22. Confirms the
+  blowout read; 24 min, POOR, no action.
+- **Giannis** — *"He's what fourth in Durant... 30 and 12, seven assists, one steal, two
+  blocks... Couldn't really ask for too much more."* 57 fpts.
+- **Anthony Davis** — *"really good here. 27 and 9, three steals, no blocks."* Plus a
+  structural positive: Washington played **AD at centre** with Sarr out and "Jerean"
+  limited to 24 min — *"That means they played Anthony Davis at center which they should."*
+- **LaVine** — *"production was fine, 23 points, four rebounds, five threes, 57% but only
+  28 minutes for Lavine is a little concerning."* Second straight limited-minutes game;
+  Doug Christie rotation, Monk at 30.
+- **Brandon Miller** — *"with Kobe White back that meant that Brandon Miller did less,
+  24 usage... Still being very good to start the year, and there is room for that to get
+  a lot better."*
+- **Coward** — *"The chicken Cedric Carol. 10 points, nine rebounds, 31 minutes. He'd been
+  playing really well. Not so much here, but we give him a bit of a pass."*
+- **Fears** — *"Fears played a lot... not super successful but I will take it and I would
+  not drop at all after this... him starting as that primary point guard has been
+  successful for them."* 38 min, 19 fpts, POOR.
+- **Mikal Bridges** — *"a genuine all-time slump... I've said from basically day one or two
+  if you want to drop him go for it."* Not a target at 16.3/g.
+- **LaMelo** — *"can we breathe a little bit easier about LaMelo Ball? 34 and six... he
+  played 33 minutes here. So, okay, we're good."* Owned by Top G, my week-3 opponent.
+- **Garland** — *"he played 36 minutes. He had eight assists. He had four rebounds, which
+  is one of the things he was lacking... He's just shooting horribly. And the turnovers
+  are racking up... **Don't drop Darius Garland.**"*
+
+---
+
+## 3 Nov 2026 — ⚠ FEARS: I got this wrong, and the user caught the exact mechanism
+
+**What I said:** 28.3/g, rate z −1.65, usage 22.6%, "below replacement", VOR −2.7.
+**What was true:** every one of those axes came from **ONE game** — his 5-of-17 worst.
+`grade.py` only grades games played while a player is rostered here, Fears was added
+2 Nov, so `game_grades` had a single row. `p.sh` printed `TREND 1 graded: 19` and I read
+past it. Rule 12, broken by me.
+
+| Date | Opp | MIN | FG | FG% | AST | REB | STL | BLK | TOV | PTS | **FPTS** |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| 22 Oct | IND | 21 | 2-10 | 20.0% | 1 | 3 | 0 | 0 | 1 | 8 | 6 |
+| 24 Oct | UTA | 24 | 3-9 | 33.3% | 1 | 0 | 1 | 0 | 2 | 7 | 8 |
+| 25 Oct | DEN | 23 | 4-12 | 33.3% | 2 | 6 | 1 | 0 | 3 | 10 | 15 |
+| 29 Oct | DEN | 24 | 5-14 | 35.7% | 3 | 4 | 1 | 0 | 3 | 11 | 17 |
+| **30 Oct** | **SAC** | **29** | **9-16** | **56.2%** | **13** | **8** | **2** | **4** | 3 | **22** | **81** DD |
+| **31 Oct** | **ATL** | **31** | **9-12** | **75.0%** | 7 | 5 | 1 | 0 | 3 | **20** | **44** |
+| 3 Nov | MEM | **38** | 5-17 | 29.4% | 7 | 4 | 0 | 0 | 4 | 12 | 16 |
+
+- **First 4** (21-24 min role): **11.5/g** on 23.0 mpg, **0.500 fpts/min**
+- **Last 3** (29-38 min role): **47.0/g** on 32.7 mpg, **1.439 fpts/min** — ~3x per minute
+- Season 28.3 is a **blend of two roles and describes neither.** The role changed 30 Oct.
+
+**So "below replacement" was wrong** — against the ~31/g backfill his current role is
+roughly **+16**. Honest caveat I keep: 3 games, and the 81 is a real outlier (22/8/13 with
+4 blocks). Strip it and the other two are 44 and 16 — he is volatile. **The minutes trend
+is the part that is not noise: 21/24/23/24/29/31/38, monotonic.**
+Usage: shot equivalents per 36 over the last three are **24.1 / 17.9 / 20.7**, so the
+user's 26% read for the recent stretch is plausible and my 22.6% was unrepresentative.
+(fpts above are rule-17 weights off the public log, which has no OREB — understated ~1.1/g;
+ESPN's own column says 1.1 OREB. The 3 Nov line checks: 16 + ~3 = ESPN's 19.)
+
+**Fix shipped:** `p.sh` prints `[n=N graded]` and refuses the axes when N<3 or N<0.6×GP.
+
+### Paul George — our data was already right
+He was out 2 Nov (Lloyd: *"they did sit Paul George on the second night of a
+backto-back"*). Dashboard reads **GP 6, status DTD, 46.2 avg** — the average correctly
+**excludes** the missed game. Nothing to fix.
+
+### The API was not the problem
+Dashboard FANTASY PTS AVG vs our `players.per_game`, all 15 players: Fears 28.3, Coward
+35.2, Miller 37.8, Giannis 61.1, Wemby 64.4, Amen 38.0, Reed 36.6, Davis 44.9, Buzelis
+20.1, CMB 22.7, George 46.2, Edey 25.7, LaVine 35.0, Dejounte 43.8, Keegan 13.0 —
+**identical on every one.** The error was my sample, not the feed. Keeping the tab anyway
+for status badges, the day strip, the **1/3 acquisition limit** and the news column.

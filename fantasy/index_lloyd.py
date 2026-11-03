@@ -30,7 +30,7 @@ CREATE INDEX idx_seg_date ON lloyd_segments(show_date DESC);
 """)
 
 def kind_of(fn):
-    for k in ('preview', 'recap', 'mailbag', 'draft-guide', 'bust', 'ranks', 'friday'):
+    for k in ('preview', 'recap', 'mailbag', 'draft-guide', 'buy-low', 'bust', 'ranks', 'friday'):
         if k in fn: return k
     return 'other'
 
