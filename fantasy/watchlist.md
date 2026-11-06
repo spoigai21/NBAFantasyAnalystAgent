@@ -61,12 +61,19 @@ so **all 11 invisible passages were load-bearing for a player on my roster.** Ad
 drives CMB), `France Vagner` (Franz Wagner). Alias table 242 → **248**, notes **1,117**,
 index **3,459 passages**.
 
-### ❓ WORDING I COULD NOT RESOLVE — one of these could matter
-- **"a kitten Wagler" / "Waggler"** — a most-dropped player, minutes down, *"Struus is there.
-  Bill and Ingram are coming at some point,"* living on free throws, *"not a 12 team league
-  guy."* **If that rotation is New Orleans it bears on Dejounte's usage;** otherwise noise.
+### ✅ WORDING RESOLVED 6 NOV — and it is NOISE for this roster
+- **"a kitten Wagler" / "Waggler" = KEATON WAGLER (LAC G).** The captioner split "Keaton"
+  into "a kitten". User ruled out New Orleans; the Clippers roster then confirmed every
+  detail: **Max Strus** is a Clipper (*"Struus is there"*), **Bradley Beal Out since 15 Oct**
+  (*"Bill"*), **Brandon Ingram Out since 2 Nov** (*"Bill and Ingram are coming at some
+  point"*). Cross-checks twice over — **Isaiah Jackson**, also on that drop list, is also a
+  Clipper. **Nobody of mine is on LAC, so the Dejounte-usage angle is dead.**
+  ⚠ **LESSON:** Lloyd's add/drop segment runs on the last **30 hours of waiver activity**, not
+  on who played that night — he says so himself (*"Kingston Flemings is one that's not
+  involving the games on Thursday"*). So "their team didn't play" does **not** narrow that
+  segment. **Reach for a team-roster lookup first; asking the user is the fallback.**
 - **"the Daim Mara" / "Pig Williams is out" / "Bennett Stirts"** (Friday watch item 4) and
-  **"Kingston Flemings"** (most-added) — teams never stated, and neither looks roster-relevant.
+  **"Kingston Flemings"** (most-added) — teams never stated, neither roster-relevant.
 
 
 # ⏰ 5 Nov 2026 (late) — MAILBAG ANSWERED SIX OF THESE. Closing them out.
