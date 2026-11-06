@@ -1746,3 +1746,590 @@ Dashboard FANTASY PTS AVG vs our `players.per_game`, all 15 players: Fears 28.3,
 20.1, CMB 22.7, George 46.2, Edey 25.7, LaVine 35.0, Dejounte 43.8, Keegan 13.0 —
 **identical on every one.** The error was my sample, not the feed. Keeping the tab anyway
 for status badges, the day strip, the **1/3 acquisition limit** and the news column.
+
+---
+
+## 4 Nov 2026 — scoring Lloyd's live reads against a 14-game slate
+
+No new transcript tonight (his recap of this slate is not out yet). This section tests the
+reads already on disk against what actually happened. **All six quotes below greped clean
+through `verify.py quote`, 1 hit each.**
+
+### Amen Thompson — right about the season, wrong about the timing
+
+> *"His blocks haven't returned. And that was a big thing that drove his value two years
+> ago. Very disappointing start. So while he's a bit of a buy low, I am concerned."*
+> — 3 Nov recap
+
+**Verdict: the premise checks out, the implication does not.** "Two years ago" is 2024-25
+and he is right that it was the block season — 1.3/g on 32.2 mpg. But the blocks did not
+fail to *return* this month; they **left last season**:
+
+| season | mpg | BLK/g | per 36 |
+|---|---|---|---|
+| 2023-24 | 22.4 | 0.6 | 0.96 |
+| **2024-25** | 32.2 | **1.3** | **1.45** |
+| 2025-26 | 37.4 | 0.6 | 0.58 |
+| 2026-27 (9 GP) | 32.8 | 0.25 | 0.27 |
+
+That is 88 games of evidence, which makes it a permanent markdown of his ceiling rather
+than something to buy low on. Size it honestly: **−4.2/g against the 2024-25 peak, only
+−1.4/g against last season, −1.8/g against ESPN's 0.71 projection.** The blocks are not
+the live question — **minutes are** (75% of his −7.75/g decline vs last season).
+
+Tonight: 17 fpts, 0 STL and 0 BLK, but **minutes MINS-OK 0.88 and usage USG-OK 0.93**.
+Both coach axes intact, so this one is rate, and rate reverts. Lloyd's "I am concerned"
+is fair; his "bit of a buy low" is the better half of the sentence.
+
+### Brandon Miller — he called the shooting in advance, and it is worth +6.2/g
+
+> *"He's not going to be this good, but... I know that he's going to be bad with his
+> shooting. I understand that. But I think we're in for a pretty big season from Brandon
+> Miller."* — 27 Oct recap
+> *"his usage has been through the roof he still didn't shoot well... Still being very
+> good to start the year, and there is room for that to get a lot better."* — 3 Nov recap
+
+**Verdict: hold, and credit him for pre-registering it.** Tonight was 3 fantasy points on
+2-of-15, **1-of-10 from three** — the worst line on my roster this season. The axes agree
+with Lloyd rather than with the box score: **usage FED 34.0%**, he is being given
+everything.
+
+Season, 9 regular-season games: **27-of-101 from three, 26.7%, on 11.2 attempts a game.**
+At rule-17 prices (made three +5 net of attempt, miss −1) his threes are worth **+6.8/g**;
+at a league-average 36% on the same volume they are worth **+13.0/g**. So Lloyd's "room
+for that to get a lot better" is **+6.2/g, available with no role change at all.** Drop
+tonight's outlier and he is already 37.8/g.
+
+The thing to actually watch is the one he did not mention: **26 minutes, MINS-DOWN 0.77.**
+
+### Paul Reed — his caveat is the whole position
+
+> *"Let's just start things off by talking about the goat Paul Reed... he just puts up big
+> numbers nearly always. Reed is now a top 60 player on the season. And yes, obviously
+> Jaylen Duran being out means he's able to do this."*  — 3 Nov recap
+
+**Verdict: correct, and the subordinate clause is the part that matters.** Duren is still
+**OUT** (DET roster feed, 4 Nov), so the role holds.
+
+This also exposes a defect in our own tool, not in Lloyd. `p.sh` prints **SIGNAL BUY LOW,
+rate z −1.09** for Reed and it is an artifact: ESPN projected him as a 13.8-mpg backup at
+1.796 fpts/min, he is playing 27.4 (min_ratio **2.13**), and `grade.py` grades him against
+that bench per-minute rate. He is **+12.6/g over his adjusted projection** while reading
+AWFUL. Rule 22 in reverse — audit the minutes inside the projection before believing the
+signal. **The risk is Duren's return, not Reed's rate.**
+
+### One place Lloyd has nothing and neither does anyone else
+
+Dejounte Murray's usage has fallen in all five of his games — 27.4 → 26.5 → 22.9 → 20.1 →
+**13.3%** — and tonight's was on **45 minutes** (ROLE-UP 1.39, seven field-goal attempts).
+Lloyd's only recent Murray note is about the three games he missed. Web searches on 4 Nov
+returned nothing newer than **February 2026**, when Murray publicly denied requesting a
+trade, so **the trade premise has no current sourcing** and should not be leaned on.
+Logged as a trigger, not a conclusion.
+
+### Rule-1 exhibit of the season
+
+Wembanyama: 52 points, 24 rebounds, 8 blocks, **133 fantasy points** on 34 minutes — a
+career high, and per AP the first player since 1996-97 with 25 points, 10 rebounds and 5
+blocks **in a half**. ESPN's own `appliedStats` breakdown of the night:
+
+`PTS +52 · BLK +32 · FGM +32 · FGA −28 · REB +24 · FTA −23 · FTM +19 · OREB +9 · STL +8`
+
+**The 8 blocks alone were +32 — more than Brandon Miller, Amen Thompson, Paul Reed and
+Collin Murray-Boyles produced between them (62) in half as much.** Verified against the
+public box score, which matches the fantasy feed exactly.
+
+## 5 Nov 2026 — Lloyd's 4 Nov recap (14 games), saved to disk and scored against my roster
+
+Source: `fantasy/transcripts/2026-11-04_recap-wednesday.txt`, pasted by the user and written
+in the same turn (rule 18). 97,629 chars. Index rebuilt in order: 3,336 passages /
+~389,205 words / 221 aliases / 1,025 player notes. Every quote below greps clean through
+`verify.py quote` — one hit each, all in this file.
+
+**The roster moved this morning before I wrote any of this.** ESPN `mTransactions2`:
+07:51 on 5 Nov, **DROP Paul Reed (4278562), ADD Ryan Rollins (4591725)**, plus a lineup
+edit on LaVine. Jeremiah Fears is no longer on the roster either, so the plan I
+pre-committed last night (drop Buzelis for Fears) has a different board under it.
+`matchupAcquisitionTotals` now reads **{1:2, 2:1, 3:2}** — two of three used in this
+matchup period, **one add left**.
+
+### Where Lloyd agrees with the user and disagrees with me
+
+**Reed — Lloyd validates the drop timing, precisely.** "This was probably one of Paul
+Reed's worst games. He just got cooked by Embiid. Eight and seven, four assists, 29%
+shooting." Then the window: the Pistons "have one game over the next five nights… I
+wouldn't drop Reed myself, but… **if you were ever going to do it, this is the time that
+you do that.**" That is the whole case in one clause — Reed's 34.5/g was going to be
+collected *once* in five days, and Duren's return (~8–14 Nov) erases it anyway. The user
+made the move at 07:51; Lloyd's recap published the same reasoning.
+
+**Buzelis — Lloyd is explicitly against the drop, and this collides with my own plan.**
+"He's lost all confidence… he looks completely out of sorts out of position doesn't block
+shots anymore and in saying that this is one of his better games 12 five and three."
+Then: "I don't think Bzalis is losing this starting spot. It can easily turn around…
+**what is the benefit of dropping him to add who?** Braden Burries wouldn't do it… It
+might be wrong, but **I have to give it more time than this.**"
+⚠ Under rule 26 this is **tier 2, not tier 1** — Lloyd's stated alternative is Braden
+Burries, a generic rookie-guard add, and my question was Fears-with-a-trade-catalyst. A
+quote has to be on the *actual* question to earn tier 1. It still moves me, on two grounds
+that are mine: "lost all confidence" is the **rate** axis, the only one of the three that
+reverts on its own (our split was 65% rate / 35% minutes), and he keeps the starting job,
+so the minutes floor holds. What Lloyd cannot price for us: "doesn't block shots anymore"
+costs far more here (+4) than in his generic points framing, so our downside is worse than
+his.
+
+**Fears/Murphy — Lloyd supplies the control I skipped, unprompted.** "We wanted to know
+what would happen with the Pelicans with Dejonte Murray coming back… **We didn't need to
+worry about that because Trey Murphy just decided to sit this one out instead.**" That is
+an independent source saying the 4 Nov game answered nothing — the user's exact objection,
+and the opposite of what I had told him. Lloyd then refuses to project it: "the next
+question will be what happens in the next one when Ken Murphy does come back… And then
+what do they do with Fears?… I don't really know which direction they're going to go with
+it." He is explicitly *not* claiming to know. That was the correct epistemic state and I
+did not hold it.
+He also reaches, on his own, the logical point I had to be corrected into: "we talked about
+this when Fierce was having those big games without Murray. I said this doesn't tell us
+that he can't do well without Murray. **It tells us that he did do well without Murray.**"
+On the game itself: "19 and six. He only had two assists, but two steals, good volume,
+didn't shoot well, but **that's good enough. That is good enough.**"
+
+### Where Lloyd adds something our numbers did not have
+
+**Dejounte — he lands on "inquire" from the other direction.** "Murray who came back and
+played 45 minutes in overtime. Had 20 and eight with four assists and four steals. Perfect
+11 of 11 from the line. A huge game. **Could you use one game like that to sell high on
+him? Probably not, but at least inquire about it.**" Three independent lines now point the
+same way: our usage trend (27.4 → 26.5 → 22.9 → 20.1 → 13.3%), Lloyd's sell-high instinct,
+and the In The N.O./SI trade reporting. Keep the distinction: he is explicit about
+*inquiring*, not selling, and the 45 minutes is itself confounded — overtime, Murphy out.
+
+**Edey — from the drop pile to "go and add him," with the gate named.** "The player that
+everyone wanted to drop, Zack Ed. And it turns out he's fine. 11 and 13 with two blocks and
+played 25 minutes… Do I think Ed is going to be great all season? **I sort of do a little
+bit**… It's been concerning the foul trouble, the low minutes, and at times a lack of
+usage, but **he was a plus 18**… **He only had three fouls. If someone dropped Zack Edit,
+I hope it wasn't you. Go and add him.**" Tier-1 explicit, on a player we own, and it
+isolates the same gate our numbers found: three fouls → 25 minutes. 3.6 fouls in 20.7 min
+is 6.3 per 36; his 1.319 fpts/min is third on the roster behind Wembanyama and Giannis.
+
+**Rollins — what we actually bought.** "He came off the bench again, but to further
+complicate matters, he was good. 24 minutes only, that's a red flag. but 28 usage… **He's
+close to their best player.** And all the advanced stuff and the onoff and the plus minus
+suggest that as well." On the role: "I just I don't understand what the plan is… So I think
+it just means I have to hold again." Our side: 25.1/g over 8 GP, 24.9 mpg, **mins 0.89
+(bench), usage 1.17** (25.1% vs 21.5% projected, league average 20.0) — a bench guard being
+given starter touches, the same archetype as Fears bought a different way. The worry is the
+trend: 19/31/32/31/12/26/14, first three 27.3/g at 1.0 fpts/min, last three 17.3/g at
+0.867. His 36-point 4 Nov game is **missing from `game_grades`** because he was not
+rostered in this league that night — rule 27's backfill gap understating him by one good
+game. Milwaukee has started rookie Braden Burries over him two games running.
+
+**CMB — the disagreement from last night is closed, three sources deep.** "Yaka Purle
+returned but he didn't start. **Colin Murray Boils did** and that was against Jokic. Huh.
+23 minutes for CMBB… Three fouls, 13 three and two, one triple, 21 usage, shot 60%. That's
+two solid enough games the last two games." The caution matters for us: "Do I think that he
+should be rostered in category leagues? Yes, **points leagues not necessarily.**" That is
+calibrated to a format paying STL/BLK +2; ours pays +4 (rule 24), so discount the caveat —
+but his underlying read matches our grade, CMB is the lowest-scoring active starter.
+Poeltl is no longer a threat to the job: "very hard for me to look at Purle… to consider
+that a must roster player."
+
+**Amen — the one read where Lloyd, the user and our data all agree.** "**Where I am very
+worried** is what is going on with the men Thompson. At least he played over 30 minutes,
+but 11 points, eight rebounds, no steals, no blocks, one assist. **These are significant
+regressions from everything that he did last season.** And I don't think it's just all Fred
+Van Vleet related. Van Vleet had 18 and three and he was fine… I don't really understand
+what is fully happening with him. I'm not panicking. It's just frustrating." Note he
+*rules out* the VanVleet explanation with evidence, and says minutes are not the problem —
+both match our axes. We have the mechanism he lacks, and it is unflattering: blocks 1.3 →
+0.6 → 0.25, so the collapse happened **last season**, 79 games ago. A ceiling markdown
+worth ~−1.4/g, not a slump.
+
+**Giannis — wrist, and he is my only player tonight.** "**Yanni came in probable with a
+wrist issue. He seemed to be grasping at it quite a bit.** He played 41 minutes. He had
+27/4 and six with three blocks, two steals, bad field goals and **elite free throws**."
+Outside reporting on the same game calls it a right wrist sprain, probable then available.
+Our feed says nothing — fantasy `injuryStatus` ACTIVE, public MIA roster endpoint returns
+an empty injuries array. Rule 27's blind spot, the AD-26-Oct situation again. The tell is
+the free throws: elite FT shooting with a sore wrist is the opposite of the usual signature.
+
+**Wemby — Lloyd's own count vs ours.** "52 and 24. Two assists, two steals, and just eight
+blocks" — he scores it **113** fantasy points; we score **133** in this league's bonuses,
+and the gap is the format (8 blocks = +32 here, plus DD and OREB). Monster line of the
+night. Coward took young gun of the night: "23 points, four threes, four steals, nine
+rebounds, four assists, doing everything… he's now top 60." Brandon Miller's 13% shooting
+came with "some early foul trouble," and Lloyd's framing is the same as ours: "you knew
+that when you drafted him." LaVine: "Zack Lavine's minutes went back up. So that's good.
+35 minutes." Paul George: "33 usage, 35 minutes, 25, three and five, four steals, five
+threes, top 30, top 25 player… if you could trade him for a top 40 player, you would do it.
+But I also don't think that you can."
+
+### A retrieval defect this transcript exposed
+
+`split_players.py` reported that the 4 Nov passages for **Giannis, Amen and CMB matched no
+alias at all**. Chasing that warning produced four new manglings, and three were hiding
+passages we could never reach: **"Fierce" = Fears (6 hits)**, **"Yanni" = Giannis (6
+hits)**, "CMBB" = Murray-Boyles (4), "Zack Ed"/"Zack Edit" = Edey (3). Six invisible Fears
+passages is the uncomfortable one — it means every "no Lloyd read exists" I have said about
+Fears was understated by construction, the same failure mode as rule 18 and rule 23.
+One tracked player still has no occurring alias: Noa Essengue.
+
+## 5 Nov 2026 — Lloyd + Kingy MAILBAG, saved to disk. Six of my open questions answered directly.
+
+Source: `fantasy/transcripts/2026-11-05_mailbag.txt` (50.5k chars, 67 indexed passages).
+**Attribution warning: this is a two-man show.** Adam "Kingy" King answers most of the
+roster-specific questions and Lloyd answers the strategy ones. Several verdicts below are
+Kingy's, and Kingy is NOT a tier-1 source under rule 26 — Lloyd is. Labelled per line.
+
+### 1. Dejounte Murray — the LEAD question, and it closes mine from earlier today
+Asker: *"What do I think Dejonte Murray's value is this season? Is he considered a sell
+high? Do we enjoy it and ride it out like PG?"*
+- **LLOYD (explicit, tier 1):** *"I don't really see the comparison to Paul George to be
+  honest… I think both of these guys are doing pretty much what I thought they would do."*
+  And: *"I don't think you're getting anything specific back for it. And for most sell
+  highs, most of the time it is about… just enjoying it."*
+- **KINGY:** *"any player that's playing well could be considered a sell high, but it's
+  whether someone will give you something in return that that makes it a sell high. I
+  don't think anyone will. So, I I would just be holding him."*
+- **KINGY on the trade risk:** *"Uh not that worried. I mean that those kind of three games
+  off for for a kid were kind of weird."* -> **he does not know those three games were
+  paternity leave.** We established that this morning. So his "weird" is our known quantity
+  and the trade worry is softer than his, not harder.
+- **Verdict: HOLD, and it is the same verdict I gave this morning** (+0.06 against his own
+  level, no form case to sell on). Lloyd adds the market half I could not compute: the
+  reason not to sell is that **nobody pays for him**, not that he is about to improve.
+
+### 2. Anthony Davis — "is it still safe to hold on to AD or do you sell high?"
+This lands squarely on the user's availability thesis and on my pick-39 answer.
+- **LLOYD (explicit, tier 1):** *"nothing has changed regarding Anthony Davis. I thought
+  Anthony Davis could be a top 25 per game player. Anthony Davis is currently a top 25 per
+  game player. I thought that some of the injury concerns were overblown with Anthony
+  Davis. He has yet to be injured. My assessment of him has not changed in the slightest."*
+- **LLOYD on selling:** *"I would move him if you could get a a top 20, top 15 player, but
+  I don't think anyone's giving you that for Anthony Davis because everyone knows about the
+  injury risk."* -> **the market will not pay the AD premium.** Same structure as Dejounte.
+- **KINGY:** drafted him again this season; *"I view him as that guy that has top 20
+  upside. don't think he has first round upside like he used to, but um certainly top 20,
+  top 25."* -> **this is independent confirmation of the user's "ad was act supposed to be
+  higher"**: the market moved him from round 1 to round 5 (we paid 39) on exactly this.
+- **KINGY on the ankle:** *"He he did injure his ankle yesterday. He left the game uh at
+  least once if not twice, but but managed to play through it. So that's definitely
+  something to monitor."* -> ESPN still reads **DAY_TO_DAY** as of 22:30 PST 5 Nov.
+- **THE 82-GAME QUOTE IS CONFIRMED BY BOTH, AND KINGY DOES NOT BELIEVE IT.** Lloyd: *"he
+  said at the start of the year he was going to play every game, didn't he?"* Kingy:
+  *"Well, he's lying about that, but yeah, he did say that."* So the user's thesis is the
+  contrarian side of a disagreement the pros are having out loud — not a consensus read.
+  Nothing in Kingy's "lying" is evidence; it is prior, and 8-of-8 is the data against it.
+
+### 3. Matas Buzelis — a viewer asked to drop him. Lloyd said no, with a rank.
+- **LLOYD (explicit, tier 1):** asker says *"Matas sucks. Move him out of the top 120
+  please."* Lloyd: *"I will leave him where I have him, which is inside the top 100."*
+- **LLOYD on the role floor:** *"he's not losing his starting spot to Isaac Aoro. Leonard
+  Miller is not coming in and playing these minutes. It's not happening. He will get
+  better."* Also concedes the symptoms: *"He can't he can't control the ball. He can't
+  shoot. His usage is down."*
+- **LLOYD's price:** *"if someone kind of goes… I'll give you a top 60 player for him…
+  then I would do that. But I wouldn't just drop him or move him for a top 100 player."*
+- **KINGY:** *"he has been very disappointing… but I would say that the Bulls have been
+  very very terrible. So he's not alone on that island… his per 36 numbers are fine. Like,
+  it's just his minutes are down. He's played 30 minutes maybe twice."*
+  (Per-36 is exactly the reasoning rule 30 forbids us from USING, but it is a fair
+  description of the *mechanism*: minutes, not production.)
+- **Verdict: the user's "im not dropping him" is now backed by Lloyd EXPLICITLY.** And the
+  user's own reason — sunk draft cost — is the one reason Lloyd does *not* give. His reasons
+  are the starting job, the team context and reversion. Keep the decision, upgrade the why.
+- ⚠ Our grader has Buzelis at **AVOID** (rate down AND minutes down). That is the harshest
+  label on the roster and it directly contradicts Lloyd's top-100. The grader is measuring
+  8 games; Lloyd is holding a season-long rank. Rule 30: the screen points, it does not rule.
+
+### 4. Brandon Miller — TWO separate panic questions, and Lloyd is emphatic
+- **LLOYD (explicit, tier 1):** *"He's shooting 35% from the field on 33 usage. Coniple
+  just went down. I got a feeling he's probably not going to continue to be a 35% shooter.
+  So, it's only going to go up from here."* And: *"Trading when you're pissed off with
+  someone and selling them away is just a a great method for making your team worse."*
+- **LLOYD, second question:** *"I'd be so upset if I had a guy that was having 33 usage,
+  averaging 22 and five with three threes over a steal, hitting 86% from the line… that is
+  a gigantic bo[y low] opportunity… It hasn't even crossed my mind to trade him or drop him."*
+- **KINGY, with the number:** *"he's like 115th or something. I just went in and punted
+  field goal percentage… he's the 31st ranked player if you if you ignore field goal
+  percentage."*  (Category-league framing — see rule 24, do not import the rank. The
+  *mechanism* is what transfers: one broken input, and it is the self-correcting one.)
+- **Confirms Knueppel:** *"Coniple has done his hammy again"* — ESPN has **Kon Knueppel OUT
+  at CHA** right now. Miller's 33% usage has no competition and CHA host BOS tomorrow.
+- **This is the one place the mailbag BEATS our own read.** Our grader has Miller at
+  **HOLD, "within noise"** over 9 games. Lloyd calls it a *gigantic buy low*. Our log shows
+  why he is right and we are wrong: 19 / 9 / 40 / 73 / 56 / 31 / 50 / 24 / **3**. The mean
+  (33.9) is dragged by two single-digit shooting nights sitting next to a 73 and a 56.
+  **The grader averages the variance away; Lloyd prices the input that produced it.**
+
+### 5. Ryan Rollins — the exact watchlist question, answered
+Asker: *"Is Rollins still effective in his bench roll?"*
+- **KINGY:** *"Yeah, I think so. I thought he looked pretty good yesterday. Um he looks like
+  their best player a lot of the time to be honest."*
+- **LLOYD (explicit on the role):** *"It's been very disappointing with how they're using
+  him… even if he's coming off the bench um like he did yesterday, I think Barry's still
+  only played minutes in the low 20s. **Rollins closed the game.**"* And: *"we thought he
+  would be starting and and hopefully rolling at top 70 value. That's not the case. But
+  yeah, I still like Rollands. I'm not dropping him anywhere. And honestly, I think the
+  Bucks are just a mess like the Bulls. Things could change in a heartbeat over there."*
+- **LLOYD names it as unexplained:** *"why did Rollins get benched? Like that just sort of
+  came out of nowhere and minutes are a little bit more all over the place in Milwaukee."*
+- **"Barry's" = BRAYDEN BURRIES** — confirmed off the live MIL roster (G). NEW MANGLING.
+- **Resolves the open watchlist item "Rollins or Burries starts":** neither is settled, but
+  Burries is in the low 20s and **Rollins closed**, which is the minutes that matter.
+  Rollins on 4 Nov: 24 min, 13 pts, 9 reb, 5 ast, 1 stl, 1 blk, 4 TO = **36 fantasy points**
+  in 24 minutes, his second-best night of the season. The role bet is still live.
+
+### 6. Zach Edey — rest-of-season, with a minutes timeline and a foul admission
+Asker (via Lloyd): *"Where do you think Ed is rest of season?"* Lloyd first mocks the panic:
+*"This guy's trash. He can't even move… And then he had a double double with three blocks
+in 25 minutes yesterday. So again, let's settle down."*
+- **KINGY:** *"I think he's in that top 70 range… when he can hit 25 minutes, he'll be a a
+  double double with with two to three blocks uh and efficient. Um his free throws are
+  fine. So yeah, **it's been the minutes.** Uh there there have been **foul issues** as
+  well… He is coming off a significant foot injury for a dude that is massive… **I think
+  within a month barring if there's no setbacks he's probably up around that 25 26 minutes
+  a night every night.**"*
+- **Closes BOTH open Edey watchlist items in one answer** — the fouls are real and
+  acknowledged, and the minutes ceiling has a date on it (~early December).
+- Our log backs the mechanism exactly: 21 / 22 / 21 / 19 / 18 / 19 / **25** min, and the
+  25-minute game is his second-best of the year (37 fpts). He has never been given 26.
+- **And the unlock is already here:** ESPN has **Isaiah Stewart OUT at MEM**. Lloyd raised
+  Stewart in this very answer (*"apparently avoided serious knee injury… I guess Stuart's
+  missing a bit of time here"*). MEM host OKC tomorrow. Edey starts in a UTIL slot anyway.
+
+### 7. Wembanyama — the scoring-settings gap, now measured against Lloyd's own number
+- Asker: *"How many fantasy points did he end up on yesterday?"* **LLOYD: *"118, I think it
+  was. Yeah, 118."*** Our ESPN applied total for the same game is **133.0**.
+- **The 15-point gap is our bonus scoring, not a feed error** (OREB +1, DD +3, GP +1, and
+  Lloyd's Basketball Monster points default differs besides). Same shape as the 113-vs-133
+  note from the 4 Nov recap — and it means **Lloyd's "fantasy points" are never our
+  fantasy points.** Never compare the two numbers; compare rank language instead.
+- *"Should we all just give the chip to Webby manager at this point?"* Lloyd: *"he's not
+  even the number one ranked player, so I'm going to say probably not on that."*
+  (In OUR scoring he is 73.0/g and our best player by 11 a night. Rule 24 again.)
+
+### 8. Paul George — one clause only, and it is positive
+Only appears as the asker's comparison for Dejounte. Lloyd rejects the comparison but:
+*"I think both of these guys are doing pretty much what I thought they would do."*
+Not a sell-high call, not a buy. Doing-as-expected. (He is at 45.9/g for us, +9.0 over
+projection — so "as expected" from Lloyd is an overperformance in our scoring.)
+
+### 9. Zach LaVine — ⚠ NAME APPEARS, ZERO ANALYSIS
+He is named **only** in the "who is the most handsome NBA player" bit (*"yeah, Zack Lavine,
+I think"*). **This is exactly the rule-19 trap in its purest form** — a clean grep for
+"Lavine" in a 5 Nov transcript returns a hit that is about his face. Flagged in the header.
+
+### 10. Giannis — NOT IN THIS MAILBAG AT ALL. No wrist update here.
+(He played tonight: 31 min, 20 pts, 14 reb, 4 ast, **0 stl, 0 blk**, 4 TO, 7-13 FG, in a
+100-120 loss at Golden State = **41 fantasy points**, his worst night since 24 on 25 Oct.
+No injury designation at MIA on ESPN. The wrist is off the published report; the zero
+steals and zero blocks are a 8-point hole in our scoring and worth one more look.)
+
+### Lloyd's general-strategy lines worth keeping (both apply to our standing rules)
+- On panic trades: *"making panic trades and things early in the season, I I try not to do.
+  I try to wait give my team some time… because I drafted them for a reason."*
+- On correlation, answering why Giddey broke the rebounds/assists stability rule: *"089 is
+  not one. So that means there are always outliers… the correlations are are about mass
+  sample sizes and general takeaways that you can apply as a broad stroke and then you come
+  in with your little fine liner."*  **This is rule 30 in Lloyd's own words** — the model
+  sets the base coat, the player-specific look sets the finding.
+- On variance: *"One game where random stuff happens… Oh, who cares? Next one."* (rule 12)
+
+### 11. ADDENDUM, 5 Nov 2026 — user resolved all four of my wording questions, and one
+### of them turned out to be the most useful thing in the transcript.
+
+**(1) "the Superman color" = KEL'EL WARE (MIL C).** "Superman" is Lloyd's standing nickname
+for him. Corpus hits: `Superman` **6**, `Callware` 2, `Callaway` 1, `Superman wear` 1,
+`Ware` 1 — and **his real name returned ZERO**, so every search I have ever run for him came
+back empty. Fourth alias hole in three days (after Reed, Paul George, Fears, Kyshawn George).
+
+**Why it matters for MY roster — Ware is on MILWAUKEE, which is the Rollins question.**
+Reading the full passages (rule 19 — both sides, not the snippet):
+- 22 Oct, MIL recap: *"I just don't think that Burries is going to do enough to be a 12 team
+  league guy. And then I guess we talk about Superman. Um 14 minutes and he fouled out… That
+  is clearly not good enough… I will use this as notification to you or remembering that
+  Eric B is not a bad coach. He didn't limit [Ware] because he doesn't know what he's doing."*
+- 29 Oct, Rockets-Bucks: *"[Turner] didn't get benched because Superman was playing well. In
+  fact, Callaway was bad again."*
+- 29 Oct mailbag: *"how many more chances do you give Superman wear? Again, we are 8 days
+  into the season. There is 95% of the season left. It is not looking good."*
+- 5 Nov mailbag, the question itself: *"Can the Superman color turn it up? It seems like his
+  coach hates him."* Lloyd: *"if every coach looks at him in the same way… then maybe it's
+  not the coach's fault, does the coach hate him, or does he just not play well? And I think
+  at the moment you're leaning towards he does not play well."* Kingy: *"He's been very
+  disappointing. We thought he'd play more here in Milwaukee and he hasn't."*
+
+⚠ **I ALMOST MISATTRIBUTED INSIDE THIS VERY PASSAGE.** In the 29 Oct line *"Kyle Kosma has
+also been good in most games. And like Rollins, he was benched and only played 18 minutes,"*
+the "he" is **KUZMA, not Ware.** I read it as Ware on the snippet. Rule 19 again, and this
+time reading both sides caught it before it reached the user.
+
+**THE ACTUAL FINDING: Milwaukee has benched Rollins, Kuzma, Turner AND Ware.** That is four
+different rotation players demoted inside two weeks, which is what Lloyd means by *"minutes
+are a little bit more all over the place in Milwaukee"* and *"the Bucks are just a mess like
+the Bulls. Things could change in a heartbeat over there."*
+**This REFRAMES the Rollins bet in our favour.** His benching is not a Rollins-specific
+verdict on Rollins — it is one instance of a team-wide churn, in a rotation where the coach
+has benched his starting centre and his best veteran forward too. A player-specific demotion
+is a role problem; a team-wide churn is noise that resolves. And the competition is thin:
+Burries is in the low 20s and Lloyd does not rate him (*"I just don't think that Burries is
+going to do enough to be a 12 team league guy"*), while **Rollins closed the game.**
+
+**(2) The Edey "24 25 a night" line IS about Edey, and Stewart's injury is the ENABLER.**
+User verbatim: *"they are saying that stuart injury will allow edey to possible ramp up
+more."* So Kingy's *"within a month… 25 26 minutes a night every night"* is not a standalone
+projection — **it is conditional on the Memphis frontcourt being short, and it is short
+right now** (Stewart OUT on the ESPN report, MEM host OKC on 6 Nov). The timeline could
+therefore arrive EARLIER than "within a month" rather than later. Edey's 25-minute game is
+already his second-best of the year at 37 fantasy points.
+
+**(3) Sacramento manglings — user said ignore.** Marked IGNORE in the transcript header.
+
+**(4) "Yousef Nerkish"/"Nerkage" = JUSUF NURKIC.** 6 corpus hits on `Nerkage` going back to
+23 Oct (*"Ysef Nerkage, who again is injured to start the season, we're not drafting him in
+the top 120"*), real name returns ZERO. Not mine, no action — but note Lloyd ties his ramp
+to Edey's explicitly: *"that ramp up is going to be much like with with Zack Edy. It's a
+foot injury… It's a foot injury for a big guy."* Independent support for the Edey timeline.
+
+**Alias table: 224 → 242.** Also added this session: `Deontay Murray`, `Masalis`, `Bizales`,
+`Rollands`, `Webby`, and **`Burries` — 10 hits, Rollins's direct competition, and he had
+never been in the table at all.**
+
+### 12. ADDENDUM 2, 5 Nov 2026 — user sent me back to the 2 Nov buy-low show, and corrected
+### an overstatement of mine about tomorrow's lineup.
+
+**(a) Lloyd called ROLLINS a BUY LOW on 2 Nov — explicit, tier 1, three days before the add.**
+I had logged him only as one of six "rapid-fire" names and never recorded the verdict. He is
+named **first** in Chapter 9: *"Ryan Rollins currently 188th. It's annoying the way the
+minutes are up and down, but that's a bo[y low]."* The mechanism Lloyd names — **minutes up
+and down, not production** — is precisely what has since played out. Three independent reads
+now point the same way: the 2 Nov explicit buy low, the 5 Nov mailbag (*"Rollins closed the
+game"*, *"I'm not dropping him anywhere"*, Burries only low-20s), and the Milwaukee churn.
+Same segment on **Edey**: *"I don't believe [he] is going to stay as a 20-minute a night
+player. They're going slow on him. People think he's just trash… I thought he could be a top
+60 player this season."* So the mailbag's 25-26 minute call is a **standing four-day read**,
+not a single-show reaction — which upgrades it under rule 26 from tier-2 inference to a
+consistent tier-1 position.
+**Lesson for the log: recording that a player was "mentioned" is not recording the verdict.**
+A rapid-fire segment is where Lloyd states a buy low in one clause, and I filed the clause
+away as a list entry.
+
+**(b) THE BACK-TO-BACK — user raised it, and it reverses which night is dangerous.**
+WSH @ ATL 6 Nov, then **WSH @ OKC 7 Nov**. Both road. ESPN still `Day-To-Day`, no published
+detail, last touched 22:51Z on 5 Nov.
+- 6 Nov: **10 playable for 10 slots** -> losing AD = one empty UTIL.
+- 7 Nov: **3 playable for 10 slots** (Davis, Amen, Wembanyama only) -> losing AD = a third
+  of an already-bare board.
+**So the 7th is the expensive leg, not the 6th.** And it is the first real test of the
+user's availability thesis: **none of the 8-for-8 games was a road back-to-back on a bad
+ankle.** Both legs played is stronger evidence than everything we have so far; the OKC leg
+missed is the first genuine point against the 82-game claim.
+
+**(c) CORRECTION — I overstated tomorrow's risk.** I told the user that without AD "the PF/F
+pair cannot both be filled." **Wrong.** Re-derived from `eligibleSlots`: the nine remaining
+bodies fill every positional slot and only one UTIL empties — `PG Dejounte · G Rollins ·
+SG Coward · SF Miller · PF Paul George · C Wemby · F Murray-Boyles · UTIL LaVine · UTIL Edey
+· UTIL —`. **Paul George carries slot 3 and Murray-Boyles carries slot 6.** I had the dump in
+front of me and read it wrong. Consequence: an AD scratch on 6 Nov costs roughly a
+replacement body, **not a positional forfeit, and therefore does not justify the last add.**
+
+---
+
+## 6 Nov 2026 — Josh Lloyd, Locked On Fantasy: RECAP OF THURSDAY 5 NOV (two games)
+
+Pasted by the user 6 Nov. Transcript saved to `fantasy/transcripts/2026-11-05_recap-thursday.txt`
+(328 lines / 45,688 chars, gitignored). Lloyd solo, no Kingy — so **everything here is
+tier-1-eligible attribution**, unlike the 5 Nov mailbag where Kingy answered most roster
+questions. Slate was ORL@PHX and MIA@GSW. **Only one of my 14 played.**
+
+### 1. Giannis — the only one of mine who played, and Lloyd flags the same hole we did
+Verbatim: *"What about Yanni, the big fella? 20 and 14, four assists. It's not it's not his
+best obviously. Um it's not bad, but we want a little bit more. No defensive stats. The free
+throws were okay without being great. It was fine."*
+
+Our log matches to the digit: 31 min, 20 pts, 14 reb, 4 ast, **0 stl, 0 blk**, 4 tov, 5-7 FT,
+**41.0 fpts** against a 62.25/g season rate. Independently we had already flagged the zeros as
+roughly an 8-point hole in this scoring (STL and BLK pay +4). Lloyd reaching the same
+conclusion off the box score is corroboration, not new information — **and he does not treat
+it as a worry.** "It was fine" on a loss where Miami was blown out 100-120 on the back half of
+a back-to-back. No wrist mention anywhere, which is the third consecutive show with no wrist
+mention. Treat the wrist as closed.
+
+### 2. Murray-Boyles — the one genuinely ACTIONABLE line, and it is about TONIGHT
+Verbatim: *"Scott Barnes, who was hobbling around last game, was questioned before last game
+and didn't look great. He is questionable now. Again, I wouldn't be shocked if there is a day
+off for Barnesy coming up at some point. So, if he is out, that should mean a lot more Colin
+Murray Boils. It should mean a lot more for everyone else to do usage-wise."*
+
+**Verified against ESPN the same morning: Scottie Barnes is `Day-To-Day`, dated 2026-11-06.**
+Kyle Anderson also Day-To-Day, Kawhi Leonard Out, Nate Bittle Out. Murray-Boyles himself is
+clean. Toronto plays at Milwaukee tonight.
+
+This is a **conditional**, not a verdict — rule 26 tier 2 at best. Lloyd says "if he is out."
+But it lands on a player whose minutes were already climbing on their own: 20 / 18 / 19 / 15 /
+23 / 20 / **28 / 23** over eight games, and his touches are the one axis clearly above his own
+projection. Our own signal on him is **BUY (usage up)**, which is the independent read.
+What this changes: nothing about whether to start him — he was already in tonight's F slot.
+It raises his ceiling for one night, it does not raise his floor.
+
+### 3. Brandon Miller — Lloyd's #1 Friday watch item, and a rule-19 trap I nearly walked into
+The closing segment: *"So what am I watching for on Friday's games? Can Brandon Miller ever
+shoot?"* — said twice.
+
+**Read in isolation that sounds like doubt. It is not.** The same day, in the mailbag, Lloyd
+twice called Miller a buy: *"He's shooting 35% from the field on 33 usage. Coniple just went
+down. I got a feeling he's probably not going to continue to be a 35% shooter. So, it's only
+going to go up from here"* and *"that is a gigantic bo[y] opportunity."* The Friday watch item
+is him needling a percentage he expects to normalise. **I wrote "skeptical, not bullish" into
+the transcript header on first pass and had to correct it — exactly the failure rule 19
+describes: the words were real, the subject's framing was not.**
+
+And his mechanism checks out in data I pulled independently: **Kon Knueppel is OUT (5 Nov) and
+Dennis Schroder Day-To-Day**, with Grant Williams and Moussa Diabate also down. Miller's volume
+is not at risk tonight.
+Our numbers agree with the direction and are blunter about the shape: 33.9/g over 9 games on
+32.9 mpg, with a log of **19 / 9 / 40 / 73 / 56 / 31 / 50 / 24 / 3**. Strip the 3 (4 Nov, 2-for-15)
+and he is 37.8/g. FG% 43.5% last season → 37.8% now on FGA up 16.1 → 22.5. **The volume is
+real and the conversion is the only broken part** — which is Lloyd's point, arrived at from the
+other direction. He plays Boston tonight, i.e. against my own Paul George.
+
+### 4. Wembanyama — two mentions, BOTH colour, neither quotable as analysis
+(1) Inside the **Kalshi sponsor read**: the MVP market has *"Victor Wmanyama and Luca Donuch
+both equal at 35%"*. That is an ad segment, not a Lloyd opinion. (2) A Portland aside: *"I
+thought for sure Williams would have been out Friday and matched up against WBY on Saturday,
+but apparently not."* That is about Robert Williams's rest, not about Wemby.
+**Logged specifically so a future search does not mistake either for a Wembanyama read.**
+
+### 5. Not discussed at all — and this is the useful half of a 2-game recap
+Anthony Davis, Dejounte Murray, Paul George, Amen Thompson, Coward, Edey, Buzelis, Rollins,
+LaVine, Keegan Murray: **zero mentions, because their teams did not play.** No new information
+on AD's ankle from Lloyd. The ankle question is still answered only by the Washington injury
+report, which as of this morning still reads `Day-To-Day`, dated 5 Nov — i.e. **not refreshed
+today.**
+
+### 6. Two near-misses worth recording, both "not mine despite the name"
+- **"Jaylen Green"** in this recap is on the **PHOENIX SUNS**, and Lloyd buries him (*"I think
+  he sucks"*, 200th in category leagues). Nothing to do with Amen Thompson or Houston.
+- **"Klay Thompson"** is on **MIAMI** here — his revenge game against Golden State, 11 pts in
+  23 min for 18 fpts, and Lloyd stands by *"he's not a 12 team guy."* He is Giannis's teammate,
+  not a Warrior, and the Heat section covers Giannis, Adebayo, Klay, Wiggins, Portis, Hardaway,
+  Conwell and Larsson — **with no mention of Kel'el Ware at all.**
+
+### 7. Addendum: a THIRD total retrieval hole, found the same way as Superman and Burries
+`Kon Knueppel` returned **0 hits** on every spelling we had. The captioner writes **"Coniple"**,
+which returns **11**. He is Brandon Miller's Charlotte teammate, so every one of those 11
+passages was load-bearing for a player on my roster and all 11 were invisible.
+Added. Also added this show's manglings: `Wmanyama` (3) and `WBY` (3) for Wembanyama,
+`Barnesy` (4) for Scottie Barnes — tracked **only** because Barnes's absence drives
+Murray-Boyles's usage — and `France Vagner` (3) for Franz Wagner.
+Alias table 242 → **248**; player-attributed notes **1,117**; index **3,459 passages /
+~403k words**. Rebuild order followed: `index_lloyd.py` → `aliases.py` → `split_players.py`.
+
+### 8. Unresolved wording — asked the user
+- **"a kitten Wagler" / "Waggler"** — a most-dropped player, minutes down, *"Struus is there.
+  Bill and Ingram are coming at some point,"* living on free throws, *"not a 12 team league
+  guy."* If that rotation is **New Orleans**, it bears on Dejounte Murray's usage; if not it is
+  noise. Cannot resolve it from the captions.
+- **"the Daim Mara" / "Pig Williams is out" / "Bennett Stirts"** — Friday watch item 4, team
+  never stated. **"Kingston Flemings"** — most-added player, team never stated.

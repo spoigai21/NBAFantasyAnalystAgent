@@ -1,5 +1,610 @@
 # Watchlist
 
+# ⏰ 6 NOV 2026 — THURSDAY RECAP LOGGED. TONIGHT IS A 10-OF-10 NIGHT.
+
+Source: `fantasy/transcripts/2026-11-05_recap-thursday.txt` (Lloyd solo, no Kingy, so
+tier-1-eligible attribution throughout). Recap of a 2-game Thursday — **only Giannis of my
+14 played.** The useful content is the Friday-facing news, not the recap.
+
+### ✅ TONIGHT'S LINEUP IS CONFIRMED CORRECT — nothing to change
+9 games on (verified off the public scoreboard, matching Lloyd's "nine games on"). **Exactly
+10 of my 14 play, and they are exactly the 10 I planned to start.** No slot sits idle, so the
+bench costs nothing tonight.
+
+| Slot | Player | Game |
+|---|---|---|
+| PG | Dejounte Murray | MIN @ NO |
+| G | Ryan Rollins | TOR @ MIL |
+| SG | Cedric Coward | OKC @ MEM |
+| SF | Paul George | BOS @ CHA |
+| PF | Anthony Davis | WSH @ ATL |
+| C | Victor Wembanyama | SA @ SAC |
+| F | Collin Murray-Boyles | TOR @ MIL |
+| UTIL | Brandon Miller | BOS @ CHA |
+| UTIL | Zach LaVine | SA @ SAC |
+| UTIL | Zach Edey | OKC @ MEM |
+
+Bench (no game): **Giannis** (MIA), **Amen Thompson** (HOU), **Buzelis** (CHI). Keegan Murray IR.
+⚠ Two **internal head-to-heads**: Paul George vs Brandon Miller, and CMB vs Rollins. Both
+pairs are in my starting ten, so one of each pair scoring well partly comes at the other's
+expense. Nothing to do about it — just do not read a quiet night from either as a signal.
+
+### 🔴 TRIGGERS FOR TONIGHT, in priority order
+1. **Anthony Davis — the Washington report has NOT refreshed.** Still `Day-To-Day` **dated
+   5 Nov**. First leg of the road back-to-back is tonight at Atlanta. **Check again before
+   tip-off.** Lloyd gives nothing here — Washington did not play Thursday, so AD gets zero
+   mentions in the recap. The ankle is answerable only off the injury report.
+2. **Scottie Barnes is `Day-To-Day` (dated 6 Nov) → Murray-Boyles ceiling up.** Lloyd: *"if
+   he is out, that should mean a lot more Colin Murray Boils."* Kyle Anderson also Day-To-Day,
+   Kawhi Out, Bittle Out; CMB clean. This is **conditional** — it raises his ceiling for one
+   night, not his floor, and does not change the start/sit. His minutes were already climbing
+   on their own: 20 / 18 / 19 / 15 / 23 / 20 / **28 / 23**.
+3. **Brandon Miller's volume is protected.** Kon Knueppel **OUT** (5 Nov), Dennis Schroder
+   Day-To-Day, Grant Williams and Moussa Diabate also down. Lloyd's #1 Friday watch item is
+   *"Can Brandon Miller ever shoot?"* — **and that is needling, not doubt** (see below).
+   Watch the **FG%**, not the fantasy total: the volume is already there (22.5 FGA/g), the
+   conversion is the only broken part (43.5% → 37.8%).
+4. **Edey's minutes, not his points** — 26+ confirms the ramp. Carried over, still open.
+
+### ⚠ RULE-19 CORRECTION I MADE TO MYSELF TODAY
+I first wrote into the transcript header that Lloyd's *"Can Brandon Miller ever shoot?"* was
+**"skeptical, not bullish."** That was wrong, and reading the other side is what caught it.
+The same day in the mailbag Lloyd twice calls Miller a **buy**: *"Coniple just went down. I got
+a feeling he's probably not going to continue to be a 35% shooter. So, it's only going to go up
+from here"* and *"that is a gigantic bo[y] opportunity."* The words were real; the framing I put
+on them was mine. Header corrected.
+
+### 🔧 THIRD TOTAL RETRIEVAL HOLE — `Kon Knueppel` → 0 hits, `Coniple` → 11
+Same failure class as `Superman` (Ware) and `Burries`. Knueppel is Brandon Miller's teammate,
+so **all 11 invisible passages were load-bearing for a player on my roster.** Added, plus
+`Wmanyama`/`WBY` (Wembanyama), `Barnesy` (Scottie Barnes — tracked only because his absence
+drives CMB), `France Vagner` (Franz Wagner). Alias table 242 → **248**, notes **1,117**,
+index **3,459 passages**.
+
+### ❓ WORDING I COULD NOT RESOLVE — one of these could matter
+- **"a kitten Wagler" / "Waggler"** — a most-dropped player, minutes down, *"Struus is there.
+  Bill and Ingram are coming at some point,"* living on free throws, *"not a 12 team league
+  guy."* **If that rotation is New Orleans it bears on Dejounte's usage;** otherwise noise.
+- **"the Daim Mara" / "Pig Williams is out" / "Bennett Stirts"** (Friday watch item 4) and
+  **"Kingston Flemings"** (most-added) — teams never stated, and neither looks roster-relevant.
+
+
+# ⏰ 5 Nov 2026 (late) — MAILBAG ANSWERED SIX OF THESE. Closing them out.
+
+**Tonight was a 2-game slate** (ORL@PHX, MIA@GSW) and only **Giannis** played: 31 min,
+20/14/4, **0 steals 0 blocks**, 4 TO, 7-13 FG = **41 fantasy points** in a 100-120 loss at
+Golden State. Matchup vs Top G is **845-740, +105, still open** (`totalPointsLive`).
+
+### CLOSED by the 5 Nov mailbag (`fantasy/transcripts/2026-11-05_mailbag.txt`)
+- ~~Is Dejounte a sell high?~~ **No.** Lloyd + Kingy both HOLD. The reason is the market,
+  not the form: *"I don't think you're getting anything specific back for it."* Kingy still
+  thinks the 3 missed games were "weird" — **we know they were paternity leave,** so our
+  base rate for future absences is lower than his.
+- ~~Rollins or Burries starts?~~ **Unsettled, and it does not matter yet.** Lloyd: *"Barry's
+  still only played minutes in the low 20s. Rollins closed the game."* ("Barry's" =
+  **Brayden Burries**, confirmed off the live MIL roster — new mangling, now in aliases.)
+  Lloyd is *"not dropping him anywhere"*; calls MIL minutes *"all over the place."*
+- ~~Edey's fouls / minutes ceiling?~~ **Both confirmed, with a date.** Kingy: *"it's been the
+  minutes… there have been foul issues as well… within a month barring no setbacks he's
+  probably up around that 25 26 minutes a night every night."* Top-70 rest of season.
+- ~~Buzelis: hold or drop?~~ **HOLD, now backed by Lloyd explicitly** — *"inside the top
+  100"*, *"he's not losing his starting spot"*, sell only for a top-60 player. Note our own
+  grader says **AVOID** (rate down AND minutes down); that is the sharpest disagreement on
+  the roster and Lloyd is working off a season rank, we are working off 8 games.
+- ~~AD: sell high?~~ **No.** Lloyd: *"nothing has changed… top 25 per game player… He has
+  yet to be injured."* Would move him only for a **top-15/20** player and says nobody will
+  pay that. Kingy independently prices him **top 20-25, not first round** — which is the
+  market confirmation of the user's "supposed to be higher."
+- ~~Brandon Miller: trade him?~~ **Absolutely not — BUY MORE.** Lloyd: *"a gigantic bo[y
+  low] opportunity… It hasn't even crossed my mind to trade him or drop him."* One broken
+  input (FG%), 33% usage, **Knueppel OUT again with the hamstring** (ESPN confirms).
+  ⚠ Our grader says HOLD/"within noise" over 9 games — **it is wrong here and Lloyd is
+  right.** His log is 19/9/40/73/56/31/50/24/3; the mean hides the shape.
+
+### TOMORROW, 6 NOV — 9 games, and it is a 10-FOR-10 night. Set this lineup.
+Giannis (MIA), Amen (HOU) and Buzelis (CHI) **have no game.** Keegan Murray stays on IR.
+Everyone else plays, which is exactly 10 bodies for 10 scoring slots — **no bench waste,
+but also zero slack if anyone is ruled out.**
+
+| Slot | Player | Game |
+|---|---|---|
+| PG | Dejounte Murray | MIN @ NO |
+| G | **Ryan Rollins** (in for Amen) | TOR @ MIL |
+| SG | Cedric Coward | OKC @ MEM |
+| SF | Paul George | BOS @ CHA |
+| PF | **Anthony Davis** (move up from F) | WSH @ ATL |
+| C | Victor Wembanyama | SA @ SAC |
+| F | **Collin Murray-Boyles** (in for Giannis's slot knock-on) | TOR @ MIL |
+| UTIL | Brandon Miller | BOS @ CHA |
+| UTIL | Zach LaVine | SA @ SAC |
+| UTIL | Zach Edey | OKC @ MEM |
+
+Three moves: **bench Giannis and Amen, start Rollins and Murray-Boyles, slide AD from F to
+PF.** Verified against `eligibleSlots` — CMB carries slot 6 (F), so the F slot is legal.
+
+### STILL OPEN — dated triggers
+- ⚠ **AD's ankle is STILL `DAY_TO_DAY` on ESPN** as of 22:30 PST 5 Nov, and Kingy flagged
+  it unprompted: *"that's definitely something to monitor… just to see if that flared up
+  and he misses a couple of games here."* **Check the WAS report before tip-off at ATL.**
+  ⚠ **AND IT IS A ROAD BACK-TO-BACK — the user raised this and it reverses which night
+  is dangerous.** WSH @ ATL on 6 Nov, then **WSH @ OKC on 7 Nov**, both away.
+
+  ⚠ **CORRECTION to the first version of this bullet:** I wrote that without AD "there is
+  no 11th body — the F or PF slot goes empty." **That is wrong**, re-derived from
+  `eligibleSlots`: the nine remaining bodies fill every *positional* slot and only one UTIL
+  empties — `PG Dejounte · G Rollins · SG Coward · SF Miller · PF Paul George · C Wemby
+  · F Murray-Boyles · UTIL LaVine · UTIL Edey · UTIL —`. **Paul George carries slot 3 and
+  Murray-Boyles carries slot 6.** So an AD scratch on 6 Nov costs roughly a replacement
+  body, **not a positional forfeit — and therefore does NOT justify the last add.**
+
+### ⚠⚠ 7 NOV IS THE EXPENSIVE NIGHT, NOT THE 6TH
+7 Nov is a 7-game slate (DEN@IND, BKN@ATL, NY@CLE, WSH@OKC, ORL@GS, HOU@PHX, SA@POR) and
+**only THREE of my players are on it: Anthony Davis, Amen Thompson, Victor Wembanyama.**
+- 6 Nov: 10 playable for 10 slots -> losing AD costs **one** empty UTIL.
+- 7 Nov: **3 playable for 10 slots** -> losing AD costs **a third of an already-bare board.**
+
+**And the second leg is the real test of the availability thesis.** None of his 8-for-8
+games was a road back-to-back on a bad ankle. **Both legs played is materially stronger
+evidence than the 8-of-8 we already have.** The OKC leg missed is the first genuine point
+against "I want to play all 82" — and it lands on 7 Nov, not tomorrow.
+
+### STILL OPEN (continued)
+- **Giannis's wrist is off the published report** (no MIA injury designation) but he put up
+  **0 steals and 0 blocks in 31 minutes** tonight — 8 points of our scoring, and the first
+  time all season he has zeroed both. Watch the next MIA game, not this one.
+- **Trey Murphy III is `DAY_TO_DAY` at NO** — the third variable in the Dejounte/Fears
+  cross-tab (rule 12). Dejounte plays MIN tomorrow; if Murphy sits, Dejounte's usage rises.
+- **Isaiah Stewart is OUT at MEM** — Edey's minutes unlock, and Lloyd raised it himself in
+  the Edey answer. MEM host OKC tomorrow. Watch whether Edey finally clears 26 minutes.
+- **Knueppel OUT at CHA** — Miller's usage has no competition. CHA host BOS tomorrow, so
+  Miller and Paul George are in the same game on opposite sides.
+- **Dejounte trade risk** — deadline 11 Feb 2027. Kingy *"not that worried."* No action.
+- ~~UNRESOLVED WORDING~~ **RESOLVED by the user: "the Superman color" = KEL'EL WARE (MIL C),
+  and it changes the Rollins read for the better.** "Superman" is Lloyd's nickname for him
+  — 6 corpus hits, real name returns ZERO, fourth alias hole in three days. Reading the
+  full passages: **Milwaukee has benched Rollins, Kuzma, Myles Turner AND Ware** inside two
+  weeks. So Rollins's demotion is **not a verdict on Rollins** — it is one instance of a
+  team-wide churn, which is what Lloyd means by *"the Bucks are just a mess… Things could
+  change in a heartbeat."* And the competition is thin: Lloyd on **Brayden Burries**
+  ("Barry's", 10 corpus hits, also never in the alias table) — *"I just don't think that
+  Burries is going to do enough to be a 12 team league guy."* **HOLD Rollins with more
+  confidence than this morning, not less.**
+- **AND LLOYD CALLED ROLLINS A BUY LOW ON 2 NOV, THREE DAYS BEFORE THE ADD** — the user sent
+  me back to the buy-low show, where I had logged him as a "rapid-fire" name and never
+  recorded the verdict. He is named **first** in that segment: *"Ryan Rollins currently
+  188th. It's annoying the way the minutes are up and down, but that's a bo[y low]."* The
+  mechanism he names — minutes, not production — is exactly what has played out. **Three
+  independent reads now align on Rollins.** Same segment on Edey: *"I don't believe [he] is
+  going to stay as a 20-minute a night player. They're going slow on him… I thought he
+  could be a top 60 player"* — so the 25-26 minute call is a **four-day-old standing read**,
+  not a one-show reaction.
+- **Edey's 25-26 minute timeline is CONDITIONAL on Stewart, per the user** — *"stuart
+  injury will allow edey to possible ramp up more."* Stewart is OUT *now* and MEM host OKC
+  tomorrow, so the ramp may land **earlier** than Kingy's "within a month." Edey has never
+  been given 26 minutes (21/22/21/19/18/19/**25**). **Watch his minutes tomorrow, not his
+  points** — 26+ is the trigger that confirms it.
+
+# ⏰ 5 Nov 2026 — board changed this morning. Reed out, Rollins in, ONE add left.
+
+**What happened before I looked:** ESPN `mTransactions2`, 07:51 today — **DROP Paul Reed,
+ADD Ryan Rollins**, plus a LaVine lineup edit. Fears is also off the roster. So last
+night's pre-committed execution (drop Buzelis → add Fears) now sits on a different board.
+`matchupAcquisitionTotals` = **{1:2, 2:1, 3:2}** → **1 add remaining this matchup period.**
+Roster is **13 active (full)** + Keegan Murray on IR, so any add still costs an active body.
+
+## TONIGHT, 5 Nov — 2-game slate, and only Giannis plays
+- ⚠ **Giannis: right wrist.** Lloyd, 4 Nov: *"Yanni came in probable with a wrist issue.
+  He seemed to be grasping at it quite a bit."* Played 41 min, 27/4/6, 3 blk, 2 stl.
+  Our feed shows **nothing** — fantasy `injuryStatus` ACTIVE, public MIA roster endpoint
+  returns an **empty** injuries array (rule 27 blind spot). No MIA @ GS report published
+  yet. **Trigger:** check the final report before tip; the tell is free throws — he shot
+  "elite free throws" with it, which is the opposite of a limiting wrist.
+- He is in the PF slot already. Nothing else to set tonight.
+
+## TOMORROW, 6 Nov — 9 games, and 10 of my players are in them
+Playing: Wemby (SA@SAC), AD (WSH@ATL), Paul George + Brandon Miller (BOS@CHA), Coward +
+**Edey** (OKC@MEM), CMB + **Rollins** (TOR@MIL), Dejounte (MIN@NO), LaVine (SA@SAC).
+**Not playing: Giannis, Amen, Buzelis** (Chicago has one game in five nights).
+→ **That is exactly 10 playable bodies for 10 slots, and all of them fit.**
+  PG Dejounte · G Rollins · SG Miller · SF Coward · F LaVine · PF AD · C Wemby ·
+  UTIL George · UTIL Edey · UTIL CMB.
+  **Action: move Giannis, Amen and Buzelis to the bench and start Edey + Rollins.**
+  Leaving the slate as-is costs three zero-scoring starters.
+- **Standing leak, independent of tomorrow:** **Edey 27.3/g is benched while CMB 22.6/g
+  starts at UTIL**, and both are UTIL-eligible — **−4.7/g on any night both play.** Lloyd
+  on Edey, 4 Nov, verbatim: *"If someone dropped Zack Edit, I hope it wasn't you. Go and
+  add him."* Tier-1 explicit on a player we own.
+
+## FEARS — trigger still armed, but REPRICED
+Lloyd supplied the control I missed, unprompted: *"We didn't need to worry about that
+because **Trey Murphy just decided to sit this one out instead**."* And he refuses to
+project the resolution: *"I don't really know which direction they're going to go with
+it."* On the game: *"19 and six… didn't shoot well, but **that's good enough**."*
+- **Murphy is now listed DAY-TO-DAY on ESPN's NOP report, dated today, 5 Nov** — one day
+  before NOP hosts MIN. So trigger (2) is live but soft.
+- **What changed the price:** we now own **Rollins**, who is the same archetype — bench
+  guard, 25.1/g, **usage 1.17 (25.1% vs 21.5% proj)**, mins 0.89. Lloyd: *"He's close to
+  their best player."* We bought the Fears bet in a different wrapper this morning.
+- **So: spend the last add only on trigger (1), Dejounte actually being traded.** Deadline
+  11 Feb 2027. Fears is unowned across all 9 teams, so the race risk is low until a trade
+  hits the wire.
+- **Buzelis is no longer a free drop.** Lloyd, 4 Nov, explicit: *"what is the benefit of
+  dropping him to add who?… I have to give it more time than this."* Rule 26 grading: this
+  is **tier 2, not tier 1** — his stated alternative was Braden Burries, not Fears. But
+  "lost all confidence" is the **rate** axis, the only one that reverts, and he keeps the
+  starting job. **Hold.**
+
+## DEJOUNTE — Lloyd independently reaches "inquire"
+*"A huge game. Could you use one game like that to sell high on him? Probably not, but
+**at least inquire about it**."* Three lines now agree: our usage trend
+(27.4 → 26.5 → 22.9 → 20.1 → **13.3%**), Lloyd's instinct, and the In The N.O./SI trade
+reporting. Keep the distinction — he is explicit about **inquiring**, not selling, and the
+45-minute game was overtime with Murphy out. **Trigger:** usage under ~18% for two more
+games, or any trade report.
+
+## Carried forward
+- **Anthony Davis — ankle.** Lloyd: *"tweaked his ankle… a bit of a trip to the locker
+  room, but in the end he was fine. He played through it."* 26/10, 3 blk, high usage. Next
+  game 6 Nov at Atlanta. Watch the report.
+- **Rollins's role** — Milwaukee has started rookie Braden Burries over him two games
+  running. Our trend has him declining per minute (first 3 games 1.0 fpts/min → last 3
+  0.867). His 36-point 4 Nov game is **missing from `game_grades`** (rule 27 backfill gap).
+  **Trigger:** does he start, or does Burries keep the job?
+- **Edey's fouls ≤ 3** — Lloyd names the same gate we did. 3 fouls → 25 min.
+- **Amen's minutes are fine; the rate is not.** Lloyd *"very worried"*, and he rules out
+  the VanVleet story with evidence. Our mechanism: blocks 1.3 → 0.6 → 0.25, collapse was
+  **last season**. Ceiling markdown ~−1.4/g, not a slump.
+- **CMB holding the start** — confirmed started by three sources now. Poeltl at 19 min off
+  the bench is not a threat: *"very hard for me to look at Purle… to consider that a must
+  roster player."*
+
+---
+
+
+## ⏰ STANDING TRIGGER — add Jeremiah Fears. Pre-committed 4 Nov 2026.
+
+**User's call, reaffirmed after I pushed back twice:** *"regardless fears has shown he has
+potential and dejounte could be traded as well if he does get traded he is a must."*
+Executing it. And a correction in his favour: I told him the trade premise had **no current
+sourcing**. A better-aimed search found that it does.
+
+**What the beat is actually saying (within ~the last week):**
+- **Shamit Dua, In The N.O.** — the Pelicans and Murray *"may want to go their separate
+  ways,"* and **Murray's presence could complicate New Orleans' plans involving Jeremiah
+  Fears.**
+- **Sports Illustrated** — Murray *"can help off the bench while Jeremiah Fears leads the
+  starters."*
+
+That is the mechanism stated by beat sources, not my inference. **My earlier "nothing newer
+than Feb 2026" was a search failure, not an absence of evidence** — rule 18 in a new costume.
+
+**Likelihood caveat, stated straight:** SI also notes Murray is 30, has an Achilles rupture
+in his history, and holds a player option for 2027-28, so the market *"may offer few
+attractive solutions."* Deadline is **11 Feb 2027**; most offseason signees become tradeable
+15 Dec. The window is wide and the probability is unknowable — **which is exactly why a free
+option is the right structure**, not a conviction bet.
+
+### What he's worth as a starter — with the outlier called out
+
+In the three Dejounte-out games: **141 fpts on 98 minutes = 1.439 fpts/min (47.0/g).**
+
+But be honest about the shape: the **81 on 30 Oct carried 13 AST (+26) and 4 BLK (+16) — 42
+of 81 from two lines**, and four blocks from a 6'4" rookie guard will not repeat. Median 44;
+mean without the 81 is 30.0/g.
+
+**The repeatable part is the passing: 13 / 7 / 7 assists = 9.0/g = +18/g at +2.**
+
+| scenario | estimate |
+|---|---|
+| raw 3-game rate × 32 mpg | 46/g |
+| regressed to 1.20 fpts/min × 32 | 38/g |
+| **honest range as a starter** | **35–46/g, central ~38–40** |
+
+Against Buzelis at 20.9/g that is **+17 to +25/g into the lineup.** If no trade comes, Fears
+stays 11.5/g and simply never gets added. **The option costs nothing** — that was the point
+I had right.
+
+### TWO independent triggers, not one
+
+This roughly doubles the chance the scenario lands:
+
+1. **Dejounte traded** — window open now through 11 Feb 2027.
+2. **Trey Murphy out** — ⚠ **true RIGHT NOW**, no published timeline. Murphy's absence alone
+   bought Fears **34 minutes and ~34 fpts** on 4 Nov, with Dejounte playing 45.
+
+### Execution — pre-committed so it takes minutes, not hours
+
+→ **Drop Matas Buzelis (20.9/g, the only AVOID among active players, lowest active scorer),
+add Fears.**
+
+Roster is 13 active + Keegan Murray on IR + **1 empty IR slot**, and Fears is ACTIVE so he
+*cannot* take the IR slot — an active player has to go. **Acquisition limit 1/3, so 2 adds
+remain.** Race risk is low while Fears is unowned across all nine teams, but it **spikes the
+instant a trade is announced** — hence pre-committing the drop now.
+
+**It gets cheaper around 8–14 Nov:** when Duren returns, Reed falls from 34.2/g to ~20–25/g
+and you have *two* droppables instead of one.
+
+→ **NEXT READ: NOP plays 6 Nov at Minnesota. Check Murphy on that injury report.**
+(Nobody of mine plays 5 Nov except Giannis — only 2 games on the slate.)
+
+---
+
+## 4 Nov 2026 (late) — per-player follow-up. Two of my reads were wrong.
+
+### ⚠ Fears: the user caught the confound. **Trey Murphy was out.**
+
+I reported Fears's 34 minutes with Dejounte active as proof the two-guard backcourt was
+real. It was **the only one of his 8 games Murphy has missed**, and it went to OT. Full
+cross-tab:
+
+| Dejounte | Murphy | games | Fears minutes | Fears |
+|---|---|---|---|---|
+| **in** | **in** | 4 | 21 / 24 / 23 / 24 | **11.5/g** |
+| out | in | 3 | 29 / 31 / 38 | **47.0/g** |
+| **in** | **out** | 1 (OT) | **34** | ~34 |
+
+**Correct model: Fears needs *a vacancy* in the NOP rotation, from either man.** There is
+still **zero** evidence he holds 30+ minutes with both healthy — the 34 is fully explained
+without it, and discounted for OT it is ~29–30 regulation.
+
+Also worth knowing: his shooting is bad — **43-of-106, 40.6%** on the season. At 16 FGA a
+night the field is a **net negative** in rule-17 terms (−4 tonight). His value is steals,
+free throws and rebounds, not scoring.
+
+**Fears is still a free agent — unrostered across all nine teams.** No urgency.
+
+### ⚠ CMB: he DID start, and he has won the job
+
+| | games | mpg | fpts/g |
+|---|---|---|---|
+| off the bench | first **6** | 19.2 | 21.3 |
+| **starting** | last **2** | **25.5** | **26.5** |
+
+TOR's five tonight: Barrett, Barnes, **Murray-Boyles**, Quickley, Walter. And **Barnes
+played all eight games** (26/37/28/31/39/36/38/32), so CMB won the job with Barnes
+*healthy* — which buries the old "CMB rises when Barnes sits" thesis for good.
+
+His 22 tonight was **within 0.6 of his 22.6 average** — par, not weak — on 23 minutes,
+*above* his 20.8 season mpg. What capped it was the game: TOR lost **109–128** at Denver.
+Usage ratio **1.31**; his only broken axis is FG% 57.9% → 47.1%. Still the right 10th man
+behind LaVine and Edey, but the direction of travel is **up**.
+
+### Edey: your 25 minutes are real, and the gate is FOULS
+
+| | 22 Oct | 24 Oct | 27 Oct | 30 Oct | 1 Nov | 3 Nov | 4 Nov |
+|---|---|---|---|---|---|---|---|
+| fouls | 3 | 2 | 5 | 4 | 2 | **6 (fouled out)** | **3** |
+| min | 21 | 22 | 21 | 19 | 18 | 19 | **25** |
+
+**3.6 fouls in 20.7 minutes = 6.3 per 36.** The ceiling is self-inflicted, not the coach.
+Lloyd, 3 Nov: *"he fouled out in 19 minutes... I want more minutes."*
+
+Why this matters more than it looks: **Edey's 1.319 fpts/min is third-best on the roster**,
+behind only Wemby (2.31) and Giannis (1.885), and he is the most minute-starved player on
+it — 20.7 vs 26.4 projected (0.79) *and* usage 14.6% vs 18.5% (0.79), both coach axes down.
+Blocks 1.57/g in 20.7 min = 2.7 per 36 = **6.3 fpts/g from blocks alone**. At his current
+rate, 26.4 minutes ≈ **34/g**. MEM gave the other 21 centre minutes to Post (11) and
+Stewart (10), so the runway is there.
+
+→ **TRIGGER: track fouls ≤ 3, not mpg. That is the leading indicator.**
+
+### Buzelis: struggling yes — but the usage read is wrong, and that is good news
+
+Usage ratio is **1.07** (22.7% vs 21.1% projected, league average 20.0). He is being fed
+**more** than projected, not less. He also **started** tonight and played 26 — his second
+highest — and the minutes show no trend at all (25/17/35/22/33/20/23/26).
+
+**The decomposition is the point: of his −13.92/g vs last season, rate is 65% (−9.03) and
+minutes only 35% (−4.89).** FG% 46.3% → 40.0%, per-minute 1.167 → 0.806 (−30.9%), blocks
+1.51 → 0.71 (−3.17/g on its own). **The problem is him, not Donovan** — and that is the
+better diagnosis, because rate is the only axis that reverts.
+
+Lloyd, 3 Nov, twice: *"I just wouldn't be dropping him... I also know he's not this bad.
+He's not this poor of a shooter... dropping him does not remove the bad performances. It
+just means you don't get the future ones. And maybe they're all bad."* He has also
+**lowered** his projections. Caveat: he frames a 12-team pool; we are **nine**, so our bar
+for a bench stash is higher than his.
+
+### The Reed → Fears plan: right timing, wrong trigger
+
+Duren: **right hamstring strain** (30 Oct vs MIA), *"re-evaluated in two weeks"* → ~13 Nov.
+Reporting splits between a hopeful 8 Nov (at LAL) and a likelier **14 Nov** (MIA rematch).
+ESPN's DET feed still says OUT, no date. **So Reed holds the role another ~4–10 days.**
+
+Your plan needs **two independent conditions**, not one:
+
+| condition | tells you | status |
+|---|---|---|
+| Duren returns | when **Reed** becomes droppable (reverts to ~13.8 mpg, ~20–25/g) | ~8–14 Nov |
+| NOP vacancy (Murphy **or** Dejounte out) | whether **Fears** is worth adding | Murphy OUT now, no timeline |
+
+If Duren comes back while Murphy *and* Dejounte are both healthy, the swap is **34.2/g →
+11.5/g and actively bad.** Fears is unowned, so you can wait for both to line up.
+
+## 4 Nov 2026 — 14-game slate, all final. Wemby 133. Miller 3. Starters 477.
+
+Matchup is **804–680, +124, UNDECIDED** (`totalPointsLive` — rule 20).
+
+| | FP | avg | Δ | min | line |
+|---|---|---|---|---|---|
+| **Wembanyama** | **133** | 64.4 | **+68.6** | 34 | 52 pts / 24 reb / 9 OREB / **8 BLK** / 16-28 / 19-23 |
+| Giannis | 70 | 61.1 | +8.9 | 41 | 27 / 14 / 6, ROLE-UP 1.22 but USG-DOWN 0.80 |
+| Anthony Davis | 65 | 44.9 | +20.1 | 30 | 12-19, 10 reb, 3 blk, **0 TOV** |
+| Cedric Coward | 55 | 35.2 | +19.8 | 33 | 23 / 9 / 4, 4 stl, MINS+ and FED 1.38 |
+| Dejounte Murray | 48 | 43.8 | +4.2 | **45** | 11-11 FT, 4 stl, **7 FGA — usage FROZEN 13.3%** |
+| Paul George | 44 | 46.2 | −2.2 | 35 | 5 threes, 4 stl, **6 TOV (−12)** |
+| Zach Edey (BE) | 37 | 25.7 | +11.3 | 25 | 13 reb, 2 blk, DD |
+| Zach LaVine (BE) | 29 | 35.0 | −6.0 | 35 | 2 blk, 6 TOV |
+| Matas Buzelis (BE) | 26 | 20.1 | +5.9 | 26 | season-high-ish, still 10th man |
+| Collin Murray-Boyles | 22 | 22.7 | −0.7 | 23 | 6-10, exactly par |
+| Paul Reed | 20 | 36.6 | −16.6 | 30 | 4-14. **Signal is a projection artifact — see below** |
+| Amen Thompson | 17 | 38.0 | −21.0 | 32 | 3-9, **0 STL 0 BLK**, 3 TOV |
+| **Brandon Miller** | **3** | 37.8 | **−34.8** | 26 | **2-15, 1-10 from three** |
+
+### ⚠ I got the Fears call's REASON wrong, and it broke the next night
+
+On 3 Nov I wrote that Fears's production was entirely a function of Dejounte's absence,
+7 of 7 games, and concluded they were "one roster slot with a backup." **Tonight both
+played: Dejounte 45 min, Fears 34 min, 19 pts, ~34 fpts in our scoring.** His previous
+high with Dejounte active was 24 min / 17 fpts.
+
+Honest discount: this was an **OT** game, so Fears's 34 is ~29–30 regulation and
+Dejounte's 45 is ~40. Even discounted, 29–30 min is well clear of the 23.0 mpg he
+averaged in the four Dejounte-active games. **The two-guard backcourt is real; my
+substitution model was an artifact of seven games.**
+
+The user dropped Fears at 15:04 to activate Dejounte (`LINEUP 3907497 + DROP 5144091`).
+**That does not make the drop wrong** — a 14th man cannot start, and Dejounte's 48 went
+into the lineup where Fears's 34 could not have. But the hedge was worth more than I
+priced it, and the reason I gave for keeping him was wrong.
+
+Also: I said "NOP's next game is 5 Nov vs UTAH, there is no NOP game on 4 Nov." **It was
+4 Nov.** Check the schedule, don't infer it.
+
+### Amen Thompson — the blocks question is CLOSED
+
+Lloyd (3 Nov, verbatim): *"His blocks haven't returned. And that was a big thing that
+drove his value two years ago."* He has the reference season right and the timing wrong.
+
+| season | mpg | BLK/g | per 36 |
+|---|---|---|---|
+| 2023-24 | 22.4 | 0.6 | 0.96 |
+| **2024-25** | 32.2 | **1.3** | **1.45** |
+| 2025-26 | 37.4 | 0.6 | 0.58 |
+| 2026-27 (9 GP) | 32.8 | **0.25** | 0.27 |
+
+**The collapse happened last season, 79 games ago — not this month.** So "they haven't
+returned" rests on 88 games, which makes it a markdown of his ceiling, not a slump.
+Worth −4.2/g vs the 2024-25 peak but only **−1.4/g vs last season** and −1.8/g vs ESPN's
+0.71 projection.
+
+Tonight: 0 STL + 0 BLK = zero of his ~6.5/g defensive baseline, and that is most of the
+17. **But minutes were MINS-OK 0.88 (32) and usage USG-OK 0.93 (18.7%)** — both
+coach-controlled axes intact, so tonight was a rate night, and rate is the only axis that
+reverts. Season decomposition vs last year: **minutes −5.83 (75%), rate −1.91 (25%).**
+HOLD. Do not sell on tonight.
+
+### Brandon Miller — 3 fpts, and it is entirely three-point conversion
+
+Not a role problem: **usage FED 34.0% (1.22)** — he is being given everything. Minutes
+MINS-DOWN 0.77 (26) is the one thing to watch.
+
+Regular season, 9 GP: **27-of-101 from three = 26.7% on 11.2 3PA/g.** Tonight 1-of-10.
+At rule-17 prices a made three is +5 net of the attempt and a miss is −1, so his threes
+are worth **+6.8/g** now; at a league-average 36% on the same attempts they are worth
+**+13.0/g**. That is **+6.2/g available from conversion alone, no role change needed.**
+Split vs 2025-26: FG% 43.5% → 37.8% while FGA went 16.1 → 22.5.
+
+**Lloyd pre-registered this** (27 Oct, verbatim): *"I know that he's going to be bad with
+his shooting. I understand that. But I think we're in for a pretty big season from
+Brandon Miller."* And 3 Nov: *"his usage has been through the roof he still didn't shoot
+well... there is room for that to get a lot better."* Tier-1 explicit, rule 26. **HOLD.**
+Drop tonight's 3 and he is 37.8/g.
+
+### Paul Reed — his BUY LOW signal is FAKE, ignore it
+
+`p.sh` says BUY LOW, rate z −1.09, AWFUL. **Do not act on it.** ESPN projected Reed as a
+13.8-mpg backup at 1.796 fpts/min; he starts 27.4 mpg because **Jalen Duren is out**
+(confirmed on the DET roster feed tonight). `grade.py` sets expected = projected
+points-per-minute × minutes played, so doubling his minutes (min_ratio **2.13**, highest
+on the roster) measures him against a bench rate he was never going to hold at starter
+volume. He is **+12.6/g over his adjusted projection** (34.5 vs 21.9) while reading AWFUL
+on rate. Rule 22 running backwards.
+
+Lloyd, 3 Nov: *"the goat Paul Reed... he just puts up big numbers nearly always. Reed is
+now a top 60 player on the season. And yes, obviously Jaylen Duran being out means he's
+able to do this."*
+
+→ **TRIGGER: check Duren's status before every Reed start.** That is the risk, not the rate.
+
+### Dejounte Murray — usage falling every single game while minutes climb
+
+| game | 21 Oct | 23 Oct | 24 Oct | 28 Oct | 4 Nov |
+|---|---|---|---|---|---|
+| usage | 27.4% | 26.5% | 22.9% | 20.1% | **13.3%** |
+| min | 34 | 30 | 35 | 30 | **45** |
+
+Monotonic, five for five. Tonight's 13.3% is **FROZEN (0.52 of his own projected share)
+on 45 minutes** — ROLE-UP 1.39, the most minutes anyone on my roster has played this
+season. Seven field-goal attempts in 45 minutes. **The two coach-controlled axes point in
+opposite directions**, which the HOLD signal does not capture.
+
+He still scored 48, but on 11-of-11 free throws and 4 steals (+16 from steals alone).
+That is a fragile 48 — it does not survive a night without the whistle. Fears played 34
+in the same game; the ball is going to the rookie.
+
+Trade reporting is **stale** — a web search tonight returned nothing newer than Feb 2026,
+when Murray himself denied requesting a trade. Treat the trade premise as unsupported.
+
+→ **TRIGGER: if usage stays under ~18% for two more games while Fears holds 30+ min, the
+44.6/g is propped up by free throws and steals and needs re-pricing.**
+
+### The one lineup leak left: LaVine, not CMB, at UTIL
+
+Starters scored **477**. Hindsight-optimal legal lineup was **529** — but 52 points of
+hindsight is worthless. Priced on **pre-game averages** the lineup was nearly right: the
+chosen ten projected 430.7, the best legal ten projected 443.0, and the **entire 12.3/g
+gap is one swap** — CMB (22.6/g) starts at UTIL while **LaVine (34.3/g) sits on the
+bench**, and both are UTIL-eligible. Free fix. Cost tonight: 7 points.
+
+The Paul George leak I flagged on 3 Nov is **fixed** — he started at UTIL for 44. Edey
+(37 tonight, 27.3/g) is C/UTIL only and also beats CMB, so **CMB is the clear tenth man**.
+
+Dashboard: **Matchup Acquisition Limit 1/3**, so two adds remain. One IR slot is empty
+but only an OUT-designated player can fill it (Keegan Murray holds the other, 13.0/g,
+AVOID, still O).
+
+---
+
+
+## 3 Nov 2026 — DECISION: drop Buzelis to activate Dejounte. Do NOT drop Fears.
+
+Dejounte's ESPN status flipped to **Active**, so he leaves IR and the 13 active spots are
+full. One player goes.
+
+**⚠ First, an amendment to what I told you earlier today.** I framed Fears' jump to 47.0/g
+as a role change and implied he was a standalone asset. He isn't — **it is Dejounte's
+absence.** The separation is perfect, 7 of 7:
+
+| Date | Fears MIN | Fears FPTS | Dejounte |
+|---|---|---|---|
+| 22 Oct | 21 | 6 | **played 34** |
+| 24 Oct | 24 | 8 | **played 30** |
+| 25 Oct | 23 | 15 | **played 35** |
+| 29 Oct | 24 | 17 | **played 30** |
+| 30 Oct | 29 | **81** | out |
+| 31 Oct | 31 | **44** | out |
+| 3 Nov | 38 | 16 | out |
+
+Dejounte playing → Fears **23.0 mpg, 11.5/g**. Dejounte out → **32.7 mpg, 47.0/g**.
+They are **one roster slot with a backup**, not two assets.
+
+### The three options, priced
+
+| | Effect |
+|---|---|
+| **A — drop Buzelis, activate Dejounte, keep Fears** | **+23.7/g** to the lineup, and keeps the free option on the trade thesis |
+| B — drop Fears | same +23.7/g, but retains a 20.1/g AVOID and gives up the only hedge |
+| C — leave Dejounte on IR | **forfeits ~23.7/g every game he plays**, recurring — ~71 pts on a 3-game NOP week |
+
+**Your "10 to 20 points" estimate understates option C by about 3x.** It's the most
+expensive choice, not the cautious one.
+
+**Why Buzelis:** lowest on the roster at 20.1/g, the only AVOID signal, last 3 at 18.3/g on
+0.724 fpts/min and falling, and his cut trigger was already set for ~9 Nov. The crunch just
+moves it up six days.
+
+**Disagreeing with Lloyd, openly:** he said twice not to drop Buzelis. Overriding on format
+(rule 24) — he advises 12-team leagues with ~160 rostered; this is a **nine-team** league so
+waivers are far deeper, and he doesn't know our DD/OREB/GP bonuses.
+
+**TIMING — no rush. NOP's next game is 5 NOV vs UTAH; there is no NOP game on 4 Nov.**
+Read the 5 Nov final injury report before committing.
+**Caveat on Dejounte's 43.8:** 4 games, last two were 50 then 27 with per-minute declining,
+and he's back from a 3-game absence — rule 27 says expect less than 43.8 at first.
+
+
 ## 3 Nov 2026 — ⚠ AMEN: I OWE YOU A CORRECTION, LLOYD CAUGHT WHAT I MISSED
 
 I told you the 25 minutes was a blowout artifact and "no action." Lloyd's recap has the

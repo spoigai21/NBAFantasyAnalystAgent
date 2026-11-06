@@ -60,6 +60,27 @@ assistant. Read `README.md` for the full league and roster picture before non-tr
    games it is. Lloyd's own rule: *"Players have a really poor opening night efficiency
    wise... it happens a lot at this time of year, so don't overreact."* The user has
    called me out on this twice: 23 Oct 2026.
+   ⚠ **AND NEVER BUILD A CAUSAL MODEL ON A PERFECTLY SEPARATED SMALL SAMPLE — 3-4 Nov
+   2026.** On 3 Nov I noticed Jeremiah Fears's production split **7 of 7** on Dejounte
+   Murray's availability: Dejounte played → 23.0 mpg and 11.5/g, Dejounte out → 32.7 mpg
+   and 47.0/g, no exceptions. I wrote that they were "one roster slot with a backup" and
+   told the user so. **It broke on the very next game.** 4 Nov, both played: Dejounte 45
+   min, **Fears 34 min, 19 pts, ~34 fpts** — against a previous Dejounte-active high of 24
+   min. **A clean 7-of-7 split feels like a mechanism and is statistically almost nothing**
+   — with n=7 and a 4/3 split, perfect separation arises by chance about 1 time in 35.
+   Rule 12 forbids one game; this forbids the more seductive version, a small sample with
+   *no counterexamples yet*. Say "7 of 7 so far, and one contrary game kills it" — never
+   "they are one slot."
+   ⚠⚠ **AND THEN I BROKE THE MODEL WITHOUT CHECKING THE THIRD VARIABLE — same night.** I
+   reported that 34-minute game to the user as proof the two-guard backcourt was real. The
+   user asked the obvious question I had not: *"trey murphy was out."* He was — and it was
+   **the only one of Fears's 8 games Murphy missed**, and it went to OT. Full cross-tab:
+   Dejounte in + Murphy in (4 games) → Fears **21/24/23/24** min; Dejounte out + Murphy in
+   (3) → **29/31/38**; Dejounte in + Murphy **out** (1, OT) → **34**. So Fears needs *a*
+   vacancy in the NOP rotation, and there is still **zero** evidence he holds 30+ minutes
+   with both healthy. **An exception to a rule is itself an n=1 observation and gets the
+   same audit as the rule did** — before I announce either, cross-tab against every other
+   absence in that rotation. Twice in two days the user supplied the control I skipped.
 13. **Per-minute rate and total are different questions.** A player can be clearly better
    per minute and still the wrong start, because minutes are the bigger term. State which
    one is driving the answer.
@@ -127,6 +148,23 @@ assistant. Read `README.md` for the full league and roster picture before non-tr
    - A framework (LangChain etc.) does not help here and the user asked: every failure this
      session was a *verification* failure, not an orchestration one. Checks at the point of
      claim are the fix.
+   ⚠ **`verify.py quote` PROVES THE WORDS EXIST. IT SAYS NOTHING ABOUT WHO THEY ARE ABOUT.
+   5 Nov 2026.** I told the user Lloyd was leaning sell on Anthony Davis, quoting *"didn't
+   have this guy on the sell high show, but I probably should have."* The string greps clean
+   — **and it is about Kyshawn George.** Lloyd uses it as a *teaser* immediately before
+   naming the next player: *"…24th ranked player over the course of the season. Well, didn't
+   have this guy on the sell high show, but I probably should have. **What about Keshan
+   George?** 25 points, seven assists, 71% shooting."* The user caught it: *"it was a p
+   sudden transition but he was talking abaout kyshawn."*
+   `split_players.py` could not save me here either — it cut the note to end on *"…What
+   about"*, so the orphan teaser rode along **inside Davis's note**, because name-boundary
+   cutting cannot catch a sentence that refers to a player it has not named yet.
+   **So: a clean `verify.py` hit licenses the WORDS, never the SUBJECT. Before attributing
+   any quote, read the sentences on BOTH sides of it and confirm the player is named in the
+   same breath — and treat a note that ends mid-sentence or on "what about" as a boundary
+   failure, not as content.** Lloyd's real AD read was the opposite: *"AD has been pretty
+   good to start this season… the blocks have been a little bit down for AD. So that's good
+   to see."*
 20. **Read `totalPointsLive`, never `totalPoints`.** ESPN's `totalPoints` on a matchup
    **lags by a day** — it excludes the current scoring period entirely. `totalPointsLive`
    is the real score, and `winner` ("UNDECIDED" vs a team id) is the only reliable signal
@@ -387,6 +425,20 @@ assistant. Read `README.md` for the full league and roster picture before non-tr
    a different player's season. It also **includes preseason**: count only games from 20 Oct,
    which is why Fears shows 11 logged and `gp=7` is correct rather than a bug.
 
+   **⚠ THE RATE AXIS PRODUCES A FALSE `BUY LOW` FOR ANY PLAYER WHOSE MINUTES HAVE
+   EXPANDED. 4 Nov 2026 — this is rule 22 running backwards and it is structural.**
+   `expected = projected points-per-minute × minutes actually played`, so a player promoted
+   out of a bench role is measured against a **bench per-minute rate he was never going to
+   hold at starter volume**. Paul Reed: ESPN projected 13.8 mpg at 1.796 fpts/min, he is
+   starting 27.4 mpg because Jalen Duren is out, `min_ratio` **2.13** — and `p.sh` printed
+   `SIGNAL BUY LOW`, `rate z -1.09`, grade **AWFUL**, while he was running **+12.6/g OVER
+   his adjusted projection** (34.5 vs 21.9). Per-minute 1.796 → 1.354 is the *expected*
+   shape of a role expansion, not a decline. **So: before believing a BUY LOW or a POOR,
+   read `min_ratio` on the same line. Above ~1.4 or below ~0.7 the rate axis is comparing
+   two different jobs and the label is void.** The real risk for such a player is the
+   starter's return, not his rate — Lloyd had it right in one clause: *"obviously Jaylen
+   Duran being out means he's able to do this."*
+
    **`game_grades.fpts` is ESPN's own `appliedTotal`** — authoritative, formula-free, and
    it supersedes `game-log.csv`'s hand-computed `fpts`. ⚠ **CORRECTED 2 Nov 2026: this rule
    previously said "off by ±1 on seven lines" and that was wrong on both counts.** Re-ran the
@@ -440,6 +492,34 @@ assistant. Read `README.md` for the full league and roster picture before non-tr
    `fantasy/league.db` before any rebuild** and only run `build_db.py` when you actually need
    `lloyd_quotes`, `game_log` or `transactions` rebuilt from disk.
 
+30. **Report in FANTASY POINTS, not in z-scores, and do not reason from points-per-minute.**
+   User, 5 Nov 2026: *"whenever u record ststs dont tell me those z numbers thosae are just
+   for you to look at. just give m the fantasy numbers and dont look at per minute fantasy
+   points its rlly just wrong and inconsistent. u look at just the overall stats, baskwtball
+   is not as perfectly mathematical as u think."*
+   **What this means in practice:**
+   - **Never put `z`, `form_z`, `scaled`, SD units or `min_ratio`/`usg_ratio` decimals in a
+     user-facing answer.** They stay internal — keep computing them, keep logging them in
+     `research` and `player_form`, but translate before speaking. "Below his own level" not
+     "z −0.63". "Touches climbing" not "usage ratio 1.31".
+   - **Lead with the numbers he actually plays with:** fantasy points per game, the game log
+     (e.g. 68 / 16 / 30 / 50 / 43 / 52 / 55 / 65), minutes, games played, totals, and the
+     raw box categories — points, rebounds, assists, steals, blocks, turnovers, FG/FT.
+   - **Do not build an argument on points-per-minute.** Use minutes and totals instead. If a
+     role changed, say "he went from 20 minutes to 32 and scored X" — not "his rate fell
+     from 1.796 to 1.354".
+   ⚠ **He is right on the evidence, and our own files prove it.** Rule 27's own worked
+   example is a per-minute failure: Paul Reed printed `BUY LOW` and a grade of **AWFUL**
+   while running **+12.6 fantasy points per game over expectation**, purely because a bench
+   per-minute rate was projected onto starter minutes. Rule 22 is the same error in the
+   other direction. Per-minute rates are the single most error-prone number in this repo —
+   they have produced more wrong calls than any other quantity, and he has now flagged them
+   unprompted. **Minutes and role are the real variables; per-minute is a fragile derived
+   quantity, not a fact about the player.**
+   The three-axis grader stays as a *screen* — it is still how we spot a player whose
+   touches moved before the box score did. But the screen is a pointer to go look, never
+   the finding itself, and the finding gets reported in points.
+
 ## Files
 
 | Path | What it is |
@@ -475,5 +555,27 @@ assistant. Read `README.md` for the full league and roster picture before non-tr
   eligibility from the API, never from memory. Full roster: only 6 of 15 are G-eligible
   (Fears, Dejounte, Amen, Miller, Coward, LaVine), so GUARD depth is the real constraint,
   not PG specifically.
+  ⚠⚠ **AND IT WENT STALE AGAIN IN 48 HOURS — re-checked 5 Nov 2026.** **Fears was dropped**
+  and **Ryan Rollins added** (ESPN `mTransactions2`, 07:51 on 5 Nov, with Paul Reed as the
+  drop). The conclusion survives but **for a different player**: Rollins is **PG/SG**, so
+  there are still two PG-eligible bodies (Dejounte, Rollins) and 6 of 14 are G-eligible
+  (Dejounte, Rollins, Amen, Miller, Coward, LaVine). Dejounte is **not** on IR any more —
+  he is ACTIVE and in the PG slot; Keegan Murray holds the only IR spot. **The lesson is
+  not "this bullet was wrong," it is that a roster fact in a file is stale the moment the
+  user makes a move, and the user moves between sessions.** Pull `mRoster` first, every
+  time, before saying anything about slots, IR or eligibility.
 - **Anthony Davis is the biggest single risk** — 20 games last season, and GP is +1.
+  ⚠ **UPDATE 5 Nov 2026 — the user's read, and it has both a quote and the behaviour behind
+  it.** AD stated publicly (Twitch / Fanatics Fest) that he wants to play **all 82**,
+  answering "82" to "how many games played for you?", and adding that he does not care
+  about his stats. **Through 8 team games he has played 8**, at **33.1 mpg vs 31.2 last
+  season** — so he is playing *more* per night, not being managed — and he finished the
+  4 Nov game on a wrapped ankle for 65 fpts (GOOD, z +1.42). Priced under rule 9: ~16.4/g
+  over a ~31/g replacement means **every 10 extra games ≈ +164 points**, i.e. 20 GP → ~328
+  for the season vs 65 GP → ~1,066. **That single question outweighs every lineup tweak and
+  waiver add on this roster.** Counterweight, kept honest: his per-minute rate is −16.6% on
+  last season, concentrated in **blocks (1.65 → 0.86) and OREB (3.10 → 1.43)** — the
+  categories an availability-first big sheds, and the ones our bonuses pay most for. n=8, so
+  do not commit to the mechanism; his last four games (53.8/g at 1.629/min) are *above* last
+  season's per-minute. Either way the trade favours us: 45/g × 65 games beats 50/g × 20.
 - Top-heavy: Wemby, Giannis and AD are ~40% of output, with a replacement-level bench.

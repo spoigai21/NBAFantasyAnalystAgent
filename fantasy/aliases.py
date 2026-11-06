@@ -8,15 +8,15 @@ Rebuild: python3 fantasy/aliases.py
 import sqlite3, re
 
 ALIASES = {
- 'Matas Buzelis':['Bazales','Bazala','Bazale','Buzelis','Matas Bala','Bazalis','Bisellis','Bales','Bisales','Bzalis','Buzzales'],
- 'Collin Murray-Boyles':['Murray Boils','Colin Murray Boils','Murray Boyles','Murray-Boyles','CMB','Mari Boils','Colin Mari boils','Mari boils'],  # CMB is MY shorthand, 0 FTS hits by design
- 'Giannis Antetokounmpo':['Jiannis','Giannis','Antetokounmpo','Yani Ant Kmpo','Yani Ant'],
- 'Victor Wembanyama':['Wembanyama','Wemby','Wemi','Victoryama','Yama','Weby'],
+ 'Matas Buzelis':['Bazales','Bazala','Bazale','Buzelis','Matas Bala','Bazalis','Bisellis','Masalis','Bizales','Bales','Bisales','Bzalis','Buzzales'],
+ 'Collin Murray-Boyles':['Murray Boils','Colin Murray Boils','Murray Boyles','Murray-Boyles','CMB','Mari Boils','Colin Mari boils','Mari boils','CMBB'],  # CMB is MY shorthand, 0 FTS hits by design
+ 'Giannis Antetokounmpo':['Jiannis','Giannis','Antetokounmpo','Yani Ant Kmpo','Yani Ant','Yanni'],
+ 'Victor Wembanyama':['Wembanyama','Wemby','Wemi','Victoryama','Yama','Weby','Webby','Wmanyama','WBY'],  # 'Wmanyama','WBY' from 5 Nov Thursday recap
  'Nikola Jokic':['Jokic','Jokich','Joker'],
  'Luka Doncic':['Doncic','Donic','Donuch','Luca'],
  'Shai Gilgeous-Alexander':['Gilgeous','Sheay','Shay'],
  'Jakob Poeltl':['Poeltl','Purle','Purdle','Yaka Purle','Yaka Purdle'],
- 'Zach Edey':['Edey','Edy','Zack Edy','Zakit','Zack Edi','Zakid','Zakiti'],
+ 'Zach Edey':['Edey','Edy','Zack Edy','Zakit','Zack Edi','Zakid','Zakiti','Zack Ed','Zack Edit'],
  'Darius Acuff Jr.':['Acuff','Akoff','Akuff','Akaf','Auff'],
  'Tyrese Haliburton':['Haliburton','Hallebertton','Hallebert','Torres Hallebertton'],
  'AJ Dybantsa':['Dybantsa','Debansa','Debanser','Deansa','Dybansa'],
@@ -33,12 +33,15 @@ ALIASES = {
  'Kawhi Leonard':['Kawhi','Kawawaii','Kawai','Kawhai'],
  'Isaiah Hartenstein':['Hartenstein','Isaiah Hartenstein'],
  'Dennis Schroder':['Schroder','Schroer','Shruder','Schröder'],
- 'Scottie Barnes':['Scottie Barnes','Scott Barnes','Barzie'],
+ 'Scottie Barnes':['Scottie Barnes','Scott Barnes','Barzie','Barnesy'],  # NOT mine -- tracked because Barnes OUT drives Murray-Boyles usage
  'Deandre Ayton':['Ayton','Aton','Eighton','DeAndre Aton'],
  'Jaren Jackson Jr.':['Jiren Jackson','Jaren Jackson'],
  'Cedric Coward':['Coward','the chicken','Cedric Carol'],
- 'Kon Knueppel':['Knueppel','Kon Knueppel','Conquer Nipple'],  # captioner mangles him badly
- 'Keyonte George':['Keyonte George','Kee George','Keshan George'],
+ 'Kon Knueppel':['Knueppel','Kon Knueppel','Conquer Nipple','Coniple','Koniple'],  # captioner mangles him badly; 'Coniple' = 5 Nov mailbag, drives Brandon Miller's usage
+ # ⚠ 5 Nov 2026: 'Keshan George' was mapped here and it is KYSHAWN George (WAS) --
+ # 10 of its hits are in the HOU-WAS team preview. User caught the misattribution.
+ 'Keyonte George':['Keyonte George','Keonte George','Kee George'],
+ 'Kyshawn George':['Kyshawn George','Keshan George','Kishan George'],
  'Noa Essengue':['Essengue'],
  'Caleb Wilson':['Caleb Wilson'],
  'Leonard Miller':['Leonard Miller'],
@@ -47,13 +50,13 @@ ALIASES = {
  'Jalen Suggs':['Jaylen Suggs','Jalen Suggs'],
  'Ivica Zubac':['Zubats','Zubac'],
  'Tyrese Maxey':['Maxey','Maxi','Tyres Maxi'],
- 'Franz Wagner':['Fran Vagna','Franz Wagner','Vagna','Vagnner','Frzagna'],
+ 'Franz Wagner':['Fran Vagna','Franz Wagner','Vagna','Vagnner','Frzagna','France Vagner'],
  'Desmond Bane':['Desbane','Dez Bane','Desmond Bane'],
  'Anthony Edwards':['Anthony Edwards','Anthony Ed Woods'],  # NOT 'Ant ' — matches 'anti', 'want'
  'Karl-Anthony Towns':['Karl-Anthony Towns','Carlton Towns','KAT','Towns'],
  'Josh Giddey':['Giddey','Josh Giddey','Giddy','Joshy Giddy','Josh Giddy'],
  'Anthony Davis':['Anthony Davis','Anthony Tony Davis'],  # NOT 'AD' — collides with waiver 'add'/'ad'
- 'Amen Thompson':['Amen Thompson','a men Thompson','Aymen','a man Thompson'],  # 'Amen' alone matches the word "amen"
+ 'Amen Thompson':['Amen Thompson','a men Thompson','Aymen','a man Thompson','the men Thompson'],  # 'Amen' alone matches the word "amen"
  'Tari Eason':['Tari E','Trey Een','Tari Eason'],
  'Fred VanVleet':['Van Vleet','Vanble','Van Vele','VanVleet','Fleet'],
  'Jabari Smith Jr.':['Jabari Smith','Jabar Smith'],
@@ -63,12 +66,17 @@ ALIASES = {
  'Jalen Brunson':['Brunson','Jaylen Brunson','Bronson','Bunson'],
  'LaMelo Ball':['LaMelo','Melo Ball'],
  'Mikal Bridges':['Mikal Bridges','Mikuel Bridges','Muel Bridges'],
- 'Ryan Rollins':['Ryan Rollins','Rollins'],
+ 'Ryan Rollins':['Ryan Rollins','Rollins','Rollands'],
  'Darryn Peterson':['Darryn Peterson','Darren Peterson','Kmart Thong'],
  'Paul Reed':['Paul Reed','Reed'],
  'Paul George':['Paul George'],
- 'Jeremiah Fears':['Fears','Jeremiah Fears','Jeremiah'],
- 'Dejounte Murray':['Dejonte','Dejante','Dejonte Murray','Dejante Murray','Dejonte Mari'],  # real name -> 0 hits
+ 'Jeremiah Fears':['Fears','Jeremiah Fears','Jeremiah','Fierce'],  # 'Fierce' = 4 Nov recap
+ # 5 Nov 2026 mailbag -- user identified both of these for me. 'Superman' is Lloyd's
+ # nickname for Ware and it was returning ZERO hits on his real name for weeks.
+ "Kel'el Ware":['Superman','Ware','Kelel Ware','Callware','Callaway','Superman wear'],
+ 'Jusuf Nurkic':['Nerkage','Nerkish','Yousef Nerkish','Ysef Nerkage'],
+ 'Brayden Burries':['Burries','Brayden Burries','Braden Barry'],  # 'Barry's' in 5 Nov mailbag
+ 'Dejounte Murray':['Dejonte','Dejante','Dejonte Murray','Dejante Murray','Dejonte Mari','Deontay Murray'],  # real name -> 0 hits
 }
 con=sqlite3.connect("fantasy/league.db")
 con.execute("ATTACH DATABASE 'fantasy/lloyd.db' AS lloyddb")  # gitignored transcript index

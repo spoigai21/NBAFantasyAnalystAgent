@@ -378,7 +378,11 @@ def main():
         inj = injury.get(name, "ACTIVE")
         if inj != "ACTIVE":
             note = f"{note}  ⚠ {inj}: injury confounds all three axes — verify before acting"
-        form.append((name, gs[0]["fantasy_team"], len(gs),
+        # ⚠ 5 Nov 2026: this was gs[0], the owner at his EARLIEST graded game, so a player
+        # who changed hands read under his OLD manager — Ryan Rollins sat in player_form as
+        # "Why so serious" the morning he was added here, and every roster-scoped query
+        # silently dropped him. ESPN returns period-accurate rosters, so take the LATEST.
+        form.append((name, max(gs, key=lambda x: x["period"])["fantasy_team"], len(gs),
                      round(sum(g["fpts"] for g in gs) / len(gs), 1),
                      round(sum(g["expected"] for g in gs) / len(gs), 1),
                      round(fz, 2), round(mr, 3),
