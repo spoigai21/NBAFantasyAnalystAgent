@@ -1,5 +1,97 @@
 # Watchlist
 
+# ⏰ 7 NOV 2026 — FRIDAY LOGGED. IT WAS A DAY **WIN** BY 91, NOT A BAD DAY.
+
+**Week 3 vs Top G: 1127 – 931, +196, UNDECIDED, 2 days left.** By day: 2 Nov 327-336 ·
+3 Nov 0-0 · 4 Nov 479-346 · 5 Nov 41-60 · **6 Nov 280-189**. Friday *felt* poor because 280
+is well under the 479 we posted Wednesday — but Top G only managed 189, so the lead went
+**+105 → +196**. Week 2 also closed: **1692-1543, a win by 149.** Record **1-1**.
+
+### ✅ THE FRIDAY TEN WAS SET CORRECTLY — ZERO BENCH LEAKAGE
+Dejounte 18 · Rollins 16 · Miller 17 · Coward 24 · Wemby 61 · Paul George 20 · Edey 22 ·
+**CMB 51** · LaVine 26 · **Kingston Flemings 25** = **exactly 280.** Starting Flemings in
+place of AD was worth **+25 over a zero**, and nothing sat on the bench on a night when three
+roster players had no game at all. (Contrast week 1: ~54 points leaked, matchup lost by 3.)
+
+### 🔴 LIVE RIGHT NOW — tonight's slate has NOT been played
+**WSH @ OKC tips 8:00 PM EST tonight.** AD **did not play** Friday — he isn't in the WSH@ATL
+box score at all — and is still `Day-To-Day`. **The back-to-back question is open, not
+answered.** Only **AD, Amen Thompson and Wembanyama** are on tonight's 7-game slate, so this
+is still the expensive night.
+
+### 🟢 MURRAY-BOYLES — Lloyd's conditional paid, and it may not be over
+Barnes sat. CMB went **34 minutes** (season high, previous best 28) for **19 pts, 7 reb,
+2 ast, 4 STEALS, 1 blk, 7-12 FG, 5-5 FT = 51.0** — his season best by **20 points**. The
+4 steals alone are worth 16 in this scoring.
+Log: 30 / 24 / 17 / 13 / 27 / 17 / 31 / 22 / **51** on minutes 20 / 18 / 19 / 15 / 23 / 20 /
+28 / 23 / **34**.
+**⚠ The opening may persist:** Barnes **still Day-To-Day (7 Nov)**, Immanuel Quickley **now
+Day-To-Day**, Kawhi and Bittle **Out**. Keep him in the starting ten.
+
+### 🟡 BRANDON MILLER — hurt, but the minutes are not clean evidence
+14 minutes, 8 pts on 3-10, 17.0 fantasy points, and **Charlotte now lists him Day-To-Day
+(7 Nov)**. **Confound that must be stated: Charlotte lost 80-119**, so minutes were coming
+down regardless. The injury is real; its severity is not readable off 14 minutes.
+Around him it is now extreme — **Knueppel OUT, Schroder OUT, Grant Williams OUT, Diabate
+DTD.** If he plays, the volume is enormous. If he sits, that UTIL slot is a hole.
+
+### ⚠⚠ CORRECTED BY THE USER, 7 NOV — I HAD DEJOUNTE AND ROLLINS EXACTLY INVERTED
+I wrote that Dejounte's line was "the one genuinely bad line" of the night. **Wrong.** New
+standing rule (**CLAUDE.md rule 31**), in the user's words: *"there is a huge difference
+between bad shooting night and role loss or minute loss. If its a minutes reductin thats bad
+or a real concern due to a blowout is fine. if its a bad shooting night we can ignore it."*
+
+**Triage order — minutes first, then bin the shooting:**
+
+| What moved | Blowout explains it? | Verdict |
+|---|---|---|
+| Minutes down | no | **REAL CONCERN** — the only watchlist-worthy thing |
+| Minutes down | yes | **FINE** — the scoreboard, not the coach |
+| Minutes fine/up, shooting bad | n/a | **IGNORE** |
+
+**Friday re-sorted under it. Nine of ten lines are noise and exactly one is a signal:**
+- **IGNORE (minutes fine or up, bad shooting):** **Dejounte 35 min** — and that is *up* on his
+  average (34/30/35/45/35) — 3-11, 4 ast, 1 stl, 1 blk. Also Paul George's 3-11 and LaVine's
+  4-12 on 35 minutes.
+- **FINE (minutes down, blowout-explained):** Wemby 26 (won by 15, sat the fourth), Coward 23
+  and Edey 20 (lost by 31), Paul George 22 (won by 39), Brandon Miller 14 (lost by 39 — his
+  *injury* is a separate axis and still real).
+- **🔴 REAL CONCERN — and I waved it through: RYAN ROLLINS.** 14 minutes, **3 shot attempts**,
+  5 turnovers, in a **121-107 loss — a 14-point margin, not a blowout**, so the scoreboard does
+  not excuse it. Minutes: 24 / 34 / 25 / 32 / 17 / 26 / 17 / **14** — three of the last four
+  under 20. The 5 turnovers in 14 minutes look like the cause, not the symptom.
+  **Counterweight, kept honest:** the Milwaukee churn finding (Rollins, Kuzma, Turner and Ware
+  all benched inside two weeks) and **Lloyd's explicit tier-1 buy low of 2 Nov** — *"Ryan
+  Rollins currently 188th. It's annoying the way the minutes are up and down, but that's a
+  bo[y low]"* — where Lloyd names the **minutes** as the broken thing. So: a real concern a
+  tier-1 source has already priced. **Watch his next competitive Milwaukee game. Do not drop.**
+- **Wemby's 61 in 26 minutes stays the best line of the night**, and Murray-Boyles's 51 on 34
+  minutes is the only *minutes-up* story.
+
+⚠ **Why I got it backwards:** the grader's rate axis divides by minutes, so it flags the
+shooter and is blind to the bench. That is the same reason rule 30 bans per-minute reasoning —
+points-per-minute **mixes shooting and role together** and cannot separate them.
+
+### 🔧 TWO METHOD ERRORS OF MINE, BOTH CAUGHT TODAY
+1. **`mRoster`'s `lineupSlotId` is TODAY's lineup, not the historical one.** It showed CMB and
+   Rollins on BE and I was one step from telling the user that CMB's 51 had been **wasted on
+   the bench.** It had not. **Reconstruct a past lineup from `mMatchupScore`'s
+   `pointsByScoringPeriod` — the day total is exact, so solve for which ten sum to it.** And a
+   day total that **exceeds** the current roster's sum is the tell that a scoring player has
+   since been dropped: that 25-point gap is what found Flemings.
+2. **I filed Kingston Flemings as "not roster-relevant" on 6 Nov and he started and scored 25.**
+   Lloyd had him as the #1 most-added player. I dismissed him because the transcript never
+   said his team — **resolving a team is one roster lookup.** He's an Atlanta guard.
+   **The drop today was correct, and the user's reasoning is the right one:** *"id rather take
+   a chance on ad coming back vs 0 than take flemmings whos more of a deep waiver 12 team
+   league."* That also agrees with Lloyd, who recommended him and warned in the same breath
+   that *"it will probably be bad for 3 weeks or so. And it may not come good until February."*
+   A deep-league flyer's floor is not worth a spot against AD's upside.
+3. **There was no bench mystery to explain at all — CMB and Rollins show benched today simply
+   because Toronto and Milwaukee DO NOT PLAY on 7 Nov.** Only AD, Amen and Wembanyama are on
+   tonight's slate. **Check the day's slate before reading anything into a bench slot.**
+
+
 # ⏰ 6 NOV 2026 — THURSDAY RECAP LOGGED. TONIGHT IS A 10-OF-10 NIGHT.
 
 Source: `fantasy/transcripts/2026-11-05_recap-thursday.txt` (Lloyd solo, no Kingy, so

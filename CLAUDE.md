@@ -520,6 +520,36 @@ assistant. Read `README.md` for the full league and roster picture before non-tr
    touches moved before the box score did. But the screen is a pointer to go look, never
    the finding itself, and the finding gets reported in points.
 
+31. **A BAD SHOOTING NIGHT AND A MINUTES LOSS ARE NOT THE SAME EVENT. Triage every poor
+   line through minutes FIRST, and throw the shooting away.**
+   User, 7 Nov 2026: *"there is a huge difference between bad shooting night and role loss
+   or minute loss. If its a minutes reductin thats bad or a real concern due to a blowout
+   is fine. if its a bad shooting night we can ignore it."*
+   **The decision tree, in this order:**
+
+   | What moved | Blowout explains it? | Verdict |
+   |---|---|---|
+   | **Minutes down** | no | **REAL CONCERN** — the only thing on this table worth a watchlist item |
+   | **Minutes down** | yes | **FINE** — say so and move on; it is the scoreboard, not the coach |
+   | **Minutes fine or up, shooting bad** | n/a | **IGNORE** — do not report it as a bad night |
+
+   So **check the game margin before calling any minutes figure a benching**, and once
+   minutes are cleared, a 3-for-11 is not a finding. Rule 12 already bans a one-game read;
+   this says which *half* of a bad game is even eligible to be read.
+   ⚠ **Caught applying this backwards on 6 Nov 2026.** I told the user Dejounte Murray's
+   line was "the one genuinely bad line" of the night — 7 points on 3-11 for 18 fantasy
+   points. **His minutes were 35 and they were UP on his own average.** It was a pure
+   shooting night and belonged in the bin. Meanwhile I waved through **Ryan Rollins at 14
+   minutes in a 14-point loss** — not a blowout, minutes trending 24 / 34 / 25 / 32 / 17 /
+   26 / 17 / **14**, only 3 shot attempts — which is the one line on the slate that
+   actually survives this rule. **I had the two exactly inverted**, because the grader's
+   rate axis flags the shooter and says nothing about the bench.
+   This is also *why* rule 30 bans per-minute reasoning: points-per-minute **mixes the two
+   together**, so it is structurally incapable of telling a missed shot from a lost role.
+   Note the asymmetry the user is pointing at: **shooting reverts and minutes do not** —
+   the same split rule 27's table already makes between the player-controlled axis and the
+   coach-controlled one. Report a shooting slump as noise; escalate a minutes cut.
+
 ## Files
 
 | Path | What it is |
