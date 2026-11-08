@@ -600,7 +600,26 @@ assistant. Read `README.md` for the full league and roster picture before non-tr
   answering "82" to "how many games played for you?", and adding that he does not care
   about his stats. **Through 8 team games he has played 8**, at **33.1 mpg vs 31.2 last
   season** — so he is playing *more* per night, not being managed — and he finished the
-  4 Nov game on a wrapped ankle for 65 fpts (GOOD, z +1.42). Priced under rule 9: ~16.4/g
+  4 Nov game on a wrapped ankle for 65 fpts (GOOD, z +1.42).
+  ⚠⚠ **THAT "8 OF 8" IS STALE — RE-CHECKED 8 Nov 2026. He is now 8 of Washington's 10:
+  he missed TWO games, and they were BOTH LEGS OF A ROAD BACK-TO-BACK** (@ATL 6 Nov,
+  @OKC 7 Nov). He does not appear in either box score; ESPN logged period 19 as a 0.0 with
+  him sitting in a starting slot. Still **Day-To-Day** with **no injury type published**.
+  The wrapped ankle on 4 Nov is the obvious suspect but nothing is confirmed. So the
+  all-82 quote is a stated intention rather than observed behaviour for now — but **two
+  games off the back end of a back-to-back is the most ordinary absence pattern there is,
+  and it is NOT yet evidence against the all-82 read.** Next opportunity: **Mon 9 Nov
+  @ DET**, so no new information until then. The valuation below is unchanged.
+  ⚠ **COUNT MISSED GAMES, NEVER "SCORING DAYS AT ZERO" — user correction, 8 Nov 2026.** I
+  first wrote this up as "zero for three consecutive scoring days," counting 8 Nov, a day
+  **Washington does not play.** User: *"AD only missed 2 days the whole back to back
+  basically."* A day with no game scheduled is not an absence, and padding the count that
+  way makes a routine two-game sit read like an escalating injury. This is the **same**
+  no-game-day error as the 7 Nov bench-slot one (*"uh thats because they dont have a
+  game?"*) — **check the team's schedule before turning any zero into a trend.** A zero on
+  a no-game day is a MATCHUP fact (he cannot help week 3 any further) and never a
+  DURABILITY fact; keep the two apart.
+  Priced under rule 9: ~16.4/g
   over a ~31/g replacement means **every 10 extra games ≈ +164 points**, i.e. 20 GP → ~328
   for the season vs 65 GP → ~1,066. **That single question outweighs every lineup tweak and
   waiver add on this roster.** Counterweight, kept honest: his per-minute rate is −16.6% on

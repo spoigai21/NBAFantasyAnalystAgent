@@ -1,5 +1,57 @@
 # Watchlist
 
+# ⏰ 8 NOV 2026 — SATURDAY 7 NOV LOGGED. A DAY **LOSS BY 56**, AND ONLY 3 PLAYERS HAD GAMES.
+
+**Week 3 vs Top G: 1226 – 1090, +136, UNDECIDED, FINAL DAY TODAY.** By day: 2 Nov 327-336 ·
+3 Nov 0-0 · 4 Nov 479-346 · 5 Nov 41-60 · 6 Nov **276**-189 · **7 Nov 103-159**.
+
+⚠ **ESPN REVISED 6 NOV DOWN FROM 280 TO 276** after I logged it, so the "+196" below was
+really +192. Re-read `pointsByScoringPeriod` before quoting a day total from a past session.
+
+### ✅ NOTHING WENT WRONG ON SATURDAY — THERE WAS ALMOST NOTHING TO GO WRONG
+Only **3 of 14** were on the 7-game slate, and one of them did not play:
+**Wemby 56 · Amen 47 · Anthony Davis DNP** = **exactly 103**, zero bench leakage. Both lines
+hand-reconcile to the point on rule-17 weights. Top G simply had more bodies playing (159).
+
+### 🟡 ANTHONY DAVIS MISSED **TWO** GAMES — BOTH LEGS OF A ROAD BACK-TO-BACK
+⚠ **CORRECTED BY THE USER, 8 NOV.** I first wrote this as "three straight scoring days at
+zero," counting today — **a day Washington does not play.** User: *"AD only missed 2 days
+the whole back to back basically."* He is right: a no-game day is not an absence. **Same
+error as the 7 Nov bench slots** — check the team's schedule before calling a zero a trend.
+- **Two missed games: @ATL 6 Nov and @OKC 7 Nov.** Not in either box score; ESPN logged
+  period 19 as **0.0 with him in a starting slot**. **GP 8 of Washington's 10.**
+- **Two games off the back end of a back-to-back is the most ordinary absence shape there
+  is**, so this is NOT yet evidence against the all-82 read. Still `Day-To-Day`, **no
+  injury type published**; the 4 Nov wrapped ankle is the suspect, unconfirmed.
+- **He cannot add to week 3** — WSH is not on the 8 Nov slate. That is a *matchup* fact,
+  not a durability fact. Keep the two apart.
+- **Trigger: Mon 9 Nov @ DET.** No new information before then. If he sits **that** one —
+  a standalone game after two days off — it stops being routine and becomes the roster's
+  biggest open question (rule 9: every 10 games ≈ **+164 points**).
+
+### ✅ WEMBY'S 24 MINUTES ARE NOT A CONCERN — RULE 31 CLEARS THEM
+Minutes **34 / 32 / 29 / 34 / 26 / 24**. The two lowest are the last two — and both came in
+**wins by 15 and 22**. Minutes down, blowout explains it → **fine, it is the scoreboard, not
+the coach.** And the output went the other way: **61 then 56**, his 2nd and 3rd best nights.
+29 pts on 9-13, 3-6 from three, 8-9 FT, 7 reb, 3 ast, 1 stl, 1 blk in 24 minutes at POR.
+
+### ✅ AMEN AT 39 MINUTES IN A 3-POINT GAME — FULL LOAD, NO EXCUSE NEEDED
+47 fpts: 17 pts on 7-14, **5 offensive rebounds**, **4 blocks** (16 points of the total),
+1 stl, 1 TOV, and **0 assists** in a 99-102 loss at PHX. The zero assists is box-score
+noise, not a role change — 39 minutes ties his season high. Season: 10 GP, 36.8/g, 33.2 mpg.
+
+### 📋 TODAY (8 NOV) CLOSES WEEK 3 — LINEUP IS ALREADY OPTIMAL
+**6 players have games, all 6 are in starting slots:** Giannis (**MIA** @ SAC) · LaVine
+(SAC vs MIA) · Paul George (BOS @ MIL) · Rollins (MIL vs BOS) · Buzelis (CHI vs PHI) ·
+Dejounte (NO @ LAC). Nobody with a game is on the bench, so there is nothing to change.
+Two of my own pairs are **head-to-head**: Giannis vs LaVine, and Paul George vs Rollins.
+⚠ **GIANNIS IS ON MIAMI, NOT MILWAUKEE.** I wrote "Giannis (MIL)" into this file on 8 Nov
+and had to correct it; `game-log.csv` had `MIA` right all along. ESPN `proTeamId` **14 =
+MIA and 15 = MIL**, and Rollins is the Buck. Resolve a pro team from `proTeamId` via the
+public athlete endpoint, never from memory of where a star used to play.
+
+---
+
 # ⏰ 7 NOV 2026 — FRIDAY LOGGED. IT WAS A DAY **WIN** BY 91, NOT A BAD DAY.
 
 **Week 3 vs Top G: 1127 – 931, +196, UNDECIDED, 2 days left.** By day: 2 Nov 327-336 ·
