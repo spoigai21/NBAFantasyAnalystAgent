@@ -32,6 +32,25 @@ error as the 7 Nov bench slots** — check the team's schedule before calling a 
   a standalone game after two days off — it stops being routine and becomes the roster's
   biggest open question (rule 9: every 10 games ≈ **+164 points**).
 
+### 🔴 MATAS BUZELIS — HIS STARTING SPOT IS ACTUALLY IN PLAY, AND LLOYD SAYS IT ISN'T
+**Check the starting five vs PHI today (12:30 PT). That one observation settles it.**
+- **Hoops Rumors (Nov 2026):** coach **Tiago Splitter** said Claxton and Jalen Smith will
+  *"definitely"* play together in double-big lineups, **possibly starting** — which would
+  push Buzelis to a **reserve role**. Splitter: *"nothing is set in stone."*
+- **Joe Cowley (Sun-Times)** argues for moving **Isaac Okoro** into the starting lineup
+  ahead of him. **Lloyd named Okoro on 5 Nov and dismissed it** — *"he's not losing his
+  starting spot to Isaac Aoro… It's not happening."* He may be answering that column.
+- **The mechanism is a lineup number:** Giddey/Powell/Wilson/Buzelis/Smith is **−20.3 over
+  92 minutes** (Joel Lorenzi, The Athletic). The five doesn't work, so something changes.
+- ⚠ **COACHING REGIME CHANGED — Splitter replaced Billy Donovan in June 2026.** Every
+  "Donovan explains Buzelis's minutes" article in search is the old staff. Do not cite it.
+- **Today's opening:** **Norman Powell is OUT** (ESPN, dated today) and Collins is out.
+  Powell plays ~30 mpg and is *in* the failing five, so touches are there. But the Powell
+  **trade** thesis is a December story — **he is not trade-eligible until 15 Dec.**
+- **Outside consensus is buy-low/hold, and it UNDERPRICES his slump for us:** his biggest
+  single loss is **blocks, 1.51 → 0.71 per game**. Generic points formats pay ~1-2 for a
+  block; **we pay +4**, so that's ~3 points a game those writers don't feel. Rule 24.
+
 ### 🔴 BRANDON MILLER — **GROIN**, LEFT THE 6 NOV GAME. RE-EVAL DUE **MONDAY**.
 ⚠ **I FILED HIS 14 MINUTES UNDER "BLOWOUT, SO IT'S FINE." THAT WAS WRONG — HE LEFT THE
 GAME.** From the ESPN News column (AP's Steve Reed, via coach Charles Lee), none of which is
