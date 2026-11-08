@@ -20,14 +20,36 @@ the whole back to back basically."* He is right: a no-game day is not an absence
 error as the 7 Nov bench slots** — check the team's schedule before calling a zero a trend.
 - **Two missed games: @ATL 6 Nov and @OKC 7 Nov.** Not in either box score; ESPN logged
   period 19 as **0.0 with him in a starting slot**. **GP 8 of Washington's 10.**
+- **ANKLE — now confirmed**, and it is the 4 Nov wrapped ankle. ESPN News column:
+  *"Davis (ankle) won't play Saturday against the Thunder… Davis' next chance to play will
+  come Monday in Detroit."* The API publishes `DAY_TO_DAY` with **no type at all**; I had
+  reported "nothing is confirmed" straight off that empty field.
 - **Two games off the back end of a back-to-back is the most ordinary absence shape there
-  is**, so this is NOT yet evidence against the all-82 read. Still `Day-To-Day`, **no
-  injury type published**; the 4 Nov wrapped ankle is the suspect, unconfirmed.
+  is**, so this is NOT yet evidence against the all-82 read.
 - **He cannot add to week 3** — WSH is not on the 8 Nov slate. That is a *matchup* fact,
   not a durability fact. Keep the two apart.
 - **Trigger: Mon 9 Nov @ DET.** No new information before then. If he sits **that** one —
   a standalone game after two days off — it stops being routine and becomes the roster's
   biggest open question (rule 9: every 10 games ≈ **+164 points**).
+
+### 🔴 BRANDON MILLER — **GROIN**, LEFT THE 6 NOV GAME. RE-EVAL DUE **MONDAY**.
+⚠ **I FILED HIS 14 MINUTES UNDER "BLOWOUT, SO IT'S FINE." THAT WAS WRONG — HE LEFT THE
+GAME.** From the ESPN News column (AP's Steve Reed, via coach Charles Lee), none of which is
+in the API: Miller *"will be re-evaluated over the weekend, and they expect to have more
+information by Monday."* The coach *"noticed Miller started limping, and he asked for a sub
+after a couple of plays. He was ruled out after heading back to the locker room, and Tidjane
+Salaun started the second half for him."*
+- **The API carries none of this** — `injuryStatus=DAY_TO_DAY`, `injured=False`, **no type.**
+- **He has played all 10 of Charlotte's games** (31.0 mpg, 31.8/g). Nothing missed yet.
+- **Charlotte has not played since**, so the missing status update is the schedule, not a
+  signal — same trap as the AD count. Their next game **is** the re-evaluation date.
+- **Trigger: Mon 9 Nov vs CLE.** If he sits, Salaun and Sion James absorb the minutes.
+
+### 🟡 THE ADDS BUDGET IS **3 / 3 — EXHAUSTED** FOR WEEK 3
+Off the team page, and **nowhere in the API or the DB** (CLAUDE.md still said 1/3). So there
+is **no waiver response available today** even if one were wanted. Week 3 ends tonight, so
+**the budget resets Monday 9 Nov** — the same day both Miller's re-eval and AD's return are
+due. Full budget arrives exactly when the news does.
 
 ### ✅ WEMBY'S 24 MINUTES ARE NOT A CONCERN — RULE 31 CLEARS THEM
 Minutes **34 / 32 / 29 / 34 / 26 / 24**. The two lowest are the last two — and both came in

@@ -18,9 +18,22 @@ assistant. Read `README.md` for the full league and roster picture before non-tr
   matched `players.per_game` on **all 15** of my players to the decimal, so when a number
   looks wrong, suspect the QUERY before the feed. What the tab genuinely adds: the Set
   Lineup day strip with real opponents (empty OPP cells on a zero-game day), DTD/O badges
-  beside each player, **"Matchup Acquisition Limit 1/3"** — the adds budget, which is
-  nowhere in our DB — and a news column that surfaces beat notes rule 27's `injuryStatus`
+  beside each player, **"Matchup Acquisition Limit N/3"** — the adds budget, which is
+  nowhere in our DB (it read **3/3, exhausted**, on 8 Nov 2026; it resets each matchup) — and a news column that surfaces beat notes rule 27's `injuryStatus`
   flag misses. Tab is live this session (ESPN already signed in).
+  ⚠ **AND ACTUALLY OPEN IT — user, 8 Nov 2026: *"you got to start usingt he chrome tab as
+  well later."*** This bullet has described the tab as a "fallback" since it was written and
+  I have been treating that as permission to skip it. It is not a fallback, it is the
+  **second half of the read**: the API gives numbers, the tab gives the WHY. Worked example
+  from that same day — Anthony Davis sat both legs of a back-to-back, the API said
+  `DAY_TO_DAY` with **no injury type at all**, and I reported "nothing is confirmed" and
+  stopped. The tab's news column is exactly where that answer lives.
+  **So check the tab whenever the question is a why rather than a how many:** any
+  `DAY_TO_DAY`/`OUT` with no published injury type, any unexplained minutes drop or DNP,
+  before a start/sit on a questionable player, and whenever the adds budget
+  ("Matchup Acquisition Limit N/3") or a real OPP column matters. Load the tools in ONE
+  `ToolSearch` call, read the existing ESPN tab rather than opening a new one, and
+  screenshot — the point values and several columns are not in the accessibility tree.
   A `401` means the session cookies expired — ask me to refresh them, never read them
   out of Chrome yourself.
 
@@ -529,9 +542,22 @@ assistant. Read `README.md` for the full league and roster picture before non-tr
 
    | What moved | Blowout explains it? | Verdict |
    |---|---|---|
+   | **He left the game** | irrelevant | **INJURY — triage stops here.** Not a minutes read at all |
    | **Minutes down** | no | **REAL CONCERN** — the only thing on this table worth a watchlist item |
    | **Minutes down** | yes | **FINE** — say so and move on; it is the scoreboard, not the coach |
    | **Minutes fine or up, shooting bad** | n/a | **IGNORE** — do not report it as a bad night |
+
+   ⚠ **THE INJURY ROW WAS MISSING AND IT COST ME ONE — user, 8 Nov 2026: *"brandon miller
+   also got injured too like he left hte game early rememeber, but no status about future
+   games was uopdated."*** On 6 Nov I filed Miller's **14 minutes** in a 39-point loss under
+   *"minutes down, blowout did it → FINE."* **The blowout had nothing to do with it — he
+   left the game.** Charlotte's coach: he *"started limping, and he asked for a sub after a
+   couple of plays,"* was **ruled out** after heading to the locker room, and Tidjane Salaun
+   started the second half in his place. An injury exit is neither "fine" nor "ignore": it
+   is rule 27's confounder, which **invalidates all three axes**, and it is the one way a
+   minutes drop carries forward to the next game. **So ask "did he finish the game?" BEFORE
+   reaching for the margin** — a blowout and an exit produce the same low minutes number and
+   mean opposite things.
 
    So **check the game margin before calling any minutes figure a benching**, and once
    minutes are cleared, a 3-for-11 is not a finding. Rule 12 already bans a one-game read;
