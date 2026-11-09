@@ -1,39 +1,164 @@
-# Watchlist
+# ⏰ 8 NOV 2026 — WEEK 3 PLAYED OUT: **WON 1434-1388 (+46)**, AFTER A SUNDAY LOSS BY 90
+By day: 2 Nov 327-336, 3 Nov 0-0, 4 Nov 479-346, 5 Nov 41-60, 6 Nov 276-189, 7 Nov 103-159,
+**8 Nov 208-298.** The +136 lead became +46. All 7 games final; ESPN still reads
+`winner=UNDECIDED` but nothing is left to score. Record **2-1**.
+Mine: Giannis 62, Paul George 48, Buzelis 38, Rollins 25, LaVine 23, **Dejounte 12.**
+Top G ran 9 bodies to my 6 and beat my 233-267 projection with **298** (Acuff 59, Giddey 59,
+Garland 50, Gafford 46, LaMelo 42), helped by Markkanen and Jaren Jackson Jr. both sitting at 0.
 
-# ⏰ 8 NOV 2026 — SATURDAY 7 NOV LOGGED. A DAY **LOSS BY 56**, AND ONLY 3 PLAYERS HAD GAMES.
+### 🔴🔴 DEJOUNTE — **REAL CONCERN. ROLE LOSS, AND THE MECHANISM HAS A NAME.**
+**User raised it unprompted and he is right.** Run the triage and every gate opens the bad way.
+- **Did he leave the game?** **No.** Normal rotation, pulled at 3:24 of Q4 of a decided game.
+  Not an injury exit, and **no injury note on his feed** — the last entry is his 4 Nov return.
+- **Blowout?** LAC won by 16, but **he was +4, the best mark of any Pelican who played heavy
+  minutes** (teammates ran −10, −19, −23, −14, −16). The game got away while he rested. **So the
+  low minutes are not a punishment and the margin does not excuse them either.**
+- **Shooting?** 1-6. Bad — and by rule 31 that part is ignorable.
+- **ATTEMPTS AND MINUTES — both down, three games running.** This is the half that counts:
 
-**Week 3 vs Top G: 1226 – 1090, +136, UNDECIDED, FINAL DAY TODAY.** By day: 2 Nov 327-336 ·
-3 Nov 0-0 · 4 Nov 479-346 · 5 Nov 41-60 · 6 Nov **276**-189 · **7 Nov 103-159**.
+  | | 4 Nov UTAH | 6 Nov MIN | 8 Nov LAC |
+  |---|---|---|---|
+  | minutes | 45 (OT) | 35 | **28** |
+  | FGA | 7 | 11 | **6** |
+  | points | 20 | 7 | **6** |
+  | fantasy points | 48 | 18 | **12** |
 
-⚠ **ESPN REVISED 6 NOV DOWN FROM 280 TO 276** after I logged it, so the "+196" below was
-really +192. Re-read `pointsByScoringPeriod` before quoting a day total from a past session.
+  **His season average is 12.3 FGA; last season 15.5. He took 6.** Before his leave he was at
+  18/15/18/11 attempts. **His share of New Orleans' offence has fallen from about 27% to the
+  mid-teens**, which is a coach-controlled axis — rule 27 — and it does not revert on its own.
+- 🔻 **THE MECHANISM IS JEREMIAH FEARS, THE PLAYER WE DROPPED.** Dejounte was on **paternity
+  leave for three games** (29 Oct, 30 Oct, 2 Nov). Fears's minutes before: 21/24/23/24. During:
+  **29/31/38**. **After Dejounte came back: 34/36/29 — he kept the job.** Tonight Fears went
+  **29 min, 10-14 FG, 25 pts, 5 ast** while starting *alongside* Dejounte.
+- **Tonight's New Orleans shot distribution — Dejounte is FIFTH:**
 
-### ✅ NOTHING WENT WRONG ON SATURDAY — THERE WAS ALMOST NOTHING TO GO WRONG
-Only **3 of 14** were on the 7-game slate, and one of them did not play:
-**Wemby 56 · Amen 47 · Anthony Davis DNP** = **exactly 103**, zero bench leakage. Both lines
-hand-reconcile to the point on rule-17 weights. Top G simply had more bodies playing (159).
+  | | min | FGA | line |
+  |---|---|---|---|
+  | Trey Murphy III | 30 | **17** | 9-17, 26 pts |
+  | **Jeremiah Fears** | 29 | **14** | 10-14, 25 pts |
+  | Saddiq Bey (bench) | 26 | 12 | 3-12 |
+  | Zion Williamson | 31 | 9 | **9-9**, 25 pts |
+  | **Dejounte Murray** | **28** | **6** | 1-6, 6 pts |
 
-### 🟡 ANTHONY DAVIS MISSED **TWO** GAMES — BOTH LEGS OF A ROAD BACK-TO-BACK
-⚠ **CORRECTED BY THE USER, 8 NOV.** I first wrote this as "three straight scoring days at
-zero," counting today — **a day Washington does not play.** User: *"AD only missed 2 days
-the whole back to back basically."* He is right: a no-game day is not an absence. **Same
-error as the 7 Nov bench slots** — check the team's schedule before calling a zero a trend.
-- **Two missed games: @ATL 6 Nov and @OKC 7 Nov.** Not in either box score; ESPN logged
-  period 19 as **0.0 with him in a starting slot**. **GP 8 of Washington's 10.**
-- **ANKLE — now confirmed**, and it is the 4 Nov wrapped ankle. ESPN News column:
-  *"Davis (ankle) won't play Saturday against the Thunder… Davis' next chance to play will
-  come Monday in Detroit."* The API publishes `DAY_TO_DAY` with **no type at all**; I had
-  reported "nothing is confirmed" straight off that empty field.
-- **Two games off the back end of a back-to-back is the most ordinary absence shape there
-  is**, so this is NOT yet evidence against the all-82 read.
-- **He cannot add to week 3** — WSH is not on the 8 Nov slate. That is a *matchup* fact,
-  not a durability fact. Keep the two apart.
-- **Trigger: Mon 9 Nov @ DET.** No new information before then. If he sits **that** one —
-  a standalone game after two days off — it stops being routine and becomes the roster's
-  biggest open question (rule 9: every 10 games ≈ **+164 points**).
+  Zion is healthy and converting everything, Murphy is the volume wing, Fears runs the ball.
+  **Dejounte is the fourth guard-sized mouth at a three-mouth table.**
+- ⚠ **KEPT HONEST — this is 3 games and the baseline is an outlier.** The "decline" starts from a
+  **45-minute overtime game**, and his season is still **43.8/g, ABOVE last season's 37.9**. Rule
+  12: three games with a clear mechanism is a direction, not a verdict, and one 35-minute
+  14-attempt game would reopen it. **But unlike Buzelis, this one has an identified cause and the
+  cause is still on the roster and still improving.**
+- **TRIGGER — next NOP game, 10 Nov.** Watch **(1)** his minutes against 34, **(2)** his attempts
+  against 12, **(3)** Fears's minutes. If Fears stays at 30+ and Dejounte stays under 30, this is
+  a settled demotion and he is a sell-high-on-name candidate rather than a hold. **Do not drop or
+  trade on three games** — but stop projecting him at 44/g.
+
+### ✅ THE 8 NOV LINEUP **WAS** MAXIMISED — I CALLED 24 POINTS "LEAKAGE" AND I WAS WRONG
+**User correction, 8 Nov: *"it was literally maximized bruh miller was ruled out after games
+started."* He is right and the timestamps prove it.**
+
+| Event | ET |
+|---|---|
+| PHI @ CHI tips — **slate begins, lineups start locking** | **3:30 PM** |
+| Keegan Murray listed **available** (was questionable, ankle) | **3:35 PM** |
+| **Brandon Miller ruled OUT** | **5:21 PM** |
+| MIA @ SAC tips (Keegan's game) | 9:00 PM |
+
+**At lineup time there was NO LEGAL MOVE.** All 10 scoring slots and all 3 bench slots were full;
+activating a player off IR requires an IR-eligible body to swap in, and the only candidate —
+Miller — **was still day-to-day until nearly two hours after the slate had started.** Keegan
+himself was not even cleared until 5 minutes after the first tip.
+⚠ **THE ERROR I ACTUALLY MADE WAS THE ANALYTICAL ONE: I saw 24 uncounted points and worked
+backwards to a mistake, instead of checking whether the move had been POSSIBLE.** That is the
+same shape as the Anthony Davis "three scoring days" error and the 7 Nov bench-slot error —
+**a zero is not evidence of a mistake until the schedule and the roster rules are checked.**
+Three files got the wrong story before I checked a single timestamp.
+**The one genuinely true residue, and it is a thin one:** a window did open at **5:21 PM**, when
+Miller's OUT made him IR-eligible — Miller to IR, a no-game player (Coward) from UTIL to bench,
+Keegan to UTIL, all before the 9:00 PM Sacramento tip. **That is a mid-slate, three-move chain
+off a benched player's injury designation, not a lineup-time oversight.**
+**So the real standing note is narrow: when a BENCHED player gets ruled OUT mid-slate, check
+whether it unlocks an IR activation for someone who still has a game left.** (Open question I
+have not verified: whether ESPN's IR accepts a DAY-TO-DAY player, which would have made Anthony
+Davis eligible this morning. Do not assume either way — look it up before relying on it.)
+
+### 🔴🔴 THE POWELL-VACANCY THESIS WAS TESTED TONIGHT AND BUZELIS FAILED IT
+**User, 8 Nov: *"hes not taking shots even with powell out."* This is the finding of the night and
+it kills the mechanism behind every buy-low article written about him.**
+- **Norman Powell was Chicago's second-highest-volume shooter — 12.9 FGA per game over 8 games**
+  (9/20/12/11/15/11/13/12). He was **OUT tonight**. Zach Collins out too.
+- **Buzelis took 7 of Chicago's 80 attempts** — under 9% of the team's shots, in 25 minutes, while
+  shooting **5-7 from the field, 3-5 from three, 4-4 from the line, 17 points.**
+- **His own season average is 9.5 FGA.** So with the team's #2 shot-taker out, his attempts went
+  **DOWN, not up.** That is the opposite of what the thesis requires.
+- **Where Powell's shots actually went — Chicago's distribution tonight:**
+
+  | | min | FGA | FG% |
+  |---|---|---|---|
+  | Caleb Wilson (rookie, S) | 25 | **16** | 37.5% |
+  | Josh Giddey (S) | 27 | 11 | 54.5% |
+  | Jalen Smith (S) | 24 | 10 | 70.0% |
+  | Tre Jones (bench) | 14 | **8** | 37.5% |
+  | **Buzelis (S)** | **25** | **7** | **71.4%** |
+  | Patrick Williams (bench) | 25 | 7 | 42.9% |
+  | Noa Essengue (bench) | 15 | 7 | 42.9% |
+  | Jordan Hawkins (bench) | 17 | 7 | 57.1% |
+
+  **Four bench players matched or beat his attempt count, three of them in fewer minutes**, and he
+  was the most accurate shooter on the floor among anyone taking real volume.
+- ⚠ **THE REAL SHOT HIERARCHY IN CHICAGO, and it is not what the articles assume:**
+  **Caleb Wilson 17.1 FGA/g on 32.5 mpg** (a rookie), Powell 12.9, **Buzelis 9.5**, Giddey 9.0.
+  **He is the FOURTH option on a 1-7 team**, behind a rookie taking 17 a night. Powell's absence
+  did not promote him because he was never next in line.
+- 🔻 **CONSEQUENCE — downgrade the outside consensus.** RotoBaller / RotoWire / SI all build the
+  buy-low on freed Chicago volume, and the SI piece makes the **Powell trade** the explicit
+  catalyst. **Tonight was a live, free preview of exactly that scenario** — Powell absent, Buzelis
+  starting, 25 minutes, hot hand — and he took fewer shots than his own average. **So the
+  December Powell-trade thesis has now been tested early and it did not hold.** Treat those
+  pieces as priced on an opportunity he has not shown he will take.
+- **What would change it:** a game where his FGA is in double digits *without* needing 33+ minutes
+  to get there. Until then the ceiling is roughly what we are seeing, because his two 30-plus
+  fantasy nights both required 13 attempts and 33-35 minutes.
+
+### 🔴 BUZELIS 8 NOV — THE PROBLEM IS **ATTEMPTS**, NOT MINUTES AND NOT SHOOTING
+**User spotted this live and it is the cleanest read we have had on him all season:**
+*"hes shooting really well but hes still not taking shots even then. if a player with a role is
+shooting well they are going to be naturally be more aggressive. he isnt."*
+- **Halftime, PHI @ CHI:** 17 min (**team high**), **10 pts on 3-4 FG, 2-3 from three, 2-2 FT**,
+  3 reb, 1 ast, 0 stl, 0 blk, 0 TOV, **−8** → **20 fantasy points**. Started; Claxton benched.
+- **He took 4 of Chicago's 50 first-half attempts.** Distribution:
+
+  | | min | FG | FG% |
+  |---|---|---|---|
+  | Caleb Wilson (rookie) | 16 | **5-12** | 41.7% |
+  | Jalen Smith | 16 | 6-7 | 85.7% |
+  | **Buzelis** | **17** | **3-4** | **75.0%** |
+  | Josh Giddey | 15 | 3-6 | 50.0% |
+  | Tre Jones (bench) | 9 | **2-7** | 28.6% |
+
+  **Most minutes on the team, third-fewest attempts of the ten Bulls who played, best shooting
+  night of anyone taking real volume.** A rookie took three times his shots at half his clip.
+- **Why it matters here specifically:** rule 17 — every attempt is +EV in this scoring
+  (made two +3, made three +5, miss only −1). At tonight's conversion each shot of his is worth
+  about **3 fantasy points**, so 4 more attempts is roughly **+12**. Even at his season 40% the
+  attempt is still positive. **Shots he declines are points we do not score.**
+- ⚠ **THE CONFOUND, kept honest:** his two best games (32 and 29 fpts) are his only two
+  **13-attempt** games — and also his two **highest-minute** games (35, 33). Attempts and
+  minutes have been tangled all season. **Tonight is the first game that separates them:**
+  34-minute pace, hot hand, no volume. That is new information, not a restatement.
+- **Trigger:** his FGA column, every game from here, logged next to minutes. **Season FGA is
+  9.3/g, down from 12.5** — if he keeps the start and the minutes and the attempts stay single
+  digit, the buy-low thesis is dead regardless of what his percentages do, because the volume
+  is what made his two big nights.
 
 ### 🔴 MATAS BUZELIS — HIS STARTING SPOT IS ACTUALLY IN PLAY, AND LLOYD SAYS IT ISN'T
-**Check the starting five vs PHI today (12:30 PT). That one observation settles it.**
+**✅ RESOLVED LIVE, 8 Nov — HE STARTED. Lloyd was right, the beat was wrong.**
+  Chicago's starting five vs PHI: **Jalen Smith / Isaac Okoro / Matas Buzelis / Caleb Wilson /
+  Josh Giddey**. **Nic Claxton came off the bench** — the Splitter double-big start did NOT
+  happen. Okoro did start, but at **Norman Powell's** vacated spot, not Buzelis's. Rotation was
+  normal too: full first-quarter shift to 3:48, back on at 8:42 of Q2.
+  Still true: that five is **−8 through 18 minutes** tonight, so the fit problem is unfixed and
+  the question is live again the moment Powell is back. But the starting spot itself is not
+  in play right now.
 - **Hoops Rumors (Nov 2026):** coach **Tiago Splitter** said Claxton and Jalen Smith will
   *"definitely"* play together in double-big lineups, **possibly starting** — which would
   push Buzelis to a **reserve role**. Splitter: *"nothing is set in stone."*
@@ -51,7 +176,41 @@ error as the 7 Nov bench slots** — check the team's schedule before calling a 
   single loss is **blocks, 1.51 → 0.71 per game**. Generic points formats pay ~1-2 for a
   block; **we pay +4**, so that's ~3 points a game those writers don't feel. Rule 24.
 
-### 🔴 BRANDON MILLER — **GROIN**, LEFT THE 6 NOV GAME. RE-EVAL DUE **MONDAY**.
+### 🔴 BRANDON MILLER — **RE-EVAL CAME BACK "OUT." ESPN FLIPPED HIM TODAY, 8 NOV.**
+**User flagged it; confirmed on both feeds.** ESPN team injury report status **Out**, timestamped
+**2026-11-08T22:21Z** (~5:20 PM ET today), and the fantasy API agrees (`injured=True`,
+`injuryStatus=OUT`). He had been Day-To-Day since Friday.
+- **The injury is specifically RIGHT GROIN SORENESS** — he exited halfway through the second
+  quarter of the 6 Nov loss to Boston, was briefly questionable to return, then ruled out.
+- **Head coach Charles Lee** (via Steve Reed, AP, 7 Nov): Miller would be *re-evaluated over the
+  weekend* with more information *by Monday*. **That re-eval is what today's listing is.** The
+  answer is he does not play Monday.
+- **He is OUT for Mon 9 Nov vs CLE — the FIRST GAME of matchup 4.** No duration or return date
+  published. Charlotte's schedule after that: **12 Nov @ PHX, 14 Nov @ LAC, 17 Nov @ LAL** — three
+  days off between, so a single missed game costs exactly one game.
+- ⚠ **The listing landed TWO MINUTES before the Knueppel news, so it is Charlotte's Monday injury
+  report, not a standalone update.** Do not read the absence of a timeline as a short absence; read
+  it as no timeline given.
+- 🟢 **THE OFFSET, AND IT IS BIG: KON KNUEPPEL IS OUT AT LEAST FOUR WEEKS** (left hamstring
+  strain, ESPN, 8 Nov — *"out for at least four weeks before he's reevaluated"*). Charlotte's own
+  beat note already said they would *"continue to rely heavily on Miller's scoring production
+  until Kon Knueppel (hamstring) is cleared to return."* **So whenever Miller is cleared he walks
+  back into a month of inflated usage.** That is a hold, not a drop.
+- **What he is when healthy:** **31.8 fantasy points per game over 10 games, 31.0 mpg**, and
+  career bests of **24.4 pts / 6.1 reb / 1.4 stl on 34.0 mpg** in the regular season.
+- ✅ **He is on my BENCH, so the OUT costs week 3 nothing** (bench scores zero anyway, and
+  Charlotte had no game today). The cost starts Monday.
+- 📌 **Contrast worth keeping next to the Buzelis note:** Miller's recent lines are **2-15, 7-18,
+  8-20** — he keeps firing through a cold streak. That is the aggression Buzelis is missing. Same
+  bad-shooting symptom, opposite underlying behaviour, and only one of them is ignorable.
+
+### 🟡 ADDS BUDGET NOW READS **0 / 3**, NOT 3/3 — RE-CHECK BEFORE ACTING
+The team page read **"Matchup Acquisition Limit 3 / 3"** this morning and reads **0 / 3** now
+(8 Nov evening, matchup 3's last day). So **three adds appear to be available** — most likely the
+page is already showing matchup 4's budget. **Confirm on the page before telling the user adds are
+blocked; I told them "exhausted" earlier today and that is no longer what it says.**
+
+### 🔴 BRANDON MILLER — ORIGINAL 8 NOV NOTE (superseded above): **GROIN**, LEFT THE 6 NOV GAME.
 ⚠ **I FILED HIS 14 MINUTES UNDER "BLOWOUT, SO IT'S FINE." THAT WAS WRONG — HE LEFT THE
 GAME.** From the ESPN News column (AP's Steve Reed, via coach Charles Lee), none of which is
 in the API: Miller *"will be re-evaluated over the weekend, and they expect to have more

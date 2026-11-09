@@ -546,6 +546,31 @@ assistant. Read `README.md` for the full league and roster picture before non-tr
    | **Minutes down** | no | **REAL CONCERN** — the only thing on this table worth a watchlist item |
    | **Minutes down** | yes | **FINE** — say so and move on; it is the scoreboard, not the coach |
    | **Minutes fine or up, shooting bad** | n/a | **IGNORE** — do not report it as a bad night |
+   | **Minutes fine, shooting GOOD, attempts flat or down** | n/a | **REAL CONCERN — a role he is not using.** Not a shooting read and not a minutes read: a THIRD thing |
+
+   ⚠ **AND THERE IS A THIRD AXIS INSIDE "SHOOTING" — ATTEMPTS. User, 8 Nov 2026:**
+   *"the issue is hes shooting really well but hes still not taking shots even then. if a player
+   with a role is shooting well they are going to be naturally be more aggressive. he isnt."*
+   **This rule as first written had a blind spot: it treated "shooting" as one thing and told me
+   to bin it.** But shooting splits into **conversion** (ignorable, reverts, the player's touch)
+   and **attempts** (not ignorable — it is the player's *willingness*, and rule 17 proves every
+   attempt is +EV in this scoring, so an attempt not taken is points not scored). The diagnostic
+   the user is using: **a player with a real role who is converting gets greedier.** If the makes
+   are landing and the attempt count does not move, that is a player who is not asserting himself
+   — and it shows up as a low fantasy total *even on a good shooting night*, which is exactly the
+   case this table used to tell me to throw away.
+   **Worked example, the one that produced the rule — Buzelis, PHI @ CHI, 8 Nov 2026 at halftime:**
+   **17 minutes (team high), 3-4 FG, 2-3 from three, 2-2 FT — and 4 attempts out of Chicago's 50.**
+   Caleb Wilson, a rookie, took **12 in 16 minutes at 41.7%**; Tre Jones took **7 in 9 bench
+   minutes at 28.6%**. Buzelis led the team in minutes and was **third-lowest in attempts among
+   the ten Bulls who played.** His season-long collapse is the same shape — rule 17 already
+   measured **−4.25 points/g from fewer attempts** (12.5 -> 9.3 FGA) — so the night is the season
+   in miniature, and it is *not* the ignorable half of a bad game.
+   ⚠ Keep the confound honest: his two best fantasy games (32 and 29) are his only two 13-attempt
+   games — **and also his two highest-minute games (35, 33)**, so attempts and minutes were tangled
+   all season. **8 Nov is the first game that separates them**: big minutes, hot shooting, no volume.
+   So report attempts as their own line — **FGA alongside minutes, every time** — and never let
+   "he shot well" close the triage.
 
    ⚠ **THE INJURY ROW WAS MISSING AND IT COST ME ONE — user, 8 Nov 2026: *"brandon miller
    also got injured too like he left hte game early rememeber, but no status about future
