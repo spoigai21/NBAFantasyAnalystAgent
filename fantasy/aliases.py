@@ -76,7 +76,7 @@ ALIASES = {
  "Kel'el Ware":['Superman','Ware','Kelel Ware','Callware','Callaway','Superman wear'],
  'Jusuf Nurkic':['Nerkage','Nerkish','Yousef Nerkish','Ysef Nerkage'],
  'Brayden Burries':['Burries','Brayden Burries','Braden Barry'],  # 'Barry's' in 5 Nov mailbag
- 'Dejounte Murray':['Dejonte','Dejante','Dejonte Murray','Dejante Murray','Dejonte Mari','Deontay Murray'],  # real name -> 0 hits
+ 'Dejounte Murray':['Dejonte','Dejante','Dejonte Murray','Dejante Murray','Dejonte Mari','Deontay Murray','Deonte Murray','Deonte M'],  # real name -> 0 hits; 'Deonte Murray' = 8 Nov Sunday recap, the marginalization note
 }
 con=sqlite3.connect("fantasy/league.db")
 con.execute("ATTACH DATABASE 'fantasy/lloyd.db' AS lloyddb")  # gitignored transcript index

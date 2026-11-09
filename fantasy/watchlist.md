@@ -6,6 +6,95 @@ Mine: Giannis 62, Paul George 48, Buzelis 38, Rollins 25, LaVine 23, **Dejounte 
 Top G ran 9 bodies to my 6 and beat my 233-267 projection with **298** (Acuff 59, Giddey 59,
 Garland 50, Gafford 46, LaMelo 42), helped by Markkanen and Jaren Jackson Jr. both sitting at 0.
 
+### 🟢 LLOYD'S 8 NOV SUNDAY RECAP IS ON DISK — AND HE CONFIRMS DEJOUNTE OUTRIGHT
+`fantasy/transcripts/2026-11-08_recap-sunday.txt` (68.8 KB, gitignored, local only). Index
+rebuilt in order: `index_lloyd.py` -> `aliases.py` -> `split_players.py`. **New caption mangling
+added: `Deonte Murray` (4 hits)** — the marginalization note was unreachable under his real name.
+All quotes below verified with `verify.py quote`, subject confirmed in the same breath (rule 19).
+
+**DEJOUNTE — TIER 1, EXPLICIT, AND IT MATCHES WHAT WE DERIVED INDEPENDENTLY:**
+> *"Deonte Murray is just off completely. **It looks relatively toxic** sort of what's happening
+> here at the moment. He was really good and then he stepped away for the birth of his child and
+> he's just **been completely marginalized. 12 usage**, six points, three rebounds, three assists.
+> I don't know if he's going to be traded. I've got no idea. But it does make more sense for them
+> to **pump more into Jeremiah fears**."*
+
+And on how he got there: *"when I heard they were starting fears, I was like, oh, this I'm not
+really sure how Dejante fits into all this, and it's not looking great at the moment."*
+**He names the paternity leave as the break point and Fears as the beneficiary — the exact
+mechanism, derived from the box scores before the transcript existed.** His "12 usage" is also
+independent confirmation of the usage collapse. **Nothing here softens the read. Escalate it:
+this is now data + explicit tier-1 Lloyd pointing the same way, and he raises a trade he cannot
+rule out.** Trigger unchanged: 10 Nov, his minutes vs 34, attempts vs 12, Fears's minutes.
+
+### ⚠ LLOYD **PARTLY CORRECTS** MY BUZELIS FRAMING — USAGE IS FLAT, THE MIX IS WHAT MOVED
+> *"the thing that's been really down with Bzelis this season, **his usage is basically the same
+> as last season**... His usage hasn't changed. Now, to be fair, I thought it would increase a
+> little bit, but it's the same. But he's just not blocking shots anymore, and **his contest rate
+> is well down because he's moved from the four to the three**, which is something I probably
+> should have factored in a little bit more... He's also just **playing like five fewer minutes
+> per game.**"*
+
+**Checked against our own numbers, and he is right — but so is the user, and they are compatible:**
+- **Field-goal attempts fell 12.5 -> 9.3 a game** while minutes fell **29.2 -> 25.0**. That is a
+  bigger attempt drop than the minutes alone explain, so the user's observation is real.
+- **But his free-throw trips rose 3.1 -> 5.3 and his turnovers 2.1 -> 3.0.** He is ending roughly
+  the *same number of possessions* — our own usage axis reads slightly **above** his projection.
+  **So it is not an aggression collapse. It is a SUBSTITUTION.**
+- 🔻 **AND THE SUBSTITUTION IS STRICTLY BAD IN OUR SCORING, which is the part Lloyd has no reason
+  to price.** Made two **+3**, made three **+5**, made free throw **+1**, turnover **−2**. Trading
+  ~3 field-goal attempts a game for ~2 extra foul-line trips and ~1 extra turnover is a loss even
+  before the conversion drop. Applied, per game: **FGM −4.16, PTS −3.26, FTA −2.19, TOV −1.87**,
+  against only **+3.22** saved on fewer attempts and **+1.86** from the extra made free throws —
+  **net −6.40 from the possession mix alone.**
+- **Then blocks −3.17 and rebounds −1.53 on top**, and Lloyd supplies the cause we did not have:
+  **he moved from the 4 to the 3**, so his contest rate collapsed. **That is a position change —
+  coach-controlled, and it does not revert.** It is the best explanation yet for why blocks went
+  1.51 -> 0.71, and it makes the blocks loss structural rather than a slump.
+- ⚠ **SO AMEND THE "POWELL VACANCY FAILED" CONCLUSION — Lloyd reads the same game the other way:**
+  *"without Norm Pow there, everything just looked better"*, and he hedges it himself: *"One game
+  without Norman Power doesn't mean Norman Pal is the entire problem. It's the only data we have
+  that saw Gideon Bazellis both play well."* He is counting the **output** (19 pts, 3 threes, a
+  block, 38 fantasy points — second-best game of his season); I counted the **attempts**. Both
+  are facts about the same 31 minutes. **The honest statement is that the attempts did not rise
+  but the night was still good, so it is unresolved, not failed.** My earlier "the thesis was
+  tested and failed" was too strong off one game — rule 12.
+- **Lloyd's verdict:** *"He's still not inside the top 150 for the season, but it's again it's a
+  glimmer... **If Bzalis was dropped, I would add him.**"* So: hold, and he would pay to acquire.
+
+### 🟡 ROLLINS — LLOYD IS NOW AT **"CLEAR DROP"**, BUT HOLD THROUGH THE 3-GAME STRETCH
+> *"why is he getting preferenced to someone like Ryan Rollins?... **He has been dreadful.** I
+> thought that he was by far their clear starting guard... but they've just said no, it's Hero and
+> Burries... **it's my evaluation of how he was and how the Bucks viewed him looks massively off
+> and it's looking like a clear drop. I would hold for this period though.**"*
+- **He independently flags the exact thing rule 31 flagged: *"He took four shots."*** 20 minutes,
+  4 attempts. Two separate reads, same signal.
+- **The hold is schedule-based and it applies to us too: Milwaukee plays THREE GAMES IN FIVE
+  NIGHTS — Tuesday, Wednesday, Friday.** Volume covers a weak per-game line in a points league.
+- *"An injury to hero or to burries reopens everything to Rollins."* That is the only upside path.
+- **Decision: hold through Friday, then re-evaluate.** Matches Lloyd exactly, and the adds budget
+  reads 0/3 anyway.
+
+### 🟢 PAUL GEORGE — LLOYD WOULD **SELL HIM FOR A TOP-30 PLAYER**
+> *"He is so very clearly their number two player and always was and the injury risk still is
+> there. But this bloke is cooking. The **21st ranked player for the year**... It's going to come
+> down some of the shooting stuff. Absolutely. And the risk of getting injured is still there.
+> **If I could turn him into a top 30 player in a trade, I would do it.** But otherwise, just go
+> with it, man."*
+**That is an explicit, actionable sell-high band: he is tier-1 saying a top-30 player is a fair
+return for a top-21 one, because of injury risk and shooting regression.** Paul George is at
+48 fpts on 8 Nov and 42.6/g. **Worth shopping — but only into a genuine top-30 piece, and
+remember rule 21: judge any offer purely by its effect on my starting ten.**
+
+### ❓ ONE WORDING I WANT TO CHECK WITH YOU — KEEGAN MURRAY
+Lloyd on his return: *"I'm encouraged by a few things. The two steals and one block are great.
+10 points, the 30% shooting is terrible, but **the low minutes are there.** Is he a must-grab
+player? I I probably, but I remain unconvinced."*
+**"The low minutes are there" is ambiguous** — it could mean *the minutes are worryingly low* or
+*at least the minutes floor is established*. "I I probably" also reads as a cut-off sentence.
+**You watched the video — which way did he mean it?** It changes whether Keegan is a stash or a
+body. Not guessing on it.
+
 ### 🔴🔴 DEJOUNTE — **REAL CONCERN. ROLE LOSS, AND THE MECHANISM HAS A NAME.**
 **User raised it unprompted and he is right.** Run the triage and every gate opens the bad way.
 - **Did he leave the game?** **No.** Normal rotation, pulled at 3:24 of Q4 of a decided game.
