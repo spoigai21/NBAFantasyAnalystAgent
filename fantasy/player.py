@@ -126,7 +126,15 @@ def main():
     # ---------- SPLIT (ESPN's own appliedStats, cached) ----------
     L = con.execute("SELECT * FROM stat_lines WHERE player=? AND season=? AND src=0", (name, PREV)).fetchone()
     N = con.execute("SELECT * FROM stat_lines WHERE player=? AND season=? AND src=0", (name, CUR)).fetchone()
-    if L and N and L['min'] and N['min']:
+    if L and N and L['min'] and N['min'] and L['gp'] < 3:
+        # A 1-2 game prior season is not a baseline (rule 12). Dame 2025-26 = 1 GP,
+        # applied_avg 0.0, which also divided by zero below. Say so instead.
+        print(f"SPLIT  vs {PREV-1}-{str(PREV)[2:]}: UNUSABLE -- only {int(L['gp'])} GP last season "
+              f"({L['applied_avg']:.1f}/g). Too few games for a baseline; use the TREND line above.")
+    elif L and N and L['min'] and N['min'] and L['applied_avg'] <= 0:
+        print(f"SPLIT  vs {PREV-1}-{str(PREV)[2:]} ({int(L['gp'])} GP): last season averaged "
+              f"{L['applied_avg']:.1f}/g -- no per-minute split possible.")
+    elif L and N and L['min'] and N['min']:
         mL, mN = L['min']/L['gp'], N['min']/N['gp']
         aL, aN = L['applied_avg'], N['applied_avg']
         rL, rN = aL/mL, aN/mN

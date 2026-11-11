@@ -2333,3 +2333,283 @@ Alias table 242 → **248**; player-attributed notes **1,117**; index **3,459 pa
   noise. Cannot resolve it from the captions.
 - **"the Daim Mara" / "Pig Williams is out" / "Bennett Stirts"** — Friday watch item 4, team
   never stated. **"Kingston Flemings"** — most-added player, team never stated.
+
+## 9 Nov 2026 — BUY-LOW SHOW (`fantasy/transcripts/2026-11-09_buy-low-show.txt`)
+
+Eight names. **Two of them are mine, and that matters for pricing.**
+
+- **Damian Lillard (Top G)** — the one the user is chasing. *"I think that top 40 for Dame is a
+  pretty comfortable range for rest of season production"*; *"by the time we're rolling into
+  December, he'll be playing 33 a night."* His quoted last-two-week numbers **verify exactly**
+  against the box scores (29 fpts / 19 pts / 4.5 ast / 41% FG / 82% FT → actual 28.9 / 18.7 /
+  4.57 / 40.7% / 81.6%). ⚠ But his levers are **category-league levers**: in OUR scoring the
+  free-throw fix he leads with is worth **+0.7/g**, steals +1.3, FG% +1.8 — and **minutes +3.6**,
+  i.e. half the case. Full upside 39.2/g from 32.2 today.
+- **His pricing rule, verbatim and worth keeping:** *"If I think Dame can be a top 40 player, send
+  someone outside the top 50… if you traded at the 42nd ranked player in your rest of season
+  projections for Dame, hoping he becomes the 38th, it's silly. You want to take someone who's
+  80th, producing more than Lilard at the moment, and turn him into Dame."*
+- **Amen Thompson (MINE) — named a buy-low.** *"there is enough scope in both Nars and Amen
+  Thompson here to also be by low players."* Minutes a little low, assists fallen off, 27 fpts.
+  **So do not use Amen as trade currency.**
+- **Brandon Miller (MINE) — named a buy-low, emphatically.** *"He's a top 50 player"*; the 140th
+  nine-cat rank is *"clear garbage"*; *"could you get Miller for a top 70 player"*; *"I think he
+  can almost average 25 points a game this season."* ⚠ He calls it a **hip issue** — ESPN and the
+  Charlotte beat said **right groin soreness** on 8 Nov. Lloyd also only knows the one-game
+  ruling. **Do not use Miller as trade currency either.**
+- Others: **Coby White** (CHA, 23% FG, "never going to be that", ~30 fpt guy), **Ty Jerome**
+  (MEM — *not* a sell high, top 30-40 rest of season), **Jalen Johnson** (ATL, "45 minimum fantasy
+  point player", would pay a top-20 for him), **Naz Reid** ("being a little exposed"),
+  **Scottie Barnes** as the nine-cat loser (12th on Durant vs 69th nine-cat — *"It is not 69th"*).
+- **Charlotte context he leans on all show:** *"They have five games over the next 14 days"* — a
+  low-volume stretch that depresses Miller's and Coby White's perceived value.
+
+⚠ **Two indexing traps caught while filing this.** (1) The captioner writes **"Kobe White"** for
+COBY White — not Kobe. (2) A bare **`Dame`** alias matches **"Dame Mitchell"** (= Davion Mitchell)
+in the 8 Nov recap, so it is deliberately NOT in `aliases.py` — `Lillard`/`Lilard` catch every real
+passage. Also fixed a divide-by-zero in `p.sh`: a player with a 1-GP prior season (Dame, 2025-26)
+crashed the SPLIT block.
+
+---
+
+## 10 Nov 2026 — MONDAY RECAP (slate of Mon 9 Nov, 8 games)
+
+Transcript: `fantasy/transcripts/2026-11-09_recap-monday.txt` (65,629 bytes, gitignored).
+Six of my 14 played. Every quote below greps clean and the subject is named in the same
+breath (rule 19 check done against the raw file, not a snippet).
+
+### Anthony Davis — the absence question is answered, for now
+*"that is an absolutely ridiculous game. 44 and 13 for Anthony Davis. 33 usage… he shot 76
+from the field. He shot 91 from the line on 10 attempts"* / *"Do you know he's the 10th
+ranked player per game this season?"*
+Ours: **78 fantasy points, 34 minutes**, 16-21 FG, 10-11 FT, 44 pts, 13 reb (5 OREB), 1 ast,
+1 stl, 0 blk, 3 TO. **ELITE, MINS+, FED.** He came back from the 6-7 Nov back-to-back absence
+**straight into the starting lineup** — Bilal Coulibaly moved to the bench (and was out anyway,
+hand soreness). Season now **9 GP at 50.8/g against a 50.8 projection — dead on**.
+⚠ He took 21 attempts and 11 free throws; this is not a managed-minutes usage pattern.
+
+### Victor Wembanyama — 109 points in 25 minutes, and the blowout is the only risk
+*"40 11 three assists eight blocks uh 79% shooting 80% from the line. Just an absolutely
+bonkers game again"* — ⚠ **it was NINE blocks, not eight.** Lloyd miscounted by one.
+Ours: **109 fantasy points on 25 minutes**, 15-19 FG, 8-10 FT, 40/11/3, **9 blocks**, 1 TO.
+At +4 a block that is 36 points of blocks alone.
+The mechanism Lloyd names, and it is the actual watch item: *"they are so good at the moment
+that these guys just don't play any minutes and it's not really mattering that much for WBY
+because look at the numbers that he's putting up."* SA won by 26; his 25 minutes printed
+**MINS-DOWN**. Season **73.6/g on 29.8 mpg**. Nobody sells this; the exposure is simply that
+San Antonio blowouts cap his floor, and it has not cost anything yet.
+
+### Amen Thompson — ⚠ THE REAL PROBLEM ON MY ROSTER, AND LLOYD SAYS IT OUT LOUD
+*"I wanted to see more from Amen Thompson. I didn't unfortunately eight and nine 12% usage a
+steal. He is a buy low, but I'm getting very worried that he's sort of just not involved at
+all."* / *"The defensive stats haven't really come back. The assists are down. The usage is
+low. Like, it's it's bad."*
+Ours: **28 fantasy points on THIRTY-FIVE MINUTES**, 3-8 FG, 8 pts, 9 reb, 3 ast, 1 stl,
+**0 blk**. Usage **12.4%**, `FROZEN`.
+**This is rule 31's third row, not a bad shooting night.** His minutes are completely intact —
+35 / 39 / 32 / 25 / 28 / 39 over the last six — and the touches are gone. Eight attempts in
+35 minutes. Season **36.1/g against a 41.0 projection**.
+⚠ **This is a straight downgrade from the 9 Nov buy-low show, where Lloyd named him a buy-low
+on the strength of the same role.** He still says "buy low" here, but he has attached
+*"I'm getting very worried"* and *"it's it's bad"* to it in 24 hours. **He is no longer
+untouchable as trade currency — but he is also not a sell at 12% usage.**
+
+### Zach Edey — converting and NOT SHOOTING: three attempts in 23 minutes
+*"it was probably a bit of a step back today. He still played 23 minutes, so that's a
+positive. But eight points, nine rebounds, 16 usage, one block. He's just not really getting
+it going, is he? I am going to give it a few more weeks. Watch the minutes trend. Watch where
+the usage sits because we've seen him be a top 60ish sort of player, but at the moment is not
+moving in that direction anywhere near fast enough for me. And it's getting a little worrying."*
+Ours: **22 fantasy points, 23 minutes** — his HIGHEST minutes in six games (18/19/19/25/20/23)
+— on **2-3 FG and 4-4 FT**. That is 67% from the field, 100% from the line, and **THREE field
+goal attempts.** Usage 15.4%, `USG-DOWN`.
+**This is the user's own 8 Nov Buzelis diagnostic, exactly:** a player with a role who is
+converting and still not raising his volume. Season **26.1/g against a 36.3 projection —
+a −10.2 shortfall, the largest on my roster.** Lloyd's framing ("a bit of a step back",
+"not getting it going") undersells it: the minutes are fine and climbing. The problem is
+that he will not shoot.
+
+### Dejounte Murray — ⚠ THE TOUCHES CAME BACK. First real counter-evidence since the leave
+*"Let's start with the Jonte Murray. It's not been great here since he had that time off for
+the birth of his child. He has struggled to do anything. This game wasn't as bad as some of
+those other ones, but still 12 points in 18 minutes with three rebounds and one assist. He's
+outside the top 100 over the last two weeks. **But encouragingly, the usage was high in this
+game. He just didn't play because he had five fouls.** So in the other games, he'd been like
+just weirdly not involved… No usage, no shots, no nothing. So it's not as worrying this game
+as the other ones, but still not moving in the right direction."*
+Ours: **18 fantasy points, 18 minutes**, **5-10 FG**, 12 pts, 3 reb, 1 ast, 0 stl, **5 FOULS**,
+in a **51-point blowout loss (GS 138 - NO 87)**.
+**Usage 28.3%, `USG+` — his first non-frozen game since the leave.** The full sequence:
+
+| | pre-leave | 4 Nov | 6 Nov | 8 Nov | **9 Nov** |
+|---|---|---|---|---|---|
+| usage | 27.4 / 26.5 / 22.9 / 20.1 | 13.3 | 16.1 | 13.2 | **28.3** |
+| grade | — | NORMAL | AWFUL | AWFUL | NORMAL |
+
+**Rule 31 verdict: the 18 minutes are FINE.** Five fouls plus a 51-point blowout, so the
+minutes number carries no information. The usage number does, and it points the other way
+from the role-loss thesis.
+⚠ **BUT hold the confound (rule 12's cross-tab rule): Trey Murphy AND Zion were BOTH resting**
+on the back end of a five-in-seven. Jordan Poole got 34 minutes out of nowhere; Benedict
+Mathurin got 24. So the touches returned in the one game where New Orleans's two best players
+sat. **That is an n=1 with an obvious third variable — exactly the Fears/Murphy error from
+4 Nov. The clean read is 11 Nov vs Brooklyn with Murphy and Zion back.**
+
+### Cedric Coward — quiet, and Lloyd stays positive on the season
+*"Cedric Coward, the chicken… 36 and four for Coward on a nine usage. He did have two steals
+and a block and his defensive stats have been a bit better this season. Um, we would hope for
+somewhat more than this from Coward, but overall I'd say he's delivered way more than
+expectation."*
+⚠ **WORDING RESOLVED: "36 and four" is "3, 6 and four" — 3 points, 6 rebounds, 4 assists**,
+not 36 points. Confirmed against the box score: **1-6 FG, 3 points**, 6 reb, 4 ast, 2 stl,
+1 blk, 0 TO in 28 minutes, **28 fantasy points** (which reconciles to 28 exactly on rule 17's
+weights, so there is no ambiguity).
+Minutes **28, his projection is 28.4 — dead on**. Conversion was bad, attempts were low (6),
+but usage has been low and volatile all season and he is still **35.3/g against a 29.6
+projection**. Ignore the night.
+
+### Keegan Murray — the wrist, and ESPN has more than Lloyd does
+*"in Sacramento, the other bit of news we got was that Keonte, not Kee, Keegan Murray has
+popped up as questionable with a wrist issue. Come on, man. Sabon is still questionable as
+well… none of these particular scenarios seem super long-term."*
+**ESPN beat, 10 Nov: questionable tonight vs Orlando, RIGHT WRIST SORENESS.** The fuller
+picture Lloyd does not give: he returned Sunday from a **seven-game absence** (left ankle
+capsulitis), played **23 minutes off the bench** for 10 points while **Precious Achiuwa
+started at power forward**, and *"the duo could switch roles as soon as Tuesday"* with
+Sabonis (knee) not 100%. So the wrist is minor; the **role** is the open question.
+He is in a **UTIL scoring slot tonight**, which is correct — see the lineup note below.
+
+### Collin Murray-Boyles — out, and it was ILLNESS, not injury or role
+*"Colinary Boils was out also"* / *"I also wanted to see Colin Marary Boils, but unfortunately
+we didn't get to see that cuz he was out."*
+**ESPN: out Monday with an ILLNESS — his first missed game of the season.** Not a minutes cut,
+not an injury. No read to take from it.
+⚠ **The real CMB item is Jakob Poeltl**, and Lloyd connects them himself: Poeltl went
+*"31 minutes, 18 and eight, one steal, four blocks, 75 from the field… He's a top 70 player
+now over the last two weeks… You have to grab him if he was dropped,"* and then —
+*"that is super encouraging, which again makes it a little bit harder to figure out what's
+going to happen with someone like Mari Boils later."* ESPN says the same thing:
+CMB *"will likely be a fixture on the second unit when Barnes and Jakob Poeltl are both
+healthy."* **CMB's `BUY (usage up)` signal has a expiry date attached to Barnes's and
+Poeltl's returns.**
+
+### Brandon Miller — still groin, still no timeline, and Lloyd has less than we do
+*"The Hornets were without everybody. No Brandon Miller, no Coniple, no Musadate, no Grant
+Williams, no Dennis Shredder"* / *"I don't think Miller is a long-term one."*
+⚠ **Lloyd called it a "hip issue" on the 9 Nov buy-low show. It is a GROIN** — ESPN and the
+Charlotte beat both say right groin soreness, injured Friday 6 Nov, ruled out Monday, "more
+information expected by Monday" and nothing newer has published. He remains on IR and
+DAY_TO_DAY. Lloyd's "not long-term" is a guess, not reporting.
+This also settles a Charlotte roster question from yesterday: ESPN's own note —
+*"Coby White and Naz Reid would be asked to step it up on offense"* — confirms **both are
+Hornets**, which is why Lloyd discussed them inside the Hornets section.
+
+### Not on the slate (no information tonight either way)
+Giannis (MIA), Paul George (BOS), Zach LaVine (SAC), Ryan Rollins (MIL), Matas Buzelis (CHI)
+— and **Damian Lillard (POR)**, so the buy-low valuation is unchanged going into tonight.
+
+### Elsewhere, only because it touches a trade or a watch item
+- **Jalen Johnson** (a 9 Nov buy-low): 38 min, 15 and 7, 2 stl, bad FG and bad FT.
+  *"this is also well below what my expectation of Jaylen is. So, he remains a pretty clear
+  buy low."* Thesis intact, price unchanged.
+- **Coby White** (a 9 Nov buy-low): 20 min, 10 and 8, **35% usage**, shot badly again.
+  *"The buy low on Kobe White is very clearly open. I would not drop him."*
+- **Naz Reid** (a 9 Nov buy-low): 25/13, 4 threes, **38% usage** — but with the entire
+  Charlotte rotation out. *"everyone was out. He shot poorly and I think he'll continue to do
+  that."* The volume *"probably turned some of that around pretty quickly."* Buy-low window
+  closing on a one-game spike with a huge absence confound.
+- **Ty Jerome** (a 9 Nov buy-low): 32 min, 27 and 6, 34% usage, 5 threes, 47% — and
+  **zero assists**. *"I think he can be better than this though."*
+
+---
+
+## 11 Nov 2026 — TUESDAY RECAP (slate of Tue 10 Nov, 6 games)
+
+Transcript: `fantasy/transcripts/2026-11-10_recap-tuesday.txt` (59,231 bytes, gitignored).
+Five of my 14 played. All quotes verified; subjects confirmed in the same breath.
+
+### Paul George — 57 fantasy points, and Lloyd puts a NUMBER on the sell band
+*"Washed legend Paul George had 36 points with six dribbles. He had five rebounds. **He's a
+top 25 player this season. He's top 15 over the last two weeks.**"* / *"If you could sell out
+on him and sell high, I don't really know if anyone's buying into it, but every game that goes
+past that he's healthy, your chances of doing it are high. **Now, I wouldn't do it just for a
+top 50 player.** At this point, I just take what I get… If it's a top 30 player, now we're
+talking a little bit more interestingly… **So unless I'm getting a top 30-ish guy back, I'm
+just rolling with it.**"*
+Ours: **57 fantasy points, 30 minutes**, 14-22 FG, **6-11 from three**, 36 pts, 5 reb, 1 ast.
+`GOOD`, `FED` at 36.0% usage. Season **44.6/g**, and his minutes are **30.1 against a 33.2
+projection**, so his minutes-adjusted fair value is about **33.5 — he is running +11.1 over it,
+the largest overperformance on my roster by a distance.** Lloyd's only stated worry is the
+knees and they have been clean. **This is the sell-high, and Lloyd has now priced it: top 30.**
+
+### Zach LaVine — ⚠ LEFT WITH AN ANKLE SPRAIN, CAME BACK, scored 31
+*"What about Zack Lavine? **Left with an ankle sprain and then came back** 31 points, three
+rebounds, two assists, and two steals."* / *"About a week ago, he was in a similar Sabonis sort
+of predicament. The shots had dropped, the production was down, the minutes were down… **And
+now it's back up.** That's what I mean by we can't predict it."*
+Ours: **47 fantasy points, 33 minutes**, 10-16 FG, **6-9 from three**, 5-5 FT, 31 pts, 2 stl,
+**5 turnovers**. `GOOD`, `FED` at 31.9% usage.
+ESPN beat: he *"rolled his right ankle, but he was able to return after getting checked out in
+the locker room and appeared to be fine,"* and he has **two full days of rest before Friday**
+vs Portland. Rule 31's injury row fired and then cleared. Season back up to **33.6/g**.
+
+### Giannis — downgraded from probable and played anyway
+*"Giannis was listed probable heading into this game and then **he got the dreaded downgrade**.
+You go, okay, so he's going to be out with his wrist issue, but he played… 30 and 11, four
+assists, no defensive stats… **He's the sixth ranked player in head-to-head leagues.**"*
+Ours: **54 fantasy points, 31 minutes**, 12-21 FG, 5-9 FT, 30 pts, 11 reb, 4 ast, **0 stl,
+0 blk**. Season **59.5/g against a 57.3 projection**. The wrist has now survived a downgrade
+without costing a game. No action.
+
+### Ryan Rollins — started, and Lloyd makes his FINAL CALL tonight
+*"Tyler Herro was indeed out in this game. So that meant that Ryan Rollins got to go back into
+the starting lineup and he was tracking to be pretty good. **But they lost by 30 points.** So we
+only got 24 minutes out of Rollins. 145 and two, only 18 usage. **The variance in usage in
+Rollins every game is just wild. It's so hard to track.** He shot the ball well, but he didn't
+take that many shots."* / *"do we actually believe that Taylor Jenkins is going to **keep
+Rolland starting over Burries or Hero? I don't.** Unfortunately, I don't. I hope that Rollins
+can get 24 minutes to 26 minutes as a sixth man."* / Closing watch-list: ***"Ryan Rollins is our
+final call on him after a solid game today."***
+Ours: **34 fantasy points, 24 minutes**, 5-9 FG, **4-6 from three**, 14 pts, 5 reb, 2 ast, 1 stl,
+**0 turnovers**. `GOOD`. **Rule 31: the 24 minutes are a 32-point blowout loss, not a benching.**
+Season 25.1/g against 31.0 projected; minutes 23.4 vs 28ish.
+**Trigger: tonight, LAL @ MIL — Lloyd decides, and so should we.** The question is only whether
+Herro is back.
+
+### Keegan Murray — played through the wrist, FOUR BLOCKS, still on the bench
+*"Keegan Murray is still coming off the bench. **Why are they being so cautious with him here?**
+24 minutes overall. He had 11 points, two rebounds, but he blocked a million shots. And by a
+million, I mean four… I would probably grab him in a 12 team league, but **they're being a
+little bit annoying with the minutes.**"*
+Ours: **28 fantasy points, 24 minutes** off the bench, 4-9 FG, 11 pts, 2 reb, **4 BLOCKS**
+(worth 16 of the 28 on their own in our scoring). `GOOD`, `FED` at 22.5% usage.
+⚠ **THIS RESOLVES THE OPEN 8 NOV WORDING QUESTION, and Lloyd resolved it himself rather than me
+guessing.** I had flagged *"the low minutes are there"* as ambiguous — worryingly low, or floor
+established? Three days later he says *"being so cautious"* and *"annoying with the minutes."*
+**He means the minutes are the problem.** Keep the user's own read as the tiebreak, but the
+direction is no longer in doubt.
+ESPN adds the mechanism Lloyd only gestures at: he is *"still dealing with lingering right wrist
+soreness"* and **"has fallen into a battle with Precious Achiuwa for the top spot at power
+forward."** So it is a role competition, not caution.
+
+### Damian Lillard — ⚠ THE BUY-LOW WINDOW HAS CLOSED, AND HE IS REACHABLE IN THE INDEX AGAIN
+*"**Dame continues to play much better in only 24 minutes.** 25 points, four threes, three
+assists. The free throws are coming back. He's top 90 on the season. **I feel like he's going to
+get to top 30 this year.**"*
+Ours: **45 fantasy points in 24 minutes** — 8-15 FG, **4-10 from three, 5-5 FT**, 25 pts, 3 reb,
+3 ast, 1 stl, **zero turnovers**. `ELITE`, usage 30.9%.
+Season now **33.5/g over 10 GP (was 32.2 over 9)**, **last five 35.4**, usage **26.8% against a
+26.7% projection — exactly 1.00.** Minutes **28.9 against 31.4 projected**.
+**Minutes-adjusted fair value ≈ 33.0, and he is producing 33.5. There is no discount left.**
+⚠ **AND THE MINUTES CASE HAS A STRUCTURAL OBSTACLE, not just blowouts.** Portland won by 20, so
+rule 31 excuses 24 minutes — except **Sissoko started and played 33, Jrue Holiday played 25 off
+the bench, Scoot Henderson 23 off the bench.** Three other guards at or above Dame's minutes in
+the same blowout is a rotation choice, not a scoreboard artifact. Lloyd's *"his minutes are too
+low"* thesis needs those minutes to come from somewhere and they are not.
+Lloyd also, 5 Nov: *"**I expect that Dame sits on a back to back**"* — so tonight's OKC rematch
+is the second leg and will tell us nothing either way.
+⚠⚠ **INDEX FIX: I had to reverse the 9 Nov decision to leave bare `Dame` out of `aliases.py`.**
+This entire paragraph never says "Lillard" once, so it was unreachable under his real name — the
+silent zero-hit failure rule 19 exists to stop, on the player we are actively trading for. Cost
+measured before changing it: `Dame` = 20 hits, `Dame Mitchell` (= Davion Mitchell) = 1. Added,
+with Davion Mitchell tracked separately so the one collision is visible instead of silent.

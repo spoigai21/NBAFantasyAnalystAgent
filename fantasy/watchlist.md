@@ -1,3 +1,512 @@
+# 🚨 11 NOV 2026, 3:40 PM — **TRADE BOARD REBUILT. TOP G DECLINED BOTH GARLAND OFFERS.**
+
+✅ **THE API DOES CARRY PENDING TRADES AFTER ALL — `view=mPendingTransactions`.**
+I previously wrote that the five offers were visible "on the ESPN team page, not in the API."
+**That was wrong.** `?view=mPendingTransactions` returns a `pendingTransactions` array with the
+full item list (playerId, fromTeamId, toTeamId), proposer, proposed date and expiry, and
+`/transactions/?view=mTransactions2` carries the `TRADE_DECLINE` records. No browser needed.
+
+## WHAT HAPPENED — all three of MY offers are dead
+
+| Offer | Deal | Outcome |
+|---|---|---|
+| 2 | Send Coward + LaVine · Receive **Garland** | ❌ **DECLINED by Top G** (`TRADE_DECLINE EXECUTED`) |
+| 3 | Send Rollins + Paul George · Receive Garland + LaMelo | ❌ **DECLINED by Top G** |
+| 1 | Send LaVine · Receive VanVleet | ❌ **CANCELED** (no decline record — voided, not refused) |
+
+**Garland does not appear in any live offer.** He is still on Top G's **bench**, alongside LaMelo
+and Darius Acuff. Top G kept him.
+
+## 🔴 THREE OFFERS ARE LIVE — ALL FROM TOP G, ALL INCOMING
+
+| # | Deal | Expires | Verdict |
+|---|---|---|---|
+| A | Receive **Damian Lillard** · Send **Amen Thompson** | ⏰ **TONIGHT 8:00 PM** | **DECLINE** |
+| B | Receive **Devin Booker** · Send **Paul George** | 12 Nov 7:08 PM | **DECLINE** (user's call) |
+| C | ⚠ **NEW** — Receive **LaMelo Ball** · Send **Anthony Davis** | 13 Nov 12:39 PM | **DECLINE — the clearest no of the three** |
+
+### 🔴 OFFER C — **LAMELO FOR ANTHONY DAVIS: DECLINE.** Proposed today 12:39 PM
+**The totals settle it without any rate math: AD has scored 457 points in 9 games. LaMelo has
+scored 403 in 11.** AD has outscored him by 54 while playing **two fewer games.**
+
+| | Producing | GP | Total | mpg now / proj | Minutes-adj fair value |
+|---|---|---|---|---|---|
+| **Anthony Davis** | **50.8/g** | 9 of WSH's 11 | **457** | 33.2 / 32.2 | **~50.8** |
+| LaMelo Ball | 36.6/g | 11 of MIN's 11 | 403 | **27.8 / 32.9** | ~37.8 |
+
+**−14.2/g now and −13.0/g on fair value.** Nothing in this file is further outside the noise band.
+
+⚠⚠ **LAMELO IS THE RULE-22 TRAP, THIRD TIME OF ASKING.** ESPN still projects **32.9 mpg**; he
+is playing **27.8**, after 28.0 last season and 26.0 the year before. The 44.7 adjusted
+projection is **minutes that have never once been delivered** — price him at ~37, never 44.7.
+Minnesota are **8-3** and deep; the minutes are a rotation choice, which does not revert.
+
+**DURABILITY IS THE ONLY ARGUMENT FOR IT, AND IT FAILS ITS OWN TEST.** Priced under rule 9
+against a ~30/g replacement: AD is worth **+20.8/g over replacement**, LaMelo **+6.6/g**. A
+**70-game** LaMelo returns 462 surplus points, so **AD breaks even at 22 games** — and his worst
+season ever was 20. He has played **9 of Washington's 11**, the two misses being both legs of one
+road back-to-back, and he is **ACTIVE** with no flag (ESPN, 9 Nov: *"Davis (ankle) will play."*)
+
+**AD IS GETTING BETTER, NOT WORSE.** Last four: **52 / 55 / 65 / 78**, averaging **62.5**. The
+78 was 44 points and 13 boards on 16-21 shooting. Lloyd, 9 Nov recap: *"that is an absolutely
+ridiculous game... Do you know he's the **10th ranked player per game this season**?"*
+Honest counterweight: **AD's blocks are down 1.65 → 1.00**, and at +4 apiece that is real money
+in this scoring — but it is already inside the 50.8 he is producing.
+
+**AND IT GUTS THE FRONTCOURT.** AD covers **PF, C, F, G/F, PF/C, F/C, UTIL** — seven slots.
+LaMelo covers **PG, G, G/F, UTIL** — four, guard-only. Behind AD there is only Wembanyama and
+Zach Edey at 26.1/g. **Do not trade the PF for a point guard.**
+
+✅ **IN LAMELO'S FAVOUR, STATED FAIRLY:** he has played **11 of 11** to AD's 9 of 11, his last
+five are **40.4/g**, and Lloyd on 8 Nov: *"another solid game from him... He's now up to 54th on
+the season after a dreadful start. It is all starting to come back to normal."* None of it closes
+a 14-point-a-game gap.
+
+### ⚖️ ASKED 11 NOV — **PAUL GEORGE FOR LAMELO BALL (user's own idea, not a live offer): NO, BUT COUNTER**
+**Right direction, wrong price.** This is the first deal on the board that is even close, because
+three axes disagree:
+
+| Axis | Paul George | LaMelo | Effect on me |
+|---|---|---|---|
+| Producing now | **44.6/g, 446 in 10 GP, 21st** | 36.6/g, 403 in 11 GP, **58th** | **−8.0/g** |
+| ESPN adjusted projection | 36.9 (56th) | **44.7 (16th)** | +7.8/g |
+| Minutes-adjusted fair value | ~33.5 | ~37.8 | +4.3/g *(thin — ~2x the error band)* |
+| Age | **36** | **25** | LaMelo |
+
+✅ **LLOYD HAS AN EXPLICIT BAR FOR THIS EXACT TRADE** (10 Nov recap, verified 1 hit; the segment
+opens *"That is Paul George"* and never leaves him): *"If you could sell out on him and sell high…
+every game that goes past that he's healthy, your chances of doing it are high. **Now, I wouldn't
+do it just for a top 50 player.** At this point, I just take what I get… If he gets hurt, he gets
+hurt. **If it's a top 30 player, now we're talking a little bit more interestingly** because there
+is plenty of different alternate branching timeline scenarios in which he just plays 65 games and
+your pick at pick 80 delivers top 25 numbers, which is how you win a league."*
+**LaMelo is 58th by current production, and Lloyd himself called him 54th on 8 Nov. He IS the
+top-50 player Lloyd is saying no to.** Tier 1 under rule 26 — explicit, dated, on the question.
+
+**WHAT WOULD FLIP IT: LaMelo's minutes, and only that.** 27.8 against 32.9 projected, after 28.0
+last season and 26.0 before. Minnesota are 8-3 and deep. **If he holds 32+ minutes for two weeks
+he is a real top-30 player and this becomes a yes on Lloyd's own terms.** Watch that, not his
+scoring.
+
+**THE CASE FOR SELLING PG IS REAL THOUGH:** 36 years old, **37 GP last season**, the risk is his
+knees, and he is **OUT tonight with an illness.** Lloyd's whole point is that the window shuts the
+moment he tweaks something.
+**BETTER TARGETS ON TOP G** (current rank): **Karl-Anthony Towns 12th** (49.2/g, 46.3 projected) —
+their best healthy asset, the right ask even if they refuse. **Kyrie Irving 32nd** (42.3/g, 40.9
+projected, priced right) — the cleanest realistic one, but he does not land until their
+Haliburton + JJJ deal executes **7:13 PM tonight**. ⚠ **Darius Acuff is a trap** — 31st at 42.5/g
+but only **28.4 projected on 37.3 mpg**; he is *their* overvalued player. Booker is 39th, under the bar.
+**No structural problem either way:** PG is a wing and SF stays covered by Amen, Coward and Miller.
+
+### 🔴 OFFER A — DAME FOR AMEN: **DECLINE** (unchanged, expires 8:00 PM tonight)
+Dame 33.5/g over 10 GP (335 total), Amen 36.1/g over 11 (397). You give up production, fair value
+and flexibility at once: **Dame is PG/G only; Amen fills SG, SF, G, F, SG/SF, G/F, F/C, UTIL.**
+Lloyd's own pricing rule, 9 Nov buy-low show: *"if you traded at the 42nd ranked player in your
+rest of season projections for Dame, hoping he becomes the 38th, **it's silly.**"* Amen projects
+**above** Dame. This is the silly version, and selling a 22-year-old at the bottom of a usage
+trough is the worst possible moment.
+
+### 🔴 OFFER B — BOOKER FOR PAUL GEORGE: **DECLINE** — the user's call, 11 Nov
+*"booker is not top 30 hes top 40 or even worse as of now… im not taking him."* Correct: Booker
+is **36th by current production**, not the 27th I misquoted off his projection.
+⚠ **ONE HONEST TENSION TO KEEP VISIBLE, because the user also said to think long term.** Paul
+George is producing **44.6/g against a ~33.5 minutes-adjusted fair value — the single most
+overvalued player on either roster (+11.1)** — while Booker's 40.5 sits against ~39.1, i.e. he is
+priced right. On the long-term axis the user asked me to use, **this deal favours us**; on
+current production it does not. **He has decided; the decision stands.** But note PG's status
+changed today: **he is now OUT with an illness and sitting on IR.**
+
+### 📋 TOP G IS REBUILDING AROUND THIS (context only — rule 21, not an input to my calls)
+A fourth pending item is theirs, not mine: **Top G send Haliburton + Jaren Jackson Jr. to Why so
+serious for Kyrie Irving + Kawhi Leonard**, accepted and **executing tonight 7:13 PM**. Both
+players they are sending are **OUT**. That is why the offers to me all want a healthy big or wing
+and why Garland was kept.
+
+### 📋 MY ROSTER CHANGED TODAY
+**Paul George moved to IR (OUT, illness)** and **Brandon Miller came off IR into the SF slot**
+(DAY_TO_DAY). Murray-Boyles is in UTIL, also DAY_TO_DAY. Dillon Brooks is **gone** — added for
+Tuesday and dropped, as suspected. 13 active slots **still full**, one IR slot open, **two
+acquisitions left** before 15 Nov.
+
+### 📏 THE MINUTES-ADJUSTED BOARD — this is what decides all five (rule 22)
+ESPN projects a minutes jump for almost every one of these players that is not being delivered,
+so I re-priced each projection by the share of projected minutes actually being played. **Rule 10:
+anything inside about 2/g is noise and is not an edge.**
+
+| Player | Producing | mpg now / proj | Minutes-adj fair value | Gap |
+|---|---|---|---|---|
+| **Paul George** | **44.6** | 30.1 / 33.2 | **~33.5** | **+11.1 OVER** |
+| Cedric Coward | 35.3 | 28.4 / 28.5 | ~29.6 | +5.7 over |
+| Fred VanVleet | 32.8 | 30.1 / 32.2 | ~29.2 | +3.6 over |
+| Zach LaVine | 33.6 | 32.7 / 33.0 | ~30.3 | +3.3 over |
+| Devin Booker | 40.5 | 33.8 / 35.8 | ~39.1 | +1.4 (noise) |
+| Damian Lillard | 33.5 | 28.9 / 31.4 | ~33.0 | +0.5 (noise) |
+| LaMelo Ball | 36.6 | **27.8 / 32.9** | ~37.8 | −1.2 (noise) |
+| Amen Thompson | 36.1 | 33.4 / 36.5 | ~37.5 | −1.4 (noise) |
+| **Darius Garland** | **31.0** | 32.7 / 35.2 | **~36.0** | **−5.0 UNDER** |
+
+**Only two names clear the noise band: Paul George is the sell, Darius Garland is the buy.**
+⚠⚠ **LaMelo is the 23 Oct trap repeating, verbatim.** ESPN had him at 32.9 projected mpg then
+after 28.0 the prior season and 26.0 actual; it STILL says 32.9 and he is at **27.8**. His 44.7
+projection is minutes that are not happening — **price him at ~37, never 44.7.**
+
+### 🔴 OFFER 5 — **DAME FOR AMEN: DECLINE.** The discount is gone, and this is the inverse of Lloyd's rule
+**Dame 33.5/g (fair ~33.0) for Amen 36.1/g (fair ~37.5).** You give up **2.6/g of current
+production and about 4.5/g of fair value**, and both players are inside the noise band, i.e.
+**neither is mispriced.** There is nothing to arbitrage.
+Lloyd's own pricing rule, verbatim from the 9 Nov buy-low show: *"if you traded at the 42nd
+ranked player in your rest of season projections for Dame, hoping he becomes the 38th, **it's
+silly.** You want to take someone who's 80th, producing more than Lilard at the moment, and turn
+him into Dame."* **Amen projects ABOVE Dame on every measure. This is the silly version.**
+And the window shut in 48 hours: Dame went 45 on 10 Nov, his season moved 32.2 -> 33.5, last five
+**35.4**, usage is **exactly at projection (1.00)**, and Lloyd upgraded him from *"top 40 is a
+pretty comfortable range"* to *"I feel like he's going to get to top 30 this year."*
+Add the two structural costs: **Dame is PG/G only while Amen fills SG/SF/G/F** — a real
+flexibility loss — and **selling a 22-year-old at the bottom of a usage trough** (12.4% on 9 Nov)
+is the worst possible moment, which is the exact trade we were trying to make on other managers.
+**COUNTER INSTEAD: offer Cedric Coward.** 35.3/g now (within 0.8 of Amen) against a ~29.6 fair
+value — produces nearly as much today and projects far less. That is Lloyd's trade, in the right
+direction. ⚠ But Coward is already committed inside my own offer 2; cancel that first.
+
+### 🔴 OFFER 4 — **BOOKER FOR PAUL GEORGE: DECLINE.** ⚠ I HAD THIS WRONG — BOOKER IS 36th, NOT TOP 30
+**❌ CORRECTED 11 NOV, user caught it: *"booker is not top 30 hes top 40 or even worse as of now…
+there should be an estimate of rankings currently."*** I quoted Booker's **projected** rank (27th)
+as though it were his standing and said he "clears a top-30 bar comfortably." **He does not.**
+Ranked across the 127 rostered players with 5+ GP, in our scoring:
+
+| | Producing | **RANK NOW** | Projected | rank proj |
+|---|---|---|---|---|
+| **Paul George** | 44.6 | **19th** | 36.9 | 52nd |
+| **Devin Booker** | 40.5 | **36th** | 41.4 | 27th |
+| Damian Lillard | 33.5 | **75th** | 35.9 | 59th |
+| Amen Thompson | 36.1 | **61st** | 41.0 | 29th |
+| LaMelo Ball | 36.6 | 54th | 44.7 | 14th |
+| Darius Garland | 31.0 | 93rd | 38.8 | 38th |
+
+Lloyd's bar on this exact player: *"I wouldn't do it just for a top 50 player… **unless I'm
+getting a top 30-ish guy back, I'm just rolling with it.**"* **You would be sending the 19th-ranked
+producer in the league for the 36th.** The entire case rested on projections reversing a 17-place
+gap — and the same projections have George at 52nd, which is a number his last ten games flatly
+contradict. **Decline.**
+**George stays, and the price stays exactly where Lloyd set it: a genuine top-30 player by
+CURRENT production.** From Top G's roster only two bodies clear that bar — **Karl-Anthony Towns
+(49.2/g, 10th)** and **Darius Acuff (42.5/g, 29th)**. Booker is not in that group. Ask for one of
+those two or keep George.
+⚠ Keep the honest counterweight on the shelf: George is still **+11.1 over his minutes-adjusted
+level**, the largest overperformance on the roster, and he is 36 with a knee history. **He is a
+sell — just not at this price.**
+
+### 🔴 OFFER 3 — GARLAND + LAMELO FOR ROLLINS + PAUL GEORGE: **CANCEL, or re-price it**
+On raw projections it looks like **+15.6/g** and that number is a mirage: **LaMelo's 44.7 is built
+on 32.9 projected minutes against 27.8 actual** — the error I was burned by on this same player on
+23 Oct. At his real level (~37) the deal is roughly **+9/g of fair value for −2.1/g of current
+production**, which is genuinely positive but nothing like what it looks like.
+**The reason to cancel anyway: it sends Paul George, and so does offer 4.** Booker alone
+(41.4 projected) is worth more than Garland + the LaMelo discount, and offer 4 does not also cost
+Rollins. **Do not leave two Paul George offers live at the same time.**
+
+### 🟢 OFFER 2 — GARLAND: **THE RIGHT IDEA, THE WRONG PACKAGE.** ❌ I REVERSED MYSELF HERE
+**I told you to cancel this and scored it ~-15/g. That was current production only, under the
+short-term frame you corrected.** Re-run on the scoring TEN (14 bodies, 10 score), three bases:
+
+| Send | Current production | Projection | **Minutes-adj fair value** |
+|---|---|---|---|
+| Coward + LaVine (the live offer) | **−12.0** | +7.8 | **+3.2** |
+| **LaVine alone** | **−2.6** | +7.8 | **+5.8** |
+| Coward alone | −4.3 | +7.8 | **+6.5** |
+
+**On rest-of-season value this is the only one of the five pending offers that is POSITIVE** —
+Coward (29.6) and LaVine (30.3) both already sit **below my projected top-ten cut line of 31.0**,
+so it converts two non-scoring projected assets into one that slots 5th.
+⚠ **BUT THE 1-FOR-1 BEATS THE 2-FOR-1 IN EVERY COLUMN.** The second body costs **2.6/g of fair
+value and 9.4/g of current production and buys nothing** — with 14 bodies and 10 scoring slots it
+was already worth zero, so removing it only promotes a worse body into the ten and deletes injury
+cover. It also drops active G-eligible 5 → 4 and SG-eligible 5 → 3 against three guard slots:
+**zero slack, with Dejounte's role still unresolved.**
+⚠⚠ **REVISED AGAIN 11 NOV — THE USER'S ROSTER-SPOT ARGUMENT CHANGES THE ARITHMETIC AND I HAD THE
+SLOT MATH WRONG.** The roster is **13 active slots (10 scoring + 3 bench) + 2 IR, and all 13
+active slots are FULL right now** — one IR slot is empty, which helps nobody. **There is no way to
+add anyone without a 2-for-1.** And the pool is worth a slot: free agents producing above my 10th
+scorer (Edey, 26.1/g) are **Jalen Smith 32.7, Gafford 32.0, Hartenstein 31.5, Ace Bailey 30.8,
+Braun 30.6, Day'Ron Sharpe 30.2, Poeltl 28.8** (Lloyd, explicit: *"You have to grab him if he was
+dropped"*), Tari Eason 28.6. Two acquisitions remain.
+**So the real deal is not −12.0/g. Trade + the add it enables = −6.0/g now, with +7.8/g of
+projection intact.**
+**ACTION: do the trade, but try LAVINE + BUZELIS first** — frees the identical slot at
+**−2.6 now / +7.1 projected / +5.8 fair** against Coward + LaVine's **−12.0 / +7.8 / +3.2**.
+Buzelis is `SIGNAL AVOID` at a 0.82 minutes ratio and 22.8/g; he is the throw-in. If Top G insists
+on Coward, the deal still clears once the waiver add is counted.
+
+### 📌 WHAT LLOYD ACTUALLY SAYS ABOUT GARLAND — **30-50, NOT "TOP 30"**
+Only one place gives a rest-of-season number, the **2 Nov buy-low show**: *"I've got him in the
+top 50 rest of season **between the 30 to 50 range and between 34 to 38 fantasy points**."*
+**Top 30 is the CEILING of that band, not the estimate** — midpoint ~40th, ~36 fpts. The two other
+rank references are not current calls: 19 Sep, *"his rank is 53, which is also already too low,
+but an ADP of 90"*; 23 Oct draft guide, *"if you're getting him at pick 60, you might have a top
+25 player… I'm happily taking him in round three"* — upside conditioned on a draft price.
+`verify.py quote "Garland is a top 30"` returns **0 hits.**
+**Three independent methods converge:** Lloyd 34-38, our proj_adj 38.8, minutes-adjusted ~36.0.
+
+### ⚠ RULE-19 TRAP IN THE 10 NOV GARLAND NOTE — THE KYSHAWN GEORGE FAILURE AGAIN
+The segmented note reads as if Lloyd soured on him: *"...I can't really see the full path for him
+being a 12 team league guy. If he does start, then yeah, I'll grab him."* **That is a DIFFERENT
+PLAYER.** The boundary is mid-sentence: *"And it's going to be harder for **Katon Wagler** to do
+stuff later on as well."* Three proofs: the name switch is in the sentence; Garland's line is
+given as *"13, five, and six"* while the second is *"11 points, four assists"*; and *"if he does
+start"* cannot be the LAC starting point guard at 32.7 mpg.
+**Lloyd's real 10 Nov read is two sentences and it is positive: *"Definitely not his worst game.
+He's getting better."***
+
+### 🔬 WILL GARLAND IMPROVE? THE MECHANISM IS MEASURABLE, AND IT IS THE GOOD KIND OF BUY-LOW
+Minutes **0.93 of projection — fine.** Usage **28.7% vs 25.8% projected = 1.11, he is being FED.**
+Rule 27's distinction decides it: *a player missing shots he is still being given regresses; one
+who has stopped being given them does not.* Garland is firmly the first.
+Against last season (45 GP), 36.9 → 28.3/g, and the movers in applied points per game:
+**TURNOVERS −5.08 (2.89 → 5.43 a game — the single biggest item)**, FTA −1.57, FGA −1.50,
+STL −0.97, BLK −0.71, REB −0.66; **FG% 46.0 → 43.5 on MORE attempts (14.9 → 16.4)**. Lloyd's own
+check: his last three seasons from three were **40 / 39.6 / 40.1 / 37.1 and he is at 34**.
+*"do I believe Darius Garland's a six turnover per game player shooting 40%. No, I don't."*
+**RISKS, in order:** (1) **DURABILITY — 45 GP last season**, and ESPN's own note says he *"still
+needs to prove he can stay healthy after missing significant time in 2023-24 and 2025-26."* Price
+absences against the ~26/g bench backfill (rule 9), not zero. (2) **The turnovers have NOT come
+down yet** — 7 on 3 Nov, 6 on 5 Nov, outside reports of 5+ in four straight. (3) **Brandon Ingram
+returns soon**; Lloyd expects touches down, efficiency up, roughly neutral. (4) An outside blog
+mentions back tightness — not in the ESPN feed, not date-verifiable, **unused**.
+
+### 🔴 OFFER 1 — VANVLEET FOR LAVINE: **CANCEL** *(re-run at user's request 11 Nov — unchanged)*
+32.8 vs 33.6 producing, ~29.2 vs ~30.3 fair value. **Both gaps are inside the noise band.** It is
+a pure lateral that spends a trade and changes nothing. LaVine also just went for 47 and has two
+days of rest before Friday.
+**By current rank: LaVine 79th, VanVleet 86th** of rostered players with 3+ GP. Seven places apart.
+
+⚠⚠ **NEW — THE SAME DOUBLE-COMMITMENT HAZARD AS OFFERS 3 AND 4, AND I HAD NOT FLAGGED IT.**
+**OFFERS 1 AND 2 BOTH SEND ZACH LAVINE.** They cannot both complete. If Top G accepts offer 1
+first it **kills the Garland deal**, which is the one the user has decided to take. This is
+identical in structure to the Paul George conflict flagged at the top of this file and it was
+missed on the first pass. **Cancel offer 1 before Top G can act on it.**
+
+**AVAILABILITY FAVOURS LAVINE RIGHT NOW (GP is +1, and rule 9 prices an absence against the
+~26-31/g bench backfill):** HOU are 8-3 — eleven games — and **VanVleet has played 9**, missing
+two. SAC are 1-10 — eleven games — and **LaVine has played 11 of 11.** VanVleet is 32, is back
+from a 2025 ACL tear, and Houston's own stated plan is to be careful with him on back-to-backs
+(preseason beat reporting; Sheppard and Smart absorb those minutes).
+
+**ELIGIBILITY FAVOURS LAVINE:** LaVine covers **8 slots** — SG, SF, G, F, SG/SF, G/F, F/C, UTIL.
+VanVleet covers **6 and is guard-only** — PG, SG, G, SG/SF, G/F, UTIL. **LaVine fills the F slot
+and VanVleet cannot**, and the Garland deal already removes Coward, the other F-eligible guard.
+
+**LLOYD IS EXPLICIT AND IT POINTS AWAY FROM THE DEAL** (9 Nov recap, verified 1 hit, subject
+checked per rule 19 — VanVleet is named two sentences earlier with his box line): *"Fred Van
+Vleet, not his greatest 12 and one, two assists, three threes. He's doing enough. **I think in 10
+you're not beholden to rostering him, but in twelves, he should be on rosters.**"* Rule 3
+conversion: **this league is NINE teams — shallower than 10** — so by Lloyd's own framing
+VanVleet is **below the must-roster line here.**
+
+**THE ONE HONEST ARGUMENT FOR SELLING LAVINE, AND WHY IT STILL DOES NOT MAKE THIS THE TRADE:**
+SAC are **1-10**, worst record in the league. Summer reporting — **June–July 2026, four to five
+months old, NOT news** — had the Kings listening on LaVine and Sabonis, and Evan Sidery floating
+him as a midseason buyout candidate if the rebuild started slowly. The precondition has been met.
+But that argues for **spending LaVine on Garland (offer 2)**, not swapping him for a lateral.
+No November reporting on either story was found; do not present it as current.
+
+### ✅ THE MISSING 18 POINTS WERE DILLON BROOKS — CONFIRMED
+ESPN has Tuesday at **238**; my five players scored **220**. The missing **18** is exactly Dillon
+Brooks's Tuesday line, and `grade.py` independently tagged Brooks `The Freaky Alien` for that
+date while the `players` table has him on *Why so serious*. The acquisition counter reads
+**1/3 used this matchup**, and with Miller and Murray-Boyles on IR there was one open active slot.
+✅ **CONFIRMED BY THE USER: you added him.** Both of my roster snapshots (before Tuesday, after
+Wednesday) missed it, which is why the API looked self-contradictory. **Two acquisitions remain
+before 15 Nov.**
+
+### ❌ MY OWN ERROR, CAUGHT BY THE TAB: TONIGHT IS A **TEN-GAME NIGHT**, NOT A FIVE-GAME ONE
+I ran `verify.py slate | tail -8`, saw six games, and wrote that five of my scoring slots had no
+game. **The slate is TEN games. `tail -8` ate the header and the first four lines**, so WSH@IND,
+CLE@NY, BOS@TOR and SA@CHI were invisible to me. Re-queried directly: `dates=20261111` returns
+10 events, so this was not a UTC boundary and not a tool defect — it was mine.
+**NEVER pipe `verify.py` through head/tail/grep.** A truncated check and a confident wrong answer
+look identical, which is the whole reason rule 19 exists.
+
+### ✅ TONIGHT'S LINEUP IS OPTIMAL — ALL TEN SLOTS PLAY, ALL THREE BENCH SIT
+Read off the tab's OPP column, not inferred:
+
+| Slot | Player | Tonight |
+|---|---|---|
+| PG | Dejounte Murray | BKN |
+| SG | Cedric Coward | DEN |
+| SF | Paul George ⚠**OUT (illness)** | @TOR |
+| PF | Anthony Davis | @IND |
+| C | Victor Wembanyama | @CHI |
+| G | Amen Thompson | GSW |
+| F | Matas Buzelis | SAS |
+| UTIL | Zach Edey | DEN |
+| UTIL | Collin Murray-Boyles ⚠DTD | BOS |
+| UTIL | Ryan Rollins | LAL |
+| Bench | Keegan Murray, Giannis, Zach LaVine | **none play** |
+
+**Nothing to move** — correct conclusion, wrong reasoning the first time. Wembanyama and Buzelis
+are in the **same game** (SAS @ CHI). Murray-Boyles is DTD and there is **one empty IR slot**, but
+IR-ing him gains nothing because no bench player has a game.
+🎯 **DEJOUNTE vs BROOKLYN AT HOME is the test I set:** Murphy and Zion back, so the 9 Nov usage
+spike (28.3% in a 51-point blowout with both resting) finally gets a control. **Attempts against
+10, assists against 1.**
+
+### 📅 GAMES LEFT THIS MATCHUP (11-15 Nov) — and it flips the Booker trade in my favour
+**Both sides have 37 player-games left.** Raw points-at-stake 1367 mine to 1260 theirs, and
+**Anthony Edwards is OUT** for them. I lead 521-301.
+**3 games:** Wembanyama, Anthony Davis, Amen Thompson, Coward, Dejounte, Edey, Murray-Boyles,
+Rollins, Buzelis. **2 games:** Giannis, Paul George, LaVine, Miller, Keegan Murray.
+❌ **AND THIS BOARD IS FOR LINEUPS ONLY — NOT FOR TRADES. User, 11 Nov:** *"you are thinking way
+too short term i dont make trades based on status of currrent match up unless we are the end of
+the season. long term those trades dont make snese to do."* I argued the Booker deal partly on
+games-remaining this week and that was scope creep on a rest-of-season decision. **Games left in
+the current matchup decide start/sit and nothing else.** Strike it from every trade rationale
+above; the trades stand or fall on rest-of-season value alone, and on that basis both incoming
+offers are declines.
+
+# ⏰ 10 NOV 2026 — MATCHUP 4 DAY 1: **283-157 vs Yash's Hearty Team (+126)**, 1 OF 7 DAYS
+`winner=UNDECIDED`. Six of my 14 played Monday 9 Nov. Wembanyama **109** (25 min, 40/11/3,
+**NINE blocks**), Anthony Davis **78** (34 min, 44/13, 16-21 FG), Amen Thompson 28 (35 min),
+Cedric Coward 28 (28 min), Zach Edey 22 (23 min), Dejounte Murray 18 (18 min, 5 fouls).
+Monday recap on disk: `fantasy/transcripts/2026-11-09_recap-monday.txt`, gitignored.
+Index rebuilt in order `index_lloyd.py` -> `aliases.py` -> `split_players.py`.
+
+### 🔴🔴 AMEN THOMPSON — **35 MINUTES, EIGHT ATTEMPTS.** THE ONE THAT HAS NO BENIGN EXPLANATION (9 Nov)
+**28 fantasy points on 35 minutes.** 3-8 FG, 8 pts, 9 reb, 3 ast, 1 stl, **0 blocks**.
+Usage **12.4%**, `FROZEN`. Season **36.1/g against a 41.0 projection**.
+**His minutes are completely intact** — 35 / 39 / 32 / 25 / 28 / 39 over six games — so rule 31
+sends this to the third row, not the shooting bin: **a role he is not using.** Eight attempts in
+35 minutes, and the blocks and steals that justify him in our +4/+4 scoring have not come back.
+Lloyd, same night, unprompted: *"He is a buy low, but I'm getting very worried that he's sort of
+just not involved at all."* / *"The defensive stats haven't really come back. The assists are
+down. The usage is low. Like, it's it's bad."*
+⚠ **THIS CHANGES THE DAME LADDER.** Yesterday I ruled Amen out as trade currency *because Lloyd
+had named him a buy-low on the 9 Nov show.* He still says "buy low" — but he has bolted
+*"very worried"* and *"it's it's bad"* onto it within 24 hours. **He is no longer a hard
+exclusion; he is a hold with a falling floor.** Not a sell at 12% usage either — selling the
+bottom of a usage trough is the opposite of the trade we are trying to make.
+⚠ **KEEP THE SERIES HONEST — it is choppy, not a clean collapse.** His usage by game runs
+25.7 / 13.8 / 16.7 / 18.7 / 18.8 / **12.4**, so Monday is the low of six rather than the bottom
+of a slide. Published usage (on-court possessions, so not directly comparable to our box-score
+reconstruction) has him around **20.3% on the season and 18.8% over five games**, up from 17.5%
+last year. So the *level* is not collapsing; what is missing is the +4/+4 production — blocks
+and steals — that is why he is worth 41 in this scoring at all.
+**Outside analysts independently flag the same thing, and give a mechanism Lloyd does not:**
+The Dream Shake argues Houston *"cannot efficiently run him at point guard; his playmaking lacks
+the fluent manipulation required to table-set, leaving him much more effective as an off-ball
+roller or cutter rather than a true half-court initiator"* — i.e. the role he is being given is
+the wrong one, which is a durable problem, not a reverting one. Kevin O'Connor posted Houston's
+on/off at 112.1 offensive rating with him versus 139.4 without. **Both are small-sample and
+early; take the mechanism, not the size.** His three-point shooting (~22%) is the stated cause.
+**TRIGGER: his next game, and the numbers are ATTEMPTS and STOCKS, not points.** Under 10 FGA
+with minutes above 32, plus another zero-block night, and this is a role finding, not variance.
+**This is the one item on the roster with no benign explanation available** — Edey has a ramp-up,
+Dejounte has a blowout and five fouls, Murray-Boyles has an illness. Amen has 35 healthy minutes.
+
+### 🔴 ZACH EDEY — **THREE ATTEMPTS IN 23 MINUTES, ON 67% SHOOTING** (9 Nov)
+**22 fantasy points, 23 minutes** — his *highest* minutes in six games (18/19/19/25/20/23) —
+on **2-3 FG and 4-4 FT**. 8 pts, 9 reb (2 OREB), 1 blk, 3 TO. Usage 15.4%, `USG-DOWN`.
+It looks like the user's 8 Nov Buzelis diagnostic — converting and still not shooting — and
+the season gap is the biggest on my roster: **26.1/g against 36.3, a −10.2 shortfall**, with
+minutes 20.9 against 26.4 projected. Against last season (11 GP) he is **41.1 -> 25.7/g**, and
+the shot bundle is most of it: **PTS −6.80 and FGM −5.61 against only +3.58 back from the
+unspent attempts = about −8.8/g from shooting less** (8.9 -> 5.3 FGA). Lloyd: *"He's just not
+really getting it going, is he? I am going to give it a few more weeks. Watch the minutes trend.
+Watch where the usage sits… And it's getting a little worrying."*
+
+⚠⚠ **BUT THERE IS A MECHANISM AND IT IS NOT A ROLE VERDICT — LLOYD GAVE IT ON 5 NOV AND I HAD
+NOT CONNECTED IT. Edey is on a managed post-foot-injury ramp-up.** Talking about Jusuf Nurkic's
+return, Lloyd uses Edey as the *precedent*: *"that ramp up is going to be much like with with
+Zack Edy. It's a foot injury. It's not as significant, but it's a foot injury for a big guy…
+These these players need time um to to get mentally confident in in their in their body and in
+their foot."* (Subject check: the stash advice in that passage is about **Nurkic**, not Edey —
+Edey is only the comparison. The fact it establishes is that Lloyd treats Edey's season as a
+ramp-up from a foot injury.)
+Outside reporting agrees and adds the surgeries: he is back from **two left ankle surgeries**,
+*"Memphis is taking a cautious approach when it comes to ramping Edey up,"* and foul trouble has
+been recurring (3 fouls and 3 turnovers again Monday). His last season was **11 GP** — itself
+injury-shortened. And his minutes are **drifting UP**, not down: 21/22/21/19/18/19/25/20/23.
+**So this is a workload cap, not a coach's verdict, and it should lift. HOLD, do not sell into
+it — selling a ramp-up at the bottom is the exact trade we are trying to make on other people.**
+⚠ **AND THERE IS A NAMED COMPETITOR, which is the part that should worry us more than the
+ramp-up.** Lloyd's *"Kambooza"* — a name I could not place on first read — is **CAMERON BOOZER**,
+the Memphis rookie, *"the 28th ranked player on the course of the season. Been a spectacular
+start for him,"* 22 / 8 / 8 on Monday. He is on **Why so serious** at **36.6/g on 32.1 mpg**
+against Edey's 20.9. **So the ramp-up explains the cap; Boozer is who holds the minutes when the
+cap lifts.** Those are two different facts and only the first one is temporary.
+**TRIGGER: FGA against minutes.** The tell that the cap has lifted is attempts rising *with*
+minutes. If minutes reach 26+ and attempts stay under 6, then it becomes a role finding — and
+if Boozer is still at 32 minutes when Edey is cleared, the ceiling is lower than 36.3 regardless.
+
+### 🟡 DEJOUNTE — **THE TOUCHES CAME BACK. FIRST COUNTER-EVIDENCE SINCE THE LEAVE** (9 Nov)
+**Usage 28.3%, `USG+`** — straight back to his pre-leave band (27.4 / 26.5 / 22.9) after three
+frozen games (13.3 / 16.1 / 13.2). **5-for-10 from the field**, 12 points, in 18 minutes.
+**Rule 31: the 18 minutes carry NO information.** Five fouls, in a **51-point blowout loss
+(GS 138 - NO 87)**. Minutes down + blowout + foul trouble = fine, say so and move on.
+Lloyd agrees and says why: *"encouragingly, the usage was high in this game. He just didn't play
+because he had five fouls… So it's not as worrying this game as the other ones, but still not
+moving in the right direction."*
+⚠⚠ **HOLD THE CONFOUND — THIS IS THE FEARS/MURPHY ERROR WAITING TO HAPPEN AGAIN.**
+**Trey Murphy AND Zion were BOTH resting** (back end of a five-in-seven). Jordan Poole got 34
+minutes out of nowhere, Mathurin 24. So the touches returned in the one game New Orleans's two
+best players sat. **n=1 with an obvious third variable.** Do not upgrade the thesis on it.
+**CLEAN READ: 11 Nov vs Brooklyn, at home, with Murphy and Zion back.** Watch **attempts
+against 10** and **assists against 1** — if both hold with the stars back, the role loss is over.
+
+### ✅ ANTHONY DAVIS — THE ABSENCE QUESTION IS ANSWERED, AND THE ALL-82 READ SURVIVES (9 Nov)
+Returned from the 6-7 Nov back-to-back absence **straight into the starting lineup** and went
+**44 and 13 on 16-21 FG and 10-11 FT for 78 fantasy points in 34 minutes.** 5 OREB. `ELITE`,
+`MINS+`, `FED`, usage 33.8%. Lloyd: *"Do you know he's the 10th ranked player per game this
+season?"* Season **9 GP, 50.8/g against a 50.8 projection — exactly on.**
+**21 field goal attempts and 11 free throws is not a managed-minutes pattern.** The two missed
+games now read as what they looked like — the back end of a road back-to-back, nothing more.
+Status is back to **ACTIVE**. This was the single biggest question on the roster and it is shut.
+
+### 🟢 GIANNIS IS **PROBABLE** TONIGHT — RIGHT WRIST SPRAIN, NO GAMES MISSED (10 Nov)
+ESPN flipped him to DAY_TO_DAY, which is why the grader appended an injury warning. The beat:
+*"probable for Tuesday's game against the Jazz due to a right wrist sprain… he's yet to miss
+any time."* He is 29 pts / 14 reb on 8 Nov, **double-double in seven straight**, 27.1 / 14.9 /
+6.3 / 1.4 blk over that stretch. **Start him. No action.**
+
+### ✅ TONIGHT'S LINEUP IS ALREADY OPTIMAL — NO MOVE TO MAKE (10 Nov)
+Slate: MIL@NY, BOS@PHI, LAC@PHX, MIA@UTAH, ORL@SAC, **OKC@POR**.
+Mine playing: **Rollins (PG), LaVine (SG), Paul George (SF), Giannis (PF), Keegan Murray (UTIL)**.
+**Neither bench player has a game** — Buzelis (CHI) and Coward (MEM) are both idle — so Keegan
+Murray in UTIL costs nothing even if the wrist rules him out. Miller and Murray-Boyles hold the
+two IR slots. **Nothing to gain by touching it.**
+
+### 🟡 KEEGAN MURRAY — WRIST IS MINOR, THE **ROLE** IS THE OPEN QUESTION (10 Nov)
+Lloyd: *"Keegan Murray has popped up as questionable with a wrist issue… none of these
+particular scenarios seem super long-term."* **ESPN has more: right wrist soreness, questionable
+tonight** — and the context Lloyd skips. He came back Sunday from a **seven-game absence** (left
+ankle capsulitis), played **23 minutes off the bench** while **Precious Achiuwa started at power
+forward**, and *"the duo could switch roles as soon as Tuesday"* with Sabonis (knee) short of
+100%. **So the watch item is whether he starts tonight, not the wrist.** 3 GP, 16.7/g.
+
+### ⚠ MURRAY-BOYLES — OUT WITH **ILLNESS**, AND HIS SIGNAL HAS AN EXPIRY DATE (9 Nov)
+Missed Monday with an **illness** — first game missed all season, not a minutes cut and not an
+injury. No read to take from the absence itself.
+**The real item is Jakob Poeltl, and Lloyd links them himself.** Poeltl went *"31 minutes, 18 and
+eight, one steal, four blocks, 75 from the field… He's a top 70 player now over the last two
+weeks… You have to grab him if he was dropped"* — then: *"that is super encouraging, which again
+makes it a little bit harder to figure out what's going to happen with someone like Mari Boils
+later."* ESPN says the same: CMB *"will likely be a fixture on the second unit when Barnes and
+Jakob Poeltl are both healthy."* **His `BUY (usage up)` reads off three starts that only exist
+because Barnes and Poeltl were hurt. Price it as temporary.**
+
+### 🎯 DAME — THE DECIDING GAME IS **TONIGHT, OKC @ POR, 11PM ET** (10 Nov)
+Portland was not on Monday's slate, so the 9 Nov valuation stands unchanged: **32.2/g on 29.4
+mpg, fair value ~36/g, and half the upside is the minutes call.** Tonight is the **first leg** of
+the home back-to-back with OKC — so **tonight is the clean read and tomorrow is not.** The number
+that decides the trade: does a non-back-to-back game hold **33+ minutes**.
+
+### ⚠ WEMBANYAMA — 109 POINTS IN 25 MINUTES, AND SAN ANTONIO BLOWOUTS ARE THE ONLY EXPOSURE
+40/11/3 with **NINE blocks** (Lloyd said eight — he miscounted) on 15-19 FG, in a 26-point win.
+`MINS-DOWN` at 25 minutes. Lloyd names the mechanism: *"they are so good at the moment that
+these guys just don't play any minutes and it's not really mattering that much for WBY because
+look at the numbers that he's putting up."* Season **73.6/g on 29.8 mpg**. The grader prints
+`SELL HIGH (usage)` on a 41.8% usage night — **that is a screen, not a finding. Nobody sells
+this.** Logged only so the minutes cap is on the record if it ever starts costing points.
+
 # ⏰ 8 NOV 2026 — WEEK 3 PLAYED OUT: **WON 1434-1388 (+46)**, AFTER A SUNDAY LOSS BY 90
 By day: 2 Nov 327-336, 3 Nov 0-0, 4 Nov 479-346, 5 Nov 41-60, 6 Nov 276-189, 7 Nov 103-159,
 **8 Nov 208-298.** The +136 lead became +46. All 7 games final; ESPN still reads
@@ -136,10 +645,109 @@ body. Not guessing on it.
   12: three games with a clear mechanism is a direction, not a verdict, and one 35-minute
   14-attempt game would reopen it. **But unlike Buzelis, this one has an identified cause and the
   cause is still on the roster and still improving.**
-- **TRIGGER — next NOP game, 10 Nov.** Watch **(1)** his minutes against 34, **(2)** his attempts
-  against 12, **(3)** Fears's minutes. If Fears stays at 30+ and Dejounte stays under 30, this is
-  a settled demotion and he is a sell-high-on-name candidate rather than a hold. **Do not drop or
-  trade on three games** — but stop projecting him at 44/g.
+- **TRIGGER — ⚠ CORRECTED 9 NOV: IT IS TONIGHT, NOT 10 NOV. New Orleans has no game on 10 Nov.**
+  Schedule: **9 Nov @ GSW 10:00pm ET (tonight)**, 11 Nov vs BKN, 13 Nov vs MEM, 14 Nov vs DEN,
+  16 Nov vs GSW. Watch **(1)** his minutes against 34, **(2)** his attempts against 12,
+  **(3)** Fears's minutes. If Fears stays at 30+ and Dejounte stays under 30, this is a settled
+  demotion and he is a sell-high-on-name candidate rather than a hold. **Do not drop or trade on
+  three games** — but stop projecting him at 44/g.
+  ⚠ **Tonight is the back end of a road back-to-back** (8 Nov @ LAC, 9 Nov @ GSW), so low minutes
+  tonight are schedule-explained under rule 31 and prove nothing. **The attempts line is the real
+  read tonight; the clean minutes read is 11 Nov vs Brooklyn at home.**
+
+### 🟢 DAME IS A REAL BUY-LOW — **BUT HALF HIS UPSIDE IS A MINUTES CALL THAT RESTS ON JA MORANT'S INJURY** (9 Nov)
+Lloyd's 9 Nov buy-low show. **Dame is on Top G.** Ours: **32.2/g over 9 GP on 29.4 mpg**,
+proj_adj 35.9, usage dead on projection. One 6-point dud (29 Oct) drags the mean — without it
+35.5/g, median 32. Last 4: 32.5/g on 30.0 min.
+- **Lloyd explicit:** *"top 40 for Dame is a pretty comfortable range for rest of season
+  production"* and *"by the time we're rolling into December, he'll be playing 33 a night."*
+  **His quoted numbers verify exactly** against the box scores (he said 29 fpts / 19 / 4.5 / 41% /
+  82% for the last two weeks; actual 28.9 / 18.7 / 4.57 / 40.7% / 81.6%).
+- ⚠ **HIS LEVERS ARE CATEGORY-LEAGUE LEVERS. Priced one at a time in OUR scoring from 32.2:**
+  **minutes 29.4 → 33 = +3.6** · FG% 42 → 45.5 = +1.8 · steals 0.78 → 1.1 = +1.3 ·
+  **FT% 84 → 90 = +0.7 only** (FTM +1 and FTA −1 nearly cancel). All four = **39.2/g**.
+  **So the free throws he leads with are worth seven tenths of a point to us, and the minutes are
+  half the case.** Fair value here ≈ **36/g**.
+- ⚠⚠ **THE THESIS IS SOMEONE ELSE'S INJURY.** Verified on the Portland roster: **Ja Morant is a
+  Blazer and is OUT, Shaedon Sharpe OUT, Vit Krejci OUT** — but **Jrue Holiday and Scoot Henderson
+  are healthy.** When Morant returns the minutes case reverses. Second risk: preseason reporting
+  said Portland meant to manage his load for the playoffs, and **Portland are 6-3 and actually
+  good**, which makes that *more* plausible, not less. Third: his two sub-30 games are the opener
+  and a back-to-back second leg (20 min) — **and they play OKC back-to-back 10 and 11 Nov.**
+  Fourth, the big one: **he played ONE game last season** (torn Achilles) and he is 36.
+- **POR coach is MICAH NORI.** The Billups "defines Dame's role" article is **July 2025** and about
+  him assistant-coaching during rehab. Not current — do not cite it.
+- **DAME IS PG/G ONLY** — the same positional trap as the LaMelo offer. PG-eligible bodies here:
+  Dejounte, Rollins.
+- **TRIGGER: his minutes on 10 and 11 Nov vs OKC.** Expect a reduced second leg. The number that
+  decides the trade is whether the non-back-to-back games hold 33+.
+
+### 💰 THE PRICE FOR DAME — **LADDER, AND A HARD WALK-AWAY** (9 Nov)
+Lloyd's rule, verbatim: *"If I think Dame can be a top 40 player, send someone outside the top 50…
+if you traded at the 42nd ranked player in your rest of season projections for Dame, hoping he
+becomes the 38th, it's silly. You want to take someone who's 80th, producing more than Lilard at
+the moment, and turn him into Dame."* **Arbitrage window: pay someone projected UNDER ~36/g who is
+currently producing AT OR ABOVE 32.2.**
+1. **OPEN: Ryan Rollins + Matas Buzelis.** Neither is in my scoring ten on current production
+   (24.2 and 22.8). Lloyd calls Rollins a **clear drop**; Buzelis grades **AVOID**. Free money if
+   taken; probably refused.
+2. **THEN: Dejounte Murray straight.** The only **PG-for-PG** swap — zero positional coverage cost.
+   Near-even on paper (36.1/37.0 vs 32.2/35.9) but **the 37.0 is stale-high** after this week's
+   role finding, and it sells the asset I have the most negative information about.
+3. **THEN: Cedric Coward straight.** The textbook Lloyd trade — **36.2 now (above Dame) / 29.6
+   projected (below Dame)**. ⚠ Honest risk: he is a young riser and rule 16 warns against anchoring
+   one to a flat projection, so the +6.6 overperformance may be real growth, not luck.
+4. **THEN: Zach LaVine straight.** 32.3 now / 30.3 projected, and **last 5 games 24.0/g on falling
+   minutes** — selling at the right moment. ⚠ But **Lloyd is an explicit LaVine bull** (rule 14 —
+   I fabricated a quote in the other direction once), so this trades against his read.
+- 🚫 **NEVER PAUL GEORGE.** 36.9 projected vs Dame's 35.9 — literally Lloyd's *"trading the 42nd for
+  the 38th, it's silly."* His sell band is a genuine **top-30** piece.
+- 🚫 **NEVER AMEN THOMPSON OR BRANDON MILLER — LLOYD NAMED BOTH AS BUY-LOWS ON THIS SAME EPISODE.**
+  Selling your own buy-low to buy someone else's is paying the spread twice.
+- ⚠ **Do NOT put Rollins and Dejounte in the same deal** — that leaves Dame as the only PG-eligible
+  body on the roster.
+
+### 🟡 DEJOUNTE — **THE TRADE: NO DEAL, NO ACTIVE TALKS, AND IT IS NOT WHY HE IS DOWN** (9 Nov)
+Researched 9 Nov. **The trade is a deadline story, not a November story, and it is the wrong thing
+to be watching.**
+- **Newest actual reporting is 28–29 Oct, eleven days old.** HoopsHype (28 Oct): many around the
+  league believe New Orleans and Murray would both benefit from a fresh start. Hoops Rumors
+  (29 Oct), citing **Shamit Dua of In The N.O.**: the Pelicans may be **starting him partly to
+  showcase his trade value**, and both sides could be open to a move. **Murray himself denied
+  requesting a trade** and said he wants to stay (Apr 2026). Nothing since is sourced reporting.
+- **Everything else is columnist speculation, and I should name it as such:** Phoenix for Jalen
+  Green + a 2027 second, Nic Claxton (BKN), Daniel Gafford (DAL), Myles Turner (MIL), Rudy Gobert
+  (MIN), OKC, Charlotte absorbing him into a trade exception. No sourcing behind any of them.
+- **The contract is the brake: $32.8M this season PLUS a $30.8M PLAYER OPTION for 2027-28.** An
+  acquiring team takes a multi-year commitment on a 30-year-old two seasons removed from an
+  Achilles tear. Multiple writers independently conclude he has **little trade value** and that
+  New Orleans gets back a second-rounder or a lower-end prospect. That is also why Lloyd said on
+  5 Nov that nobody would give us anything for him in *fantasy* — the real market agrees.
+- **Lloyd has been asked three times and has never claimed to know.** 8 Nov, verbatim: *"I don't
+  know if he's going to be traded. I've got no idea. But it does make more sense for them to pump
+  more into Jeremiah fears."* 5 Nov, asked directly how worried he is about a trade: *"Uh not that
+  worried."* 3 Nov: *"it is very very weird for a trade to happen at this point in the season but
+  it is a little it is a little weird."* **Tier 2, not tier 1 — he addresses it and disclaims it.**
+- **FANTASY DIRECTION: a trade is the UPSIDE case, not the risk.** His current situation — starting,
+  33.9 mpg, and 6 attempts — is close to the worst outcome available. Almost any team that trades
+  for a $32.8M point guard hands him the ball. **So do not sell on trade fear; the fear is backwards.**
+  What we are actually exposed to is **the 3 months until the deadline at 26.0/g**.
+
+### ✅ DEJOUNTE IS STILL STARTING — THE DECLINE IS TOUCHES, NOT THE LINEUP CARD (9 Nov)
+**Verified in the 8 Nov box score (event 401909950): Murray carries the starter flag**, alongside
+Fears, Zion, Murphy and Matkovic. Lloyd: *"Same starting group for the Pelicans."* **This is not a
+benching.** It is a two-guard starting lineup in which the other guard gets the ball —
+**Fears 14 attempts and 25 points to Dejounte's 6 and 6.**
+- ⚠ **AND OUR MECHANISM NOTE NEEDS AMENDING. The paternity leave was the SECOND opening, not the
+  first.** Pelican Debrief, **20 Oct 2026** — before the season started: **Murray hurt a toe after
+  one preseason game, Fears got the start and "ran with it,"** and that piece was already headlined
+  *the starting decision doesn't have a clear answer*. So Fears had a claim on the job from opening
+  night. The leave widened a door that was already open, which makes the role loss **more** durable
+  than our 8 Nov write-up assumed, not less.
+- **Context around the rotation:** coach is **Jamahl Mosley** (not Borrego), New Orleans are **4-6**
+  and have lost two straight, a columnist graded Mosley a D after the Clippers loss and called the
+  **backcourt rotation unsettled**, **Yves Missi (C) is out**, and **Jordan Poole is healthy again**
+  (cleared 5 Nov, 16.0 mpg) — one more guard in the mix, which cuts against any minutes recovery.
 
 ### ✅ THE 8 NOV LINEUP **WAS** MAXIMISED — I CALLED 24 POINTS "LEAKAGE" AND I WAS WRONG
 **User correction, 8 Nov: *"it was literally maximized bruh miller was ruled out after games
