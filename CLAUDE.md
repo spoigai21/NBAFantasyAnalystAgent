@@ -601,6 +601,234 @@ assistant. Read `README.md` for the full league and roster picture before non-tr
    the same split rule 27's table already makes between the player-controlled axis and the
    coach-controlled one. Report a shooting slump as noise; escalate a minutes cut.
 
+32. **TWO VALUES, NEVER MIXED: `python3 fantasy/rankings.py`. Current value and projected
+   value are different questions and must never be traded off against each other inside one
+   argument.** User, 11 Nov 2026: *"theres 2 types of values: 1. current value 2. projected
+   value. Your not usin either of these your switching between 2 whenever convenient and
+   random."* **He was right and the evidence is in one answer of mine:** I priced Paul George
+   at **44.6** ("producing"), **~33.5** ("minutes-adjusted fair value") and **36.9**
+   ("projection") and reached for whichever supported the point. That is not a valuation.
+
+   | List | Formula | Answers | Injuries? |
+   |---|---|---|---|
+   | **CURRENT** | ESPN applied fpts per game, actual. Nothing else. | what he HAS DONE | **no** — except trade mode |
+   | **PROJECTED** | `(GP x actual + 6 x 0.905 x ESPN proj) / (GP + 6)` | what he WILL DO | **never** |
+
+   **Injuries enter ONLY in trade mode and ONLY on the current list** — user: *"if theres an
+   injury concern discount 10-15 spots of value mean drop the player down 5 reankings ONLY in
+   the case of trade evalutations. otherwise rankings hsould primarily based on how well a
+   player is performing."* He gave two numbers, so it is read as severity-tiered and both are
+   flags: **day-to-day −5 spots, out/IR −12** (`--dtd-penalty`, `--out-penalty`).
+   Projected value takes **no** injury adjustment at all: *"dont look at injuries at all just
+   what are the values projected to be."*
+   **Rebuild nightly after games** (he asked for it): `. ~/.espn-fantasy.env && python3
+   fantasy/refresh_players.py && python3 fantasy/rankings.py`. Writes `fantasy/rankings.md`
+   and a dated `rankings` table, so the history is queryable.
+   ⚠ **`--validate` refits the two constants. Re-run monthly.**
+
+   **Three measurements made 11 Nov 2026, two of which overturn rules already in this file:**
+   - **`K_PROJ = 0.905` SURVIVED.** Rule 28 warned it shrinks and quoted a re-derived
+     **0.939**. On a clean temporal holdout (fit periods 1-18 = 960 games, test 19-22 = 199)
+     the fit is **0.903**, out-of-sample MAE 11.956 vs 11.962 at 0.905 and 12.627 raw, mean
+     signed error **+0.128**. **0.939 does not replicate — ignore rule 28's headline, keep 0.905.**
+   - ⚠ **RULE 28's "per-player corrections FAIL" IS NOW FALSE, and it is a sample-size
+     effect.** Shrinking the projection toward the player's own actuals gains **+4.9% / +6.5%**
+     MAE out of sample across two holdout windows, optimal at a prior weight of **6** in both.
+     Rule 28 measured this at ~5 games per player and was right then; at ~11 games the actuals
+     carry real signal. **As GP grows the optimal weight keeps falling — that is what
+     `--validate` is for.**
+   - ⚠⚠ **THE "MINUTES-ADJUSTED FAIR VALUE" I QUOTED ALL SESSION DOES NOT WORK. MEASURED AND
+     DELETED.** Multiplying a projection by realized-mpg / projected-mpg — the numbers I gave
+     for Paul George (~33.5), LaMelo (~37.8), Coward (~29.6), Garland (~36.0) and the whole
+     "minutes-adjusted board" the five trade verdicts rested on — buys **+0.3%** MAE
+     (9.857 → 9.824) and **adds +0.80 of bias**; down-only is worse (+1.63); half-weighted on
+     top of the shrinkage it **loses 1.6pp**. Josh Giddey at a 0.77 minutes ratio went on to
+     score **59.0 a game** while the adjustment predicted 35.8. **Minutes stay a diagnostic
+     column (rules 22, 31). They are never multiplied into a value.**
+
+   **THE FORM WINDOW — `--buylow`. This is how a buy-low is identified, and the user asked
+   for it explicitly, 11 Nov 2026:** *"for the over the last 2 weeks he is ... this basicalyl
+   should be done by you when understand buy lows as well. Over the last 2 weeks is this
+   player blowing his projections out of the park."*
+   ⚠ **It is NOT a third value.** Current value has two **windows** — season-to-date and last
+   14 days — and both answer "what has he done". Projected value stays the one forward number.
+   Cuts are a **share of the player's own projection**, not flat points: relative predicts
+   better (r +0.330 vs +0.272) and a flat 4/g gate called **Wembanyama** a sell-high off a 6%
+   wobble. Measured on **659 player-weeks** (4+ games in the window, 2+ forward):
+
+   ⚠⚠ **THE FIRST VERSION OF THIS TABLE HAD NO USAGE AXIS AND THE USER HAD TO POINT IT
+   OUT — 12 Nov 2026: *"dejounte is not even a slump itts reduce role?"*** He was right. The
+   screen tested **minutes only**, so a player who kept his minutes and lost his **touches**
+   was filed as a reverting slump. **Rule 27 has said since 26 Oct that usage is a separate
+   coach-controlled axis that does not revert, and I built the screen without it** — the exact
+   *"those two look identical on rate and minutes alone"* case rule 27 exists to catch.
+   Re-measured on **1,104 player-weeks** (14-day window, 4+ games in it, 2+ after) under the
+   shipped gates:
+
+   | Signal | Condition | What actually happened next week |
+   |---|---|---|
+   | **BUY LOW** | 10-20% under, minutes **and touches** intact | **−11%** — it does not just wash out, it **reverses** |
+   | **FADE (usage)** | 10%+ under, **touches down** (<0.90) | **90%** persisted — **the strongest signal in this file** |
+   | **FADE (minutes)** | 10%+ under, **minutes down** (<0.90) | **65%** persisted |
+   | **SLUMP (no edge)** | 20%+ under with minutes *and* touches fine | **46%** persisted — not a buy |
+   | **SELL HIGH** | 10%+ over on **fewer** minutes than projected | **52%** survived |
+   | **RIDE** | 10%+ over, minutes **≥** projection | **67%** was real — keep him |
+   | **INJURED (void)** | the player is **OUT/IR** right now | **no claim** — see below |
+
+   ⚠⚠ **AND THE SCREEN HAD NO INJURY GATE AT ALL UNTIL 12 Nov 2026 — the SAME SHAPE of hole
+   as the usage one the user found the day before.** `add_form()` computed its signal from
+   rate, minutes and usage and **never read the injury flag**, although rule 27 has said
+   since 26 Oct that injury *"is not a fourth axis, it is the confounder"* and that it
+   **invalidates the other three**. So a medical absence came out labelled as a coach
+   decision. Caught on **Brandon Miller**, who printed `FADE (minutes)` because his 14-day
+   window holds the game he **left with a groin strain** plus the two he then missed —
+   Charlotte's own note says he *"injured his groin during the 119-80 loss to Boston"*.
+   Nothing about his role changed. Rule 31 puts INJURY in the **top row** of its triage
+   table for exactly this reason: *"triage stops here"*, before minutes are even read.
+   **The gate is two-tier, and the first version was too blunt:** voiding `DAY_TO_DAY` as
+   well killed Paul George's reading on a DTD that arrived the day *after* the six games in
+   his window were played. So **OUT/IR → void** (he is not playing; there is no role to
+   read) and **DTD → keep the signal, mark it provisional**. Effect on the 12 Nov board:
+   **7 of 78 flagged rows voided.**
+   ⚠ **It is a VALIDITY gate, not a fitted threshold, and it is UNMEASURED — do not quote a
+   persistence number for it.** It cannot be backtested here: neither `game_grades` nor
+   `player_form` stores an injury flag per game, and `rankings.injury` only begins 11 Nov
+   2026. It **withholds** a claim rather than making one, which is why shipping it unmeasured
+   is defensible where the usage gate would not have been. It also still cannot tell whether
+   the injury falls **inside** the window — Miller's does, Curry's does not — and that is the
+   question that actually matters. Store a per-game injury flag and this gets fixed properly.
+   ⚠⚠ **AND IT HAS A SECOND BLIND SPOT, FOUND THE SAME DAY: A MINUTES CAP ON A PLAYER LISTED
+   ACTIVE.** The gate keys on ESPN `injuryStatus`, so it only sees players who are *not
+   playing*. **Zach Edey reads `ACTIVE`** — he is playing, just capped — and he is returning
+   from *"two left ankle surgeries earlier this year"* (Rotowire, 22 Oct 2026), with Memphis
+   sitting him outright on 25 Oct for *"left ankle injury management"* (the only one of
+   Memphis's 11 games he has missed) and reported on 10 Nov as *"restricting Edey to no more
+   than about 24 minutes per game"*. So his `FADE (minutes)` / `AVOID` is **rule 27's
+   confounder again**, and neither the flag nor the new gate catches it. **A managed ramp and
+   a benching produce the identical row.** Before calling any minutes figure coach-controlled,
+   check whether the player is coming back from surgery — the API says `ACTIVE` the whole way.
+   ⚠ **And when a ramp IS the cause, do not let it cover the usage axis too.** Edey's two
+   problems have **different causes and different timelines**: minutes are medical and
+   time-limited, touches are a possession hierarchy and are not. Lloyd treats them as one
+   thing (*"it's confusing how low the minutes in usage are"*) and puts a single clock on
+   both — while three days earlier naming the real usage mechanism himself: *"the complete
+   lack of usage as guys like Boozer, Jerome, and Coward get most of the stuff."* **Lifting a
+   minutes cap returns the minutes and does not return the shots.** Price them separately.
+   ⚠ **The cap itself is a MEDIA estimate, not a team position.** Every direct Iisalo quote I
+   could find is preseason. No team statement gives an end date, and the only timeline in
+   print is an analyst's *"at least for the first month of the season"* (27 Oct). Lloyd's
+   independent clock (~3 Dec) and that note converge on **late November** — two outside
+   guesses, not Memphis. Do not quote either as a team position.
+
+   **Usage is the STRONGER of the two coach-controlled axes** (90% vs 65%), which is the
+   opposite of the order rule 31 triages in — minutes are easier to *see*, touches predict
+   better. The 0.90 usage cut is chosen for symmetry with the minutes gate, **not fitted**, and
+   the direction holds at every cut tested (0.80 +25pp, 0.85 +59pp, 0.90 +85pp, 0.95 +39pp).
+   ⚠ **AND SELL HIGH GOT WORSE ON MORE DATA — 52%, not the "11-36%" this file claimed on
+   11 Nov.** The SELL HIGH / RIDE separation is now **52 vs 67**, not 11-36 vs 62, so the
+   minutes-based sell-high gate is the **weakest** signal here, not *"the most robust signal in
+   this file"* as written the day before. Anything argued off a SELL HIGH flag — the Paul George
+   read included — is about **half as strong** as it was stated. Re-measure before leaning on it.
+
+   **Three things in that table are not what I would have guessed:**
+   - ⚠ **A gap does NOT revert to projection — it persists at ~38%.** "Blowing his projections
+     out of the park" is about **38% real**, not noise to be discounted away.
+   - ⚠⚠ **THE BUY-LOW GATE DIES ON EXTREME SHORTFALLS.** At 10% under it is decisive (14% vs
+     46%); at 15% under it is gone (41% vs 42%); at 20% under it is gone (44% vs 47%). A
+     player that far below projection with "intact" minutes has something else wrong — which
+     is rule 27's injury confounder showing up in the data. **Hence the BAND: a buy-low is a
+     MODERATE shortfall with the minutes still there, never a collapse.**
+   - **SELL HIGH is the most robust signal in this file** — it holds at every threshold
+     tested, which the buy-low does not. An overperformance on fewer minutes than projected
+     almost entirely evaporates.
+
+   ⚠ **HONEST LIMIT, 11 Nov 2026: "last two weeks" and "this season" are the SAME GAMES
+   today.** The season is 21 days old, so at every date leaving a forward window the 14-day
+   span is every game played — season-actuals and last-14 shrinkage returned byte-identical
+   MAE (7.390). **Recency weighting is untestable until late November; re-run `--validate`
+   then.** Do not claim the window is adding information yet.
+
+   ⚠ **ESPN's projections are FROZEN AT PRESEASON — zero of 149 moved in a refresh on 11
+   Nov.** That is *why* blending actuals in wins: the raw projection carries no new
+   information all season. It is also the direct proof the blend was right — user, 11 Nov:
+   *"the projections for paul george and those players were updated paul goerge is a top 30
+   player thats what he is projected now."* **ESPN's static projection has Paul George 56th.
+   The blended projected list has him 25th, which is the top-30 the user is describing.**
+
+   **Lloyd and outside analysts are a CHECK on these lists, never a substitute** (rules 24, 26).
+   `LLOYD` in the script holds only hand-verified anchors with the quote attached, and that
+   matters: a regex over the 1,376 segmented notes produced ~16 candidate ranks for my own
+   players and **four were misattributions** — "top 150" for Rollins is **Kel'el Ware**, "top
+   50" for Murray-Boyles is **Miles Bridges**, "top 10" for VanVleet is **Alperen Sengun**,
+   "top 60" for Wembanyama is a guard stuck behind three point guards. Rule 19 again: a clean
+   grep licenses the words, never the subject.
+   ⚠ **Label the WINDOW and the KIND or the anchor lies.** Three of the four biggest
+   Lloyd-vs-me gaps on the first pass were my own labelling: Edey's *"we've seen him be a top
+   60ish sort of player"* is a projection, not a current rank (47-spot phantom gap);
+   Dejounte's *"outside the top 100"* is **over the last two weeks**, not the season (34-spot
+   phantom gap); Brandon Miller's top-30 is **29 Oct and he has since left a game injured**
+   (53 spots, genuinely stale).
+   ⚠ **THE MILLER ONE IS NO LONGER STALE, AND IT WENT THE OTHER WAY — 12 Nov 2026 mailbag.**
+   Asked again, Lloyd answers *"where do I have Brandon Miller projected rest of season?...
+   **pretty high. Like top 25, I think.**"* — and he gives it **knowing Miller is hurt**,
+   because in the same episode he says *"Allen is dependent on the absence of Canipple and
+   and Miller at the moment"*. So re-ask a stale anchor before discounting it; staleness is
+   a reason to refresh, not to assume decay. **Dunne independently has him 13th and my
+   projected list has him 75th** — two outside sources far above me, which is the largest
+   disagreement on the board, so I decomposed it instead of splitting the difference.
+   **They are right and my list is the outlier, for a structural reason.** Last season
+   30.3 mpg / **7.0 FGM on 16.1 FGA (43.5%)** / 3.3 ast → 37.0 fpts/g; this season 31.0 mpg /
+   **7.3 FGM on 20.5 FGA (35.6%)** / 2.2 ast → 31.8. **Minutes are UP and attempts are UP
+   27%**; the whole −5.2 is FGA −4.4, AST −2.2, 3PM −0.4 against FGM +0.6 and PTS +0.4. At
+   last season's conversion on this season's volume he makes **8.9 instead of 7.3, worth
+   about +7/g → ~38.9**. Rule 31: minutes fine, **attempts up**, conversion bad = the
+   **ignorable, reverting** half. The blend is pricing ten games of cold shooting as half his
+   future, which is what the `W_PRIOR = 6` shrinkage is *supposed* to do and why a blended
+   rank is a starting point, not a verdict. **When an outside rank disagrees with mine by 50+
+   spots, decompose the gap into minutes / attempts / conversion before taking either side.**
+   ⚠ **Lloyd quantified the points-vs-category gap on one of my own players, 12 Nov** — on
+   Collin Murray-Boyles: *"there's a **20 to 30 spot difference**, I think, in valuation
+   between Murray Boils in category and points leagues."* Rule 24 with a number attached by
+   Lloyd himself. **When he gives a rank without naming a format, assume category and subtract
+   20-30 spots for a defence-and-rebounding forward.** (On CMB he and my list agree: he says
+   drop in a 10-team points league, mine has him 111th of 114 in a 9-team one.)
+   ⚠⚠ **"LLOYD'S CURRENT RANKS AND MINE AGREE TO A MEDIAN OF 0 SPOTS" WAS MEASURED ON SIX
+   ANCHORS AND IT DOES NOT GENERALISE. Re-measured 12 Nov 2026 on 28.** The agreement is
+   **band-dependent**, and reporting the headline without the band is how a 6-case result
+   becomes a false claim about the whole list (same failure as rule 23's n=8 benchmark):
+
+   | Band | n | median gap | median \|gap\| | within 10 spots |
+   |---|---|---|---|---|
+   | Lloyd top 50 | 11 | −2 | **4** | 8/11 |
+   | Lloyd 51-100 | 11 | −6 | 11 | 5/11 |
+   | Lloyd >100 | 6 | −43 | **43** | 0/6 |
+
+   **The deep band is a SCALE artefact, not a disagreement.** My list holds only the 114
+   rostered players with 5+ GP in a 9-team league, so its floor is #114 while Lloyd's Mikal
+   Bridges is **205th** and his Edey **167th** — those cannot be represented and the "gap" is
+   arithmetic. **So his ranks are a real check inside the top 50 (median 4 spots) and
+   direction only below it.** The original six were all top-100 players, which is exactly
+   why they looked perfect.
+   ⚠ **AND HIS DAILY-RECAP RANKS ARE CATEGORY-FLAVOURED, which is visible at the very top of
+   the board.** 11 Nov: he calls Jokic *"the second ranked player overall in category
+   leagues"* and puts Wembanyama **3rd**. Our points list has Wembanyama clearly **1st**
+   (74.2/g against Jokic's 66.8) because STL/BLK +4 and our DD/OREB/GP bonuses pay him far
+   more than 8-cat does. Rule 24, again: mechanism and direction yes, never a points rank.
+   The Jokic rank is deliberately **not stored** in `LLOYD`, so it cannot corrupt the
+   validation it exists to perform.
+   ⚠ **Rule 19 caught one more before it shipped, 12 Nov.** *"Yakel, who had 25 and 10 with
+   two steals… this is a top 25 player"* is the Warriors recap and I filed it under **Jonathan
+   Kuminga**, who plays for **Minnesota** this season. It is **Yaxel Lendeborg** — confirmed by
+   the rest of the passage (*"taking him in the 90s"* after one preseason game) and settled by
+   the numbers: Lendeborg 43.1/g is my #26, which **is** a top-25 player; Kuminga 30.8/g is my
+   #91, which is not. Mis-filed it would have printed the largest phantom gap in the set, 66
+   spots. **Check the player's NBA TEAM against the game being recapped before filing a rank.**
+   Outside: **Jacob Dunne (Fantrax, points-specific, in `analysts.md`)** ROS ranks are in
+   `DUNNE`; **Spearman 0.827** against my projected list over 111 players. ⚠ **Rule 24 still
+   binds — his list is GENERIC points scoring with no STL/BLK +4 premium and none of our
+   DD/TD/OREB/GP/TW, so it checks direction and never supplies a rank.** Skip 9-cat lists
+   entirely for this: NBA Fantasy Edge has Giannis 47th in 9-cat and Dunne has him 4th in points.
+
 ## Files
 
 | Path | What it is |
@@ -619,6 +847,7 @@ assistant. Read `README.md` for the full league and roster picture before non-tr
 | `python3 fantasy/verify.py` | **Pre-claim checks.** `quote "..."` proves a quote is real; `score` gives the LIVE matchup score and whether it closed; `slate` says if games are still running |
 | `fantasy/refresh_players.py` | **Refresh `players` in place from the API** — averages, projections, rule-8 bonus. Self-contained; UPSERTs, never drops |
 | `fantasy/grade.py` → `game_grades`, `player_form` | **Per-game ELITE/GOOD/NORMAL/POOR/AWFUL vs the player's own level, on three separate axes — rate, minutes, usage — plus a SELL HIGH / BUY LOW / FADE / HOLD / AVOID signal.** Uses ESPN `appliedTotal` |
+| `fantasy/rankings.py` -> `fantasy/rankings.md`, `rankings` | **THE TWO VALUE LISTS — start here for any worth question.** CURRENT (actual fpts/g) and PROJECTED (`(GP*actual + 6*0.905*proj)/(GP+6)`), never mixed. `--trade` adds the injury discount to CURRENT only, `--player` for one man, `--mine`, `--validate` refits the constants. Re-run nightly after `refresh_players.py` |
 | `fantasy/analysts.md` | **Who to read and who not to.** Tiers, the STL/BLK calibration trap, ESPN exclusion |
 | `fantasy/transcripts/` | **Raw Lloyd transcripts — grep HERE first.** 1.8MB, 22 team previews |
 | `~/Desktop/lloyd_team_preview_notes.md` | Summaries of 22 teams, written 30 Sep. Lossy and stale |

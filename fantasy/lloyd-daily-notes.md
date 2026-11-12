@@ -2613,3 +2613,278 @@ This entire paragraph never says "Lillard" once, so it was unreachable under his
 silent zero-hit failure rule 19 exists to stop, on the player we are actively trading for. Cost
 measured before changing it: `Dame` = 20 hits, `Dame Mitchell` (= Davion Mitchell) = 1. Added,
 with Davion Mitchell tracked separately so the one collision is visible instead of silent.
+
+---
+
+# 11 NOV 2026 (Wed, 10 games) — recap saved as `fantasy/transcripts/2026-11-11_recap-wednesday.txt`
+
+**26 explicit rank statements, all verified with `verify.py`.** ⚠ Read the format warning in
+rule 32 first: he calls Jokic *"the second ranked player overall in category leagues"* and
+Wembanyama **3rd**, so these are **category-flavoured ranks**, useful as direction and as a
+top-50 sanity check, never as points ranks for our scoring.
+
+## MY ROSTER
+
+### Victor Wembanyama — monstrous line of the night, and the rank gap is a FORMAT gap
+*"He's the number three ranked player over the course of the season."* 32 points, 9 rebounds,
+**5 blocks**, 2 steals, 2 threes on 72% shooting in 32 minutes.
+Ours: **#1 on the current list at 74.2/g**, and the two-spot "gap" is the whole argument for
+having our own list — 5 blocks and 2 steals is **+28 points** in our scoring before anything
+else happens. Form screen flags **SELL HIGH at +37% over projection**; mechanically correct and
+irrelevant, there is no return that makes sense.
+
+### Paul George — ⚠ **HE SAT THE BACK-TO-BACK** and nobody announced it
+*"there was no Paul George. Interestingly enough, on the backto-back."* Lloyd notes it in
+passing and never explains it; Baylor Scheierman took the open minutes and won double-onyx of
+the night *"Paul George was out, so that helps."*
+ESPN reads **DAY_TO_DAY** with no injury type published — rule 27's confounder again, and this
+is the second straight read where the tab's news column is the only place the answer lives.
+Form: **45.5/g over 6 games, +23% over his own projection, on 29.2 minutes against 33.2
+projected → SELL HIGH**, the fragile shape (measured: 11-36% survives). **And the Booker offer
+for him expires TODAY 7:08 PM.**
+
+### Zach Edey — first CURRENT rank Lloyd has given him, and it is the floor
+*"In all of this, in all of the suck… he's 167th."* 20 minutes, **11 usage**, 2 points, 5
+rebounds, 1 block. *"It is unquestionably bad. Unquestionably."*
+Mechanism is **usage, not shooting** — *"the complete lack of usage as guys like Boozer, Jerome,
+and Coward get most of the stuff."* He still says hold, but explicitly on replacement-level
+grounds: *"is there anyone that I'm grabbing that's got the potential to be a top 80 player."*
+Ours: **FADE (minutes)** — 24.8/g over 6, 32% under projection, 20.7 mpg. Not a buy-low.
+
+### Ryan Rollins — Lloyd retracts his own projection
+24 minutes, 8/7/4 on **28 usage**, off the bench with Herro back. *"the annoying thing with that
+is it's just enough"*, and then: *"I've missed out on projecting Rollins's role completely…
+I thought he could at least get 23 minutes a night, but even that hasn't been the thing."*
+He brackets Rollins with Edey — *"they have absolutely been gigantic disappointments."*
+Ours: **FADE (minutes)**, 21.2/g over 6 on 19.7 mpg. Path to starting is injury-only.
+
+### Dejounte Murray — the mechanism is TOUCHES, and that makes it a SLUMP, not a buy-low
+*"Murray is now outside the top 140 over the last two weeks despite playing over 30 minutes a
+night because he's just never getting the ball."* 5 points, 2 rebounds, 4 assists in 28 minutes.
+Worse than his 9 Nov read (outside 100), and the 30+ minutes are the point: **minutes intact,
+production gone.** Ours: 24.6/g over 5 games, **34% under projection on 31.2 mpg → SLUMP (no
+edge)** — past the band where the buy-low gate still works. Lloyd's hold case is pure
+replacement level: *"who is better that you're grabbing off the wire… Probably no one."*
+
+### Matas Buzelis — 28 usage and it still was not good
+*"Gizales is now 153rd for the season… The minutes looked a bit better here, but it's still not
+great."* 13 points, 2 rebounds, **no defensive stats**, on 28 usage.
+⚠ This is the rule-31 attempts test coming back **the other way**: he finally got the usage and
+the line was still thin. Lloyd's framing: *"our expectations on both Buzelis and on Giddey have
+to be adjusted with how this Bulls offense has run."* Ours: **FADE (minutes)**, 23.8/g, 26.6 mpg.
+Caleb Wilson's **hand injury** (*"a broken hand in the NBA is almost universally four weeks"*)
+is the one upside path — *"maybe it gives Buzelis a chance to slide up, play the four."*
+
+### Collin Murray-Boyles — bad game, and Lloyd is holding
+*"Colin Murray Bole is my guy. Um, what what are you doing? One of nine from the field for a big
+man."* 5/4/3 with a block in 20 minutes. **He started.** *"I am holding him. Admittedly, this was
+bad."* Per rule 31 this is conversion, not role — he started and the minutes are near his 22.0
+average. Ours: **HOLD**, 27.2/g over 6. Nothing to do.
+
+### Cedric Coward — up to 70th, and Lloyd likes the volume
+*"the chicken Cedric Coward. Kacha 70th ranked player over the course of the season. A bit of a
+bargain on where he was drafted."* 15/11/4. *"No defense, which continues to be an ongoing
+inconsistency issue with him."* Ours: **#64 current**, form **SELL HIGH at +17%**.
+
+### Jakob Poeltl — the new add, and Lloyd endorsed it the same night
+*"I think we got to be rostering Poeltl in 12 team formats."* 32 minutes, 6 and 9, *"the low
+usage is sort of what was happening earlier in the season."* Ours: 27.3/g, 23.8 mpg, projected
+29.5 (#96). Reasonable depth big; the usage caveat is real.
+
+### Brandon Miller — out again, and still nothing published
+*"It turns out all of those guys are going to play apart from Brandon Miller."* Fifth straight
+read where he is missing or limited with no forward-looking status. Form: **FADE (minutes)**,
+29.5/g, 29.8 mpg, 19% under projection. The 29 Oct top-30 anchor is now two weeks stale.
+
+### Amen Thompson — Lloyd's answer is "no"
+*"is Amen Thompson doing anything good. Oh no, he's not. 29 minutes only, 19/7/4, one steal and
+two blocks."* He immediately walks it back — *"that's a little bit hyperbolic because those
+numbers are great… 73% from the field. It's getting a little better, but I still would like some
+more playing time, but the game was over sort of relatively easy."*
+Ours: **SLUMP (no edge)** — 31.7/g over 7 games, 23% under projection, but **33.0 mpg, minutes
+fully intact.** Rule 31: the blowout explains the 29 minutes. This is the one on my roster where
+the screen and Lloyd both say "wait", for the same reason.
+
+## LEAGUE-WIDE INJURIES THAT MOVE OTHER ROSTERS
+
+- **Stephen Curry (TanTheMan) — oblique/abdominal, 5 minutes, ruled out fast.** *"I would expect
+  at his age, the fact that he was ruled out so quickly, that it will be some time missed."*
+  He was **#16 on our current list at 46.1/g** and Lloyd's *"top four fantasy player"* in
+  category terms. ESPN already reads **OUT**. Biggest single value loss on the board.
+- **Austin Reaves (The Big Chin) — heel, 25 minutes, imaging next day.** *"they said they're not
+  concerned that it's an Achilles injury."* He is the one genuine **BUY LOW** on our screen
+  (34.6/g, 17% under projection, minutes intact at 36.1) — and this injury is exactly rule 27's
+  warning that a buy-low signal reads backwards on a hurt player.
+- **Luka Doncic (Skywalking) — ankle sprain late, landed on Kuzma.** *"He said he's fine.
+  [Redick] said he's fine. I believe that he is fine."* ESPN reads DAY_TO_DAY. #2 at 69.1/g.
+- **Caleb Wilson (CHI) — hand, ruled out immediately.** Four weeks if it is a break.
+- **Marcus Smart — ejected for punching Charles Bassey**, likely suspension.
+
+## RANKS FILED FROM THIS EPISODE (all into `rankings.py` `LLOYD`)
+
+Season: Wembanyama 3 · Jamal Murray 10 (6 L2W) · Towns 13 · SGA 18 · Zion 25 ·
+Lendeborg 25 · Podziemski 50 · Harden 57 · Harper 60 · Anunoby 62 · Fox 70 · Coward 70 ·
+Jalen Smith 82 (50 L2W) · Queen 100 · Castle 105 · Camara 130 · Dybantsa 145 · Pritchard 145 ·
+Buzelis 153 · Edey 167 · Mikal Bridges 205.
+Last two weeks: Franz Wagner 20 · Siakam 30 · Fears 50 · Hartenstein 80 · Dejounte 145.
+Projected: Brunson 50 · Pritchard 120.
+⚠ **Jokic's 2nd is NOT filed** — he says it is a category rank, so storing it would corrupt the
+check it exists to perform.
+⚠ **One misattribution caught before filing:** *"Yakel… this is a top 25 player"* is the Warriors
+recap, so it is **Yaxel Lendeborg**, not Jonathan Kuminga — Kuminga is on **Minnesota** this
+season. Lendeborg at 43.1/g is my #26 and genuinely top-25; Kuminga at 30.8/g is my #91.
+
+---
+
+## Thursday 12 November 2026 — MAILBAG (no slate recap; Q&A show)
+
+A listener-question episode, so it is **methodology plus scattered player reads**, not a
+game recap. Eleven of the reads touch my roster. Transcript: `2026-11-12_mailbag.txt`.
+Cold open, and he means it as a joke but it sets the whole episode:
+*"the answer to your trade question is no."*
+
+### Brandon Miller — the headline, and it is in my favour
+
+- **Fresh rest-of-season rank, given today:** *"where do I have Brandon Miller projected
+  rest of season? I also talked about this on the B low show earlier in the week. Uh,
+  pretty high. **Like top 25, I think.** Yeah, pretty high."*
+- **He gave that knowing Miller is hurt** — in the same episode, on a different question:
+  *"Allen is dependent on the absence of Canipple and and Miller at the moment."* So the
+  injury is priced in, not overlooked. This **replaces** the 29 Oct top-30 anchor that
+  CLAUDE.md rule 32 listed as "genuinely stale": it is current, and it went **higher**.
+- Jacob Dunne (Fantrax, points-specific) has him **13th**. My projected list has him
+  **75th**. Two independent outside sources far above me is the largest disagreement on
+  the board, so I decomposed it rather than splitting the difference.
+- **The decomposition says they are right and my list is the outlier.** Under rule 17
+  weights, last season (65 GP) vs this season (10 GP):
+
+  | | mpg | FGM | FGA | FG% | 3PM | PTS | AST | fpts/g |
+  |---|---|---|---|---|---|---|---|---|
+  | 2025-26 | 30.3 | 7.0 | 16.1 | **43.5%** | 3.1 | 20.2 | 3.3 | **37.0** |
+  | 2026-27 | 31.0 | 7.3 | **20.5** | **35.6%** | 2.7 | 20.6 | 2.2 | **31.8** |
+
+  **Minutes are UP and attempts are UP 27%.** The whole −5.2 is conversion and assists:
+  FGA −4.4, AST −2.2, 3PM −0.4, against FGM +0.6 and PTS +0.4. At last season's 43.5% on
+  this season's 20.5 attempts he makes **8.9 instead of 7.3** — about **+7/g, so ~38.9**.
+  Rule 31: minutes fine, **attempts up**, conversion bad = the ignorable, **reverting**
+  half. This is the one genuine buy-low on the roster.
+- ⚠ **The injury answer rule 31 has been missing since 8 Nov is now on the record** (ESPN
+  news column, not the API): *"Miller injured his **groin** during the 119-80 loss to
+  Boston on Friday and subsequently missed Monday's meeting with Cleveland. Now that
+  Miller is confirmed to be sidelined for a second consecutive contest, Sion James is the
+  favorite to remain in the starting lineup."* So the 6 Nov 14-minute game was a groin
+  strain in a 39-point loss — the user was right that he left the game, and the blowout
+  was a **coincidence, not the cause**. Two games missed, **no return or re-evaluation
+  date published**.
+
+### Ryan Rollins — Lloyd supplies the mechanism, and our numbers are worse than his floor
+
+- *"Rollins is still better than Burries... but you have to understand that there is still
+  competing forces in that Rollins is an **expiring free agent and might be a trade
+  piece** and Barry is the **face of the rebuild as the top 10 pick in the Giannis
+  trade**... I really don't think after you've elevated Braden Burries to be a starter
+  that the Bucks will switch that back around... **it's going to require an injury for
+  Rollins to start.** Now, he could still play 27 minutes off the bench, which would be
+  plenty... but it's not it's not **it's not looking good**."*
+- Our game log splits exactly on the switch: **21-26 Oct (4 games) 28.8 mpg / 28.3 fpts/g;
+  28 Oct onward (7 games) 20.3 mpg / 21.1 fpts/g.** Last 14 days: **20.8 mpg, 22.7/g**.
+  So he is not even getting Lloyd's 27-minute floor case.
+- This is **front-office driven**, not form. Form screen: **FADE (minutes)**, 65% persists.
+
+### Zach Edey — a deadline, for the first time
+
+- *"I'm giving him patience to see if the minutes and usage increase in the **next 3
+  weeks**. Simple as that. And if it doesn't happen, **we take the L and move on**."*
+  That clock expires **~3 Dec 2026** and is the first one he has put on Edey.
+- Ceiling capped in the same answer: *"He's **not close to the top 10 centers in the NBA
+  at all**... I think he is fine and functional as a starting NBA center. And it's
+  **confusing how low the minutes in usage are**."*
+- Our minutes by game: **21 / 22 / 21 / 19 / 18 / 19 / 25 / 20 / 23 / 20** — flat for
+  three weeks, never above 25, against a 30.0 projection. Form screen: FADE (minutes),
+  −38%. The thing Lloyd is waiting for has not started happening.
+- But he is an explicit **hold on upside**, see Buzelis below.
+
+### Matas Buzelis (and Edey) — explicitly in the "worth patience" bucket
+
+- Sorting holds from cuts: *"That's the difference between the struggling guys like
+  **Giddy, Bzales, Edy**. That is if they are good and they do get back to it, that is a
+  **top 60 player, top 40, top 50 in some cases**. So yes, I would regret that."*
+- The contrast is Mikal Bridges and Jalen Green, whom he says to drop outright: *"will
+  they be a top 80 player when they're good? almost certainly not. So I don't care."*
+- Buzelis also benefits if Caleb Wilson misses time: *"It probably helps everyone like
+  **Bisales**, like Giddy."* Our list: 113th current / 111th projected, FADE (minutes) −37%.
+
+### Collin Murray-Boyles — the format gap, quantified on one of my own players
+
+- *"there's a **20 to 30 spot difference**, I think, in valuation between Murray Boils in
+  **category and points leagues**... In a 10 team category league, he's on the border of a
+  category hold, but **there's no way that I need to bother with that in a points
+  league**."* Asked directly about dropping him in a 10-team Yahoo points league:
+  *"yeah, like jack away, man."*
+- Ours is a **9-team points** league, i.e. shallower still. Our list has him 111th/113th,
+  so this **agrees** with us.
+- **Keep this as a calibration constant:** when Lloyd gives a rank without naming a
+  format, assume category and subtract 20-30 spots for a defence-and-rebounding forward.
+  Rule 24, now with a number attached by Lloyd himself.
+
+### Amen Thompson
+
+- *"What do I think about **Hartenstein for Amen Thompson**? Straight up, I would take
+  Amen Thompson there. Hartenstein's last game was very good, but I would take him."*
+  Hartenstein is not rostered in our league, so this is a value marker only.
+- Worth pairing with our own screen, which disagrees mildly: Amen is **FADE (minutes)**,
+  33.0/g over the last 14 days on 32.4 mpg, −20% against his projection.
+
+### Yaxel Lendeborg — the 11 Nov attribution catch, confirmed by a second passage
+
+- *"I'm in a dynasty league and I'm tempted to activate **Yakel**... We are talking about
+  a **top 25 player**. He is a top 25 fantasy producer **who is now losing Steph Curry for
+  a month**."*
+- Losing Steph Curry settles the team as **Golden State**, so "Yakel" is **Yaxel
+  Lendeborg**, not Jonathan Kuminga (Minnesota). Rule 19's team check worked, and this is
+  an independent second source for it.
+
+### Methodology — two things worth keeping
+
+- **He describes rankings.py's blend, unprompted:** *"the stuff has already happened. If
+  I'm talking about trading for a top 15, top 50, top 70, top 100 player, I want it to be
+  someone who I think is going to be **top 50 rest of season**, not someone who is
+  **currently** top 50... **You can use a blend of those two things.** Well, currently this
+  guy's 40th. Um, he's projected 70th. Maybe he's a top 50 guy. If we merge that stuff
+  together... **What has happened informs us but it doesn't write the future.**"* That is
+  the two-list structure the user asked for on 11 Nov, from an independent direction.
+- **He updates projections "every single day"** — *"Not every player is updated every day,
+  but something is adjusted every single day."* Direct contrast with ESPN's, which rule 32
+  measured as **frozen at preseason** (zero of 149 moved on 11 Nov).
+
+### The trade segment — it cuts against two things I said yesterday
+
+- **His explicit points-league test:** *"if you're in a points league, the easiest thing
+  you should do, what does my player average? What does his player average?... have a look
+  if it's **the difference is between one or two like it's a wash**, man."* Plus *"We don't
+  need to be making trades at this level of um rapidity."*
+- **And on selling a struggling player, which is what I recommended for Dejounte:** *"Get
+  the idea out of your head that when someone is performing poorly, I've got to trade them
+  away. It's the dumbest [expletive] you could do... Do not trade them away. It is the
+  worst decision you could make. **Unless your breaking point with them is, well, I'm just
+  going to drop them. Well, get something back in a trade.**"*
+- Two honest notes on that. It is **tier 2** under rule 26 — explicit methodology, not
+  explicit about Dejounte. And his stated **reason** is that nobody pays for a struggling
+  player (*"In what world is someone coming to you go, man, that is a absolute banging
+  stud you've got on your team?"*) — which is exactly the condition the measured
+  perception gap (Dunne #33 vs our #84) says does not hold here. The sell case survives
+  through his own exception clause, because below-replacement means the alternative is
+  dropping him. **But the headline of his segment is against me.**
+
+### League-wide
+
+- **Steph Curry: oblique/abdominal tear, ~1 month.** *"I was like probably four to six
+  weeks and I think that's probably where we're at."* Anthony Melton is the add.
+- **Austin Reaves:** no update at all — *"I haven't even heard anything specific to say
+  that Reeves is missing a significant chunk of playing time."* Quentin Grimes is also
+  hurt, so the handcuff is Mamu.
+- **Caleb Wilson's hand** is still unresolved: *"without hearing any response about what
+  happened to his hand. If it's broken, then I don't want him in that spot."*
+- **Shai:** will improve but *"Do I think that Shay has any shot of challenging for a top
+  three fantasy finish? No, I don't. I think maybe top six."*
+- **Durant** rest-of-season 25th, drifting back toward top 20 as his usage recovers.
