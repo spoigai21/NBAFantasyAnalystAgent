@@ -907,3 +907,351 @@ tbody tr.is-selected {
     animation: none;
   }
 }
+
+/* —— Trade compare —— */
+
+.trade-btn {
+  appearance: none;
+  cursor: pointer;
+  padding: 0.5rem 0.9rem;
+  border-radius: var(--radius-sm);
+  font-family: inherit;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--cyan);
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid var(--line-strong);
+  white-space: nowrap;
+}
+
+.trade-btn:hover {
+  color: var(--bone);
+}
+
+.trade-btn[aria-pressed="true"] {
+  background: var(--holo);
+  background-size: 200% 100%;
+  animation: holo-drift 9s linear infinite;
+  color: #022027;
+  border-color: transparent;
+  box-shadow: 0 0 1.5rem var(--hold-glow);
+}
+
+.trade-wrap {
+  margin-bottom: 1.25rem;
+}
+
+.trade-panel {
+  position: relative;
+  padding: 1.25rem;
+  border-radius: var(--radius);
+  background: var(--slab), var(--glass);
+  border: 1px solid var(--line);
+  box-shadow: var(--lift);
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
+  backdrop-filter: blur(20px) saturate(140%);
+}
+
+.trade-head {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.trade-head h2 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--bone);
+}
+
+.trade-head p {
+  margin: 0;
+  font-size: 0.8125rem;
+  color: var(--bone-dim);
+}
+
+.trade-clear {
+  margin-left: auto;
+  appearance: none;
+  cursor: pointer;
+  background: none;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  color: var(--bone-dim);
+  font-family: inherit;
+  font-size: 0.75rem;
+  padding: 0.3rem 0.7rem;
+}
+
+.trade-clear:hover {
+  color: var(--bone);
+  border-color: var(--line-strong);
+}
+
+.trade-sides {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.trade-side {
+  padding: 0.85rem;
+  border-radius: var(--radius-sm);
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--line);
+  min-height: 7.5rem;
+}
+
+.side-tab {
+  appearance: none;
+  cursor: pointer;
+  background: none;
+  border: 0;
+  padding: 0 0 0.6rem;
+  font-family: inherit;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--bone-dim);
+}
+
+/* The active side is where clicks land, so it has to be obvious which one that is. */
+.side-tab[aria-pressed="true"] {
+  color: var(--cyan);
+  text-shadow: 0 0 14px var(--cyan-glow);
+}
+
+.side-tab[aria-pressed="true"]::after {
+  content: " ← adding here";
+  letter-spacing: 0.04em;
+  text-transform: none;
+  font-weight: 500;
+  opacity: 0.8;
+}
+
+.chips {
+  list-style: none;
+  margin: 0 0 0.6rem;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.chips button {
+  appearance: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.45rem;
+  padding: 0.35rem 0.6rem;
+  border-radius: 0.5rem;
+  font-family: inherit;
+  font-size: 0.8125rem;
+  color: var(--bone);
+  background: rgba(62, 232, 247, 0.08);
+  border: 1px solid var(--line-strong);
+}
+
+.chips button:hover {
+  border-color: var(--down);
+  color: var(--down);
+}
+
+.chip-val {
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  color: var(--cyan);
+}
+
+.chips button:hover .chip-val {
+  color: var(--down);
+}
+
+.side-total {
+  margin: 0;
+  font-size: 1.25rem;
+  font-variant-numeric: tabular-nums;
+  color: var(--bone-dim);
+}
+
+.side-total strong {
+  color: #fff;
+  font-size: 1.5rem;
+  text-shadow: 0 0 18px rgba(62, 232, 247, 0.4);
+}
+
+.fill-note {
+  display: block;
+  font-size: 0.6875rem;
+  color: var(--cyan);
+  letter-spacing: 0.02em;
+}
+
+.trade-verdict {
+  margin-top: 1rem;
+  padding: 0.85rem 1rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--line-strong);
+  background: rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.verdict-word {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--bone-dim);
+}
+
+.verdict-num {
+  font-size: 1.75rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.trade-verdict.is-good .verdict-num { color: var(--cyan); text-shadow: 0 0 20px var(--cyan-glow); }
+.trade-verdict.is-bad  .verdict-num { color: var(--down); text-shadow: 0 0 20px rgba(251,113,133,.4); }
+.trade-verdict.is-even .verdict-num { color: var(--bone); }
+
+.verdict-unit {
+  font-size: 0.75rem;
+  color: var(--bone-dim);
+}
+
+.trade-flags {
+  list-style: none;
+  margin: 0.85rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 0.35rem;
+}
+
+.flag {
+  font-size: 0.8125rem;
+  color: var(--bone-dim);
+  padding-left: 0.6rem;
+  border-left: 2px solid currentColor;
+}
+
+.flag strong { color: var(--bone); font-weight: 500; }
+.flag.is-bad  { color: var(--down); }
+.flag.is-warn { color: #fbbf24; }
+.flag.is-buy,
+.flag.is-good { color: var(--cyan); }
+
+.flag-side {
+  display: inline-block;
+  min-width: 2.6rem;
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0.75;
+}
+
+@media (max-width: 52rem) {
+  .trade-sides { grid-template-columns: 1fr; }
+}
+
+/* —— Trade panel: clearer affordances —— */
+
+.sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* The whole side is a click target, so it needs to look selectable. */
+.trade-side {
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.trade-side:hover {
+  border-color: var(--line-strong);
+}
+
+.trade-side.is-active {
+  border-color: var(--cyan);
+  background: linear-gradient(180deg, rgba(62, 232, 247, 0.07), rgba(0, 0, 0, 0.3));
+  box-shadow: inset 0 1px 0 rgba(62, 232, 247, 0.3), 0 0 26px rgba(62, 232, 247, 0.12);
+}
+
+/* The heading now reads as a real control rather than a caption. */
+.side-tab {
+  padding: 0.3rem 0.65rem;
+  margin-bottom: 0.6rem;
+  border: 1px solid var(--line);
+  border-radius: 0.5rem;
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.side-tab[aria-pressed="true"] {
+  border-color: transparent;
+  background: var(--holo);
+  background-size: 200% 100%;
+  animation: holo-drift 9s linear infinite;
+  color: #022027;
+  text-shadow: none;
+}
+
+.side-tab[aria-pressed="true"]::after {
+  content: " ← adding here";
+}
+
+.chip-x {
+  margin-left: 0.1rem;
+  font-size: 0.95rem;
+  line-height: 1;
+  color: var(--bone-dim);
+}
+
+.chips button:hover .chip-x {
+  color: var(--down);
+}
+
+.flag.is-none {
+  color: var(--bone-dim);
+  border-left-color: var(--line-strong);
+}
+
+/* ⚠ `display: flex` on .trade-verdict beats the [hidden] attribute's display:none, so
+   the empty verdict box was still painting as a blank bar before any player was added.
+   Same trap applies to any hidden element given an explicit display. */
+.trade-verdict[hidden],
+[hidden] {
+  display: none !important;
+}
+
+/* The signal label is the thing you act on, so it gets the emphasis in a trade flag. */
+.flag-tag {
+  display: inline-block;
+  margin: 0 0.35rem;
+  padding: 0.1rem 0.4rem;
+  border: 1px solid currentColor;
+  border-radius: 0.3rem;
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  vertical-align: 0.05em;
+}
+
+.flag-why {
+  color: var(--bone-dim);
+}

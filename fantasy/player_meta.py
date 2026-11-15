@@ -73,6 +73,8 @@ INJURY_PRONE = {
     "Damian Lillard": "User-flagged as injury prone.",
     # user, 15 Nov 2026: "coby white put him as injury due to multiple calf injuries"
     "Coby White": "Multiple calf injuries.",
+    # user, 15 Nov 2026: "put him in as injured w/ hamstring and coming off achilles"
+    "Tyrese Haliburton": "Hamstring, and coming off an Achilles injury.",
 }
 
 # ⚠ NOT ACTUALLY INJURED. ESPN's OUT flag normally VOIDS the signal — "he is not playing, so there is no role
@@ -103,8 +105,11 @@ REST_NOT_INJURED = NOT_INJURED
 #     projected mpg that was set too high; the gate reads that as "overperforming on
 #     fewer minutes", which is the shape that evaporates. At 35.8 minutes a game nothing
 #     is actually being taken away from him.
+#   Matas Buzelis — user, 15 Nov 2026: "for matas update his projection to 34 and say
+#     its a lowering role and mark as Fade."
 SIGNAL_OVERRIDE = {
     "Luka Doncic": ("RIDE", "Minutes are not actually down — the projected mpg was high."),
+    "Matas Buzelis": ("FADE (usage)", "Lowering role."),
 }
 
 

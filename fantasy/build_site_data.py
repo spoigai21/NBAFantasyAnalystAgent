@@ -63,6 +63,7 @@ def main():
             "prone": r.get("prone"),
             "rested": r.get("rested"),
             "sigWhy": r.get("sig_override_why"),
+            "smallSample": bool(r.get("small_sample")),
             "signal": r.get("signal") or "—",
             "form": round(r["form"], 1) if r.get("form") is not None else None,
             "formGames": r.get("form_n") or 0,

@@ -42,11 +42,38 @@
       <button type="button" id="btn-cur" aria-pressed="true">Current</button>
       <button type="button" id="btn-proj" aria-pressed="false">Projected</button>
     </div>
+    <button type="button" class="trade-btn" id="trade-toggle" aria-pressed="false">Trade</button>
     <input type="search" id="q" placeholder="Search player or team&hellip;" aria-label="Search player or fantasy team" autocomplete="off" />
     <label class="chk"><input type="checkbox" id="mine" /> My team only</label>
     <p class="count" id="count"></p>
   </div>
 </div>
+
+<section class="trade-wrap wrap" id="trade" hidden>
+  <div class="trade-panel">
+    <div class="trade-head">
+      <h2>Trade compare</h2>
+      <p id="trade-hint">Pick a side, then click players in the table to add them. Click a chip to remove it.</p>
+      <button type="button" class="trade-clear" id="trade-clear">Clear</button>
+    </div>
+
+    <div class="trade-sides">
+      <div class="trade-side" id="side-a" data-side="a">
+        <button type="button" class="side-tab" data-side="a" aria-pressed="true">You give</button>
+        <ul class="chips" id="chips-a"></ul>
+        <p class="side-total" id="total-a">—</p>
+      </div>
+      <div class="trade-side" id="side-b" data-side="b">
+        <button type="button" class="side-tab" data-side="b" aria-pressed="false">You get</button>
+        <ul class="chips" id="chips-b"></ul>
+        <p class="side-total" id="total-b">—</p>
+      </div>
+    </div>
+
+    <div class="trade-verdict" id="trade-verdict" hidden></div>
+    <ul class="trade-flags" id="trade-flags"></ul>
+  </div>
+</section>
 
 <main class="wrap layout">
   <!-- Left rail: the clicked player. Sticky, so it stays put while the table scrolls. -->

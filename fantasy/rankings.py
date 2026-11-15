@@ -582,6 +582,15 @@ MANUAL_PROJ = {
     "Ausar Thompson": 30.0,
     # 15 Nov 2026 -- "move quickleu projections so hes now set at 36"
     "Immanuel Quickley": 36.0,
+    # 15 Nov 2026 -- "for matas update his projection to 34 and say its a lowering role
+    # and mark as Fade"
+    "Matas Buzelis": 34.0,
+    # 15 Nov 2026 -- "put damian lillard projected to 37"
+    "Damian Lillard": 37.0,
+    # 15 Nov 2026 -- "why is haliburton not on these rankings? put him in as injured w/
+    # hamstring and coming off achilles his projected 47 fantasy points." He was missing
+    # because he is on 4 GP, under MIN_GP. A hand-set projection now clears that floor.
+    "Tyrese Haliburton": 47.0,
     # 15 Nov 2026, third batch -- "Zach edey put him at 36 gobert move him to 33 fears
     # mvoe him also to 32. payton pritchard is 29"
     "Zach Edey": 36.0,
@@ -644,7 +653,13 @@ def load(roster, min_gp=MIN_GP, w_prior=W_PRIOR):
                 durability(hist.get(str(info.get("id")), {}))),
             "rested": rested.get(r["name"]),
             "sig_override": sig_override.get(r["name"]),
-            "enough": gp >= min_gp,
+            # ⚠ A hand-set projection clears the games-played floor. The floor exists so
+            # a 3-game sample cannot masquerade as a season average (rule 27); it has no
+            # bearing on a forward number the manager set himself. Haliburton was invisible
+            # on 4 GP until this. His CURRENT rank is still a 4-game average, so the small
+            # sample is marked rather than hidden.
+            "enough": gp >= min_gp or manual is not None,
+            "small_sample": gp < min_gp,
         })
     return rows
 
@@ -702,8 +717,14 @@ def add_form(rows, days=FORM_DAYS):
         a = agg.get(r["name"])
         r["form_from"], r["form_to"] = lo, last
         if not a or a["n"] < FORM_MIN_GAMES:
+            # ⚠ Being OUT outranks having no recent games. Checking the sample-size gate
+            # first reported an injured player as "—" (no data), which reads as a gap in
+            # the board rather than the reason he has no games. Caught on Haliburton,
+            # 15 Nov 2026: OUT with a hamstring, 4 GP, and the card said nothing at all.
+            out = r["injury"] in OUT_FLAGS and not r.get("rested")
             r.update(form=None, form_n=(a["n"] if a else 0), form_gap=None,
-                     form_mr=None, form_ur=None, signal="—")
+                     form_mr=None, form_ur=None,
+                     signal="INJURED (void)" if out else "—")
             continue
         # ⚠ THE BAND IS APPLIED TO SEASON AVERAGE MINUS PROJECTION -- the "over expected"
         # number the site already shows -- NOT to the 7-day average. Corrected 15 Nov 2026
