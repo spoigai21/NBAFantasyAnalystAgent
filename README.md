@@ -144,7 +144,7 @@ Effect on the starting ten: **+12.1 projected fantasy points per slate.**
 
 ### Current roster, with both value lists
 
-Live from the ESPN API and `fantasy/rankings.py`, as of **14 Nov 2026**. 15 players; **10 of
+Live from the ESPN API and `fantasy/rankings.py`, as of **15 Nov 2026**. 15 players; **10 of
 the 13 active roster spots score**, so which players fill them changes nightly and is not
 recorded here — check the lineup every day.
 
@@ -153,25 +153,25 @@ is the rest-of-season blend `(GP × actual + 6 × 0.905 × ESPN projection) / (G
 injury adjustment at all. Ranks are out of the 117 rostered players in the league with 5+
 games played, so **#1 is best, #117 worst**. 📌 marks a projection set by hand by the manager
 rather than computed — `MANUAL_PROJ` in `fantasy/rankings.py` records the instruction, the
-date and the target for each.
+date and the target for each, and a later instruction replaces an earlier one outright.
 
 | Player | NBA | Elig | Status | CURRENT /g | rank | PROJECTED /g | rank |
 |---|---|---|---|---|---|---|---|
-| Victor Wembanyama | SA | C |  | **72.2** | #1 | **68.4** | #1 |
+| Victor Wembanyama | SA | C |  | **72.2** | #1 | **70.0** 📌 | #1 |
 | Giannis Antetokounmpo | MIA | PF/C |  | **61.6** | #4 | **60.3** | #4 |
-| Anthony Davis | WSH | PF/C |  | **51.6** | #8 | **51.3** | #7 |
-| Paul George | BOS | SF/PF |  | **44.6** | #22 | **41.7** | #29 |
+| Anthony Davis | WSH | PF/C |  | **51.6** | #8 | **48.0** 📌 | #12 |
+| Paul George | BOS | SF/PF |  | **44.6** | #22 | **41.7** | #31 |
 | Cedric Coward | MEM | SG/SF |  | **38.4** | #45 | **35.5** | #61 |
-| Amen Thompson | HOU | SG/SF |  | **37.1** | #56 | **43.0** 📌 | #23 |
+| Amen Thompson | HOU | SG/SF |  | **37.1** | #56 | **43.0** 📌 | #22 |
 | Zach LaVine | SAC | SG/SF |  | **33.8** | #78 | **32.6** | #84 |
-| Brandon Miller | CHA | SG/SF |  | **31.8** | #89 | **40.0** 📌 | #37 |
+| Brandon Miller | CHA | SG/SF |  | **31.8** | #89 | **42.0** 📌 | #30 |
 | Dejounte Murray | NO | PG/SG | OUT | **31.7** | #91 | **33.8** | #77 |
-| Collin Murray-Boyles | TOR | PF |  | **26.2** | #111 | **26.2** | #115 |
-| Zach Edey | MEM | C | OUT | **24.4** | #112 | **28.9** | #104 |
-| Ryan Rollins | MIL | PG/SG |  | **24.4** | #113 | **26.5** | #113 |
-| Keegan Murray | SAC | SF/PF | DTD | **24.2** | #114 | **26.9** | #112 |
-| Matas Buzelis | CHI | SF/PF |  | **23.8** | #115 | **26.4** | #114 |
-| Coby White | CHA | PG/SG |  | **12.2** | #117 | **22.7** | #117 |
+| Collin Murray-Boyles | TOR | PF |  | **26.2** | #110 | **26.2** | #114 |
+| Zach Edey | MEM | C | DTD | **24.4** | #111 | **28.9** | #103 |
+| Ryan Rollins | MIL | PG/SG | DTD | **24.4** | #112 | **26.5** | #112 |
+| Keegan Murray | SAC | SF/PF | DTD | **24.2** | #113 | **26.9** | #111 |
+| Matas Buzelis | CHI | SF/PF |  | **23.8** | #114 | **26.4** | #113 |
+| Coby White | CHA | PG/SG |  | **12.2** | #116 | **22.7** | #116 |
 
 ⚠ **Never mix the two lists inside one argument.** CURRENT answers what a player HAS done,
 PROJECTED what he WILL do; switching between them whenever one is more convenient is how a

@@ -87,6 +87,7 @@ import argparse, json, os, sqlite3, subprocess, sys, datetime
 HERE = os.path.dirname(os.path.abspath(__file__))
 DB = os.path.join(HERE, "league.db")
 MD_OUT = os.path.join(HERE, "rankings.md")
+MD_LIMIT = 110   # rows per list in the written file (user, 15 Nov 2026: "from 1-110")
 LEAGUE, SEASON = "1858125890", "2027"
 BASE = (f"https://lm-api-reads.fantasy.espn.com/apis/v3/games/fba/seasons/{SEASON}"
         f"/segments/0/leagues/{LEAGUE}")
@@ -463,9 +464,87 @@ def live_roster():
 #     conversion down, i.e. the reverting half. Lloyd 12 Nov: "pretty high. Like top 25,
 #     I think," given knowing Miller was hurt; Dunne has him #13. BOTH outside sources
 #     sit ABOVE this override, so 40.0 is the conservative end of the disagreement.
+#
+#   15 Nov 2026 -- the user asked for the projected list 1-40 ("im going to update every
+#     one start from 1 to 40") and returned twelve values verbatim:
+#     "wemby projected is 70, sengun projected 49 shai projected 50 flagg projected 55
+#     tatum projected 49 ad projected 48 drop sabonis to 43  drop ty jerome to 38 dyson
+#     bring him up to 42 melo bring to 41 miller projeted to 42 clingan projected 38"
+#     ⚠ MILLER IS A SECOND OVERRIDE OF THE SAME PLAYER, 40.0 -> 42.0, one day after the
+#     first. The newer instruction wins outright; do not average the two or treat the
+#     older one as still standing. Amen is NOT in this batch, so his 43.0 carries over
+#     unchanged -- absence from a later list is not a revocation.
+#     Direction of each against the 14 Nov blend it replaces:
+#       UP   Flagg 49.7->55, Tatum 47.9->49, Wembanyama 68.4->70, Shai 50.2->50 (flat),
+#            Dyson Daniels 40.9->42, LaMelo 40.6->41, Miller 40.0->42
+#       DOWN Sengun 54.1->49, Anthony Davis 51.3->48, Sabonis 46.7->43,
+#            Ty Jerome 41.5->38, Clingan 39.5->38
+#     Four of the five cuts move TOWARD Dunne's rest-of-season list (Sengun #14, Sabonis
+#     #12, Jerome #56, Clingan #49 vs my #5/#15/#30/#39) and the Flagg and Tatum raises
+#     move toward it too (#8 and #7 vs my #9 and #12). Anthony Davis is the one that moves
+#     AWAY from every outside source -- Lloyd had him #10 current and #22 projected, Dunne
+#     #28 -- and it is also the roster's single biggest availability bet, so it is the
+#     entry to revisit first if the season turns.
+#
+#   15 Nov 2026 (second batch, after the 40-80 band was printed) -- seventeen more:
+#     "kd is 40 giddey put at like 36 acuff move to 40. boozer goign to average 38.5
+#     yaxel is goin to avg 36. move ausar to 30 move lavine and keegan murray to 33.5
+#     Dejounte murray i think hes a 42-43 (depends on the team he gets traded to but on
+#     the pelicans when before pregnancy he was averaging 48). Garland move up to 36.
+#     nickeil also move to 36.5 julius randle put him at 37.5. dearon fox is 36.
+#     hartenstien about 33.4 (these are all fantasy pooints by the way) trey murphy put
+#     him at 36. vanvleet move him to 34.5 white move him to 36."
+#     ⚠ "white" is DERRICK White (#75, 34.0 -> 36.0), not Coby White. Read from position
+#     in the list: every other name in this batch sits inside the 40-80 band that had just
+#     been printed, and Coby is #116. Two players sharing a surname on one roster is
+#     exactly the collision rule 23 already records (Jamal/Keegan/Dejounte Murray,
+#     Klay/Ausar/Amen Thompson), so resolve it from context and say which one was meant.
+#     ⚠ DEJOUNTE IS THE ONE JUDGEMENT CALL: the user gave a RANGE, "42-43", with a reason
+#     attached -- "depends on the team he gets traded to". Stored as the 42.5 midpoint and
+#     flagged to him. A range is not a number and should not be silently rounded to its
+#     favourable end. His own anchor for the upside case: "on the pelicans when before
+#     pregnancy he was averaging 48" -- recorded verbatim; he is currently OUT, and the
+#     projected list takes no injury adjustment by design, so that is consistent.
+#     ⚠ Keegan Murray and LaVine were given as one instruction ("move lavine and keegan
+#     murray to 33.5") -- both to the same number, not 33.5 split between them.
 MANUAL_PROJ = {
+    "Victor Wembanyama": 70.0,
+    "Cooper Flagg": 55.0,
+    "Shai Gilgeous-Alexander": 50.0,
+    "Alperen Sengun": 49.0,
+    "Jayson Tatum": 49.0,
+    "Anthony Davis": 48.0,
     "Amen Thompson": 43.0,
-    "Brandon Miller": 40.0,
+    "Domantas Sabonis": 43.0,
+    "Brandon Miller": 42.0,
+    "Dyson Daniels": 42.0,
+    "LaMelo Ball": 41.0,
+    "Ty Jerome": 38.0,
+    "Donovan Clingan": 38.0,
+    # 15 Nov 2026, second batch
+    "Dejounte Murray": 42.5,   # user gave "42-43"; midpoint, flagged to him
+    "Kevin Durant": 40.0,
+    "Darius Acuff Jr.": 40.0,
+    "Cameron Boozer": 38.5,
+    "Julius Randle": 37.5,
+    "Nickeil Alexander-Walker": 36.5,
+    "Josh Giddey": 36.0,
+    "Yaxel Lendeborg": 36.0,
+    "Darius Garland": 36.0,
+    "De'Aaron Fox": 36.0,
+    "Trey Murphy III": 36.0,
+    "Derrick White": 36.0,
+    "Fred VanVleet": 34.5,
+    "Zach LaVine": 33.5,
+    "Keegan Murray": 33.5,
+    "Isaiah Hartenstein": 33.4,
+    "Ausar Thompson": 30.0,
+    # 15 Nov 2026, third batch -- "Zach edey put him at 36 gobert move him to 33 fears
+    # mvoe him also to 32. payton pritchard is 29"
+    "Zach Edey": 36.0,
+    "Rudy Gobert": 33.0,
+    "Jeremiah Fears": 32.0,
+    "Payton Pritchard": 29.0,
 }
 
 
@@ -868,19 +947,37 @@ def main():
                          r.get("current_rank"), r["projected"], r.get("projected_rank"),
                          r.get("trade_rank"), r["injury"]) for r in pool])
         db.commit()
+        # The FILE carries the two value lists only, capped at MD_LIMIT. The form screen
+        # is deliberately NOT written here -- it is a WINDOW on current value rather than
+        # a third list, and putting it in the same document is how the three get mixed in
+        # one argument, which is the thing rule 32 exists to stop. Read it with
+        # `rankings.py --buylow`, or `--mine` for the roster.
+        n_manual = sum(1 for r in pool if r.get("manual_proj"))
         with open(MD_OUT, "w") as f:
             f.write(f"# Rankings — {stamp}\n\n"
-                    f"Generated by `fantasy/rankings.py`. Two lists, two formulas, no "
-                    f"mixing.\n\n**CURRENT** = actual ESPN fantasy points per game, "
-                    f"nothing adjusted.\n**PROJECTED** = "
+                    f"Generated by `fantasy/rankings.py` over the "
+                    f"{len(pool)} rostered players in the league with "
+                    f"{a.min_gp}+ games played. Top {MD_LIMIT} of each list.\n\n"
+                    f"**Two lists, two formulas, never mixed inside one argument.**\n\n"
+                    f"| List | Formula | Answers |\n|---|---|---|\n"
+                    f"| **CURRENT** | actual ESPN applied fantasy points per game, "
+                    f"nothing adjusted | what he HAS done |\n"
+                    f"| **PROJECTED** | "
                     f"`(GP x actual + {a.w_prior} x {K_PROJ} x ESPN projection) / "
-                    f"(GP + {a.w_prior})`, no injury adjustment.\n\n"
-                    + fmt(pool, "current", "## CURRENT VALUE", cur_cols) + "\n\n"
-                    + fmt(pool, "projected", "## PROJECTED VALUE", proj_cols) + "\n\n"
-                    + fmt(pool, "form", f"## FORM — last {a.form_days} days "
-                          f"({r0['form_from']} to {r0['form_to']}). A WINDOW on current "
-                          f"value, not a third value.", form_cols) + "\n")
-        print(f"\nwrote {MD_OUT} and {len(pool)} rows to rankings (asof {stamp})")
+                    f"(GP + {a.w_prior})`, no injury adjustment | what he WILL do |\n\n"
+                    f"📌 marks a projection **set by hand by the manager** rather than "
+                    f"computed ({n_manual} of them). `MANUAL_PROJ` in "
+                    f"`fantasy/rankings.py` records the instruction, the date and the "
+                    f"target for each; a later instruction replaces an earlier one "
+                    f"outright. The injury discount (day-to-day -5 spots, out/IR -12) "
+                    f"applies to CURRENT only and only under `--trade`, so it is not in "
+                    f"either table below.\n\n"
+                    + fmt(pool, "projected", "## PROJECTED VALUE — rest of season, "
+                          "per game", proj_cols, limit=MD_LIMIT) + "\n\n"
+                    + fmt(pool, "current", "## CURRENT VALUE — season to date, per game",
+                          cur_cols, limit=MD_LIMIT) + "\n")
+        print(f"\nwrote {MD_OUT} (top {MD_LIMIT} of each list, {n_manual} manual "
+              f"projections) and {len(pool)} rows to rankings (asof {stamp})")
 
 
 if __name__ == "__main__":
