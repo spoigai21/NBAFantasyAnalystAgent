@@ -144,55 +144,44 @@ Effect on the starting ten: **+12.1 projected fantasy points per slate.**
 
 ### Current roster, with both value lists
 
-Live from the ESPN API and `fantasy/rankings.py`, both as of **14 Nov 2026**. **CURRENT** is
-actual ESPN applied fantasy points per game — nothing else in it. **PROJECTED** is the
-rest-of-season blend `(GP × actual + 6 × 0.905 × ESPN projection) / (GP + 6)` and carries no
+Live from the ESPN API and `fantasy/rankings.py`, as of **14 Nov 2026**. 15 players; **10 of
+the 13 active roster spots score**, so which players fill them changes nightly and is not
+recorded here — check the lineup every day.
+
+**CURRENT** is actual ESPN applied fantasy points per game, nothing else in it. **PROJECTED**
+is the rest-of-season blend `(GP × actual + 6 × 0.905 × ESPN projection) / (GP + 6)`, with no
 injury adjustment at all. Ranks are out of the 117 rostered players in the league with 5+
-games played, so **#1 is best and #117 is worst**. 📌 marks a projection set by hand by the
-manager rather than computed — see `MANUAL_PROJ` in `fantasy/rankings.py`, which records the
-instruction, the date and the target for each one.
+games played, so **#1 is best, #117 worst**. 📌 marks a projection set by hand by the manager
+rather than computed — `MANUAL_PROJ` in `fantasy/rankings.py` records the instruction, the
+date and the target for each.
 
-**Starting ten** — these are the only slots that score.
-
-| Slot | Player | NBA | Elig | Status | CURRENT /g | rank | PROJECTED /g | rank |
-|---|---|---|---|---|---|---|---|---|
-| PG | Ryan Rollins | MIL | PG/SG |  | **24.4** | #113 | **26.5** | #113 |
-| SG | Zach LaVine | SAC | SG/SF |  | **33.8** | #78 | **32.6** | #84 |
-| SF | Cedric Coward | MEM | SG/SF |  | **38.4** | #45 | **35.5** | #61 |
-| PF | Giannis Antetokounmpo | MIA | PF/C |  | **61.6** | #4 | **60.3** | #4 |
-| G | Coby White | CHA | PG/SG |  | **12.2** | #117 | **22.7** | #117 |
-| F | Matas Buzelis | CHI | SF/PF |  | **23.8** | #115 | **26.4** | #114 |
-| UTIL | Victor Wembanyama | SA | C |  | **72.2** | #1 | **68.4** | #1 |
-| UTIL | Amen Thompson | HOU | SG/SF |  | **37.1** | #56 | **43.0** 📌 | #23 |
-| UTIL | Keegan Murray | SAC | SF/PF | DTD | **24.2** | #114 | **26.9** | #112 |
-
-**Bench and injured reserve** — worth zero unless promoted into a scoring slot.
-
-| Slot | Player | NBA | Elig | Status | CURRENT /g | rank | PROJECTED /g | rank |
-|---|---|---|---|---|---|---|---|---|
-| BE | Anthony Davis | WSH | PF/C |  | **51.6** | #8 | **51.3** | #7 |
-| BE | Paul George | BOS | SF/PF |  | **44.6** | #22 | **41.7** | #29 |
-| BE | Brandon Miller | CHA | SG/SF |  | **31.8** | #89 | **40.0** 📌 | #37 |
-| BE | Collin Murray-Boyles | TOR | PF |  | **26.2** | #111 | **26.2** | #115 |
-| IR | Dejounte Murray | NO | PG/SG | OUT | **31.7** | #91 | **33.8** | #77 |
-| IR | Zach Edey | MEM | C | OUT | **24.4** | #112 | **28.9** | #104 |
-
-**Starting ten: 327.6 current, 342.2 projected, fantasy points per full slate.**
+| Player | NBA | Elig | Status | CURRENT /g | rank | PROJECTED /g | rank |
+|---|---|---|---|---|---|---|---|
+| Victor Wembanyama | SA | C |  | **72.2** | #1 | **68.4** | #1 |
+| Giannis Antetokounmpo | MIA | PF/C |  | **61.6** | #4 | **60.3** | #4 |
+| Anthony Davis | WSH | PF/C |  | **51.6** | #8 | **51.3** | #7 |
+| Paul George | BOS | SF/PF |  | **44.6** | #22 | **41.7** | #29 |
+| Cedric Coward | MEM | SG/SF |  | **38.4** | #45 | **35.5** | #61 |
+| Amen Thompson | HOU | SG/SF |  | **37.1** | #56 | **43.0** 📌 | #23 |
+| Zach LaVine | SAC | SG/SF |  | **33.8** | #78 | **32.6** | #84 |
+| Brandon Miller | CHA | SG/SF |  | **31.8** | #89 | **40.0** 📌 | #37 |
+| Dejounte Murray | NO | PG/SG | OUT | **31.7** | #91 | **33.8** | #77 |
+| Collin Murray-Boyles | TOR | PF |  | **26.2** | #111 | **26.2** | #115 |
+| Zach Edey | MEM | C | OUT | **24.4** | #112 | **28.9** | #104 |
+| Ryan Rollins | MIL | PG/SG |  | **24.4** | #113 | **26.5** | #113 |
+| Keegan Murray | SAC | SF/PF | DTD | **24.2** | #114 | **26.9** | #112 |
+| Matas Buzelis | CHI | SF/PF |  | **23.8** | #115 | **26.4** | #114 |
+| Coby White | CHA | PG/SG |  | **12.2** | #117 | **22.7** | #117 |
 
 ⚠ **Never mix the two lists inside one argument.** CURRENT answers what a player HAS done,
 PROJECTED what he WILL do; switching between them whenever one is more convenient is how a
 valuation stops being one. The injury discount (day-to-day −5 spots, out/IR −12) applies to
-CURRENT only, and only in trade mode — `rankings.py --trade`. Rebuild both nightly after the
-slate goes final:
+CURRENT only, and only in trade mode — `rankings.py --trade`. Rebuild both nightly once the
+slate is final:
 
 ```bash
 . ~/.espn-fantasy.env && python3 fantasy/refresh_players.py && python3 fantasy/rankings.py
 ```
-
-⚠ **The C slot is empty in the table above because it genuinely is.** Wembanyama is the only
-C-only player on the roster and he is sitting in a UTIL slot; Edey, the other center, is on
-IR. On a night when no center of the manager's plays, leaving it unfilled costs nothing, but
-it is a slot to check every single day rather than assume.
 
 ### Known weaknesses
 
