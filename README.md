@@ -14,7 +14,7 @@ done, PROJECTED is what he will do. 📌 marks a projection set by hand.
 
 | | |
 |---|---|
-| **🔗 Site** | **`<PASTE VERCEL URL HERE AFTER FIRST DEPLOY>`** — the readable version: searchable, filterable, both lists behind one toggle |
+| **🔗 Site** | **<https://nba-fantasy-rankings.vercel.app/>** — the readable version: searchable, filterable, both lists behind one toggle, with a click-through player panel and a trade comparer |
 | **Markdown** | [`fantasy/rankings.md`](fantasy/rankings.md) — top 110 of each list, for reading in the repo |
 | **Source** | [`site/`](site/) (static, frontend only) · [`fantasy/rankings.py`](fantasy/rankings.py) (the engine) |
 | **This team only** | [Current roster](#current-roster-with-both-value-lists) |
@@ -28,8 +28,11 @@ Rebuild everything once a slate goes final:
   && python3 fantasy/build_site_data.py
 ```
 
-Deploy the site with `cd site && vercel --prod`. There is no build step — Vercel serves the
-directory as-is. See [`site/README.md`](site/README.md).
+The site is live at **<https://nba-fantasy-rankings.vercel.app/>**, deployed from this repo
+on Vercel with **Root Directory `site`** and no build step. ⚠ It serves a STATIC
+`site/rankings.json`, so the page shows whatever was last pushed — rebuilding locally is
+not enough, the regenerated `site/rankings.json` has to be committed for the live site to
+change. Vercel redeploys on push. See [`site/README.md`](site/README.md).
 
 ---
 

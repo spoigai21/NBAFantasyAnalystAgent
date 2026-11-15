@@ -26,13 +26,14 @@ Run it only once a slate is final — a live game corrupts season averages.
 
 ## Deploying
 
-Vercel, with this directory as the project root:
+Live at **<https://nba-fantasy-rankings.vercel.app/>**.
 
-```bash
-cd site && vercel --prod
-```
+Deployed from GitHub on Vercel with **Root Directory `site`**, preset *Other*, and build,
+output and install commands all left empty. There is nothing to build; Vercel serves this
+directory as-is and picks up `vercel.json` from here.
 
-There is nothing to build; Vercel serves the directory as-is.
+⚠ `rankings.json` is a static file, so **a local rebuild does not change the live site** —
+the regenerated file has to be committed and pushed. Vercel redeploys on push.
 
 ## Local preview
 
