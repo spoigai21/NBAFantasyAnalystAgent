@@ -410,6 +410,21 @@ FORM_BAND = 3.5
 #     >= 3.5       RIDE if the minutes are there, SELL HIGH if they are not
 # The negative side keeps the single -3.5 band; he did not ask to split it.
 RIDE_FLOOR = 2.0
+
+# ⚠ "WASHED", user's call 15 Nov 2026: "for players who are older say like 35-36 years
+# old or more just put fade: 'washed' if they are underperforming by a decent margin but
+# their touches are the exact same (decent margin is like 2-3 or more points) regression
+# in points."
+# This is the one shortfall shape with a CAUSE attached. Everywhere else, production down
+# with minutes and touches intact is BUY LOW -- the player is missing shots he is still
+# being given, and that reverts. Past 35 the same picture has a second reading: the role
+# is intact and he can no longer convert it, which does NOT revert. Age is the only thing
+# that separates the two, which is why it had to be fetched.
+# Deliberately a LOWER bar than FORM_BAND (2.0 rather than 3.5): the user set the margin
+# at "2-3 or more", and a 2-point slide on a 36-year-old is worth more attention than the
+# same slide on a 24-year-old.
+WASHED_AGE = 35
+WASHED_BAND = 2.0
 FORM_REL = 0.10         # 10% of his own projection before the window says anything
 FORM_DEEP = 0.20        # past this the buy-low gate stops working -- no edge, not a buy
 MINS_INTACT = 0.90      # measured gate between "the shortfall washes out" and "it sticks"
@@ -457,6 +472,7 @@ def live_roster():
                 # The fantasy player id doubles as the ESPN ATHLETE id, which is what
                 # a.espncdn.com headshots and the public gamelog endpoint both key on.
                 "id": p.get("id"),
+                "pro_team_id": p.get("proTeamId"),
                 "team": teams.get(t["id"]), "team_id": t["id"],
                 "injury": p.get("injuryStatus", "ACTIVE"),
                 "slot": e.get("lineupSlotId"),
@@ -564,6 +580,8 @@ MANUAL_PROJ = {
     "Keegan Murray": 33.5,
     "Isaiah Hartenstein": 33.4,
     "Ausar Thompson": 30.0,
+    # 15 Nov 2026 -- "move quickleu projections so hes now set at 36"
+    "Immanuel Quickley": 36.0,
     # 15 Nov 2026, third batch -- "Zach edey put him at 36 gobert move him to 33 fears
     # mvoe him also to 32. payton pritchard is 29"
     "Zach Edey": 36.0,
@@ -573,7 +591,28 @@ MANUAL_PROJ = {
 }
 
 
+def _durability_note(verdict_detail):
+    verdict, detail = verdict_detail
+    return f"Averaged {detail}" if verdict else None
+
+
+def _meta():
+    """Age, team games played and the injury-prone list. Optional: if the cache is
+    missing the board still builds, just without those columns."""
+    try:
+        sys.path.insert(0, HERE)
+        from player_meta import (load_meta, durability, INJURY_PRONE,
+                                 REST_NOT_INJURED, SIGNAL_OVERRIDE)
+        m = load_meta()
+        return (m.get("ages", {}), m.get("teamGames", {}),
+                INJURY_PRONE, REST_NOT_INJURED, SIGNAL_OVERRIDE,
+                m.get("seasonGames", {}), durability)
+    except Exception:
+        return {}, {}, {}, {}, {}, {}, (lambda _: (None, None))
+
+
 def load(roster, min_gp=MIN_GP, w_prior=W_PRIOR):
+    ages, team_games, prone, rested, sig_override, hist, durability = _meta()
     db = sqlite3.connect(DB)
     db.row_factory = sqlite3.Row
     rows = []
@@ -593,6 +632,18 @@ def load(roster, min_gp=MIN_GP, w_prior=W_PRIOR):
             "gp": gp, "mpg": r["mpg"] or 0.0, "proj_mpg": r["proj_mpg"] or 0.0,
             "current": cur, "projected": projected, "proj_adj": proj_adj,
             "manual_proj": manual is not None,
+            "age": ages.get(str(info.get("id"))),
+            # ⚠ Measured against his CURRENT team's game count, so a mid-season trade
+            # inflates or deflates it. The fantasy API exposes no trade date.
+            "missed": (max(0, team_games[str(info["pro_team_id"])] - gp)
+                       if info.get("pro_team_id")
+                       and str(info.get("pro_team_id")) in team_games else None),
+            # Hand-written note wins (it is specific); otherwise the measured rule —
+            # under 60 games a season across the last three completed seasons.
+            "prone": prone.get(r["name"]) or _durability_note(
+                durability(hist.get(str(info.get("id")), {}))),
+            "rested": rested.get(r["name"]),
+            "sig_override": sig_override.get(r["name"]),
             "enough": gp >= min_gp,
         })
     return rows
@@ -695,7 +746,7 @@ def add_form(rows, days=FORM_DAYS):
         # question that actually matters -- Miller's is (he left a game in it and missed
         # two more), Curry's is not. Storing a per-game injury flag in game_grades would
         # fix it properly; until then the gate is coarse and errs toward withholding.
-        if r["injury"] in OUT_FLAGS:
+        if r["injury"] in OUT_FLAGS and not r.get("rested"):
             r.update(form=a["fpts"], form_n=a["n"], form_gap=gap, form_rel=rel,
                      form_mr=mr, form_ur=ur, form_mins=a["mins"],
                      signal="INJURED (void)")
@@ -715,17 +766,29 @@ def add_form(rows, days=FORM_DAYS):
                      signal="MISSING GAMES (void)" if complete else "THIN DATA (void)")
             continue
         dtd = r["injury"] in DTD_FLAGS
+        age = r.get("age")
+        touches_intact = ur is None or ur >= USG_INTACT
+        mins_intact = mr >= MINS_INTACT
         # The band decides FIRST: inside +/-3.5 fantasy points of projection there is
-        # nothing to say, whatever the minutes and usage axes look like.
+        # nothing to say, whatever the minutes and usage axes look like. The one
+        # exception is WASHED, which fires from 2.0 because age changes what the same
+        # picture means.
         if gap <= -FORM_BAND:
             if mr < MINS_INTACT:
                 sig = "FADE (minutes)"          # 65% of it sticks -- that part is the role
             elif ur is not None and ur < USG_INTACT:
                 sig = "FADE (usage)"            # 90% sticks. The touches went, not the touch
+            elif age and age >= WASHED_AGE:
+                sig = "FADE (washed)"           # role intact, conversion gone, and old
             elif rel <= -FORM_DEEP:
                 sig = "SLUMP (no edge)"         # 50% sticks even with role intact
             else:
                 sig = "BUY LOW"                 # only 7% sticks -- it washes out
+        elif (age and age >= WASHED_AGE and gap <= -WASHED_BAND
+              and touches_intact and mins_intact):
+            # Between -2.0 and -3.5: too small to flag on anyone else, but on a 35+ player
+            # whose role has not moved it is the start of the decline, not a cold patch.
+            sig = "FADE (washed)"
         elif gap >= FORM_BAND:
             # minutes >= projection: ~62% is real, keep him. Below projection: it goes.
             sig = "RIDE" if mr >= 1.0 else "SELL HIGH"
@@ -734,6 +797,9 @@ def add_form(rows, days=FORM_DAYS):
             sig = "RIDE"
         else:
             sig = "HOLD"
+        ov = r.get("sig_override")
+        if ov:
+            sig, r["sig_override_why"] = ov[0], ov[1]
         r.update(form=a["fpts"], form_n=a["n"], form_gap=gap, form_rel=rel, form_mr=mr,
                  form_ur=ur, form_mins=a["mins"], signal=sig, form_dtd=dtd)
     pool = [r for r in rows if r.get("form") is not None]

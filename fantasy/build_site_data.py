@@ -58,6 +58,11 @@ def main():
             "manual": bool(r.get("manual_proj")),
             # The 14-day form screen: signal plus the window it was measured over.
             # Persistence rates for each label are in CLAUDE.md rule 32.
+            "age": r.get("age"),
+            "missed": r.get("missed"),
+            "prone": r.get("prone"),
+            "rested": r.get("rested"),
+            "sigWhy": r.get("sig_override_why"),
             "signal": r.get("signal") or "—",
             "form": round(r["form"], 1) if r.get("form") is not None else None,
             "formGames": r.get("form_n") or 0,

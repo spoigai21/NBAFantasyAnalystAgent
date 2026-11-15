@@ -23,7 +23,10 @@ function signed(n) {
   return s + Math.abs(n).toFixed(1);
 }
 
-function injuryTag(status) {
+function injuryTag(status, rested) {
+  // A rested player carries ESPN's OUT flag but is not hurt — showing the chip would
+  // contradict the panel, which says the opposite.
+  if (rested) return "";
   if (!status || status === "ACTIVE") return "";
   const label =
     status === "DAY_TO_DAY" ? "DTD" :
@@ -70,7 +73,7 @@ function render() {
       const sel = p.name === selected ? ' class="is-selected"' : "";
       return `<tr${sel} data-id="${p.id}" data-name="${p.name}">
         <td class="l rank">${p[rankKey]}</td>
-        <td class="l"><span class="player">${p.name}</span>${injuryTag(p.injury)}</td>
+        <td class="l"><span class="player">${p.name}</span>${injuryTag(p.injury, p.rested)}</td>
         <td class="l owner hide-sm">${p.team}</td>
         <td class="val">${fmt1(p[mainKey])}</td>
         <td class="sub">${fmt1(p[otherKey])}</td>
@@ -140,16 +143,17 @@ dImg.addEventListener("error", () => { dImg.style.visibility = "hidden"; });
    1,104-player-week backtest — that number is the whole point of the label, so it is
    shown rather than just the verdict. Rates and definitions: CLAUDE.md rule 32. */
 const SIGNALS = {
-  "BUY LOW": ["buy", "Moderately under projection with minutes AND touches intact. This shape reverses — it is the one real buy-low."],
-  "RIDE": ["good", "Beating the projection on minutes that are holding. About 67% of these stayed real the following week."],
-  "SELL HIGH": ["warn", "Beating the projection on FEWER minutes than projected. Only about half of these survived — the weakest signal here."],
-  "FADE (usage)": ["bad", "Under projection and the touches have gone, not just the shots. 90% of these persisted — the strongest signal on the board."],
-  "FADE (minutes)": ["bad", "Under projection with minutes cut. About 65% persisted. Coach-controlled, so it does not revert on its own."],
-  "SLUMP (no edge)": ["warn", "Well under projection with role intact — no edge either way. Roughly a coin flip."],
+  "BUY LOW": ["buy", "Under projection with minutes and touches intact — this shape reverses."],
+  "RIDE": ["good", "Beating projection on minutes that are holding. ~67% stayed real."],
+  "SELL HIGH": ["warn", "Beating projection on FEWER minutes. Only ~52% survived."],
+  "FADE (usage)": ["bad", "The touches went, not just the shots. 90% persisted — the strongest signal."],
+  "FADE (minutes)": ["bad", "Minutes cut. ~65% persisted, and coach decisions do not revert."],
+  "FADE (washed)": ["bad", "35+, under projection, touches unchanged. Age-driven decline does not revert."],
+  "SLUMP (no edge)": ["warn", "Well under projection with role intact. Roughly a coin flip."],
   "HOLD": ["neutral", "Tracking his projection. Nothing to act on."],
-  "INJURED (void)": ["void", "Out or on IR. There is no role to read, so no claim is made."],
-  "MISSING GAMES (void)": ["void", "Has missed his team's recent games despite being listed active. The window describes an absence, not a role."],
-  "THIN DATA (void)": ["void", "Too few graded games to read — usually a recent pickup. Withholding rather than guessing."],
+  "INJURED (void)": ["void", "Out or on IR — no role to read, so no claim made."],
+  "MISSING GAMES (void)": ["void", "Missing games despite reading active. The window shows an absence, not a role."],
+  "THIN DATA (void)": ["void", "Too few graded games — usually a recent pickup. Withholding."],
 };
 
 function showPlayer(p) {
@@ -166,7 +170,7 @@ function showPlayer(p) {
   el("d-perf").className = "detail-perf " + (over >= 0 ? "is-over" : "is-under");
 
   el("d-name").textContent = p.name;
-  el("d-team").textContent = p.team + (p.injury && p.injury !== "ACTIVE"
+  el("d-team").textContent = p.team + (!p.rested && p.injury && p.injury !== "ACTIVE"
     ? " · " + (p.injury === "DAY_TO_DAY" ? "DTD" : p.injury === "INJURY_RESERVE" ? "IR" : p.injury)
     : "");
   const sig = SIGNALS[p.signal];
@@ -174,8 +178,11 @@ function showPlayer(p) {
   if (sig) {
     el("d-sig-badge").textContent = p.signal.replace(" (void)", "");
     el("d-sig-badge").className = "sig-badge is-" + sig[0];
-    el("d-sig-note").textContent = sig[1]
-      + (p.form !== null ? ` Last 14 days: ${fmt1(p.form)} per game over ${p.formGames}.` : "");
+    // A hand-set signal shows ONLY the reason it was overridden. Printing the override
+    // reason AND the generic blurb made the card taller than the viewport.
+    el("d-sig-note").textContent =
+      (p.sigWhy ? "Set by hand: " + p.sigWhy : sig[1])
+      + (p.form !== null ? ` Last 7 days: ${fmt1(p.form)} over ${p.formGames}.` : "");
     sigBox.hidden = false;
   } else {
     sigBox.hidden = true;
@@ -185,6 +192,20 @@ function showPlayer(p) {
   el("d-avg").textContent = fmt1(p.current);
   el("d-gp").textContent = p.gp;
   el("d-mpg").textContent = fmt1(p.mpg);
+  el("d-age").textContent = p.age ?? "—";
+  el("d-missed").textContent = p.missed ?? "—";
+
+  const prone = el("d-prone");
+  if (p.rested) {
+    prone.textContent = "⚠ " + p.rested
+      + (p.prone ? " Injury prone — " + p.prone : "");
+    prone.hidden = false;
+  } else if (p.prone) {
+    prone.textContent = "⚠ Injury prone — " + p.prone;
+    prone.hidden = false;
+  } else {
+    prone.hidden = true;
+  }
 
   if (p.id) {
     dImg.style.visibility = "";
@@ -197,12 +218,29 @@ function showPlayer(p) {
   dCard.hidden = false;
 }
 
+function clearPlayer() {
+  selected = null;
+  dCard.hidden = true;
+  dEmpty.hidden = false;
+  render();
+}
+
 rowsEl.addEventListener("click", (e) => {
   const tr = e.target.closest("tr");
   if (!tr || !tr.dataset.name) return;
+  // Clicking the already-selected row toggles it back off.
+  if (tr.dataset.name === selected) {
+    clearPlayer();
+    return;
+  }
   const p = DATA.players.find((x) => x.name === tr.dataset.name);
   if (!p) return;
   selected = p.name;
   render();
   showPlayer(p);
+});
+
+// Escape also clears, since the panel is pinned and a stale player is easy to forget.
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape" && selected) clearPlayer();
 });
