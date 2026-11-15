@@ -601,6 +601,38 @@ assistant. Read `README.md` for the full league and roster picture before non-tr
    the same split rule 27's table already makes between the player-controlled axis and the
    coach-controlled one. Report a shooting slump as noise; escalate a minutes cut.
 
+   ⚠⚠ **AND THE SAME TRIAGE APPLIES TO A WAIVER ADD — WHERE I APPLIED NONE OF IT.
+   13 Nov 2026.** Asked about adding **Jalen Suggs** and dropping Poeltl, I answered with
+   **season averages** — "22.2/g over 4 GP, projected 25.3, Poeltl is 27.0/29.2, downgrade on
+   both" — and recommended NO. User: *"i dont think you understand how the waiver wire works.
+   you dont look at averages for the waier wire you look at the temp role increase or whatever.
+   suggs took 8 shots in 21 minutes and he was super cold. shos hes aggressive and takes
+   shots."* **He is right on both counts, and both are THIS file's own rules:**
+   **(1)** I reported *"3 pts on 1-8, 6.0 fantasy points"* — that reads the **conversion**, the
+   half this rule calls ignorable, and discards the **attempts**, the half it calls
+   non-ignorable because rule 17 makes every attempt +EV. The box-score total **22.3** was the
+   conversion wearing a disguise.
+   **(2)** The 4-game average was rule 27's **Fears error**: three games preceding an 8-game
+   knee absence plus one capped game back, quoted as a level. It describes nothing.
+   **The attempts tell the opposite story to the average** — per 36 min: 9.0 / 12.7 / 8.5 in
+   October, **13.7 in the first game back**, against **14.9 per 36 last season**. And the
+   season-over-season split is a pure conversion collapse: minutes **27.5 → 30.2**, reb
+   **3.9 → 4.2**, ast 5.5 → 5.0, stl 1.8 → 1.5, but FG **43.0% → 30.6%** and 3PM 2.1 → 0.5,
+   taking 36.3/g to 22.3/g. **Everything that does not revert is intact or up.**
+   **So: a waiver add is a bet on a FORWARD ROLE, and a season average is the wrong
+   instrument for it.** Price a wire add on minutes trend, attempts, and what changed in the
+   rotation — never on a blended value rank, which is built for players with a settled role.
+   ⚠ **Two corollaries, both of which cost me the answer:**
+   - **Do not rank role-change plays against settled-role players on one list.** I put Suggs
+     behind Braun/Allen/Dunn on blended averages and called him "not even the best guard on
+     the wire." Different question, category-mismatched comparison, withdrawn.
+   - **CHECK BOTH TEAMS' NEXT GAME DATES BEFORE CALLING AN ADD URGENT.** I framed the single
+     remaining add (Matchup Acquisition Limit **2/3**) as a binding constraint. It was not:
+     Toronto's next game was **Sun 15 Nov** (last day of the matchup), Orlando's was **Tue 17
+     Nov**, and the add budget **resets Monday**. Waiting cost **zero Suggs games and zero
+     adds**. The acquisition limit only binds if a target plays before the reset — look it up
+     rather than assuming scarcity.
+
 32. **TWO VALUES, NEVER MIXED: `python3 fantasy/rankings.py`. Current value and projected
    value are different questions and must never be traded off against each other inside one
    argument.** User, 11 Nov 2026: *"theres 2 types of values: 1. current value 2. projected
@@ -719,6 +751,86 @@ assistant. Read `README.md` for the full league and roster picture before non-tr
    print is an analyst's *"at least for the first month of the season"* (27 Oct). Lloyd's
    independent clock (~3 Dec) and that note converge on **late November** — two outside
    guesses, not Memphis. Do not quote either as a team position.
+
+   ⚠⚠ **AND THE INJURY GATE MISSED BRANDON MILLER A SECOND TIME — 14 Nov 2026, AND THIS ONE
+   IS ON THE CODE, NOT THE READ.** I published the form table with Miller at **FADE
+   (minutes)**. User: *"for brandon miller i dont know what you are saying bruh he got
+   injured when played 14 mins dummy."* He is right, and **this exact failure was already
+   written into rule 31 on 8 Nov and into the gate's own comment block on 12 Nov** — the gate
+   shipped, the lesson was filed, and the label came out anyway. That is the part worth
+   remembering: *a rule in this file did not stop the thing it describes, because the hole
+   was in the code path, not in my attention.*
+   **Why it slipped through.** The gate keys on ESPN's **current** `injuryStatus`, but the
+   window reads the **last 14 days**, and those answer different questions. Miller left the
+   **6 Nov** Boston game with **right groin soreness** ([ClutchPoints](https://clutchpoints.com/nba/charlotte-hornets/hornets-news-brandon-miller-exits-celtics-clash-groin-soreness),
+   confirmed 7 Nov) and has not played since — while ESPN had already flipped him back to
+   **ACTIVE**. So he was ACTIVE on the flag and *absent from the games*, and **neither the
+   OUT/IR void nor the DTD provisional fired.** His whole 3-game window is the injury: 24,
+   then 3, then the 13 in 14 minutes he limped out of.
+   **The fix needs no per-game injury flag, which is what the 12 Nov comment said was
+   blocking it.** Count how many of his **NBA team's** games have been played since he last
+   appeared; 2 or more means he is missing games right now and there is no role to read.
+   Shipped in `add_form()` as **`MISSING GAMES (void)`**.
+   ⚠ **The first version of that gate used "1 or more games missed" and over-fired on two of
+   my own players in the same run — both worth keeping in mind, because they are the two ways
+   this check can lie:**
+   - **PAUL GEORGE missed exactly ONE Boston game** (10 Nov his last, BOS played 11 Nov) and
+     is active with a game Sunday. One game off is an ordinary rest or DTD night, not an
+     absence — and voiding George is **literally the mistake the first injury gate made on
+     12 Nov**, which this rule already records. Hence the **2-game** threshold.
+   - **COBY WHITE was voided for a DATA artefact, not an absence.** `game_grades` only grades
+     games played while a player sits on a roster in **this** league (rule 27's mid-season
+     pickup hole), so a fresh pickup's last *graded* game can predate his real last game by
+     a week. White showed **3 graded games against 5 actual GP**, so his "last game" date was
+     simply wrong. That case now prints **`THIN DATA (void)`** instead — a different kind of
+     not-knowing, and it should not wear the same label.
+   **And coverage only matters once the date looks stale.** Rollins has 6 of 13 games graded
+   but his last one *is* his team's last one, so his window is readable and he keeps his
+   **FADE (minutes)** — which is the real signal on him. Gate on staleness first, then ask
+   whether to trust the date.
+   ⚠ **STILL OPEN AND NOW NAMED BY THE USER: THE SCREEN CANNOT SEE A BLOWOUT, SO
+   WEMBANYAMA'S `SELL HIGH` IS A FALSE FLAG.** User, 14 Nov 2026: *"wemby is not a sell
+   high."* He is right. The flag fires because the minutes side of the sell-high test is
+   `mr < 1.0`, and Wemby's 14-day minutes read **26.6 against a higher projection** — but
+   San Antonio keep winning by 30, so those are **scoreboard minutes, not a role cut**, which
+   is rule 31's *"minutes down, blowout explains it -> FINE"* row. The form screen has no game
+   margin in it, so it is structurally incapable of making that distinction, exactly as it was
+   incapable of the usage one (12 Nov) and the injury one (12 and 14 Nov). **Same shape of
+   hole three times: an axis the screen cannot see, mislabelled as one it can.** Until game
+   margin is joined in, **read every minutes-based flag on a winning team against the margin
+   before repeating it** — and note the asymmetry that makes this urgent: he is the #1 player
+   on the board, so this is the single most expensive false flag the screen can produce.
+
+   **MANUAL PROJECTION OVERRIDES — `MANUAL_PROJ` in `rankings.py`. The manager's forward call
+   replaces the blend outright, and that is legitimate rather than a thumb on the scale.**
+   User, 14 Nov 2026: *"move the amen projection so he averages 43 fantasy points. brandon
+   miler do the same have him projected as a 3rd round player which is about t30-t40 for 12
+   teams. so whatever average fantasy points aer floating around that area put that for
+   brandon miller."*
+   **Why this is sound and not a fudge:** the blend shrinks toward ESPN's projection, and
+   this rule already established that ESPN's projections are **FROZEN AT PRESEASON** — zero
+   of 149 moved in an 11 Nov refresh. So the forward number carries **no new information all
+   season**, and it cannot price a role change the manager can see and the data has not
+   caught up to. An override is the only way that information gets in.
+   - **Amen Thompson -> 43.0**, landing **#23**. His blend had him 38.3 (#41), held down by
+     frozen touches (**8 attempts in 41 minutes** on 13 Nov) and not by minutes, which are
+     33.6. **Dunne independently has him #16**, above both.
+   - **Brandon Miller -> 40.0**, landing **#37**. ⚠ **MEASURE THE BAND, DO NOT GUESS IT.**
+     The instruction names a *rank* range, so the number has to be read off the list: on the
+     14 Nov projected board the **#30-#40 band runs 41.3 (#30) down to 38.5 (#40)**, and
+     **40.0 is the #35 midpoint**. Converting the round reference is rule 3 and the user had
+     already done it himself (12-team 3rd round -> t30-t40); do not re-convert it to 9 teams
+     on top of his conversion.
+   **Both overrides are the CONSERVATIVE end of the outside disagreement, which is the test
+   of whether one is defensible:** Lloyd has Miller *"pretty high. Like top 25, I think"*
+   (12 Nov, given knowing he was hurt) and Dunne has him **#13** — both ABOVE 40.0. An
+   override that lands outside the range of every outside source is a thumb on the scale;
+   one that lands inside it is a correction. **Mark them in output (`📌set`) and never let
+   one pass silently as a computed number.**
+   ⚠ The override touches the **projected list only**. The form screen still measures against
+   `proj_adj`, the pure ESPN projection, because its thresholds were fitted against that and
+   changing the yardstick would silently invalidate every persistence number in the table
+   above.
 
    **Usage is the STRONGER of the two coach-controlled axes** (90% vs 65%), which is the
    opposite of the order rule 31 triages in — minutes are easier to *see*, touches predict

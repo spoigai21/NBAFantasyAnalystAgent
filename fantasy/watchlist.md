@@ -1,3 +1,302 @@
+## 🌙 14 NOV (late) — SATURDAY LOGGED + COWARD TRADE QUESTION
+
+**Day 6: 191-139, lead +298 -> +350.** Giannis 90 (31min, 34/14/8, 13-17 FG, 3blk — season
+best), Coward 67 (33min, 23/12/4, 2stl 2blk, 4x3 — season best), Buzelis 34 (30min, 18/9/2,
+6-6 FT, zero stocks). No leakage; empty C slot cost nothing again.
+
+### ⚠ TRIGGER — SUNDAY 15 NOV, LAST DAY OF MATCHUP 4. THE LINEUP IS CURRENTLY WRONG.
+9-game slate. All three current scoring-slot holders are IDLE (Giannis/MIA, Coward/MEM,
+Buzelis/CHI) and FOUR benched players have games (AD/WSH, Miller/CHA, George/BOS, CMB/TOR).
+Exactly 10 playable bodies for 10 slots, and they fit:
+`PG Rollins, SG White, SF Amen, PF AD, C Wemby, G LaVine, F CMB, UTIL George/Keegan/Miller`.
+**Keegan Murray is DAY_TO_DAY** — if he sits there is no replacement (bench is empty Sunday)
+and one UTIL goes unfilled. Opponent has 8 playable to my 10, so +350 is effectively decided.
+
+### DECISION: TRADING CEDRIC COWARD AWAY — NO, he is the wrong man to sell. Verdict HOLD.
+Asked with no counterparty named, so this is priced as "what is he worth and should I sell".
+
+**What he is.** 38.4/g over 12 GP = **#5 on my roster, #45 of 117 rostered players.**
+Projected 35.5 (#60). Last-14-day form 39.4/g, **+33% over his own projection on minutes AT
+projection -> RIDE**, which rule 32 measures at 67% persistence — the strongest keep-signal
+in the framework and the opposite of a sell flag.
+
+**The role is unusually safe, and this is the load-bearing finding.** Memphis has no star
+returning to squeeze him: **Ja Morant is on PORTLAND and Jaren Jackson Jr. on UTAH this
+season.** MEM's rotation is Coward, rookie Cameron Boozer (38.2/g) and Ty Jerome (41.7/g),
+with **Edey OUT, Jerome OUT, Jerami Grant OUT, Scotty Pippen Jr. OUT, GG Jackson OUT.**
+There is no healthy veteran whose return takes his minutes. Minutes have been stable all
+season: 28/32/31/27/23/31/33/23/28/27/30/33.
+
+**Honest caveat on tonight's 67 (rule 12).** It is the FIRST game all season Ty Jerome has
+missed (Jerome played 29 min on 13 Nov, OUT tonight). So the 67 is Jerome-absence inflated
+and is one game. **But the 38.4 level is 11 games WITH Jerome playing** — the level does not
+depend on it.
+
+**The real weakness is usage, not minutes, and it is why he is volatile.** Usage by game:
+8.5 / 18.6 / 20.1 / 24.0 / 18.1 / **10.1** / 29.4 / 22.7 / **9.8** / 24.0 / 18.2 / 22.6
+against 20.0 league average. Three single-digit-usage nights produced his three worst totals
+(25, 26, 28). **Season-to-date usage 18.5% vs 21.5% projected — he is at #45 WITHOUT the
+touches his projection assumes.** That is upside, not a defect, but it is also the "ongoing
+inconsistency" Lloyd keeps naming.
+
+**What changed vs last season (the bonus-scoring reason he is better than his raw line):**
+29.4 -> 35.3/g applied. Biggest mover is **STEALS 0.65 -> 1.67 = +4.09 applied points/g** at
++4 each; REB 5.87 -> 8.44 = +2.57; 3PM 1.50 -> 2.44. Against that, BLK 0.44 -> 0.22 and PTS
+13.60 -> 12.56. **The gain is entirely in the categories THIS format overpays** (rule 24),
+which is exactly why generic lists undervalue him.
+
+**Outside sources — BOTH BELOW MY LIST, which is the sell-side argument against selling.**
+- **Lloyd, 11 Nov recap:** "the chicken Cedric Coward. Kacha **70th ranked player over the
+  course of the season.** A bit of a bargain on where he was drafted." Also in that passage:
+  "No defense, which continues to be an ongoing inconsistency issue with him" — **that is
+  about that single game**, because on 9 Nov he said the opposite: "his defensive stats have
+  been a bit better this season." Do not quote the 11 Nov clause as a season read.
+- **Lloyd, 9 Nov:** "we would hope for somewhat more than this from Coward, but overall I'd
+  say he's **delivered way more than expectation**."
+- **Lloyd, 4 Nov:** "the chicken Cedric Coward Ka **he's now top 60** 23 and N and four
+  steals... the defensive stats were all absent last season. So I love to see that."
+- ⚠ **RULE 19 SUBJECT CHECK — the `p.sh` hit "the complete lack of usage as guys like
+  Boozer, Jerome, and Coward get most of the stuff" is about ZACH EDEY, not Coward.** Coward
+  is named there as one of the players TAKING the touches. Do not file it under him.
+- **Dunne (Fantrax, points-specific): #57.** Generic points scoring, no STL/BLK +4 premium —
+  direction only (rule 24).
+- Web search was **thin and mostly undated/stale** — FantasySP's live figure ranks him 130th
+  overall in their generic format; NBC Sports (preseason) said his floor should be above last
+  season's outside-top-100; a 1 Nov Roundtable piece argues Memphis should give him MORE
+  shots. Nothing dated this week beyond Lloyd. Reported as weak evidence.
+
+**Why selling loses even at fair value (rule 9).** My bench is CMB 26.2, Rollins 24.4,
+Buzelis 23.8 — so replacement is ~26/g and moving Coward costs **38.4 - 26 = ~12 points a
+day out of the starting ten**, roughly 85 a week. And the roster is already top-heavy (Wemby
+72, Giannis 62, AD 52, George 45, then Coward 38 and a cliff). Selling the #5 makes the known
+structural weakness worse. **The return has to be a clear top-25 producer who fits a slot —
+not a name, a producer.** Anything at Lloyd's #70 or Dunne's #57 price is a loss.
+
+**If the goal is to sell SOMEONE, the candidate is PAUL GEORGE, not Coward.** George: 44.6/g
+(#22 mine), form +20% over projection on minutes DOWN -> **SELL HIGH**, and **Dunne has him
+#84 against my #22** — the largest overvaluation on my roster, on a 30-year-old with minutes
+already trending down. Caveat honestly: rule 32 re-measured SELL HIGH at **52%**, not the
+"most robust signal" it was once called, so this is a lean and not a conviction.
+
+**Trigger to revisit Coward:** his usage, not his minutes. If the single-digit-usage nights
+stop (i.e. he holds 20%+ in most games) he is a top-35 player and untouchable. If Ty Jerome
+and Jerami Grant both come back and his usage settles back under 15%, re-open the sell.
+
+---
+
+# 🌙 14 NOV — COBY WHITE IN, POELTL OUT. Lineup checked for tonight: nothing to fix.
+
+**Transaction (user, 14 Nov):** added **Coby White (CHA, PG/SG)**, dropped **Jakob Poeltl**.
+Not the Suggs move discussed 13 Nov — the user went a different direction and it is the
+**better version of the same bet.**
+
+## Why this beats the Suggs version
+Same shape — role intact, minutes suppressed by a ramp, shooting ice cold — but with
+**Lloyd explicit on it** (rule 26 tier 1), which Suggs has nothing current on. Two quotes,
+both greped clean, both subject-confirmed by the sentences on either side (rule 19):
+- **9 Nov, chapter literally titled "Coby White – Prime Buy-Low":** *"The buy low on Kobe
+  White is very clearly open. I would not drop him."* He adds the mechanism: *"once he is
+  better, this game goes from 10 and 8 to 18 and 8. And then the 20 minutes goes to 28
+  minutes and it becomes 28 and 11."*
+- **12 Nov:** *"He will not play 20 minutes a night every game. It will go up. He will play
+  like a regular starter. And you were about to see a pretty big run of production from White."*
+
+## The role numbers (attempts, not averages — the rule-31 way)
+| | 2025-26 (50 GP) | 2026-27 (5 GP) |
+|---|---|---|
+| minutes | 25.0 | **18.0** |
+| FGA | 12.5 | 10.8 |
+| **FGA per 36** | 18.0 | **21.6** |
+| FG% | **44.8%** | **31.5%** |
+| 3PM | 2.3 | 0.8 |
+| AST | 4.0 | 3.6 |
+| **fpts** | **28.08/g** | **12.20/g** |
+
+**Minutes down 28%, attempts per 36 UP 20%, usage 30/27/33% against a 20.0 league average.**
+Game log: 16/18/16/20/20 min; shooting 3-9, 2-9, 1-8, 3-12, then **8-16 for 21 pts** — the
+turn Lloyd called. ESPN projects 33.86/g at 33.5 mpg.
+
+## ⚠ THE HONEST CAVEAT, AND IT IS A FORMAT ONE (rule 24)
+**White gives this league almost nothing in the categories it pays most.** Steals 0.5 last
+season and **0.0** this season; blocks 0.1-0.2. In a format paying STL/BLK **+4**, that is a
+structural drag no amount of shooting regression fixes. He also turns it over **3.0/g at −2**.
+That is why his *full-scoring* value last season was only **28.08/g over 50 GP** — about #103
+on my current board — on a line that looks much prettier raw (17.4 pts, 4.0 ast, 2.3 3PM).
+**Realistic landing spot at 28-30 min with normal shooting: high-20s to low-30s/g here**, with
+real upside only if minutes reach 32+. Lloyd's "28 and 11" is a great *night*, not the mean.
+Still clearly ahead of Poeltl's forward outlook (Barnes returning, attempts down to 5-7).
+
+## Position effect
+PG-eligible bodies now **Rollins + White** (+ Dejounte, OUT) — the PG hole from 13 Nov is
+closed. **No pure backup C any more**, but AD and Giannis are both PF/C, so the C slot stays
+coverable. Not a real loss.
+
+## Tonight (14 Nov, 5-game slate) — LINEUP IS CORRECT, NO ACTION
+Only **3 of mine play**: Coward (MEM v BKN), Giannis (MIA v DET), Buzelis (CHI @ MIN) — all
+three in scoring slots. **C slot is empty and costs ZERO**: no C-eligible player of mine has a
+game (Wemby/SA, AD/WSH idle; **Edey out again** for the second leg of the back-to-back, same
+left-ankle management). Swapping Giannis to C would just move the hole to PF — 3 bodies, 3
+slots either way.
+- **Giannis DTD = the right wrist sprain from 2 Nov he has been playing through** (37 pts in
+  31 min last night). Chronic, listed probable, not a new event.
+- **Edey OUT→DTD→out again.** Two of his three missed games are now back-to-back second legs.
+  The ~24-min cap is unchanged.
+- **White's next game is Sun 15 Nov @ LAC** — one game from him this week.
+
+**Matchup day 6 of 7: 1244-946, +298, UNDECIDED.**
+
+**TRIGGER:** watch White's MINUTES, not his points. 20 → 28 is the whole thesis. If he is still
+at 20-22 minutes a week from now, Lloyd's call is wrong and the add is a bench piece.
+
+---
+
+# 🌙 13 NOV (LATE) — FRIDAY SLATE LOGGED. First day loss of the week. Suggs question answered: NO.
+
+**Matchup day 5 of 7 — The Freaky Alien 1244, Yash's Hearty Team 946, still UNDECIDED.**
+Day went **311-355**, lead **+342 → +298**. One in-progress game left on the slate (OKC @ LAC),
+so **do not rebuild rankings tonight** — rule 20, season averages absorb live games.
+
+| player | min | line | FPTS |
+|---|---|---|---|
+| **Giannis** (MIA) | 31 | 37 pts (15-20, 6-11 FT), 9 reb, 1 blk, 4 TO | **56** |
+| **Wembanyama** | **21** | 12/12/6, 2 blk, 1 stl, DD — 38-point blowout capped him | **48** |
+| **Keegan Murray** | **40** | 16 pts (7-14, 2x3), 7 reb, 4 ast, 2 stl, 0 TO | **43** |
+| **Cedric Coward** | 30 | 14 pts (5-12, 4-4 FT), 7 reb, 6 ast | **38** |
+| **Matas Buzelis** | 29 | 11 pts (3-8, 3x3), 6 reb, **3 blk** | **36** |
+| **Amen Thompson** | **41** | 12 pts on **8 attempts**, 10 reb, 3 ast, 3 OREB | **35** |
+| **Zach LaVine** | 36 | 12 pts (4-9, 3x3), 6 ast | **35** |
+| **Ryan Rollins** | 29 | 8 pts (3-8), 10 reb, 2 ast, 3 TO | **20** |
+
+**No lineup leakage.** Every idle player's pro team had NO GAME (AD/WSH, CMB+Poeltl/TOR,
+Miller/CHA, George/BOS); both IR men are genuinely OUT. SF slot was **filled** (Coward).
+
+## ⚠ ZACH EDEY: ACTIVE → OUT — but it is the ramp, not an escalation
+Memphis ruled him out 13 Nov for **"left ankle injury management"** on the **first leg of a
+back-to-back**. Second game missed all season (25 Oct was the other), same reason both times.
+The **~24-minute cap is still live** as of today. Watch whether he plays the second leg —
+if he sits that too, the cap story changes.
+
+## ⚠ MY OWN ERROR LOGGED: proTeamId 14 is MIAMI, not Milwaukee
+Giannis showed a **team-win +1 in an apparent loss**, which looked like a scoring-rule
+violation. It was my team-id map: Giannis is on **Miami** (beat CLE 133-121); Rollins is the
+Milwaukee one. ESPN stat key **43 = TW (+1)** is confirmed correct on all 8 of 8 once fixed.
+Rule 20's abbreviation warning, one layer deeper: **the numeric proTeamId needs the same care
+as the abbreviation.**
+
+## DECISION: Jalen Suggs for Jakob Poeltl — **user is right, I was wrong. Plan: wait to Monday.**
+Asked 13 Nov. Suggs **is** a free agent (18% owned); the DB had him rostered, which was stale.
+
+⚠⚠ **I ANSWERED THIS WITH SEASON AVERAGES AND THE USER CORRECTED ME: *"you dont look at
+averages for the waier wire you look at the temp role increase... suggs took 8 shots in 21
+minutes and he was super cold. shos hes aggressive and takes shots."*** He is right twice over:
+**(1)** I reported "3 pts on 1-8, 6.0 fpts" — that is reading the **conversion**, which rule 31
+says is the IGNORABLE half, and discarding the **attempts**, which rule 31 says is the half that
+is NOT ignorable because every attempt is +EV under rule 17. **(2)** I quoted **22.2/g over 4 GP**
+as a level. Three of those games precede an 8-game injury absence and the fourth is a capped
+first game back — rule 27's Fears error exactly: a number that describes nothing, quoted as if
+it described him. **A waiver add is a bet on a FORWARD role, and a season average is the wrong
+instrument for it.**
+
+**The right read — attempts per 36 min:** 9.0 (21 Oct) / 12.7 (23 Oct) / 8.5 (25 Oct) /
+**13.7 (13 Nov, first game back)**, against **14.9 per 36 last season**. So the return game was
+his most aggressive of the season and the first back at last year's volume — on a minutes cap,
+off the bench. Nuance that strengthens rather than weakens the case: he was NOT consistently
+aggressive in October; the trend is turning up now.
+
+**Season-over-season — everything but the ball going in is intact or better:**
+
+| | 2025-26 (57 GP) | 2026-27 (4 GP) |
+|---|---|---|
+| minutes | 27.5 | **30.2** |
+| FG | 4.9-11.4 (**43.0%**) | 2.8-9.0 (**30.6%**) |
+| 3PM | 2.1 | 0.5 |
+| reb / ast / stl | 3.9 / 5.5 / 1.8 | **4.2** / 5.0 / 1.5 |
+| **fpts** | **36.3/g** | **22.3/g** |
+
+The whole 14-point gap is conversion. Steals at +4 are worth ~7 fpts/g to him alone.
+
+**WITHDRAWN:** my "he isn't even the best guard on the wire" line (Braun 27.6, Allen 27.2,
+Dunn 26.3). Those are blended season averages on established-role players — a different
+question from a role-change play. Category-mismatched comparison, same averages mistake.
+
+**THE SCHEDULE MAKES WAITING FREE — check this before ever calling an add urgent:**
+- **TOR next: Sun 15 Nov vs NY** — last day of matchup 4, so Poeltl is seen before deciding.
+- **ORL next: Tue 17 Nov @ BOS** — Suggs plays no game in between.
+- **Add budget resets Mon 16 Nov** (matchup 4 ends Sun; 3 fresh adds; currently 2/3 used).
+→ Watch Poeltl Sunday, drop Monday if bad, add Suggs Monday: **zero Suggs games missed, zero
+adds spent from this week.** Only risk is another manager claiming him over the weekend —
+low at 18% owned in a 9-team league, not zero.
+
+**User's standing call:** dropping Poeltl if he plays badly Sunday, not Buzelis. His team.
+
+---
+
+# 🌙 12 NOV (LATE) — THURSDAY SLATE LOGGED. One action item for tomorrow.
+
+All 4 games final before reading. ESPN applied points pulled from the Chrome tab; **all three
+lines reconcile exactly against the rule-17 weights** (64 / 44 / 24 computed = ESPN applied).
+
+| player | min | line | FPTS | grade |
+|---|---|---|---|---|
+| **Anthony Davis** | **44** | 30 pts (13-21, 4-4 FT), 15 reb, 4 ast, 1 stl, 2 TO, DD | **64** | NORMAL · ROLE-UP |
+| **Collin Murray-Boyles** | 32 | 14 pts (5-9, 1-1 3P, 3-4 FT), 4 ast, 1 stl, **5 blk**, 0 reb | **44** | GOOD · ROLE-UP · FED |
+| **Jakob Poeltl** | 25 | 9 pts (3-7, 3-4 FT), 5 reb, 3 ast, 1 stl | **24** | POOR |
+
+**Matchup day 4 of 7 — The Freaky Alien 933, Yash's Hearty Team 591, still UNDECIDED.**
+By day: 283-157 · 238-144 · 280-187 · 132-103. Lead +126 → +220 → +313 → **+342**.
+
+## ✅ AD JUST ANSWERED THE DURABILITY QUESTION — 44 minutes on a back-to-back
+CLAUDE.md's biggest standing weakness is *"Anthony Davis is the biggest single risk — 20 games
+last season."* He played **44 minutes on the second night of a back-to-back** and posted a
+double-double. Lloyd: *"**This guy is the 11th ranked player, fourth over the last two
+weeks**"* and *"I would say sell high, but you're not going to be able to. If you got a top 15
+player back, I would do it."*
+⚠ Grade it honestly: ours says **NORMAL, not ELITE** — 44 minutes raises his own bar — and
+usage was **20.3, USG-DOWN**. The 64 came from **15 rebounds and 62% shooting, not volume.**
+**This strengthens the standing read that the LaMelo-for-AD offer is a DECLINE** (it expires
+13 Nov 12:39 PM). Lloyd's bar for moving him is a top-15 player back; LaMelo is #36 projected
+on our list, even though Lloyd rates him 14th over the last two weeks.
+
+## 🟡 CMB had his best night of the season — and 20 of the 44 points are five blocks
+32 minutes starting at the four with Scottie Barnes out. **Rule 1 in one line:** five blocks at
++4 = **20 points, 45% of his total**, on a night he scored 14 and grabbed **zero** rebounds.
+⚠ **Two reasons to hold it loosely.** Lloyd flags the NBA's tracking as broken tonight —
+*"their shots contested say that Murray Boils contested two shots yet he blocked five of
+them"* — and one game is not a role. He also still says CMB *"now is starting to put back
+together **top 120** sort of numbers. It's not where we want him. We wanted him top 90ish."*
+**Set against yesterday's mailbag — drop him in a 10-team points league, 20-30 spot
+points-vs-category penalty — this is one good night inside a bearish read, not a reversal.**
+
+## ⚠ EDEY IS OUT FRIDAY, SAME ANKLE — yesterday's ramp read confirmed, with one new wrinkle
+ESPN tonight: *"Edey won't play in Friday's game against the Pelicans due to **left ankle
+injury management**. Spin: Edey will get the night off after appearing in **eight straight
+games**... **Isaiah Stewart and Taylor Hendricks are next in line for minutes at center**."*
+- **Second game Memphis has sat him for that exact phrase** (25 Oct, 13 Nov). The ramp is live
+  and now costing whole games, not just minutes.
+- 🆕 **A competitor I did not have yesterday.** If Stewart and Hendricks produce while he sits,
+  the cap lifting does **not** guarantee the minutes come back. **Friday is the test — watch
+  what those two do against New Orleans.**
+- ✅ His status is now **`O`**, so the injury gate I added this morning **will** catch him from
+  here. It could not before: a capped player reads `ACTIVE`.
+
+## 📌 ACTION FOR FRIDAY — fill the empty SF slot
+The SF slot was **empty again tonight and cost nothing**, because no SF-eligible player had a
+game (MEM/HOU/CHI/SAC all idle). **Friday is different:** Memphis play New Orleans and
+Milwaukee play Orlando, so **Coward and Rollins are live**, Giannis is *"probable for Friday's
+game against Cleveland"*, and **Edey is out** — so a UTIL slot frees up too. Set the lineup.
+
+## 📋 Other
+- **Brandon Miller:** badge moved **O → DTD** but the note is **unchanged** — that is ESPN
+  retiring a game-specific OUT, **not** a recovery update. No return date. This morning's
+  buy-low case stands and is still waiting on a date.
+- **Poeltl:** nothing structural — the back-to-back explains 25 minutes, and rule 31 bins a
+  3-for-7 on intact minutes.
+- **Steph Curry:** Lloyd is more pessimistic than the team — *"I am saying at least longer. I
+  reckon **Christmas** is probably more accurate."*
+- **Caleb Wilson:** broken hand, surgery, 4-6 weeks. Lloyd names **Buzelis** a beneficiary.
+
+---
+
 # 🔬 12 NOV — DEEP DIVE: **ZACH EDEY** and **DEJOUNTE MURRAY**
 
 Both turned out to have a *cause* I did not have yesterday, and in both cases the cause

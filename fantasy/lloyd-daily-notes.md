@@ -2888,3 +2888,91 @@ Cold open, and he means it as a joke but it sets the whole episode:
 - **Shai:** will improve but *"Do I think that Shay has any shot of challenging for a top
   three fantasy finish? No, I don't. I think maybe top six."*
 - **Durant** rest-of-season 25th, drifting back toward top 20 as his usage recovers.
+
+---
+
+## Thursday 12 November 2026 — recap, 4-game slate (3 of mine played)
+
+ESPN applied points verified in the Chrome tab; all three lines reconcile **exactly** against
+the rule-17 weights (64 / 44 / 24 computed = ESPN applied). All four games final before
+reading. Transcript: `2026-11-12_recap-thursday.txt`.
+
+### Anthony Davis — 64 fpts. 44 MINUTES ON THE SECOND NIGHT OF A BACK-TO-BACK.
+
+**44 min, 30 pts on 13-21 (61.9%), 4-4 FT, 15 reb (2 OREB), 4 ast, 1 stl, 2 TO, DD.**
+Lloyd: *"On a backto-back as well, Anthony Davis played 44 minutes. He had 30 and 15 with
+four assists, 62% shooting 100% from the line. **This guy is the 11th ranked player, fourth
+over the last two weeks.**"* And on moving him: *"I would say sell high, but you're not going
+to be able to. If you got a top 15 player back, I would do it."*
+- ⚠ **This is the single best piece of evidence yet for the all-82 read** that CLAUDE.md's
+  standing-weakness section has been tracking. The file's worry was durability; he just
+  played **44 minutes on the back end of a back-to-back** and posted a double-double. The
+  two-game absence on 6-7 Nov now looks like what it was called at the time — the most
+  ordinary absence pattern there is — and not the start of a trend.
+- Our grader says **NORMAL**, not ELITE, and that is correct rather than harsh: 44 minutes
+  raises his own expected bar. Usage was **20.3, USG-DOWN** — the 64 came from **15 rebounds
+  and 62% shooting**, not from volume. Worth remembering before extrapolating it.
+
+### Collin Murray-Boyles — 44 fpts, and 20 of them are five blocks
+
+**32 min, 14 pts on 5-9, 1-1 from three, 3-4 FT, 4 ast, 1 stl, FIVE BLOCKS, ZERO rebounds.**
+Grade **GOOD**, **ROLE-UP** (32 min against ~22 projected), **FED** at 18.0 usage. Started at
+the four with Scottie Barnes still out.
+- Lloyd: *"impressively he played 32 minutes. He shot well. He had 14 points. Somehow he
+  didn't grab a single rebound, but he did have four assists and five blocks"* and he *"now
+  is starting to put back together top 120 sort of numbers. It's not where we want him. We
+  wanted him top 90ish."*
+- **Rule 1 in a single line:** the five blocks are worth **20 points**, 45% of his total, on a
+  night he scored 14 and rebounded nothing. This is exactly the category our scoring pays
+  quadruple for and that generic points rankings undervalue (rule 24).
+- ⚠ **Hold this loosely.** Lloyd flags the NBA's tracking data as broken tonight — *"their
+  shots contested say that Murray Boils contested two shots yet he blocked five of them"* —
+  and one game is not a role (rule 12). Set against yesterday's mailbag, where Lloyd said to
+  **drop** him in a 10-team points league and quantified a **20-30 spot** points-vs-category
+  penalty, this is one encouraging night inside a bearish read, not a reversal.
+
+### Jakob Poeltl — 24 fpts, POOR, second night of a back-to-back
+
+**25 min, 9 pts on 3-7, 3-4 FT, 5 reb (1 OREB), 3 ast, 1 stl, 0 TO.** Lloyd: *"Jakob Purle
+last two games have been a little bit disappointing. 25 minutes, 9 and 5, three assists. He
+did play the backto-back, so that is a bonus."* Nothing structural — the back-to-back is a
+sufficient explanation for 25 minutes, and rule 31 says a 3-for-7 on intact minutes goes in
+the bin.
+
+### Brandon Miller — out, as expected, and no new information
+
+Charlotte lost 96-101 at Phoenix without him. ESPN's badge moved **O → DTD**, but the note is
+**unchanged** (*"Miller (groin) is listed as out for Thursday's game against Phoenix"*) — that
+is ESPN retiring a game-specific OUT, **not** a recovery update. Lloyd, on the knock-on:
+*"Grayson Allen... 34 minutes, 14 four and six **with Brandon Miller out**. I think when
+Miller comes back Allan becomes a little bit more borderline as a 12 team guy."*
+
+### ⚠ ZACH EDEY — OUT FRIDAY, SAME ANKLE. The ramp read from yesterday just got confirmed.
+
+ESPN, tonight: *"Edey won't play in Friday's game against the Pelicans due to **left ankle
+injury management**. **Spin:** Edey will get the night off after appearing in **eight straight
+games** for the Grizzlies. **Isaiah Stewart and Taylor Hendricks are next in line for minutes
+at center** considering both Edey and Quinten Post (concussion) are listed out for Friday."*
+- This is the **second** game Memphis has sat him for that exact phrase (25 Oct, 13 Nov), and
+  it lands one day after I wrote up the ramp. **Scheduled maintenance after an eight-game
+  run — the ramp is live and now costing whole games, not just minutes.**
+- ⚠ **And it adds a competitor I did not have: Isaiah Stewart and Taylor Hendricks are the
+  next men up at centre.** That cuts against the "minutes come back automatically in late
+  November" case — if those two produce while he sits, the cap lifting does not guarantee the
+  minutes return. Watch Friday's game as the test.
+- **His ESPN status is now `O`**, so the injury gate added to `rankings.py` this morning WILL
+  catch him from here. It did not before, because he read `ACTIVE` while capped.
+
+### League-wide
+
+- **Steph Curry — abdominal tear, "at least four weeks", and Lloyd is more pessimistic:**
+  *"I am saying at least longer. I reckon **Christmas** is probably more accurate."*
+- **Caleb Wilson — broken hand, surgery, 4-6 weeks.** Lloyd names **Buzelis** among the
+  beneficiaries: *"If Jaylen Smith, Nick Claxton, Mattis Buzzales are available you add them."*
+  Worth noting for our own Buzelis, who is `FADE (minutes)` at −37%.
+- **Austin Reaves:** still no update.
+- **Joel Embiid** knocked knees and looked bad briefly, then was fine; Lloyd would not be
+  shocked to see him sit Sunday of the Sunday-Monday back-to-back.
+- **LaMelo Ball (Top G) is 14th over the last two weeks** — 22/3/9 on six threes in under 30
+  minutes. Relevant to the standing LaMelo-for-Anthony-Davis offer: Lloyd is very high on him.
+- Cade Cunningham 52 and 11 (double OT) was the line of the night.

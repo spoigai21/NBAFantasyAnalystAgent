@@ -438,6 +438,37 @@ def live_roster():
     return out
 
 
+# ──────────────────────────────────────────────────────────────────────────────────────
+# MANUAL PROJECTION OVERRIDES -- the USER's forward call, not a computed number.
+# These REPLACE the blended projected value outright. They exist because the blend is
+# backward-looking by construction: it shrinks toward ESPN's preseason projection, which
+# rule 32 established is FROZEN all season (zero of 149 moved in an 11 Nov refresh), so
+# it cannot price a role the user can see coming and the data has not caught up to yet.
+# Every entry needs a date, a target, and the user's own words. Nothing goes in here
+# because I think it should -- only because the user set it.
+#
+#   14 Nov 2026 -- "move the amen projection so he averages 43 fantasy points."
+#     Amen Thompson -> 43.0. Lands ~#22. His own blend had him 38.3 (#41), held down by
+#     frozen touches (8 attempts in 41 minutes on 13 Nov) rather than by minutes, which
+#     are 33.6. Dunne independently has him #16, well above my #41, so the override moves
+#     in the direction the one points-specific outside source already pointed.
+#
+#   14 Nov 2026 -- "brandon miler ... have him projected as a 3rd round player which is
+#     about t30-t40 for 12 teams. so whatever average fantasy points aer floating around
+#     that area put that for brandon miller."
+#     Brandon Miller -> 40.0. Measured, not guessed: on the 14 Nov projected list the
+#     #30-#40 band runs 41.3 (Austin Reaves, #30) down to 38.5 (Kevin Durant, #40), and
+#     40.0 is the #35 midpoint (Jaylen Brown). His blend had him 33.5 (#78) -- which is
+#     the cold-shooting artefact rule 32 already decomposed: minutes UP, attempts UP 27%,
+#     conversion down, i.e. the reverting half. Lloyd 12 Nov: "pretty high. Like top 25,
+#     I think," given knowing Miller was hurt; Dunne has him #13. BOTH outside sources
+#     sit ABOVE this override, so 40.0 is the conservative end of the disagreement.
+MANUAL_PROJ = {
+    "Amen Thompson": 43.0,
+    "Brandon Miller": 40.0,
+}
+
+
 def load(roster, min_gp=MIN_GP, w_prior=W_PRIOR):
     db = sqlite3.connect(DB)
     db.row_factory = sqlite3.Row
@@ -449,11 +480,15 @@ def load(roster, min_gp=MIN_GP, w_prior=W_PRIOR):
         cur = r["per_game"] or 0.0
         proj_adj = K_PROJ * r["proj_full"]
         projected = ((gp * cur + w_prior * proj_adj) / (gp + w_prior)) if gp else proj_adj
+        manual = MANUAL_PROJ.get(r["name"])
+        if manual is not None:
+            projected = manual
         info = roster[r["name"]]
         rows.append({
             "name": r["name"], "fteam": info["team"], "injury": info["injury"],
             "gp": gp, "mpg": r["mpg"] or 0.0, "proj_mpg": r["proj_mpg"] or 0.0,
             "current": cur, "projected": projected, "proj_adj": proj_adj,
+            "manual_proj": manual is not None,
             "enough": gp >= min_gp,
         })
     return rows
@@ -467,9 +502,47 @@ def add_form(rows, days=FORM_DAYS):
     lo = (datetime.date.fromisoformat(last) - datetime.timedelta(days=days - 1)).isoformat()
     agg = {r["player"]: r for r in db.execute(
         """SELECT player, COUNT(*) n, AVG(fpts) fpts, AVG(min_ratio) mr, AVG(min) mins,
-                  AVG(usg_ratio) ur
+                  AVG(usg_ratio) ur, MAX(date) last_game
            FROM game_grades WHERE date >= ? AND fpts IS NOT NULL
            GROUP BY player""", (lo,))}
+    # ⚠ "IS HE CURRENTLY MISSING GAMES" -- the question the OUT/DTD flag cannot answer.
+    # 14 Nov 2026: Brandon Miller printed FADE (minutes) for the SECOND time, because
+    # ESPN had flipped him back to ACTIVE while he had not played since 6 Nov, when he
+    # LEFT the Boston game with right groin soreness. The flag reads CURRENT status; the
+    # window reads the LAST 14 DAYS; a player between an injury exit and a return is
+    # ACTIVE in the first and absent from the second, so neither gate fired. User:
+    # "for brandon miller i dont know what you are saying bruh he got injured when played
+    # 14 mins dummy." He is right, and it is rule 31's top row -- an injury exit is not a
+    # minutes read at all. CLAUDE.md already recorded this exact failure on 8 Nov and the
+    # code still produced the label, which is the part that matters.
+    # The fix needs no per-game injury flag: count how many of his NBA TEAM's games have
+    # been played SINCE he last appeared. If the answer is 2 or more he is missing games
+    # right now and there is no role to read, whatever the status flag says.
+    # ⚠ The first version of this gate used ">= 1 game missed" and OVER-FIRED on two of
+    # my own players in the same run, so the threshold and the guard below both matter:
+    #   - PAUL GEORGE missed exactly ONE Boston game (10 Nov his last, BOS played 11 Nov)
+    #     and is active with a game Sunday. One game off is an ordinary rest/DTD night,
+    #     not an absence -- and CLAUDE.md rule 32 already records that voiding George was
+    #     the mistake the first injury gate made. Hence the 2-game threshold.
+    #   - COBY WHITE was voided for a DATA artefact, not an absence: `game_grades` only
+    #     grades games played while a player sits on a roster in THIS league (rule 27's
+    #     mid-season-pickup hole), so a fresh pickup's last graded game can predate his
+    #     real last game by weeks. White showed 3 graded games against 5 actual GP.
+    # So the gate only runs when his graded history is COMPLETE (graded >= season GP);
+    # when it is not, the window itself is untrustworthy and gets its own withholding
+    # label rather than a coach-decision one.
+    team_dates = {}
+    for r in db.execute(
+        """SELECT DISTINCT p.nba_team t, g.date d
+           FROM game_grades g JOIN players p ON p.name = g.player
+           WHERE g.fpts IS NOT NULL AND p.nba_team IS NOT NULL"""):
+        team_dates.setdefault(r["t"], set()).add(r["d"])
+    nba_of, graded_tot = {}, {}
+    for r in db.execute("SELECT name, nba_team FROM players"):
+        nba_of[r["name"]] = r["nba_team"]
+    for r in db.execute(
+        "SELECT player, COUNT(*) n FROM game_grades WHERE fpts IS NOT NULL GROUP BY player"):
+        graded_tot[r["player"]] = r["n"]
     for r in rows:
         a = agg.get(r["name"])
         r["form_from"], r["form_to"] = lo, last
@@ -513,6 +586,20 @@ def add_form(rows, days=FORM_DAYS):
             r.update(form=a["fpts"], form_n=a["n"], form_gap=gap, form_rel=rel,
                      form_mr=mr, form_ur=ur, form_mins=a["mins"],
                      signal="INJURED (void)")
+            continue
+        # he is ACTIVE/DTD on the flag, but is he actually playing?
+        dates = team_dates.get(nba_of.get(r["name"])) or set()
+        missed = sum(1 for d in dates if a["last_game"] and d > a["last_game"])
+        complete = graded_tot.get(r["name"], 0) >= (r["gp"] or 0)
+        # Coverage only matters once the last graded game looks STALE. A pickup whose
+        # graded history is short but current (Rollins: 6 of 13 games graded, but his
+        # last one is his team's last one) still has a readable window, so he keeps his
+        # signal. Gate on staleness first, then ask whether to trust the date.
+        if missed >= 2:
+            r.update(form=a["fpts"], form_n=a["n"], form_gap=gap, form_rel=rel,
+                     form_mr=mr, form_ur=ur, form_mins=a["mins"],
+                     form_last=a["last_game"], form_missed=missed,
+                     signal="MISSING GAMES (void)" if complete else "THIN DATA (void)")
             continue
         dtd = r["injury"] in DTD_FLAGS
         if rel <= -FORM_REL:
@@ -697,7 +784,9 @@ def main():
                                          + (f" (−{r['inj_penalty']})" if r["inj_penalty"] else ""))
                            if r.get("trade_rank") else "—")
     proj_cols = (["Proj/g", "Now/g", "Move", "Lloyd proj", "Dunne ROS"],
-                 [lambda r: f"**{r['projected']:.1f}**", lambda r: f"{r['current']:.1f}",
+                 [lambda r: (f"**{r['projected']:.1f}**"
+                             + (" 📌set" if r.get("manual_proj") else "")),
+                  lambda r: f"{r['current']:.1f}",
                   lambda r: f"{r['projected'] - r['current']:+.1f}",
                   lambda r: lloyd_cell(r, "proj"),
                   lambda r: f"#{r['dunne']}" if r["dunne"] else "—"])
@@ -716,7 +805,7 @@ def main():
     if a.buylow:
         flagged = [r for r in rows if r.get("signal") in
                    ("BUY LOW", "SELL HIGH", "FADE (usage)", "FADE (minutes)",
-                    "SLUMP (no edge)", "RIDE", "INJURED (void)")]
+                    "SLUMP (no edge)", "RIDE", "INJURED (void)", "MISSING GAMES (void)", "THIN DATA (void)")]
         if a.mine:
             flagged = [r for r in flagged if r["fteam"] == "The Freaky Alien"]
         print(f"## FORM SCREEN — last {a.form_days} days vs each player's own projection\n")
@@ -735,7 +824,7 @@ def main():
               "             signal is claimed. Unmeasured by construction (no per-game\n"
               "             injury flag is stored); it withholds a read, never makes one.\n")
         for sig in ("BUY LOW", "SELL HIGH", "FADE (usage)", "FADE (minutes)",
-                    "SLUMP (no edge)", "RIDE", "INJURED (void)"):
+                    "SLUMP (no edge)", "RIDE", "INJURED (void)", "MISSING GAMES (void)", "THIN DATA (void)"):
             grp = [r for r in flagged if r["signal"] == sig]
             if not grp:
                 continue
