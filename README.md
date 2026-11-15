@@ -6,6 +6,33 @@ Claude reads expert podcast transcripts, keeps notes on every NBA team and playe
 knows the exact scoring rules of this league, and connects to ESPN in Chrome to read
 live data. It is used to rank players, plan drafts, judge trades, and compare rosters.
 
+## 📊 Rankings
+
+**Projected and current value for every rostered player in the league**, computed in this
+league's exact scoring. Two lists, two formulas, never mixed: CURRENT is what a player has
+done, PROJECTED is what he will do. 📌 marks a projection set by hand.
+
+| | |
+|---|---|
+| **🔗 Site** | **`<PASTE VERCEL URL HERE AFTER FIRST DEPLOY>`** — the readable version: searchable, filterable, both lists behind one toggle |
+| **Markdown** | [`fantasy/rankings.md`](fantasy/rankings.md) — top 110 of each list, for reading in the repo |
+| **Source** | [`site/`](site/) (static, frontend only) · [`fantasy/rankings.py`](fantasy/rankings.py) (the engine) |
+| **This team only** | [Current roster](#current-roster-with-both-value-lists) |
+
+Rebuild everything once a slate goes final:
+
+```bash
+. ~/.espn-fantasy.env \
+  && python3 fantasy/refresh_players.py \
+  && python3 fantasy/rankings.py \
+  && python3 fantasy/build_site_data.py
+```
+
+Deploy the site with `cd site && vercel --prod`. There is no build step — Vercel serves the
+directory as-is. See [`site/README.md`](site/README.md).
+
+---
+
 > **This project used to be about sports betting.** That work is finished and still
 > lives here — see [BETTING.md](BETTING.md). The headline result was an **ROI of
 > −4.77%**, meaning the model found no edge against the market. The project has since

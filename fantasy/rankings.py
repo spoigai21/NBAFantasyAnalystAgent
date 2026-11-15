@@ -386,8 +386,30 @@ DTD_FLAGS = {"DAY_TO_DAY", "QUESTIONABLE", "DOUBTFUL"}
 # are the same games today, and the window only becomes a distinct signal around late
 # November. Recency weighting is therefore UNTESTABLE right now -- season-actuals and
 # last-14 shrinkage returned byte-identical MAE (7.390). Re-run --validate then.
-FORM_DAYS = 14
-FORM_MIN_GAMES = 3      # below this the window is not a read (rules 12, 27)
+# ⚠ 7-DAY WINDOW, user's call 15 Nov 2026: "u should look at 7 day stats i think."
+# A 14-day window on a 25-day-old season was most of the season, so it could not say
+# anything about RECENT form -- it was a second season-average wearing a different name.
+FORM_DAYS = 7
+FORM_MIN_GAMES = 2      # below this the window is not a read (rules 12, 27). A 7-day
+                        # window holds 2-4 games, so the old floor of 3 voided half the
+                        # league; 2 is the lowest that is still a comparison.
+
+# ⚠ ABSOLUTE BAND, user's call 15 Nov 2026: "if theres a difference of at least 3.5
+# points from projection then u change it otherwise they are a hold." This REPLACES the
+# relative FORM_REL gate as the trigger. The relative gate scaled with the player, so a
+# 10% move on Wembanyama was 7 points while a 10% move on Rollins was 2.6 -- the same
+# label meant very different things at the two ends of the board. A flat 3.5 fantasy
+# points means the same thing for everyone.
+FORM_BAND = 3.5
+
+# ⚠ RIDE FLOOR, user's call 15 Nov 2026: "ride is when they are beating projections but
+# not by a lot. so if they are 2-3.4 fantasy points above projections say ride. if they
+# are less than 2 say hold." So the POSITIVE side has three bands, not two:
+#     < 2.0        HOLD        -- noise
+#     2.0 to 3.4   RIDE        -- a modest, sustainable beat
+#     >= 3.5       RIDE if the minutes are there, SELL HIGH if they are not
+# The negative side keeps the single -3.5 band; he did not ask to split it.
+RIDE_FLOOR = 2.0
 FORM_REL = 0.10         # 10% of his own projection before the window says anything
 FORM_DEEP = 0.20        # past this the buy-low gate stops working -- no edge, not a buy
 MINS_INTACT = 0.90      # measured gate between "the shortfall washes out" and "it sticks"
@@ -432,6 +454,9 @@ def live_roster():
         for e in t["roster"]["entries"]:
             p = e["playerPoolEntry"]["player"]
             out[p["fullName"]] = {
+                # The fantasy player id doubles as the ESPN ATHLETE id, which is what
+                # a.espncdn.com headshots and the public gamelog endpoint both key on.
+                "id": p.get("id"),
                 "team": teams.get(t["id"]), "team_id": t["id"],
                 "injury": p.get("injuryStatus", "ACTIVE"),
                 "slot": e.get("lineupSlotId"),
@@ -510,7 +535,7 @@ def live_roster():
 MANUAL_PROJ = {
     "Victor Wembanyama": 70.0,
     "Cooper Flagg": 55.0,
-    "Shai Gilgeous-Alexander": 50.0,
+    "Shai Gilgeous-Alexander": 52.0,
     "Alperen Sengun": 49.0,
     "Jayson Tatum": 49.0,
     "Anthony Davis": 48.0,
@@ -629,8 +654,17 @@ def add_form(rows, days=FORM_DAYS):
             r.update(form=None, form_n=(a["n"] if a else 0), form_gap=None,
                      form_mr=None, form_ur=None, signal="—")
             continue
-        gap = a["fpts"] - r["proj_adj"]
-        rel = gap / r["proj_adj"] if r["proj_adj"] else 0.0
+        # ⚠ THE BAND IS APPLIED TO SEASON AVERAGE MINUS PROJECTION -- the "over expected"
+        # number the site already shows -- NOT to the 7-day average. Corrected 15 Nov 2026
+        # after the user rejected two labels: "giannis is a hold cade is a hold not
+        # overperforming at all." Banding the 7-day window made Giannis +5.2 and Cade
+        # +5.6; on season average they are +1.3 and +1.0, which is what he is reading and
+        # what "not overperforming at all" plainly means. It also fixes Wembanyama, whom
+        # he had already said was not a sell-high: +9.3 on the week, +2.2 on the season.
+        # The 7-day window still drives the MINUTES and USAGE axes and is still displayed;
+        # it just no longer decides whether a signal fires.
+        gap = r["current"] - r["projected"]
+        rel = gap / r["projected"] if r["projected"] else 0.0
         mr = a["mr"] or 0.0
         ur = a["ur"]
         # ⚠ INJURY GATE -- rule 27's confounder, which this screen did not consult at all
@@ -681,7 +715,9 @@ def add_form(rows, days=FORM_DAYS):
                      signal="MISSING GAMES (void)" if complete else "THIN DATA (void)")
             continue
         dtd = r["injury"] in DTD_FLAGS
-        if rel <= -FORM_REL:
+        # The band decides FIRST: inside +/-3.5 fantasy points of projection there is
+        # nothing to say, whatever the minutes and usage axes look like.
+        if gap <= -FORM_BAND:
             if mr < MINS_INTACT:
                 sig = "FADE (minutes)"          # 65% of it sticks -- that part is the role
             elif ur is not None and ur < USG_INTACT:
@@ -690,9 +726,12 @@ def add_form(rows, days=FORM_DAYS):
                 sig = "SLUMP (no edge)"         # 50% sticks even with role intact
             else:
                 sig = "BUY LOW"                 # only 7% sticks -- it washes out
-        elif rel >= FORM_REL:
+        elif gap >= FORM_BAND:
             # minutes >= projection: ~62% is real, keep him. Below projection: it goes.
             sig = "RIDE" if mr >= 1.0 else "SELL HIGH"
+        elif gap >= RIDE_FLOOR:
+            # A modest beat. Too small to call a sell-high whatever the minutes say.
+            sig = "RIDE"
         else:
             sig = "HOLD"
         r.update(form=a["fpts"], form_n=a["n"], form_gap=gap, form_rel=rel, form_mr=mr,

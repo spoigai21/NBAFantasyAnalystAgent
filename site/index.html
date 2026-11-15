@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>LeFantasy Rankings</title>
+<meta name="description" content="Projected and current value for every rostered player in the LeFantasy league, in this league's exact scoring." />
+<meta name="color-scheme" content="dark" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <p class="eyebrow">LeFantasy &middot; 9-team ESPN points</p>
+    <h1>Rankings</h1>
+    <p class="lead">
+      Projected and current value for every rostered player, computed in
+      <strong>this league's exact scoring</strong> &mdash; steals and blocks at +4, plus the
+      double-double, triple-double, offensive-rebound, games-played and team-win bonuses that
+      no public ranking carries.
+    </p>
+
+    <ul class="defs">
+      <li>
+        <div class="dt">Current</div>
+        <p>Actual fantasy points per game, season to date. Nothing adjusted.</p>
+      </li>
+      <li>
+        <div class="dt">Projected</div>
+        <p>My projections &mdash; expected fantasy points per game for the rest of the season.</p>
+      </li>
+    </ul>
+  </div>
+</header>
+
+<!-- Full-bleed so the sticky backdrop spans the viewport; the row inside is still
+     constrained to the same max width as the rest of the page. -->
+<div class="controls-bar">
+  <div class="wrap controls">
+    <div class="toggle" role="group" aria-label="Which list to show">
+      <button type="button" id="btn-cur" aria-pressed="true">Current</button>
+      <button type="button" id="btn-proj" aria-pressed="false">Projected</button>
+    </div>
+    <input type="search" id="q" placeholder="Search player or team&hellip;" aria-label="Search player or fantasy team" autocomplete="off" />
+    <label class="chk"><input type="checkbox" id="mine" /> My team only</label>
+    <p class="count" id="count"></p>
+  </div>
+</div>
+
+<main class="wrap layout">
+  <!-- Left rail: the clicked player. Sticky, so it stays put while the table scrolls. -->
+  <aside class="detail" id="detail" aria-live="polite">
+    <div class="detail-empty" id="detail-empty">
+      <p>Select a player to see where they rank and how they are performing against the projection.</p>
+    </div>
+    <div class="detail-card" id="detail-card" hidden>
+      <div class="detail-shot"><img id="d-img" alt="" /></div>
+      <p class="detail-name" id="d-name"></p>
+      <p class="detail-team" id="d-team"></p>
+      <div class="detail-rank">
+        <span class="detail-rank-label" id="d-rank-label"></span>
+        <span class="detail-rank-num" id="d-rank"></span>
+      </div>
+      <div class="detail-perf" id="d-perf">
+        <span class="detail-perf-word" id="d-perf-word"></span>
+        <span class="detail-perf-num" id="d-perf-num"></span>
+        <span class="detail-perf-unit">fantasy points per game</span>
+      </div>
+      <div class="detail-signal" id="d-signal" hidden>
+        <span class="sig-badge" id="d-sig-badge"></span>
+        <p class="sig-note" id="d-sig-note"></p>
+      </div>
+      <dl class="detail-stats">
+        <div><dt>Projected</dt><dd id="d-proj"></dd></div>
+        <div><dt>Average</dt><dd id="d-avg"></dd></div>
+        <div><dt>Games</dt><dd id="d-gp"></dd></div>
+        <div><dt>Minutes</dt><dd id="d-mpg"></dd></div>
+      </dl>
+    </div>
+  </aside>
+
+  <div class="table-scroll">
+    <table>
+      <caption id="cap"></caption>
+      <thead>
+        <tr>
+          <th class="l">#</th>
+          <th class="l">Player</th>
+          <th class="l hide-sm">Fantasy team</th>
+          <th id="th-main"></th>
+          <th id="th-other"></th>
+          <th class="hide-sm" title="Fantasy points over expected — season average minus projection. Positive means he is outperforming the projection.">Over Expected</th>
+          <th class="hide-sm">Games</th>
+          <th class="hide-sm">Minutes</th>
+        </tr>
+      </thead>
+      <tbody id="rows"></tbody>
+    </table>
+    <p class="empty" id="empty" hidden>No players match that search.</p>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>
+      <strong style="color:var(--bone)">The two lists are never mixed inside one argument.</strong>
+      Current answers what a player has done; projected answers what he will do. Trading one
+      off against the other whenever it suits the point is how a valuation stops being one.
+    </p>
+    <p id="meta"></p>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
