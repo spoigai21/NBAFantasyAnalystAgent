@@ -554,7 +554,7 @@ MANUAL_PROJ = {
     "Shai Gilgeous-Alexander": 52.0,
     "Alperen Sengun": 49.0,
     "Jayson Tatum": 49.0,
-    "Anthony Davis": 48.0,
+    "Anthony Davis": 46.5,   # 15 Nov 2026 -- "update ad projected value to 46.5"
     "Amen Thompson": 43.0,
     "Domantas Sabonis": 43.0,
     "Brandon Miller": 42.0,
@@ -722,9 +722,39 @@ def add_form(rows, days=FORM_DAYS):
             # the board rather than the reason he has no games. Caught on Haliburton,
             # 15 Nov 2026: OUT with a hamstring, 4 GP, and the card said nothing at all.
             out = r["injury"] in OUT_FLAGS and not r.get("rested")
+            # ⚠ A hand-set signal has to survive the sample-size gate too. Applying the
+            # override only at the end of the branch meant a player with too few recent
+            # games kept printing "—" and silently ignored the instruction.
+            ov = r.get("sig_override")
+            if ov:
+                sig, r["sig_override_why"] = ov[0], ov[1]
+            elif out:
+                sig = "INJURED (void)"
+            else:
+                # ⚠ FALLBACK so EVERY player gets a verdict (user, 15 Nov 2026: "you got
+                # to do buy low/sell high / etc. status for everything"). The band is
+                # season average minus projection, which needs no recent games at all —
+                # only the minutes and usage AXES did. So substitute the season minutes
+                # ratio for the 7-day one and drop the usage axis, which has no season
+                # equivalent. A fade found this way can only ever be a minutes fade; it
+                # is marked `thin` so the card can say the read is coarser than usual.
+                sgap = r["current"] - r["projected"]
+                smr = (r["mpg"] / r["proj_mpg"]) if r.get("proj_mpg") else 1.0
+                if sgap <= -FORM_BAND:
+                    sig = ("FADE (minutes)" if smr < MINS_INTACT
+                           else "SLUMP (no edge)" if sgap / max(r["projected"], 1) <= -FORM_DEEP
+                           else "BUY LOW")
+                elif sgap >= FORM_BAND:
+                    sig = "RIDE" if smr >= 1.0 else "SELL HIGH"
+                elif sgap >= RIDE_FLOOR:
+                    sig = "RIDE"
+                elif (age := r.get("age")) and age >= WASHED_AGE and sgap <= -WASHED_BAND:
+                    sig = "FADE (washed)"
+                else:
+                    sig = "HOLD"
+                r["signal_thin"] = True
             r.update(form=None, form_n=(a["n"] if a else 0), form_gap=None,
-                     form_mr=None, form_ur=None,
-                     signal="INJURED (void)" if out else "—")
+                     form_mr=None, form_ur=None, signal=sig)
             continue
         # ⚠ THE BAND IS APPLIED TO SEASON AVERAGE MINUS PROJECTION -- the "over expected"
         # number the site already shows -- NOT to the 7-day average. Corrected 15 Nov 2026

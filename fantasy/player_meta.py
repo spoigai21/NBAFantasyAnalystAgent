@@ -110,6 +110,20 @@ REST_NOT_INJURED = NOT_INJURED
 SIGNAL_OVERRIDE = {
     "Luka Doncic": ("RIDE", "Minutes are not actually down — the projected mpg was high."),
     "Matas Buzelis": ("FADE (usage)", "Lowering role."),
+    # user, 15 Nov 2026: "put brandon miller as a buy low saying he is shooting terribly
+    # low shooting percentages hes in a slump". Backed by the log: 34.5% FG and 26.0%
+    # from three over his last 10, on 19.4 attempts a game — the volume is intact and the
+    # conversion is not, which rule 31 calls the reverting half.
+    # user, 15 Nov 2026: "this makes anthony davis a sell high i believe". The computed
+    # label is RIDE: +4.2 over projection with minutes holding (34.0 mpg), which the
+    # backtest says is ~67% real. The user is reading it the other way round, and the
+    # reason is that HE set the 46.5 — a projection deliberately below his production
+    # because of age and games missed. Against a forward number you have already marked
+    # down, continuing to beat it is the moment to sell, not to ride.
+    "Anthony Davis": ("SELL HIGH", "Running 4.2 over a projection already marked down "
+                                   "for age and missed games — sell into the strength."),
+    "Brandon Miller": ("BUY LOW", "Shooting terribly — 34.5% FG, 26% from three over 10 "
+                                  "games on full volume. A slump, not a role loss."),
 }
 
 
