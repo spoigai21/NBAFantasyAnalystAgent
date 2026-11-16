@@ -590,6 +590,30 @@ MANUAL_PROJ = {
     # That's not what you signed up for. So, there is a bit of a buy low there."
     "Jalen Brunson": 44.5,
     "Trae Young": 42.0,
+    # 16 Nov 2026 -- "lower kat projection to 48.5". Lloyd 15 Nov was the other way:
+    # "their best player this year has been Karl-Anthony Towns... he's been much better
+    # than I anticipated... he's so far proving me wrong on that." The user is marking
+    # him down against that; the instruction wins, the disagreement is recorded here.
+    "Karl-Anthony Towns": 48.5,
+    # 16 Nov 2026, batch of fourteen. Direction against the previous value in brackets.
+    "Jayson Tatum": 49.5,        # up from 49.0
+    "Anthony Edwards": 49.0,     # up from 48.6 — was below the GP floor until a hand-set
+                                 # projection cleared it; he is on 4 games played
+    "Franz Wagner": 43.0,        # down from 44.6
+    "Austin Reaves": 42.5,       # up from 41.3
+    "LeBron James": 40.0,        # down from 40.5
+    "Paolo Banchero": 40.0,      # down from 41.2 (2 GP)
+    "Chet Holmgren": 38.0,       # down from 39.8 (3 GP)
+    "Keyonte George": 37.0,      # up from 35.0
+    "James Harden": 37.0,        # up from 36.5
+    "Lauri Markkanen": 35.0,     # down from 35.7
+    "Josh Giddey": 34.5,         # down from 36.0
+    "Alex Sarr": 34.5,           # unchanged in value, now pinned by hand
+    "Anthony Black": 32.0,       # down from 35.0
+    # "decrease miles bridges to 30 as his role is decreasing" — matches Lloyd, 15 Nov:
+    # "they are sick of Miles Bridges... four straight games of under 29 minutes... they
+    # just go away from him very easily... it is fading."
+    "Miles Bridges": 30.0,       # down from 35.7
     # 15 Nov 2026 -- "for matas update his projection to 34 and say its a lowering role
     # and mark as Fade"
     "Matas Buzelis": 34.0,
