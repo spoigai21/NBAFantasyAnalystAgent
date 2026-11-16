@@ -65,6 +65,7 @@ def main():
             "sigWhy": r.get("sig_override_why"),
             "smallSample": bool(r.get("small_sample")),
             "signalThin": bool(r.get("signal_thin")),
+            "noProj": bool(r.get("no_proj")),
             "signal": r.get("signal") or "—",
             "form": round(r["form"], 1) if r.get("form") is not None else None,
             "formGames": r.get("form_n") or 0,

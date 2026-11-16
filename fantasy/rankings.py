@@ -551,7 +551,7 @@ def live_roster():
 MANUAL_PROJ = {
     "Victor Wembanyama": 70.0,
     "Cooper Flagg": 55.0,
-    "Shai Gilgeous-Alexander": 52.0,
+    "Shai Gilgeous-Alexander": 55.0,
     "Alperen Sengun": 49.0,
     "Jayson Tatum": 49.0,
     "Anthony Davis": 46.5,   # 15 Nov 2026 -- "update ad projected value to 46.5"
@@ -582,6 +582,14 @@ MANUAL_PROJ = {
     "Ausar Thompson": 30.0,
     # 15 Nov 2026 -- "move quickleu projections so hes now set at 36"
     "Immanuel Quickley": 36.0,
+    # 15 Nov 2026, after the Lloyd recap -- "brunson projected at 44.5 fantasy points.
+    # trae young is at 42 fantasy points projection shai is at 55 points projection".
+    # Lloyd that night on all three: Brunson "starting to look a lot better... up to 52
+    # over the last two weeks"; Trae "buy low on Trae Young if you dare... it will not be
+    # worse than this. He cannot be this bad"; Shai "22nd ranked player for the season.
+    # That's not what you signed up for. So, there is a bit of a buy low there."
+    "Jalen Brunson": 44.5,
+    "Trae Young": 42.0,
     # 15 Nov 2026 -- "for matas update his projection to 34 and say its a lowering role
     # and mark as Fade"
     "Matas Buzelis": 34.0,
@@ -626,8 +634,21 @@ def load(roster, min_gp=MIN_GP, w_prior=W_PRIOR):
     db.row_factory = sqlite3.Row
     rows = []
     for r in db.execute("SELECT name, gp, per_game, mpg, proj_mpg, proj_full FROM players"):
-        if r["name"] not in roster or not r["proj_full"]:
+        if r["name"] not in roster:
             continue
+        # ⚠ A missing ESPN projection used to drop the player from the board entirely.
+        # Daniss Jenkins has 12 games played and no projection row, so he disappeared —
+        # not because the sample was thin but because ESPN never published a forecast.
+        # Fall back to his own season average: a worse forward number than a projection,
+        # but far better than omitting a player with a full season of evidence.
+        if not r["proj_full"]:
+            if not (r["per_game"] and (r["gp"] or 0) >= MIN_GP):
+                continue
+            r = dict(r)
+            r["proj_full"] = r["per_game"] / K_PROJ
+            no_proj = True
+        else:
+            no_proj = False
         gp = r["gp"] or 0
         cur = r["per_game"] or 0.0
         proj_adj = K_PROJ * r["proj_full"]
@@ -658,8 +679,13 @@ def load(roster, min_gp=MIN_GP, w_prior=W_PRIOR):
             # bearing on a forward number the manager set himself. Haliburton was invisible
             # on 4 GP until this. His CURRENT rank is still a 4-game average, so the small
             # sample is marked rather than hidden.
-            "enough": gp >= min_gp or manual is not None,
+            # EVERY rostered player is ranked (user, 15 Nov 2026: "did u do it for every
+            # player"). The games-played floor no longer removes anyone — it now only
+            # MARKS them, and the signal logic turns a thin sample into an explicit
+            # withholding rather than an absence.
+            "enough": True,
             "small_sample": gp < min_gp,
+            "no_proj": no_proj,
         })
     return rows
 
@@ -730,6 +756,10 @@ def add_form(rows, days=FORM_DAYS):
                 sig, r["sig_override_why"] = ov[0], ov[1]
             elif out:
                 sig = "INJURED (void)"
+            elif r.get("small_sample"):
+                # Under the games floor: a 2-4 game average is not a performance read
+                # (rules 12, 27), so state that rather than invent a verdict.
+                sig = "THIN DATA (void)"
             else:
                 # ⚠ FALLBACK so EVERY player gets a verdict (user, 15 Nov 2026: "you got
                 # to do buy low/sell high / etc. status for everything"). The band is
@@ -848,6 +878,10 @@ def add_form(rows, days=FORM_DAYS):
             sig = "RIDE"
         else:
             sig = "HOLD"
+        # ⚠ Season sample, not window sample. Enough recent games to read form does not
+        # make a 3-game season average a performance read (rules 12, 27).
+        if r.get("small_sample"):
+            sig = "THIN DATA (void)"
         ov = r.get("sig_override")
         if ov:
             sig, r["sig_override_why"] = ov[0], ov[1]
