@@ -32,8 +32,9 @@
       </li>
       <li>
         <div class="dt">Last 14 days</div>
-        <p>The same current value over a shorter window. A <em>window</em> on what he has
-           done, never a third ranking &mdash; who is hot right now, and who is cold.</p>
+        <p>A <em>column</em>, not a list. The same current value over a shorter window &mdash;
+           who is hot right now and who is cold, read <em>beside</em> the season number
+           instead of ranked against it.</p>
       </li>
     </ul>
   </div>
@@ -46,7 +47,6 @@
     <div class="toggle" role="group" aria-label="Which list to show">
       <button type="button" id="btn-cur" aria-pressed="true">Current</button>
       <button type="button" id="btn-proj" aria-pressed="false">Projected</button>
-      <button type="button" id="btn-form" aria-pressed="false">Last 14 days</button>
     </div>
     <button type="button" class="trade-btn" id="trade-toggle" aria-pressed="false">Trade</button>
     <input type="search" id="q" placeholder="Search player or team&hellip;" aria-label="Search player or fantasy team" autocomplete="off" />
@@ -110,6 +110,7 @@
         <div><dt>Average</dt><dd id="d-avg"></dd></div>
         <div><dt>Games</dt><dd id="d-gp"></dd></div>
         <div><dt>Minutes</dt><dd id="d-mpg"></dd></div>
+        <div><dt>Last 14 days</dt><dd id="d-form14"></dd></div>
         <div><dt>Age</dt><dd id="d-age"></dd></div>
         <div><dt>Games missed</dt><dd id="d-missed"></dd></div>
       </dl>
@@ -126,6 +127,7 @@
           <th class="l hide-sm">Fantasy team</th>
           <th id="th-main"></th>
           <th id="th-other"></th>
+          <th class="hide-sm" id="th-form14" title="Fantasy points per game over the last 14 days — a window on current value, never a separate ranking. Hover a number for the games behind it.">14 days</th>
           <th class="hide-sm" id="th-over" title="Fantasy points over expected — season average minus projection. Positive means he is outperforming the projection.">Over Expected</th>
           <th class="hide-sm" id="th-games">Games</th>
           <th class="hide-sm" id="th-mins">Minutes</th>

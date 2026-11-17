@@ -10,25 +10,24 @@ const qEl = el("q");
 const mineEl = el("mine");
 const btnProj = el("btn-proj");
 const btnCur = el("btn-cur");
-const btnForm = el("btn-form");
 
 let DATA = null;
-// "current" | "projected" | "form14".
-// ⚠ form14 is NOT a third value — it is the SECOND WINDOW on current value (CLAUDE.md
-// rule 32). Season-to-date and last-14-days both answer "what has he done"; projected
-// is the only forward number. The caption says so on screen so the distinction does not
-// quietly collapse the way it does when people talk about "his last two weeks" as a rank.
+// "current" | "projected" — two LISTS, and only two.
+// ⚠ The last-14-days number is a COLUMN, never a third list (CLAUDE.md rule 32). It is
+// the second WINDOW on current value, so it belongs BESIDE the season average inside the
+// same row rather than becoming a ranking of its own. A third toggle quietly invited the
+// mixing the rule forbids — "he is 12th" meaning two different things on two screens.
 let mode = "current";
-const FORM_DAYS = 14;
 let selected = null;    // name of the clicked player
 
 const fmt1 = (n) => (n === null || n === undefined ? "—" : n.toFixed(1));
 
-/* The form window the current mode reads. Everything downstream — table, left rail,
-   trade flags — goes through this, so the signal can never describe one window while
-   the number beside it describes another. */
+/* The window the SIGNAL is read off: 7 days, which is what rankings.md bands on and the
+   only width every persistence rate in CLAUDE.md rule 32 was fitted against. The 14-day
+   column is a separate number and deliberately does not move the label — one signal per
+   player, so the left rail and the trade flags can never disagree with each other. */
 function win(p) {
-  return (mode === "form14" ? p.form14 : p.form7) || null;
+  return p.form7 || null;
 }
 function sigOf(p) {
   const w = win(p);
@@ -61,35 +60,20 @@ function render() {
   const q = qEl.value.trim().toLowerCase();
   const mineOnly = mineEl.checked;
   const isProj = mode === "projected";
-  const isForm = mode === "form14";
 
-  // The 14-day rank lives inside the window object, not at the top level, so every
-  // column goes through an accessor rather than a key name.
-  const rankOf  = (p) => isForm ? (p.form14 && p.form14.rank)
-                                : p[isProj ? "projectedRank" : "currentRank"];
-  const mainOf  = (p) => isForm ? (p.form14 && p.form14.avg)
-                                : p[isProj ? "projected" : "current"];
-  const otherOf = (p) => isForm ? p.projected : p[isProj ? "current" : "projected"];
-  // ⚠ In the 14-day view "over expected" is the WINDOW minus projection, which is the
-  // "vs his proj" column rankings.md prints — not the season gap. Showing the season
-  // gap next to a 14-day average would put two different windows in one row.
-  const overOf  = (p) => isForm ? (p.form14 && p.form14.vsProj) : (p.current - p.projected);
-  const gamesOf = (p) => isForm ? (p.form14 && p.form14.games) : p.gp;
-  const mpgOf   = (p) => isForm ? (p.form14 && p.form14.mpg) : p.mpg;
+  const rankOf  = (p) => p[isProj ? "projectedRank" : "currentRank"];
+  const mainOf  = (p) => p[isProj ? "projected" : "current"];
+  const otherOf = (p) => p[isProj ? "current" : "projected"];
+  // ⚠ Over expected stays the SEASON gap in both views, because the row around it is the
+  // season row — games and minutes beside it are season numbers. The 14-day column carries
+  // its own window and does not leak into the columns either side of it.
+  const overOf  = (p) => p.current - p.projected;
 
   // Plain words, not abbreviations: the main column is whichever list is showing.
-  el("th-main").textContent = isForm ? `${FORM_DAYS} days` : isProj ? "Projected" : "Average";
-  el("th-other").textContent = isForm ? "Projected" : isProj ? "Average" : "Projected";
-  el("th-games").title = isForm ? `Games played inside the last-${FORM_DAYS}-day window.` : "";
-  el("th-mins").title = isForm ? `Minutes per game inside the last-${FORM_DAYS}-day window.` : "";
-  el("th-over").title = isForm
-    ? `Fantasy points over expected — his last-${FORM_DAYS}-day average minus his projection.`
-    : "Fantasy points over expected — season average minus projection. Positive means he is outperforming the projection.";
+  el("th-main").textContent = isProj ? "Projected" : "Average";
+  el("th-other").textContent = isProj ? "Average" : "Projected";
 
-  capEl.innerHTML = isForm
-    ? `Last ${FORM_DAYS} days<span>Fantasy points per game over the last ${FORM_DAYS} days.
-       A <em>window</em> on current value, not a third list. Games and minutes are the window's.</span>`
-    : isProj
+  capEl.innerHTML = isProj
     ? `Projected value<span>Rest of season, fantasy points per game. Ranked best to worst.</span>`
     : `Current value<span>Season to date, actual fantasy points per game. Ranked best to worst.</span>`;
 
@@ -113,16 +97,27 @@ function render() {
       // above expectation, or the label lies about the sign.
       const move = overOf(p);
       const moveCls = move > 0.05 ? "up" : move < -0.05 ? "down" : "";
+      // The 14-day column. Too few games in the window means there is no readable average,
+      // and a dash is the honest answer there — not a zero, and not his season number
+      // wearing a 14-day label. The games behind it ride along in the tooltip, because an
+      // average over two games and one over six are not the same claim.
+      const w14 = p.form14;
+      const has14 = w14 && w14.avg !== null && w14.avg !== undefined;
+      const f14 = has14 ? fmt1(w14.avg) : "—";
+      const f14t = has14
+        ? `${w14.games} game${w14.games === 1 ? "" : "s"} in the last 14 days`
+        : "Not enough games in the last 14 days to read an average";
       const sel = p.name === selected ? ' class="is-selected"' : "";
       return `<tr${sel} data-id="${p.id}" data-name="${p.name}">
         <td class="l rank">${rankOf(p)}</td>
         <td class="l"><span class="player">${p.name}</span>${injuryTag(p.injury, p.rested)}</td>
-        <td class="l owner hide-sm">${p.team}</td>
+        <td class="l owner hide-sm" title="${p.team}"><span>${p.team}</span></td>
         <td class="val">${fmt1(mainOf(p))}</td>
         <td class="sub">${fmt1(otherOf(p))}</td>
+        <td class="sub hide-sm" title="${f14t}">${f14}</td>
         <td class="sub hide-sm ${moveCls}">${signed(move)}</td>
-        <td class="sub hide-sm">${gamesOf(p)}</td>
-        <td class="sub hide-sm">${fmt1(mpgOf(p))}</td>
+        <td class="sub hide-sm">${p.gp}</td>
+        <td class="sub hide-sm">${fmt1(p.mpg)}</td>
       </tr>`;
     })
     .join("");
@@ -143,19 +138,11 @@ function setMode(next) {
   }
   btnProj.setAttribute("aria-pressed", String(next === "projected"));
   btnCur.setAttribute("aria-pressed", String(next === "current"));
-  btnForm.setAttribute("aria-pressed", String(next === "form14"));
   render();
-  // ⚠ The trade flags are built from the ACTIVE window's signal, but renderTrade() only
-  // ran when a chip changed — so switching window left LaMelo showing BUY LOW (14-day)
-  // while the table beside it had flipped to the 7-day FADE (minutes). Same class of bug
-  // as the panel/table rank mismatch above: one control, two things to refresh.
-  // (Hoisted function declaration, so calling it from here is fine.)
-  if (!el("trade").hidden) renderTrade();
 }
 
 btnProj.addEventListener("click", () => setMode("projected"));
 btnCur.addEventListener("click", () => setMode("current"));
-btnForm.addEventListener("click", () => setMode("form14"));
 qEl.addEventListener("input", render);
 mineEl.addEventListener("change", render);
 
@@ -209,17 +196,14 @@ const SIGNALS = {
 
 function showPlayer(p) {
   const isProj = mode === "projected";
-  const isForm = mode === "form14";
   const w = win(p);
   // Rank comes from whichever list is on screen, so the panel never contradicts the table.
-  el("d-rank-label").textContent = isForm ? `Last ${FORM_DAYS} days rank`
-                                 : isProj ? "Projected rank" : "Current rank";
-  const rk = isForm ? (p.form14 && p.form14.rank) : isProj ? p.projectedRank : p.currentRank;
+  el("d-rank-label").textContent = isProj ? "Projected rank" : "Current rank";
+  const rk = isProj ? p.projectedRank : p.currentRank;
   el("d-rank").textContent = rk ? "#" + rk : "—";
 
-  // Over/under is measured against the projection. In the 14-day view that is the
-  // WINDOW minus projection, matching the table beside it.
-  const over = isForm ? (p.form14 && p.form14.vsProj) : (p.current - p.projected);
+  // Over/under is the season gap, the same number the table's Over Expected column shows.
+  const over = p.current - p.projected;
   const word = over >= 0 ? "Overperforming by" : "Underperforming by";
   el("d-perf-word").textContent = word;
   el("d-perf-num").textContent = over === null || over === undefined
@@ -239,26 +223,24 @@ function showPlayer(p) {
     el("d-sig-badge").className = "sig-badge is-" + sig[0];
     // A hand-set signal shows ONLY the reason it was overridden. Printing the override
     // reason AND the generic blurb made the card taller than the viewport.
-    const days = isForm ? FORM_DAYS : 7;
     el("d-sig-note").textContent =
       (why ? "Set by hand: " + why : sig[1])
-      + (w && w.avg !== null ? ` Last ${days} days: ${fmt1(w.avg)} over ${w.games}.` : "");
+      + (w && w.avg !== null ? ` Last 7 days: ${fmt1(w.avg)} over ${w.games}.` : "");
     sigBox.hidden = false;
   } else {
     sigBox.hidden = true;
   }
 
   el("d-proj").textContent = fmt1(p.projected);
-  // In the window view the three measured stats describe the WINDOW, and their labels
-  // say so — a "14-day" card showing season games and season minutes reads as the
-  // season card with one number swapped, which is exactly the mixing rule 32 forbids.
-  el("d-avg").previousElementSibling.textContent = isForm ? `${FORM_DAYS}-day average` : "Average";
-  el("d-gp").previousElementSibling.textContent = isForm ? "Games in window" : "Games";
-  el("d-mpg").previousElementSibling.textContent = isForm ? "Minutes in window" : "Minutes";
-  el("d-avg").textContent = isForm ? fmt1(w && w.avg) : fmt1(p.current);
-  el("d-gp").textContent = isForm ? ((w && w.games) ?? "—")
-                                  : p.gp + (p.smallSample ? " ⚠" : "");
-  el("d-mpg").textContent = isForm ? fmt1(w && w.mpg) : fmt1(p.mpg);
+  el("d-avg").textContent = fmt1(p.current);
+  el("d-gp").textContent = p.gp + (p.smallSample ? " ⚠" : "");
+  el("d-mpg").textContent = fmt1(p.mpg);
+  // The 14-day window on its own line, with the games behind it stated rather than
+  // implied — same reason the table's tooltip carries them.
+  const f = p.form14;
+  el("d-form14").textContent = f && f.avg !== null && f.avg !== undefined
+    ? `${fmt1(f.avg)} over ${f.games}`
+    : "—";
   el("d-age").textContent = p.age ?? "—";
   el("d-missed").textContent = p.missed ?? "—";
 

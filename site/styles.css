@@ -387,7 +387,7 @@ caption span {
 }
 
 th {
-  padding: 0.7rem 0.55rem;
+  padding: 0.7rem 0.46rem;
   text-align: right;
   font-size: 0.6875rem;
   font-weight: 600;
@@ -419,7 +419,7 @@ th.l {
 }
 
 td {
-  padding: 0.68rem 0.55rem;
+  padding: 0.68rem 0.46rem;
   text-align: right;
   border-bottom: 1px solid rgba(62, 232, 247, 0.08);
   white-space: nowrap;
@@ -457,6 +457,18 @@ tbody tr:hover {
 .owner {
   font-size: 0.875rem;
   color: var(--bone-dim);
+}
+
+/* Fantasy team names run long ("TanTheMan's TerrifyingTeam") and are the only text in the
+   row that can be cut without losing a number, so this column yields the width the 14-day
+   column needs. The ellipsis has to sit on an inner span: max-width on a <td> is advisory
+   under table-layout:auto and browsers quietly ignore it. Full name is in the title. */
+.owner span {
+  display: inline-block;
+  max-width: 8.5rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  vertical-align: bottom;
 }
 
 .val {
