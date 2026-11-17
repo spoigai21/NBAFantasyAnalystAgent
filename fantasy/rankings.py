@@ -280,6 +280,19 @@ STALE_DAYS = 7
 # published 3 Nov 2026. In analysts.md's tier for points-specific reads. ⚠ RULE 24: this
 # is GENERIC points scoring -- it does not carry our STL/BLK +4 premium or any of our
 # DD/TD/OREB/GP/TW bonuses, so it is a cross-check on DIRECTION, never a rank to borrow.
+#
+# ⚠ PROVENANCE CHALLENGED AND RE-CONFIRMED, 16 Nov 2026. User: "jacob dunne looks like a
+# preseason draft to be honest." Fair challenge -- Dunne publishes BOTH kinds and the
+# preseason ones are easier to find. Checked by elimination, because the source article
+# now returns HTTP 410:
+#   * Dunne PRESEASON draft board, 12 Oct 2026 ....... Jalen Johnson 13, Lillard 105
+#   * Dunne ROS board, November 2025 (LAST season) ... Jalen Johnson 22, Lillard UNRANKED
+#   * this dict ...................................... Jalen Johnson 10, Lillard  77
+# Matches neither, so it is a third board. Lillard at 77 is only possible in 2026-27 --
+# he is absent from the 2025-26 list entirely because he missed that season -- and the
+# monthly ROS series demonstrably exists (Nov/Dec 2025 and Jan 2026 editions are live).
+# So the label holds. ⚠ But it rests on ELIMINATION, not on re-reading the source: if
+# these ranks ever need to be defended precisely, re-acquire the article first.
 DUNNE = {
     "Nikola Jokic": 1, "Victor Wembanyama": 2, "Luka Doncic": 3,
     "Giannis Antetokounmpo": 4, "Shai Gilgeous-Alexander": 5, "Tyrese Maxey": 6,
@@ -554,6 +567,18 @@ MANUAL_PROJ = {
     "Shai Gilgeous-Alexander": 55.0,
     "Alperen Sengun": 49.0,
     "Jayson Tatum": 49.0,
+    # user, 16 Nov 2026: "jalen joshnson should actually be projected around 48 fantasy
+    # points so put him there." Blend had him 46.2 (#16). Lands him #13.
+    # ⚠ The reason this is a correction and not a thumb on the scale is that the blend
+    # was anchored to a LLOYD read that turns out to be about a different format. Lloyd,
+    # 9 Nov: "I was down on Jaylen Johnson... I was dumbfounded that people were viewing
+    # him as a first round CATEGORY LEAGUE player" — he names the format himself. His
+    # POINTS read in the same show is the opposite: "He should be over 40 easy in fantasy
+    # points", "fringes of first round in that middle of the second round area", "I think
+    # he's a 45 minimum fantasy point player". The user reports Lloyd drafted him top 10
+    # in an ESPN points league, which I could NOT verify in the transcripts on disk — but
+    # the quotes above are on disk and already carry the argument.
+    "Jalen Johnson": 48.0,
     "Anthony Davis": 46.5,   # 15 Nov 2026 -- "update ad projected value to 46.5"
     "Amen Thompson": 43.0,
     "Domantas Sabonis": 43.0,
@@ -626,8 +651,13 @@ MANUAL_PROJ = {
     # 15 Nov 2026 -- "for matas update his projection to 34 and say its a lowering role
     # and mark as Fade"
     "Matas Buzelis": 34.0,
-    # 15 Nov 2026 -- "put damian lillard projected to 37"
-    "Damian Lillard": 37.0,
+    # 15 Nov 2026 -- "put damian lillard projected to 37", raised to 38.2 on 16 Nov 2026:
+    # "i think we should bump dame up to 38.2".
+    # Context for the raise: outside boards all sit BELOW this, not above -- RotoWire/NBA.com
+    # have him 76th (preseason, 16 Sep) and Dunne 77th. So unlike the Jalen Johnson override,
+    # this one lands at the TOP of the outside range rather than inside it. Worth re-reading
+    # if his minutes (29.1) stay under the 31.4 ESPN projects.
+    "Damian Lillard": 38.2,
     # 15 Nov 2026 -- "why is haliburton not on these rankings? put him in as injured w/
     # hamstring and coming off achilles his projected 47 fantasy points." He was missing
     # because he is on 4 GP, under MIN_GP. A hand-set projection now clears that floor.

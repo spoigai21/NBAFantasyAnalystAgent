@@ -41,10 +41,39 @@ assistant. Read `README.md` for the full league and roster picture before non-tr
 
 1. **Steals and blocks at +4 drive everything.** A block is worth four rebounds. Volume
    scorers lose a point per miss. Double-double machines gain ~200 points a season.
-2. **Josh Lloyd is the best single source, not the final word.** Weigh his reads, say what
-   evidence they rest on, and flag single-game takes as what they are.
-3. **Use his ESPN points ranks when he gives them**, and convert any "round N" reference —
-   he talks about 10-12 team leagues, this one has 9.
+2. **Josh Lloyd is the best single source for MECHANISM, and not a source of numbers at
+   all.** Weigh his reads, say what evidence they rest on, and flag single-game takes as
+   what they are. ⚠ See rule 3 — as of 16 Nov 2026 his ranks and values are out entirely.
+3. ⚠⚠ **DO NOT USE LLOYD FOR RANKS OR VALUES. He supplies INFORMATION and FLAGS, never
+   numbers.** User, 16 Nov 2026: *"i found lloyd to be a bit iffy... so lets not use josh
+   lloyd for rankings, but more for giving info and flagging players."*
+   **Keep taking from him:** who left a game and why, who started, whose minutes moved and
+   whether a blowout explains it, who is getting the touches, injury news that beats ESPN's
+   flag, and "go look at this player" pointers. That is mechanism — which rule 24 already
+   said was the only thing worth borrowing from anyone.
+   **Stop taking:** *"top 40"*, *"second round"*, *"a 45 minimum fantasy point player"*,
+   *"30th over the last two weeks"*. Every rank, every value. Our two lists answer those in
+   our exact scoring off ESPN's own applied totals; his answer them in a format he usually
+   does not name.
+   **The case that settled it — JALEN JOHNSON, and it is the cleanest example in this
+   file.** Lloyd, 9 Nov buy-low show: *"I was down on Jaylen Johnson heading into this
+   season. I was dumbfounded that people were viewing him as a first round **category
+   league** player."* He names the format himself. In the **same episode** his points read
+   is the opposite — *"He should be over 40 easy in fantasy points"*, *"on the fringes of
+   first round in that middle of the second round area"*, *"I think he's a 45 minimum
+   fantasy point player"* — and the user reports he drafted Johnson **top 10 in an ESPN
+   points league draft**. ⚠ That draft claim is NOT verified: it is not in the transcripts
+   on disk. The quotes above are, and they already carry the argument without it.
+   So one analyst, one player, one episode, reads as "down on him" or "fringe first round"
+   depending on a format he states once and then drops. **A rank whose meaning depends on
+   an unstated format is not a rank.** I had been treating that gap as something to adjust
+   for (rules 24 and 32 both try); the user's call is to stop ingesting the number at all,
+   which removes the failure mode instead of correcting for it.
+   This **supersedes the old rule 3** — *"use his ESPN points ranks when he gives them, and
+   convert any round N reference"* — which was the instruction that produced the error.
+   It does **not** touch rules 14 and 19: a Lloyd quote still has to grep clean and still
+   has to be checked for subject before attribution, because quoting him for mechanism is
+   still quoting him.
 4. **Never use the draft board's FP column to compare teams.** It is a CBS projection in
    ESPN *default* scoring with no DD/TD/OREB/GP bonus in it. Ask for real ESPN numbers.
 5. **Log what you read.** Nothing survives a session otherwise — append to
@@ -342,6 +371,12 @@ assistant. Read `README.md` for the full league and roster picture before non-tr
    Lloyd does **not** get tier 1 on our bonus scoring (he does not know our settings), on
    anything he has retracted, or on a single-game reaction. Distinguish "explicit about
    draft value" from "explicit about tonight" — they are different questions.
+   ⚠ **AMENDED 16 Nov 2026 by rule 3 — tiers 1 and 2 are MECHANISM ONLY.** "Lloyd
+   explicit" now means explicit about a **role, a minutes call, an injury, a usage change
+   or a rotation move** — follow that. It never means explicit about a **rank or a value**,
+   however explicit he was: those come from our two lists, full stop. The same demotion
+   applies to every analyst in `analysts.md` except where a source is **points-specific and
+   says so**, and even there the rank checks direction only (rule 24).
 
 27. **Grade every game against the player's OWN expected level, and keep minutes, rate
    and usage separate.** `python3 fantasy/grade.py` (needs the env) rebuilds `game_grades` and
@@ -868,6 +903,11 @@ assistant. Read `README.md` for the full league and roster picture before non-tr
    The blended projected list has him 25th, which is the top-30 the user is describing.**
 
    **Lloyd and outside analysts are a CHECK on these lists, never a substitute** (rules 24, 26).
+   ⚠ **AND AS OF 16 Nov 2026 (rule 3) LLOYD IS NOT EVEN A CHECK ON THE RANKS.** The `LLOYD`
+   dict and the validation table below are now a **historical record of why we stopped**,
+   not a live input. Do not add new anchors to it and do not quote a Lloyd rank at the user.
+   Everything below is kept because it documents the measurement; the per-player
+   misattribution warnings in it still apply to quoting him for mechanism.
    `LLOYD` in the script holds only hand-verified anchors with the quote attached, and that
    matters: a regex over the 1,376 segmented notes produced ~16 candidate ranks for my own
    players and **four were misattributions** — "top 150" for Rollins is **Kel'el Ware**, "top

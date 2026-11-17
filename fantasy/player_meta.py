@@ -118,14 +118,21 @@ SIGNAL_OVERRIDE = {
     # low shooting percentages hes in a slump". Backed by the log: 34.5% FG and 26.0%
     # from three over his last 10, on 19.4 attempts a game — the volume is intact and the
     # conversion is not, which rule 31 calls the reverting half.
-    # user, 15 Nov 2026: "this makes anthony davis a sell high i believe". The computed
-    # label is RIDE: +4.2 over projection with minutes holding (34.0 mpg), which the
-    # backtest says is ~67% real. The user is reading it the other way round, and the
-    # reason is that HE set the 46.5 — a projection deliberately below his production
-    # because of age and games missed. Against a forward number you have already marked
-    # down, continuing to beat it is the moment to sell, not to ride.
-    "Anthony Davis": ("SELL HIGH", "Running 4.2 over a projection already marked down "
-                                   "for age and missed games — sell into the strength."),
+    # ⚠ ANTHONY DAVIS — OVERRIDE ADDED 15 Nov 2026, REMOVED 16 Nov 2026. Kept as a note
+    # because the removal is the lesson, not the entry.
+    # On 15 Nov the user said "this makes anthony davis a sell high i believe" and the
+    # computed label was RIDE. The reasoning behind the override was that HE set the 46.5
+    # — a projection deliberately marked down for age and missed games — so continuing to
+    # beat a number already written down looked like the moment to sell.
+    # On 16 Nov he reversed it: "anthoyn davis is not a sell hiigh, he is a ride."
+    # He is right, and SELL HIGH was mechanically wrong the whole time. Rule 32 defines it
+    # as beating the projection on FEWER MINUTES than projected — that is the entire
+    # mechanism, and it is why only ~52% of them survive. AD's minutes are UP: 36.0 a game
+    # over the 7-day window and 34.7 over the 14-day, against a 32.2 projected mpg, with a
+    # 44-minute game inside it. A player being asked to do MORE is the opposite shape.
+    # Removing the entry rather than pinning RIDE in its place is deliberate: the screen
+    # computes RIDE on both windows unaided, so the label now rests on the data and will
+    # move on its own if the minutes ever go. A pinned RIDE would survive a real decline.
     "Brandon Miller": ("BUY LOW", "Shooting terribly — 34.5% FG, 26% from three over 10 "
                                   "games on full volume. A slump, not a role loss."),
 }

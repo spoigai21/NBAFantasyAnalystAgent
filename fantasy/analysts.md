@@ -40,7 +40,7 @@ left vague use these analysts and rank em based on the best or more accurate in 
 | # | Source | When it governs |
 |---|---|---|
 | **0** | **Hard data** — `league.db`, `game_log`, ESPN applied points | Always first. Nobody's opinion overrides a measured per-minute rate or a minutes count. Data sets the *size*, opinion sets the *direction*. |
-| **1** | **Josh Lloyd, EXPLICIT** | A verbatim, on-point, dated quote that greps clean in `fantasy/transcripts/`. **Follow it.** Must be about the actual question — "I like Brandon Miller a lot in round three" is explicit about draft value, *vague* about whether to start him in week 2. |
+| **1** | **Josh Lloyd, EXPLICIT — ON MECHANISM ONLY** | A verbatim, on-point, dated quote that greps clean in `fantasy/transcripts/`, about a **role, minutes, injury, usage or rotation move**. **Follow it.** ⚠ **NOT about a rank or a value — see "Lloyd is out of the rank business" below (16 Nov 2026).** Must be about the actual question — "I like Brandon Miller a lot in round three" is explicit about draft value, *vague* about whether to start him in week 2. |
 | **2** | **Josh Lloyd, implicit** | He addressed the situation but not the question — a minutes comment, a trigger date, a team-context read. Use as a strong prior, say it is inference. |
 | **3** | **Weighted analyst consensus** (below) | Lloyd silent or vague. Agreement across independent analysts beats any single voice. |
 | **4** | **My own calc, stated as mine** | Nobody has addressed it. Never dress this as someone else's opinion (rule 14). |
@@ -70,13 +70,59 @@ judgement, and it should get revised as we catch people being right and wrong.
 recent wins — roles change weekly; (3) **two independent sources on the same lever outrank
 one louder voice.** Always print the date.
 
+## ⚠ Lloyd is out of the rank business — 16 Nov 2026
+
+User: *"i found lloyd to be a bit iffy... so lets not use josh lloyd for rankings, but more
+for giving info and flagging players."* CLAUDE.md rule 3 carries the full version.
+
+**Take from him:** who left a game and why, who started, whose minutes moved and whether a
+blowout explains it, who is getting the touches, injury news ahead of ESPN's flag, and
+"go look at this player" pointers.
+**Do not take:** any rank, any value, any "round N", any "X fantasy points player".
+
+**Why — Jalen Johnson, 9 Nov buy-low show, one episode.** *"I was down on Jaylen Johnson
+heading into this season. I was dumbfounded that people were viewing him as a first round
+**category league** player"* — he names the format — against, minutes later, *"He should be
+over 40 easy in fantasy points"*, *"on the fringes of first round in that middle of the
+second round area"*, *"I think he's a 45 minimum fantasy point player."* The user reports
+he drafted Johnson **top 10 in an ESPN points league**; that part is **unverified** — not
+in the transcripts on disk — and the verified quotes carry the point without it.
+**A rank whose meaning depends on a format stated once and then dropped is not a rank.**
+This is the calibration problem at the top of this file, except it cannot be corrected for,
+because the format is usually unstated.
+
 ## Tier 1 — the one that's format-correct
 
 | Analyst | Where | Why |
 |---|---|---|
 | **Josh Lloyd** | Basketball Monster lead analyst ($9.95/mo); Locked On Fantasy Basketball (free, daily, YouTube); `joshlloyd48.substack.com` | The only one who treats **points-league tiers as a first-class product** and talks through the reasoning daily rather than publishing a list. Melbourne-based; ex-Yahoo, RotoWire, Betfair. Our primary source — transcripts in `fantasy/transcripts/`, searchable via `./fantasy/lloyd.sh`. Still opinion, not truth (rule 2), and he retracts (see his CMB reversal). |
 
-Nobody else is in this tier. Lloyd is genuinely the best available for this format.
+Nobody else is in this tier **for mechanism**, which since 16 Nov 2026 is the only thing
+this tier governs. For ranks and values nobody is in tier 1, including him — our own two
+lists are the answer (CLAUDE.md rule 32).
+
+## Added 16 Nov 2026 — Bleav
+
+User: *"i think another fantasy analyst who is good is BLEAV."*
+
+| Weight | Analyst | Basis |
+|---|---|---|
+| **0.6 (provisional)** | **Robbin Marx** — *Bleav in Fantasy Basketball*, Apple Podcasts [id1592852703](https://podcasts.apple.com/us/podcast/bleav-in-fantasy-basketball---nba-points-leagues/id1592852703) | User-nominated. Points-league oriented, which is the scarce thing (see the calibration section). Former NBC Sports Rotoworld analyst; Hashtag Basketball Dynasty contributor. Active — 600 episodes, 2021–2026, new episodes daily as of 16 Nov 2026. |
+
+⚠ **Provisional weight, and three honest caveats — do not treat this as a vetted source
+yet.** (1) **Bleav is a NETWORK, not a person.** "Bleav said X" is not an attribution; name
+the show and the host. The same feed carries team-specific shows (a Dallas Mavericks daily
+was the top episode on 16 Nov), so the feed alone does not identify the fantasy analyst.
+(2) The directory listing titles the show *"NBA Points Leagues & Category Leagues"* but the
+show's own description does **not** state which format a given rank is built in — which is
+the exact failure that just cost Lloyd his rank privileges. **Make him state the format or
+treat the number as unusable.** (3) I have **no observed track record** on Marx in this
+project and have back-tested nothing. The 0.6 is a placeholder matching Dan Titus
+(points-specific, no stated formula), not a measurement.
+⚠ Also note: **Bleav Basketball also carries *Fantasy NBA Today*, whose hosts include Steve
+"Dr. A" Alexander.** The user's ESPN exclusion (rule 25) names an "Alexander"; I have not
+established whether that refers to this Steve Alexander (Rotoworld/SportsEthos) or a
+different one, so **ask before citing him** rather than guessing in either direction.
 
 ## Tier 2 — read for mechanism, not ranks
 
