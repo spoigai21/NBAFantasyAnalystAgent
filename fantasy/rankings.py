@@ -600,7 +600,7 @@ MANUAL_PROJ = {
     "Anthony Edwards": 49.0,     # up from 48.6 — was below the GP floor until a hand-set
                                  # projection cleared it; he is on 4 games played
     "Franz Wagner": 43.0,        # down from 44.6
-    "Austin Reaves": 42.5,       # up from 41.3
+    "Austin Reaves": 43.0,       # up from 41.3, then 42.5 earlier today
     "LeBron James": 40.0,        # down from 40.5
     "Paolo Banchero": 40.0,      # down from 41.2 (2 GP)
     "Chet Holmgren": 38.0,       # down from 39.8 (3 GP)
@@ -614,6 +614,15 @@ MANUAL_PROJ = {
     # "they are sick of Miles Bridges... four straight games of under 29 minutes... they
     # just go away from him very easily... it is fading."
     "Miles Bridges": 30.0,       # down from 35.7
+    # 16 Nov 2026
+    "Davion Mitchell": 42.0,     # up
+    "Ty Jerome": 39.0,           # up from 38.0
+    "Deni Avdija": 44.0,         # up from a computed 43.0
+    # "drop kessler to 45" — note this runs against Lloyd, 15 Nov: "Walker Kessler...
+    # he has been much better than I anticipated this season. He has been very very good.
+    # The steals for him have been consistent and I didn't know that was going to be real."
+    "Walker Kessler": 44.5,
+    "Bam Adebayo": 45.0,
     # 15 Nov 2026 -- "for matas update his projection to 34 and say its a lowering role
     # and mark as Fade"
     "Matas Buzelis": 34.0,

@@ -61,7 +61,11 @@ TEAM = "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/"
 INJURY_PRONE = {
     "Paul George": "Long injury history; user-flagged as notorious.",
     "Anthony Davis": "Long injury history; 20 games played last season.",
-    "Zach Edey": "Returning from two left ankle surgeries; minutes being managed.",
+    # user, 16 Nov 2026: "for zach edey put slow rampup or like low minutes due to ankle
+    # injury". Matches CLAUDE.md rule 32, which already records that ESPN reads him
+    # ACTIVE the whole way through a managed ramp — the flag only sees players who are
+    # not playing, so a minutes cap on a healthy-listed player is invisible to it.
+    "Zach Edey": "Slow ramp-up — low minutes due to the ankle injury.",
     # Added 15 Nov 2026 on the user's instruction: "add kawhi, embiid, zion, curry,
     # lillard as injury prone". Marked user-flagged rather than given a specific medical
     # history, because I am not willing to state a diagnosis or surgery from memory —

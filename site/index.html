@@ -30,6 +30,11 @@
         <div class="dt">Projected</div>
         <p>My projections &mdash; expected fantasy points per game for the rest of the season.</p>
       </li>
+      <li>
+        <div class="dt">Last 14 days</div>
+        <p>The same current value over a shorter window. A <em>window</em> on what he has
+           done, never a third ranking &mdash; who is hot right now, and who is cold.</p>
+      </li>
     </ul>
   </div>
 </header>
@@ -41,6 +46,7 @@
     <div class="toggle" role="group" aria-label="Which list to show">
       <button type="button" id="btn-cur" aria-pressed="true">Current</button>
       <button type="button" id="btn-proj" aria-pressed="false">Projected</button>
+      <button type="button" id="btn-form" aria-pressed="false">Last 14 days</button>
     </div>
     <button type="button" class="trade-btn" id="trade-toggle" aria-pressed="false">Trade</button>
     <input type="search" id="q" placeholder="Search player or team&hellip;" aria-label="Search player or fantasy team" autocomplete="off" />
@@ -120,9 +126,9 @@
           <th class="l hide-sm">Fantasy team</th>
           <th id="th-main"></th>
           <th id="th-other"></th>
-          <th class="hide-sm" title="Fantasy points over expected — season average minus projection. Positive means he is outperforming the projection.">Over Expected</th>
-          <th class="hide-sm">Games</th>
-          <th class="hide-sm">Minutes</th>
+          <th class="hide-sm" id="th-over" title="Fantasy points over expected — season average minus projection. Positive means he is outperforming the projection.">Over Expected</th>
+          <th class="hide-sm" id="th-games">Games</th>
+          <th class="hide-sm" id="th-mins">Minutes</th>
         </tr>
       </thead>
       <tbody id="rows"></tbody>
