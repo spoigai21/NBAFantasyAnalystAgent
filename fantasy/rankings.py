@@ -592,6 +592,29 @@ MANUAL_PROJ = {
     "Kevin Durant": 40.0,
     "Darius Acuff Jr.": 40.0,
     "Cameron Boozer": 38.5,
+    # 18 Nov 2026: "siakam u can act low his projection to 39. apparently hes a sell hgh
+    # according to another lloyd video that you dont have so dont both looking for it"
+    # Computed blend was 40.3 (#43) -> 39.0 (~#48). No prior override.
+    # ⚠⚠ PROVENANCE: the sell-high read is USER-RELAYED from a video that is NOT on disk,
+    # and the user explicitly instructed me not to search for it. So it is recorded as
+    # hearsay and MUST NEVER be quoted or attributed to Lloyd -- rules 14 and 19 require a
+    # verbatim string that greps clean in fantasy/transcripts/ before any attribution, and
+    # there is none. If a future session finds the passage, verify the SUBJECT too (rule
+    # 19: a clean hit licenses the words, never the player).
+    # ⚠ OUR OWN DATA CANNOT REPRODUCE THE CALL, recorded so the disagreement is visible:
+    #   - A sell-high by rule 32's definition is 10%+ OVER projection on FEWER minutes
+    #     than projected. Siakam is at parity on both -- current 40.5 (#41) against
+    #     projected 40.3 (#43), so there is no overperformance to sell.
+    #   - Minutes are the steadiest on the board: MINS-OK in all seven recent games,
+    #     30/36/32/35/32/32/34, season 32.4 mpg. No decline for the gate to catch.
+    #   - Signal reads HOLD, not SELL HIGH. And rule 32 measured SELL HIGH at only 52%
+    #     persistence -- the WEAKEST signal in the file, not the most robust.
+    #   - Dunne has him #19, far ABOVE our #43, so 39.0 moves AWAY from the only outside
+    #     source we can actually check. By rule 32's own test that makes this the one
+    #     override on the board sitting outside the verifiable outside range.
+    # Kept anyway: it is the manager's call on a player he does not roster, so the cost of
+    # being wrong is confined to trade pricing if Siakam ever comes up.
+    "Pascal Siakam": 39.0,
     "Julius Randle": 37.5,
     "Nickeil Alexander-Walker": 36.5,
     "Josh Giddey": 36.0,
@@ -628,7 +651,28 @@ MANUAL_PROJ = {
     "Fred VanVleet": 34.5,
     "Zach LaVine": 33.5,
     "Keegan Murray": 33.5,
-    "Isaiah Hartenstein": 33.4,
+    # 18 Nov 2026: "lower hartenstein to 30" -- 33.4 -> 30.0.
+    # ⚠ This one our data DOES support, unlike the Siakam cut above. Minutes are the
+    # problem and minutes are coach-controlled, so they do not revert (rule 27): 24.9 mpg
+    # season against a higher projection, recent games 25/26/26/18/30/18 with two
+    # MINS-DOWN and touches FROZEN or USG-DOWN in four of six. The one ELITE night (64 on
+    # 30 min, 13 Nov) is his only ROLE-UP game and Lloyd flagged it as shooting -- "a big
+    # offensive game from Isaiah Hartenstein, who'd been missing every shot possible"
+    # (11 Nov, LLOYD dict) -- i.e. the reverting half, per rule 31.
+    # Dunne has him #102, BELOW our #92, so 30.0 moves TOWARD the outside source.
+    "Isaiah Hartenstein": 30.0,
+    # 18 Nov 2026, same instruction as Markkanen above. Computed blend was 32.0 (#100);
+    # 33.5 lands ~#92. No prior override.
+    # ⚠ This one runs AGAINST our own form screen, which has him FADE (minutes) -- 12%
+    # under on falling minutes, and rule 32 measured that gate at 65% persistence. Noted,
+    # not disputed, because the screen cannot see the thing that probably explains it:
+    # he has 9 GP against the team's ~15, so the early 7- and 19-minute games are a
+    # return ramp, not a demotion -- rule 32's ACTIVE-but-capped blind spot again (Edey,
+    # Coby White). Log 7/19/19/28/31/26/22 is a ramp that has stalled, not a bench.
+    # Dunne has him #73 against our #100, so 33.5 moves TOWARD the outside source.
+    # ⚠ What would settle it is whether the 26 and 22 are the cap or the new normal --
+    # if minutes stay in the low 20s with Zubac healthy, this is too high.
+    "Ivica Zubac": 33.5,
     "Ausar Thompson": 30.0,
     # 15 Nov 2026 -- "move quickleu projections so hes now set at 36"
     "Immanuel Quickley": 36.0,
@@ -656,7 +700,14 @@ MANUAL_PROJ = {
     "Chet Holmgren": 38.0,       # down from 39.8 (3 GP)
     "Keyonte George": 37.0,      # up from 35.0
     "James Harden": 37.0,        # up from 36.5
-    "Lauri Markkanen": 35.0,     # down from 35.7
+    # 18 Nov 2026: "zubac upgrade his to 33.5 and lauri u can upgrade to 36"
+    # LAURI 35.0 -> 36.0. Minutes are healthy and steady -- 34/39/31/29/38/34, MINS-OK or
+    # MINS+ in every real game; the lone 6-minute night (26 Oct) is the only outlier.
+    # He is currently OUT, which is correctly IRRELEVANT here: the projected list takes no
+    # injury adjustment at all by the user's own instruction ("dont look at injuries at
+    # all just what are the values projected to be"). Dunne has him #30 against our #78,
+    # so 36.0 moves TOWARD the outside source. Lands ~#72.
+    "Lauri Markkanen": 36.0,     # down from 35.7
     "Josh Giddey": 34.5,         # down from 36.0
     "Alex Sarr": 34.5,           # unchanged in value, now pinned by hand
     "Anthony Black": 32.0,       # down from 35.0
@@ -682,7 +733,40 @@ MANUAL_PROJ = {
     # have him 76th (preseason, 16 Sep) and Dunne 77th. So unlike the Jalen Johnson override,
     # this one lands at the TOP of the outside range rather than inside it. Worth re-reading
     # if his minutes (29.1) stay under the 31.4 ESPN projects.
-    "Damian Lillard": 38.2,
+    # 18 Nov 2026: "move dame lillard to 39.5. lloyd has him in the top 40 and hes better
+    # in points leagues so this is a fair move up." 38.2 -> 39.5. Third user reaffirmation
+    # on Dame; taken as his standing forward call.
+    # ⚠ THE CITED REASON IS NOT THE REASON THIS SURVIVES. Two corrections, both recorded
+    # because the number stays either way:
+    #  (a) Lloyd never said top 40. The two hand-verified anchors (LLOYD dict, 10 Nov) are
+    #      "He's top 90 on the season" (current) and "I feel like he's going to get to top
+    #      30 this year" (projected). So the real quote is HIGHER than the one cited --
+    #      the user is being conservative against Lloyd, not generous. But rule 3 bars
+    #      ingesting either one: Lloyd supplies mechanism, never ranks, by the user's own
+    #      16 Nov instruction. His recap ranks are also category-flavoured (rule 32).
+    #  (b) "better in points leagues" is the weak half. Dame's single best category-league
+    #      asset is free-throw shooting, and in OUR scoring the FT bundle is a NET LOSS:
+    #      FTM 5.3 applied against FTA -6.2 = -0.9/g, because FTM pays +1 and FTA costs
+    #      -1. He also draws essentially nothing from the STL/BLK +4 premium that is the
+    #      actual difference between our format and generic points -- 0.1 blocks, 0.4
+    #      applied. Rule 24's "generic lists undervalue shot-blockers for us" does not
+    #      apply to him; if anything it runs the other way.
+    # ⚠ WHAT DOES JUSTIFY IT (rule 32's own test -- an override inside the range of the
+    #   outside sources is a correction, outside it is a thumb on the scale): Lloyd has him
+    #   projected top 30, Dunne has him 77th. 39.5 lands ~#47, inside that range. Passes.
+    # ⚠⚠ 39.5 DOES NOT PRODUCE A TOP-40 RANK HERE. Measured off this board, not guessed
+    #   (the Brandon Miller lesson): #39 is 41.3 and #40 is 41.1, while 39.5 slots between
+    #   Siakam 40.3 (#42) and Ty Jerome 39.0 (#48), i.e. ~#47. Our list is 132 rostered
+    #   players in a 9-team league and is denser at the top than a 12-team list. If the
+    #   INTENT was the rank rather than the number, this needs ~41.3.
+    # ⚠ RAISED AGAIN SAME DAY, 38.2 -> 39.5 -> 40.5. User: "ok so im pretty conservative
+    #   on dame then. in a points league its well known dame is typically better. i think
+    #   we can increase his projection to 40.5 then." He reaffirmed the points-league
+    #   premise after seeing the FT-bundle arithmetic above, so it is his call and the
+    #   objection in (b) is NOT relitigated -- it stays on record and the number stands.
+    #   40.5 lands ~#43. Still not top 40: that needs 41.1+ (Paul George is #40 at 41.1).
+    #   Outside range is unchanged, Lloyd top-30 to Dunne #77, so 40.5 is still inside it.
+    "Damian Lillard": 40.5,
     # 15 Nov 2026 -- "why is haliburton not on these rankings? put him in as injured w/
     # hamstring and coming off achilles his projected 47 fantasy points." He was missing
     # because he is on 4 GP, under MIN_GP. A hand-set projection now clears that floor.
