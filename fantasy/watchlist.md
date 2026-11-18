@@ -2884,3 +2884,25 @@ his per-game follows, the `BUY (usage up)` signal is spent.
 **Trigger: before relying on transaction history again.** Newest row is **2026-10-25**, so the
 Ja'Kobe Walter add (~30 Oct) and drop are missing entirely. I nearly treated Walter as still
 rostered off Lloyd's positive note on him.
+
+### Damian Lillard — the minutes test on the 38.2 override
+**Trigger: 8 Dec 2026, or 10 Dame games after the trade, whichever is first.**
+Accepted 17 Nov 2026: Dame for Cedric Coward, the user's call, made against my
+recommendation and with the downside stated (*"worst case they end up the same and ill take
+the hit for that"*). He is right that Coward's spike was propped — Ty Jerome out for both
+monsters (Jerome in: 10 games, 36.5/g; Jerome out: 3 games, 49.7/g) — and right that Coward's
+touches are thin (18.8% usage vs Dame's 27.5%).
+**What decides whether 38.2 was correct, and it is one axis only: MINUTES.**
+He is at 29.1 mpg against a 31.4 projection, and the trend is the wrong way — first five games
+29.0 mpg, last five **26.6**. The rate half of the override is sound and should revert on its
+own (41% FG, 82% FT are both under his norms; Lloyd, 9 Nov: *"I don't believe that Damen
+Lillard's an 82% free throw guy. I don't believe he's going to sit at 41% from the field"*).
+⚠ **The minutes half has the player on record against it.** Lillard, Yahoo Sports 20 Oct 2026:
+*"I know I'm 36 and we've had conversations about I'm not going to be playing 38 minutes per
+night"* and *"with the depth that we have, specifically at the guard position... I don't think
+I'll be having to play super high minutes."* Backed by the rotation: on 10 Nov, in a 20-point
+win, Sissoko 33 / Holiday 25 / Scoot 23 with Dame at 24.
+**Read it this way at the trigger:** minutes settled at 31+ → the override was right, leave it.
+Still 26-28 → the shooting reversion lands on too little volume and the honest number is
+~35-36, so cut MANUAL_PROJ back. Do NOT read a hot shooting week as the thesis working; that
+is the half that was always going to come back.

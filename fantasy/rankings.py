@@ -596,7 +596,32 @@ MANUAL_PROJ = {
     "Nickeil Alexander-Walker": 36.5,
     "Josh Giddey": 36.0,
     "Yaxel Lendeborg": 36.0,
-    "Darius Garland": 36.0,
+    # 18 Nov 2026: "move copy white to 33. move darius to 38 projections fantasy points"
+    # ⚠ "copy white" is COBY White (typo), not Derrick White -- unambiguous this time
+    # because the instruction follows my own flag on Coby. See the line-551 warning for
+    # the 15 Nov case where a bare "white" DID mean Derrick.
+    # COBY WHITE: no prior override. Blend had him 23.7 (#131), built on three 16-18 min
+    # games shot at 12-33%. Real 7-game log in our scoring: 6/9/1/20/25/23/35, last four
+    # 25.8/g. Minutes 16/18/16/20/20/20/26, FGA 8-9 -> 12-16, FG% 13-33 -> 50/54/50 --
+    # rule 31 with BOTH halves moving. Coach Charles Lee put him on a minutes restriction
+    # at his 2 Nov debut (he missed the first six games), so this is rule 32's
+    # ACTIVE-but-capped blind spot, the Edey case, not a role cut. Lloyd, 17 Nov: "Even
+    # though his minutes limit was increased, it still wasn't enough and he didn't play
+    # overtime... what White is doing in these limited minutes should give you some pretty
+    # good hope for some big numbers coming later down the track."
+    # ⚠ 33.0 is ABOVE the 28-32 band I measured off the last four games -- it prices a
+    # further minutes step up to ~30, not just the 26 he has now. Flagged, not disputed:
+    # it is the manager's forward call and the only way a lifting cap gets into the number
+    # at all, since ESPN's projection is frozen at preseason. Lands him ~#97.
+    # ⚠⚠ DATA GAP that makes the old 23.7 worse than it looks: game_grades holds only
+    # 5 of his 7 games (10 Nov and 13 Nov predate him joining the roster -- rule 27's
+    # backfill hole), so the form window is missing a 20 and a 25.
+    "Coby White": 33.0,
+    # GARLAND 36.0 -> 38.0. Mechanism is Lloyd, 17 Nov, naming the suppressor and saying
+    # it cleared: "The turnovers have been a problem. What were they here? Only one...
+    # we're getting back to business with old mate Darius Garland." Turnovers are -2 each
+    # here. Blend had him 36.0 on 33.9 current; 38.0 lands him ~#58.
+    "Darius Garland": 38.0,
     "De'Aaron Fox": 36.0,
     "Trey Murphy III": 36.0,
     "Derrick White": 36.0,
