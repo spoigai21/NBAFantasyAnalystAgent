@@ -2906,3 +2906,47 @@ win, Sissoko 33 / Holiday 25 / Scoot 23 with Dame at 24.
 Still 26-28 → the shooting reversion lands on too little volume and the honest number is
 ~35-36, so cut MANUAL_PROJ back. Do NOT read a hot shooting week as the thesis working; that
 is the half that was always going to come back.
+
+### Matas Buzelis — does the role survive Caleb Wilson's return?
+**Trigger: 3 Dec 2026 (Bulls' stated re-evaluation), then the return window 10–24 Dec.**
+Caleb Wilson fractured his right hand 11 Nov vs San Antonio, had surgery 12 Nov, **out 4–6
+weeks** (Shams/ESPN), with a three-week re-evaluation rather than a firm date. Buzelis's
+run starts the game Wilson went down.
+
+**Held at 34.0 on 19 Nov — deliberately NOT raised yet, user's call.** The production says
+raise: minutes dead steady at **31/31/29/30/31/30** and the last four games **36 / 34 / 34 /
+56**, with 25 pts, 5 reb, 4 ast, 2 stl, 1 blk and five threes on 56% in the 56. Lloyd, 18
+Nov: *"since he's been out, we're seeing players that we knew could do stuff do stuff…
+47th inside the top 50."*
+
+**Lloyd's doubt:** *"Is it going to stick when Caleb comes back? I don't know. But I also
+don't care because we're weeks away from that happening."* — i.e. he ducks the question
+this watchlist item exists to answer.
+
+**THE USER'S THESIS, and it is the reason we are waiting rather than declining (19 Nov):**
+*"the thing about players mentality is that now that matas and giddey are more involved AND
+they are winning games AND they are gaining confidence this may help them to maintain value
+even when caleb comes back."*
+Three compounding mechanisms, none of which our screen can measure:
+1. **Involvement** — usage granted in an absence can become habit; a coach who has seen it
+   work is slower to take it back than a depth chart implies.
+2. **Winning** — Chicago beat Brooklyn 137-107 with Buzelis and Giddey leading it. Results
+   are what buy a role permanence, and rule 32's whole point is that the coach-controlled
+   axes do not revert on their own — they revert when the coach decides, and a winning
+   stretch is a reason not to.
+3. **Confidence** — rule 31 already says attempts are *willingness*, not touch. Buzelis's
+   collapse was measured at **−4.25 pts/g from fewer attempts** (12.5 → 9.0 FGA). If
+   confidence is what restores the attempts, that is the non-reverting half coming back.
+⚠ This is a real argument and it is **untestable before the trigger**, which is exactly why
+it is logged here instead of priced in now.
+
+**Read it this way at the trigger:**
+- Wilson back AND Buzelis holds 28+ minutes with attempts near his current level → the
+  thesis is right, raise toward the high 30s.
+- Wilson back AND minutes fall to low 20s / attempts back toward 9 → Lloyd was right, 34.0
+  was correct, leave it.
+- Wilson still out at 24 Dec → no information; do NOT read continued production as the
+  thesis working. That is the half that was always going to be there.
+⚠ Same test applies to **Josh Giddey** (Top G) — he is the control. If Giddey's role also
+survives Wilson's return, it is a Chicago-wide change; if only one of them holds it, it is
+about that player.

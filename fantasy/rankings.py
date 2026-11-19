@@ -579,7 +579,16 @@ MANUAL_PROJ = {
     # in an ESPN points league, which I could NOT verify in the transcripts on disk — but
     # the quotes above are on disk and already carry the argument.
     "Jalen Johnson": 48.0,
-    "Anthony Davis": 46.5,   # 15 Nov 2026 -- "update ad projected value to 46.5"
+    # 15 Nov 2026 -- "update ad projected value to 46.5". RAISED 19 Nov 2026 to 48.5:
+    # "update anthony davis projection to 48.5". The 46.5 had fallen BELOW his own current
+    # production (50.6, #12), which is the clearest case for an override there is -- the
+    # blend was still shrinking him toward a frozen preseason projection. Lloyd, 18 Nov:
+    # "he's playing tons of minutes and he's putting up huge numbers. He is the seventh
+    # ranked player over the last two weeks... shaping up to be like the Kawi Leonard of
+    # last season." 48.5 still sits UNDER his current, so it is not a bet on improvement.
+    # ⚠ The standing risk is unchanged and is availability, not level (README): he is 14 of
+    # 15 team games this season, which is the whole thesis holding so far.
+    "Anthony Davis": 48.5,
     "Amen Thompson": 43.0,
     "Domantas Sabonis": 43.0,
     "Brandon Miller": 42.0,
