@@ -589,7 +589,19 @@ MANUAL_PROJ = {
     # ⚠ The standing risk is unchanged and is availability, not level (README): he is 14 of
     # 15 team games this season, which is the whole thesis holding so far.
     "Anthony Davis": 48.5,
-    "Amen Thompson": 43.0,
+    # 14 Nov 2026 set to 43.0 ("move the amen projection so he averages 43 fantasy
+    # points"); LOWERED to 42.0 on 19 Nov 2026 -- "lower amen projection to 42 fantasy
+    # points". Lands ~#28, still well above his 38.6 current (#52).
+    # Mechanism, and it is a role ceiling rather than a slump -- Lloyd, 18 Nov: "the last
+    # time we saw him was absolutely amazing in that game WITHOUT Fred Vanbley. He was
+    # pretty good here 15 and nine with a steal and a block... 33 fantasy points. He's
+    # clearly still not back to his best and that might be hard to come by just with the
+    # VANBLE POSITIONING." So the ceiling games are VanVleet-absent ones, which is the
+    # same shorthanded-sample check the user taught me on Coward (research, 17 Nov).
+    # ⚠ Note the shape the 43.0 was fitted to has not changed: minutes bounce 29-41 with
+    # MINS-DOWN in three of the last five, and the scoring swings 17/48/28/50/35/62/35 --
+    # touches are USG+ in four of seven, so this is volatility, not a role loss.
+    "Amen Thompson": 42.0,
     "Domantas Sabonis": 43.0,
     "Brandon Miller": 42.0,
     "Dyson Daniels": 42.0,

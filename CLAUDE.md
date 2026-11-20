@@ -787,6 +787,33 @@ assistant. Read `README.md` for the full league and roster picture before non-tr
    independent clock (~3 Dec) and that note converge on **late November** — two outside
    guesses, not Memphis. Do not quote either as a team position.
 
+   ⚠⚠ **A PLAYER ON A MANAGED RETURN IS AN EXCEPTION TO THE WHOLE MINUTES AXIS — DO NOT RUN
+   THE ROTATION TEST ON HIM AT ALL. User, 20 Nov 2026: *"stop u cant say that it plays a role
+   in minutes. the reaosn his minutes are low is cuz of the ramp up your making unnecessary
+   correlations here that dont work out. i think players like dame are an exception to your
+   rule."*** He is right, and this is **stronger than the Edey note above it.** Edey taught me
+   that a ramp can *masquerade* as a benching, so detect the confounder. Dame teaches that for
+   an established star on a managed return there is **no rotation signal in the minutes to
+   begin with** — the number has one cause, and competition for playing time is not a
+   candidate explanation worth testing.
+   **What I did wrong.** Lillard is 36 and in year one back from a torn Achilles, sitting at
+   29.6 mpg. The user discounted his projection partly for a *"crowded team"* — Portland have
+   Holiday, Scoot Henderson, Cissoko, Camara, with Morant and Sharpe due back. I turned that
+   into a **minutes** cross-tab (Morant IN: 29.5 mpg; Morant OUT: 29.6 mpg) and reported "the
+   crowding hasn't cost him minutes yet." Flagging the sample as confounded was not enough:
+   **putting the two variables in one table already asserts that crowding is a candidate
+   cause of his minutes, and it is not.** Portland are not choosing between Lillard and Scoot
+   Henderson for a rotation spot; they are easing a 36-year-old back, and he will get his
+   minutes when he is ready regardless of who else is on the roster.
+   **The split that survives, and it is the user's own distinction:** crowding is a real
+   reason to discount him, but it acts on **TOUCHES**, never on minutes. Minutes = the ramp,
+   and they resolve **upward** on a medical clock. That is the paragraph above this one
+   applied correctly — two causes, two timelines — rather than a correlation hunt.
+   **So before testing any minutes figure against a rotation: ask whether the player's minutes
+   are even his coach's decision this season.** Established star + managed return = no, the
+   test is void, do not run it and do not print it. The grader's `min_grade` on such a player
+   is noise for the same reason.
+
    ⚠⚠ **AND THE INJURY GATE MISSED BRANDON MILLER A SECOND TIME — 14 Nov 2026, AND THIS ONE
    IS ON THE CODE, NOT THE READ.** I published the form table with Miller at **FADE
    (minutes)**. User: *"for brandon miller i dont know what you are saying bruh he got

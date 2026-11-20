@@ -1,3 +1,109 @@
+## ⚠ 20 NOV — TRIGGER: **DAME, THE FIRST GAME JA MORANT OR SHAEDON SHARPE PLAYS.**
+**Decided on TOUCHES ONLY.** Projection stays **40.5**.
+
+**His minutes are NOT part of this item and must not be tested against the rotation.**
+User, 20 Nov: *"u cant say that it plays a role in minutes. the reaosn his minutes are low is
+cuz of the ramp up... players like dame are an exception to your rule."* He is 36 and in year
+one back from a torn Achilles. Portland are not choosing between him and Scoot Henderson for
+a rotation spot — they are easing him back, and 29.6 mpg has **one** cause. Minutes resolve
+**upward** on a medical clock. I previously ran a Morant-in/Morant-out minutes cross-tab here;
+it is deleted, because putting those two variables in one table already asserts a cause that
+does not exist. See the 20 Nov amendment in CLAUDE.md rule 32.
+
+**What the discount is actually for — touches.** The user's 40.5 is discounted for a crowded
+room and for age, and crowding acts on the **possession hierarchy**, never on his minutes.
+Out or DTD in Portland now: **Ja Morant** (28.4 mpg, 37.3/g), **Shaedon Sharpe** (29.4 mpg,
+**zero games this season**), Vit Krejci, Robert Williams III; **Deni Avdija** (33.4 mpg,
+45.0/g) is DTD and was a DNP-CD on 19 Nov. Already playing: Holiday 29.4, Scoot 24.9, Cissoko,
+Camara 33.3. Rule 32: usage persists at 90% against 65% for minutes, so when Morant or Sharpe
+returns, read **shot attempts and assists** and nothing else.
+
+**The counterweight is live and measured.** 3PT by phase **32.7% -> 34.1% -> 40.9%**; points
+19.3 -> 20.4 -> 24.0. 3PM pays +1 on top of FGM +2 here, so that is the category that moves
+his value in this format. Last four: 29, 9, 25, 33 points.
+
+**DOWN (cut toward 39.5 or below):** Morant or Sharpe back AND his attempts fall under ~14 a
+game across three games.
+**UP (leave it or raise):** 3PT% holds above 40% over five more games with the room healthy.
+**Sizing, measured off the board:** 40.5 = #42, 39.5 = #48 — six ranks for one point only
+because a four-man pileup sits at exactly 40.0 (Durant, LeBron, Banchero, Acuff). A cluster
+artifact. Either number leaves him a clear starter in a 9-team league.
+
+## ⚠ 19 NOV — WATCH (not a concern yet): **WEMBANYAMA'S LAST FOUR.** 48 / 76 / 62 / 61 = 61.8/g,
+against 75.9/g over the nine before that. **Trigger: after two more Spurs games (on the
+current schedule, Sat 21 Nov and the following one).**
+
+**Why it is NOT a finding yet, and what would make it one.** Tonight (19 Nov, SA beat LAC
+124-112) he played **33 minutes** — normal — took **26 field-goal attempts**, his most of
+the season against a 20.5 average, and converted **50%** (13-26) for 32 points and 11
+rebounds. Rule 31 reads that as minutes fine, attempts UP, conversion fine: there is nothing
+on the coach-controlled side and nothing on the willingness side.
+**The entire dip is blocks and steals.** He averages **4.4 blocks and 1.1 steals**, which in
+this scoring is worth about **22 points a night**. In the last four he has been nowhere near
+that, and tonight he had **one of each — 8 points**. Against a ~10-point gap to his own
+average, that single category more than accounts for it, meaning everything else was *above*
+his rate. [NBA.com, Nov 2026](https://www.nba.com/news/visualizing-the-game-victor-wembanyama-block-party)
+independently has him at a career-high 4.3 blocks a game with an 8-block game the same week,
+so **one block is the outlier, not the new level.**
+**UP (close this item):** any game back at 3+ blocks. That is the whole item.
+**DOWN (escalate):** minutes under ~28 on a non-blowout night, OR attempts back under ~18,
+OR a third straight game under 2 blocks *with* the rebounds also down — that combination
+would point at something physical rather than variance.
+⚠ Do not price this. He is still #1 on both lists at **70.9/g over 16 GP** and the 60.0
+adjusted projection is already *below* that. Four games is four games (rule 12).
+
+## ⚠ 19 NOV — TRIGGER: **DEJOUNTE, 15 DEC.** The 42.5 has four weeks with no new data.
+
+**Trigger: 15 Dec 2026** (Lloyd's trade-eligibility date), with an earlier check the first
+game he actually plays. **Decided on usage, not minutes** — minutes were never the problem.
+
+**Why a trigger and not a change: the user has not asked for one, and his read is right.**
+19 Nov: *"dont agree with what he said about dejounte i think dejounte can get steals assists
+and points more efficient... def not a drop in shallow leagues."* He is right that it is not a
+drop, and the format reason is **bigger than he put it** — see the measurement below. The
+42.5 stays where he set it.
+
+**What is actually frozen.** He has been **OUT since 15 Nov with a left ankle sprain**, and the
+absence began **one day after Shams reported his trade request** (Pelicans confirmed).
+ClutchPoints, 16 Nov: *"it would be a shock to see him play another game for the franchise."*
+Rotowire: may not return *"before the new year."* Lloyd puts the trade at **15 Dec at the
+earliest** — *"you're talking four weeks away"* — and *"I don't think this is getting resolved
+really at any point soon."* **So our 9 GP is the whole sample until roughly mid-December.**
+
+**The format premium, measured in OUR scoring (this is the keep case):**
+
+| | last season (14 GP) | now (9 GP) | our scoring |
+|---|---|---|---|
+| **STL** | 1.64 | 1.63 | flat — **6.5 pts/g at +4** |
+| **BLK** | 0.21 | **0.63** | **tripled — 2.5 pts/g at +4** |
+| **TOV** | 3.36 | **2.38** | **+2.0/g gain** |
+| AST | 6.36 | **4.50** | **−3.7/g** |
+| PTS | 16.7 | **14.5** | −2.2/g |
+| mpg | 27.9 | **31.9** | minutes are **UP** |
+
+**9.0 fantasy points a game — 28% of his whole 31.7 — is steals and blocks.** A generic points
+league pays that bundle **4.5**, so the format is worth **+4.5/g** on him specifically, and his
+defence is **+1.6/g better than last season.** That is the real answer to the drop question and
+it is invisible in every list being quoted at us (rule 24).
+
+⚠ **But the volume is down while the minutes are up, so it is usage, not shooting.** 20.1%
+against a 26.7% projection = `FADE (usage)`, the 90%-persistence signal, with the touches gone
+to **Jeremiah Fears** (confirmed 12 Nov with both men healthy). Rule 31: this is *not* the
+ignorable half of a bad stretch.
+
+**The disagreement to resolve on 15 Dec.** Ours **#29 (42.5)**; the un-overridden blend is
+**33.8**; **Dan Titus / Yahoo points-specific** has him **68th and falling**; Windhorst calls
+him a *"distressed asset"*. Format buys back 10-15 spots of a 40-spot gap, not 40.
+**The question that decides it is not whether he is dropped — it is whether the new team gives
+him the ball.** Lloyd's Phoenix scenario says no: *"he still will be number two behind
+[Devin] Booker and he'd have to fight Dylan Brooks for shots."*
+
+**What would move the number UP:** a landing spot where he is the primary handler, or usage
+back above ~25% in his first three games anywhere. **What would move it DOWN:** still OUT on
+15 Dec, or a return at 20% usage behind another lead guard.
+
+---
+
 ## 🌙 14 NOV (late) — SATURDAY LOGGED + COWARD TRADE QUESTION
 
 **Day 6: 191-139, lead +298 -> +350.** Giannis 90 (31min, 34/14/8, 13-17 FG, 3blk — season

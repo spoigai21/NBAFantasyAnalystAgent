@@ -2976,3 +2976,76 @@ at center** considering both Edey and Quinten Post (concussion) are listed out f
 - **LaMelo Ball (Top G) is 14th over the last two weeks** — 22/3/9 on six threes in under 30
   minutes. Relevant to the standing LaMelo-for-Anthony-Davis offer: Lloyd is very high on him.
 - Cade Cunningham 52 and 11 (double OT) was the line of the night.
+
+---
+
+## Thu 19 Nov 2026 — MAILBAG (with Adam "Kingy" King)
+
+Transcript: `fantasy/transcripts/2026-11-19_mailbag.txt`. Mailbag format, so almost all of
+this is other people's rosters. Two of my players came up.
+
+### Dejounte Murray — the drop question, and WHO said what
+
+⚠ **The drop is two different people's calls and they are not the same claim.** The question
+asked was *"What do you do with Dejonte Murray in a shallow points league, Kingy?"*
+- **KINGY** is the one who actually dropped him: *"I'm pretty sure I dropped him in a league
+  where we roster 80 players. So, that's very shallow."*
+- **LLOYD**, on a 10-team points league, is hedged: *"Maybe I'd actually be okay with moving
+  on."* Not a verdict.
+
+**The mechanism — the only part rule 3 lets us take, and it is the valuable part:**
+> *"I think you're not getting a trade happen until at least **December 15th**. So, you're
+> talking four weeks away... if he does end up in Phoenix, he still will be number two behind
+> [Devin] Booker and he'd have to fight Dylan Brooks for shots."*
+
+Plus *"doesn't appear to be a great locker room guy... I'm not sure teams are falling all over
+[themselves]"* and *"I don't think this is getting resolved really at any point soon."*
+The **"Top 70ish, maybe"** that follows is a rank and is **not ingested** (rule 3).
+
+**The user disagrees with the conclusion and he is right, but on a different premise than he
+gave.** Measured, in our scoring, against last season:
+- **RIGHT, and understated:** STL 1.64 → 1.63 (flat), **BLK 0.21 → 0.63 (tripled)** = **9.0
+  fantasy points a game from defence alone, 28% of his entire 31.7.** A generic points league
+  pays that bundle **4.5**. His defence is **+1.6/g better** than last season, and turnovers
+  fell 3.36 → 2.38, another **+2.0/g** for us.
+- **WRONG on the other two:** AST **6.36 → 4.50**, PTS **16.7 → 14.5**, FG 48.4% → 43.8% on
+  **fewer** attempts (13.0 → 12.0) — while he plays **more** (27.9 → 31.9 mpg). Volume down on
+  minutes up is **usage** (20.1% against a 26.7% projection), the coach axis that does not
+  revert. Not efficiency.
+
+**Why he is OUT, which the API does not carry:** **left ankle sprain**, first missed game
+13-14 Nov — beginning **one day after** Shams reported the trade request. ClutchPoints, 16 Nov:
+*"it would be a shock to see him play another game for the franchise."* Rotowire: may not
+return *"before the new year."* So the 9 GP on our board are **capped** — no new data for weeks.
+
+⚠ **Our 42.5 (#29) is a user override from 15 Nov; the un-overridden blend is 33.8.** Dan Titus
+/ Yahoo **points-specific** has him **68th and falling**. Format explains 10-15 spots of that,
+not 40. Decided watchlist item, not a projection change — the user has not asked for one.
+
+### Zach Edey — both of them say HOLD
+
+Lloyd: *"he probably is your worst player, but you've got to look at what's happened and sort
+of wall it off... I'm just not that quick to cut Zack Edy at this point."* Kingy: *"It hasn't
+really crossed my mind yet to cut him."* Usable mechanism: Isaiah Stewart is dismissed as a
+stash because *"we would need a Zach Edi injury for him to sniff value"* — **the job is not
+contested.**
+
+⚠ **Do not use the "29 minutes" line.** The transcript reads *"He found out yesterday, too...
+that's why he played 29 minutes yesterday"* — a garbled caption, and the number **contradicts
+our own ESPN applied log: Edey played 21.0 minutes on 18 Nov.** Last eight: 21/21/20/23/20/25/
+19/18, MINS-DOWN in six. **The ankle cap has not lifted.** The 20-and-10 Lloyd points to is
+real and in our data (16 Nov, 50 fantasy points, ELITE).
+
+### League-wide, worth one line each
+
+- **Dylan Harper** — avoided major injury, **1-3 weeks**, left hip rotator strain. Lloyd
+  expected 4-6. Kills the Champagnie/Vel streaming window early.
+- **Ausar Thompson** — Kingy *"I love Assar, I'm as high as anyone on Assar"*, but the stated
+  worry is **"Assar's minutes and rebounds when [Jalen] Duren is back"** — which is exactly
+  rule 27's Paul Reed shape. Not my player; relevant only to the 30.0-vs-40.3 gap I flagged.
+- **Ty Jerome** — hip, *"four or five consecutive games"*, and Lloyd is concerned given a
+  specific hip-surgery history. Cam Spencer is the add, not Champagnie.
+- **Jusuf Nurkic** — slow ramp, *"they might keep him at like 24 or 25 minutes"*, frustrating
+  4-6 weeks. Not a priority add.
+- **Stashing** — Lloyd's blanket position: *"it is such a small percentage chance that you win
+  from it"*; they come back on minutes limits and eat the IR slot you need later.
