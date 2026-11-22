@@ -1,3 +1,36 @@
+## ⚠ 22 NOV — TRIGGER FIRED, NOW COUNTING: **TY JEROME IS BACK. COWARD WATCH IS LIVE.**
+**Need 3-4 more games before judging. First data point went AGAINST my regression thesis.**
+
+Ty Jerome returned **Sat 21 Nov** — 27 min, 18 pts, 6 ast, started, after missing five games.
+That is the event the 20 Nov trade retrospective said would settle whether Cedric Coward's
+breakout is real or an absence artifact.
+
+**Game 1 with Jerome back: Coward went 42.** 30 minutes — **above** his 28.7 season average and
+above both sides of the old split (29.0 with Jerome, 28.2 without) — 23 pts on 8-16, **4-7 from
+three (57%)**, 7 reb, 2 ast, **4 steals**, and 6 turnovers.
+
+**What this does and does not mean.** It does **not** settle it: n=1, and a 46.3% season
+three-point rate still has to regress on any reasonable prior. But two things in it cut against
+the thesis I argued on 20 Nov — his **minutes did not drop** with Jerome back, and he kept
+shooting at the hot rate in the one game that was supposed to test it. The steals, which were
+always the format-correct part of his value, showed up again at 4.
+**Count 3-4 more Jerome games before concluding.** If he holds ~40%+ from three with Jerome
+playing, the trade reads worse than the 20 Nov verdict and I should say so plainly.
+
+---
+
+## ⚠ 22 NOV — **DAME TRIGGER HAS NOT FIRED. Morant and Sharpe both still out.**
+Projection stays **40.5**. Minutes are still not to be tested against the rotation.
+
+Sat 21 Nov: **Ja Morant DNP — LEFT HAMSTRING** (now a named injury, previously just OUT), and
+**Shaedon Sharpe still has not played a game this season.** So the touches test is still pending.
+Deni Avdija *is* back (36 min, 20 pts).
+**Lillard's Saturday was a pure shooting night and belongs in the bin:** 33 minutes — above his
+29.6 average — 5-16 FG, **1-9 from three**, 3 ast, 23 fantasy points in a 96-97 loss. Minutes
+fine, attempts fine (16 FGA, 9 from deep is plenty of volume), conversion cold. Rule 31's
+ignorable half. His 3PT rate by phase was 32.7 -> 34.1 -> 40.9; this game pulls that back and
+that is what a 36-year-old's variance looks like, not a trend.
+
 ## ⚠ 20 NOV — TRIGGER: **DAME, THE FIRST GAME JA MORANT OR SHAEDON SHARPE PLAYS.**
 **Decided on TOUCHES ONLY.** Projection stays **40.5**.
 
@@ -29,28 +62,17 @@ game across three games.
 because a four-man pileup sits at exactly 40.0 (Durant, LeBron, Banchero, Acuff). A cluster
 artifact. Either number leaves him a clear starter in a 9-team league.
 
-## ⚠ 19 NOV — WATCH (not a concern yet): **WEMBANYAMA'S LAST FOUR.** 48 / 76 / 62 / 61 = 61.8/g,
-against 75.9/g over the nine before that. **Trigger: after two more Spurs games (on the
-current schedule, Sat 21 Nov and the following one).**
+## ✅ 19 NOV WEMBANYAMA WATCH — **CLOSED 22 NOV, emphatically.**
 
-**Why it is NOT a finding yet, and what would make it one.** Tonight (19 Nov, SA beat LAC
-124-112) he played **33 minutes** — normal — took **26 field-goal attempts**, his most of
-the season against a 20.5 average, and converted **50%** (13-26) for 32 points and 11
-rebounds. Rule 31 reads that as minutes fine, attempts UP, conversion fine: there is nothing
-on the coach-controlled side and nothing on the willingness side.
-**The entire dip is blocks and steals.** He averages **4.4 blocks and 1.1 steals**, which in
-this scoring is worth about **22 points a night**. In the last four he has been nowhere near
-that, and tonight he had **one of each — 8 points**. Against a ~10-point gap to his own
-average, that single category more than accounts for it, meaning everything else was *above*
-his rate. [NBA.com, Nov 2026](https://www.nba.com/news/visualizing-the-game-victor-wembanyama-block-party)
-independently has him at a career-high 4.3 blocks a game with an 8-block game the same week,
-so **one block is the outlier, not the new level.**
-**UP (close this item):** any game back at 3+ blocks. That is the whole item.
-**DOWN (escalate):** minutes under ~28 on a non-blowout night, OR attempts back under ~18,
-OR a third straight game under 2 blocks *with* the rebounds also down — that combination
-would point at something physical rather than variance.
-⚠ Do not price this. He is still #1 on both lists at **70.9/g over 16 GP** and the 60.0
-adjusted projection is already *below* that. Four games is four games (rule 12).
+The item asked for *"any game back at 3+ blocks"* to close it. On **Sat 21 Nov he had FIVE blocks
+and FOUR steals** in a 114-91 win over New Orleans, plus **50 points on 20-29 FG, five threes and
+19 rebounds** in 32 minutes — **124 fantasy points**, the biggest single game on this roster all
+season and 43% of my whole day. Nine stocks is 36 points on its own.
+The four-game dip (48 / 76 / 62 / 61) was exactly what the item said it was: block variance, not
+role, not minutes, not health. Season average is now **74.0/g and he remains #1 on both lists.**
+Lesson worth keeping: the item was written as a *watch with a closing condition* rather than a
+concern, and that was the right call — a 10-point gap to his own average that is fully explained
+by one volatile category does not deserve a projection change.
 
 ## ⚠ 19 NOV — TRIGGER: **DEJOUNTE, 15 DEC.** The 42.5 has four weeks with no new data.
 
