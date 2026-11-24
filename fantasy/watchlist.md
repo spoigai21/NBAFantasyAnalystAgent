@@ -1,3 +1,126 @@
+## ⚠ 24 NOV — **AMEN'S MINUTES HAVE A NAMED CAUSE NOW: THE LEFT KNEE. THE ROLE READ IS VOID.**
+**Two independent sources, arrived separately, same body part.**
+
+| Date | Min | Fpts | Note |
+|---|---|---|---|
+| 15 Nov | 29 | 62 | last game before the absence |
+| **16 Nov** | **—** | **—** | **MISSED, left knee soreness** (Rotoballer: ruled out vs MIA) |
+| 18 Nov | 31 | 35 | back; Rotoworld/NBC: "minutes will not be restricted in any way" |
+| 20 Nov | 26 | 34 | 10-12 FG; finished the game, 3 fouls, 9-pt loss |
+| 23 Nov | 28 | **48** | 20 pts on 9-12 FG, 5 ast, **zero turnovers** |
+
+**Lloyd, 23 Nov recap, verbatim and subject-checked:** *"And a man Thompson started the game slowly.
+Only played 28 minutes. **I I do have to think that his knee is bothering him a bit.** 20 and four,
+four assists, a block, 75%."*
+
+**What this changes.** For two turns I treated 26 and 28 as a minutes question and cleared them on
+range (25-41 all season, flat 8-game splits). That reasoning still holds and nothing contradicts it
+— but it was answering the wrong question. **Rule 27: injury is not a fourth axis, it is the
+confounder, and it invalidates the other three.** While the knee is live, `min_grade` on Amen is
+noise and so is any rotation inference. Do not run the test; this is the Edey/Dame shape again, one
+rung down (playing through, not returning from).
+
+**What is NOT wrong with him — and this is the part that matters for value.** Production is fine and
+arguably improving: 48 on 28 minutes is his best per-game output since the 62. Over the three games
+since the knee: 35 / 34 / 48 on 31 / 26 / 28 minutes. The touches are there (12 attempts in 26 min
+on 20 Nov was his highest attempt rate of the season; 12 in 28 on 23 Nov). **This is a minutes
+CEILING with a medical cause, not a role loss and not a rate decline.**
+
+**The projection.** `MANUAL_PROJ` has him at **43.0** (rule 32, user's call, 14 Nov). That number
+assumes ~33 mpg. He has not seen 33 since 13 Nov. At 28-31 minutes his last three say ~39. **I am
+NOT changing it** — projections are the user's call and the knee is explicitly the reverting kind of
+problem. Flagging only: if he is still at 28 minutes in a week, 43.0 is about four points rich.
+
+**TRIGGER — the next Houston game is Wed 25 Nov vs ... (HOU plays Wed and Sat this week).**
+Read **minutes only**. 32+ and the knee is behind him, hold 43.0. A third straight game at 26-29 and
+the ceiling is real; revisit the override then, and ask the user before touching it.
+
+---
+
+## ⚠ 24 NOV — **WEMBANYAMA RESTED MON 23 NOV. EXPECTED BACK WEDNESDAY. NO ACTION NEEDED.**
+ESPN news column, which the API does not carry: *"Wembanyama (back) won't play Monday against the
+Kings, Jeff McDonald of the San Antonio Express-News reports. **Spin:** Wembanyama is dealing with
+some back pain and will sit out Monday's game against the 1-14 Kings, but **he's expected to return
+for Wednesday's NBA Cup game in Portland.**"* Lloyd independently: *"They rested both Wemanyama back
+issue and Fox leg issue."* ESPN flag DAY_TO_DAY.
+**The Vassell pickup covered it on night one** — 35 points in the slot Wemby vacated, which is
+exactly the scenario the user bought him for on 22 Nov. Cost of the rest day: roughly 74 - 35 = ~39.
+**Watch Wed 25 Nov. If he does not play, the back is no longer a one-night rest and the #1 player on
+the board changes character.**
+
+---
+
+## ⚠ 24 NOV — **COLLIN MURRAY-BOYLES IS ACTIVE, SITTING IN AN IR SLOT, AND HIS POINTS ARE BEING BINNED.**
+Roster page, 24 Nov: the IR pair is **Dejounte Murray (badge "O", genuinely out)** and **Collin
+Murray-Boyles with NO injury badge at all** and ESPN status ACTIVE.
+On 23 Nov he played **24 minutes, 6 pts, 10 reb, 3 stl — 23 fantasy points — and it scored ZERO for
+me**, because an IR slot pays nothing. He has a game Fri 27 and Sun 29.
+ESPN normally blocks an active player from occupying IR, so either the league setting allows it or
+the slot has not been reconciled. **This is a roster-page action for the user, not something I
+should change.** Cost so far: 23 points, and ~2 games a week while it stands.
+**Also from the tab: Matchup Acquisition Limit reads 1 / 3 — two adds left this matchup.**
+
+---
+
+## 24 NOV — WEEK 6 SCHEDULE MAP (Tue 24 - Sun 29), counted off the NBA scoreboard
+
+| Day | NBA games | Mine | Who |
+|---|---|---|---|
+| **Tue 24** | 3 | **2** | **Paul George, Anthony Davis — and they are in the SAME GAME (BOS @ WSH)** |
+| **Wed 25** | 9 | **11** | the big day; Wemby expected back |
+| Thu 26 | 0 | 0 | no NBA games |
+| Fri 27 | 11 | 7 | George, Lillard, Wemby, Giannis, Vassell, Edey, Murray-Boyles |
+| Sat 28 | 5 | 5 | Amen, Davis, Miller, Buzelis, White |
+| Sun 29 | 10 | 9 | |
+
+**Tuesday is the thin day this week, not Friday** — only two of mine play and they play each other,
+so eight scoring slots are dark tonight no matter what the lineup says. Nothing to do about it:
+no add changes it, because the bodies simply have no game. Three games on the whole NBA slate.
+**3 games each: George, Lillard, Wembanyama, Giannis, Vassell, Edey. 2 games: everyone else.**
+
+## ⚠ 23 NOV — **BUZELIS: THE SPLIT IS MEASURED AND MY 34.0 OVERRIDE IS ~10 TOO HIGH.**
+**Decision point is Caleb Wilson's return, 10-24 Dec. Projection NOT changed — user's call.**
+
+User, 23 Nov: *"matas is pretty much doomed i think i cant even sell high on him becxause
+everyone in the school knows the story about how hes performing w no caleb wilson."* Tested it;
+he is right on both halves.
+
+| Caleb Wilson | n | Buzelis min | **fpts/g** | FGA | FG% | stl | blk |
+|---|---|---|---|---|---|---|---|
+| **IN** | 10 | 26.3 | **21.5** | 9.8 | 42.9% | 0.40 | 0.60 |
+| **OUT** | 6 | 30.5 | **36.0** | 12.3 | 48.6% | 0.83 | 1.17 |
+
+**+14.5 fantasy points a game**, and note it is *not* only minutes — minutes are +16% while the
+fantasy gap is +67%, because attempts and both +4 categories move with it.
+
+**The clock.** Lloyd, 12 Nov, verbatim: *"Caleb Wilson broken hand undergoing surgery **four to
+six weeks**."* Off a ~12 Nov surgery that is **10-24 Dec** — the window already on this list.
+So roughly **10-15 more Chicago games** at the elevated level.
+
+⚠ **THE ACTIONABLE PROBLEM IS OUR OWN NUMBER, NOT THE TRADE MARKET.** `MANUAL_PROJ` has him at
+**34.0** (projected #86). A rest-of-season blend under that timeline — 10-15 games at 36.0 plus
+the remaining ~51-56 at 21.5, over ~66 left — is **23.7 to 24.8**. The override is about **ten
+points too high** as a forward number, and ~24 sits **below** the ~30-32/g bench-replacement
+level rule 9 uses. Post-Wilson he is a bench body.
+**Why that matters:** any Buzelis trade judged against our own projected list with a 34.0 input
+makes every offer look like a loss and biases us toward holding.
+
+**On "can't sell high" — correct, the information is public.** Lloyd has said it on 12, 16, 18
+and 22 Nov: *"Caleb Wilson being out is a massive part of this"*, *"is this because Caleb Wilson
+is out? Yeah, obviously."* Nobody is paying the 36.0 price.
+**But the window is itself the asset:** 10-15 games at 36.0 against a ~24 forward value banks
+roughly **+120 to +190 points over the next 3-5 weeks**, and that accrues with no trade needed.
+
+**THE ONE UPSIDE CASE, and it is speculation with no evidence yet:** Lloyd questions whether
+Chicago *should* hand the offence back — 18 Nov, *"having the rookie and saying right, you're
+our future, do everything, every bit of usage, everything runs through you. **It makes the team
+worse. Obviously worse.**"* and 16 Nov, *"I don't think anybody thought Caleb Wilson's going to
+be a 30 usage player who runs the entirety of this team. Hence why I was relatively high in
+Bzelis."* If Chicago rebalances, 21.5 is too low a floor. Do not price it.
+
+**TRIGGER: the first Chicago game Caleb Wilson plays.** Read Buzelis's *attempts* that night,
+not his points.
+
 ## ⚠ 22 NOV — TRIGGER FIRED, NOW COUNTING: **TY JEROME IS BACK. COWARD WATCH IS LIVE.**
 **Need 3-4 more games before judging. First data point went AGAINST my regression thesis.**
 

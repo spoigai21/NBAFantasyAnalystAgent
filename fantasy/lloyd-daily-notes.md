@@ -3049,3 +3049,108 @@ real and in our data (16 Nov, 50 fantasy points, ELITE).
   4-6 weeks. Not a priority add.
 - **Stashing** — Lloyd's blanket position: *"it is such a small percentage chance that you win
   from it"*; they come back on minutes limits and eat the IR slot you need later.
+
+
+---
+
+## Sun 22 Nov 2026 — RECAP SHOW (7 games), indexed as `fantasy/transcripts/2026-11-22_recap.txt`
+
+⚠ Rule 3 applies throughout: Lloyd's ranks ("56th over the last two weeks", "14th ranked
+player", "top 70 guy") are NOT ingested. Mechanism only.
+
+### THE HEADLINE FOR US — WEMBY AND FOX BOTH QUESTIONABLE FOR MONDAY
+Verbatim: *"But Wimi and Fox, Victor Womenyama, that Wimby both questionable now for Monday.
+Okay. I don't expect it to be anything serious, but it's obviously something that's happening.
+And I wonder if it's just like a little bit of a a load giggity management thing. Uh **back
+tightness for WBY, shin contusion for Fox**. So they just go, 'We're playing at the Kings.
+We're okay with you just taking that game off and resetting and keeping our guys healthy for
+the long run because it's certainly what it feels like.'"*
+→ Lloyd's read is **load management against a weak opponent**, not injury. ESPN carries both as
+DAY_TO_DAY. This is the premise behind the user's Vassell pickup — see the cross-tab in
+`research` (22 Nov), which found the event has **never happened this season**, so there is no
+base rate for it.
+
+### MATAS BUZELIS — the mechanism, which matches our existing watchlist trigger
+*"21 and five, three assists, two blocks. Didn't shoot well. **The overtime really bumped him
+here.**"* and then the part that matters: *"**Caleb Wilson being out is a massive part of this.
+And it's the spectre that looms over the second half of the season.**"*
+→ Two usable things and no numbers. (1) Saturday's 40 came in a **151-145 overtime game**, so
+discount the raw total. (2) Lloyd independently names **Caleb Wilson's absence** as what is
+holding Buzelis up — which is exactly the control on our 3 Dec Buzelis trigger. He also says he
+would trade Buzelis if he could get decent value back; that is his portfolio, not a rank we use.
+
+### ANTHONY DAVIS
+*"22 and seven, two steals, a block, 62%. It's the most obvious sell high ever, but everyone
+knows it. So, it's not. What are you going to do with it?... He's just being awesome all season.
+At some point I guess he gets hurt maybe but I don't know man."*
+→ The mechanism is the one this file has tracked since October: the **only** AD question is
+durability, and he keeps answering it. No action.
+
+### PAUL GEORGE AND GIANNIS — both confirmed OUT Sunday by the transcript
+*"they were back when **Paul George was out** in this game"* (Boston) and *"Miami was playing
+**without Jiannis Antono**"*. Both cost us a scoring slot — see the matchup log.
+
+### LEAGUE-WIDE ONE-LINERS WORTH KEEPING
+- **Josh Giddey 22 assists**, 23-4-22 on 41 min, 59% — *"He has been bad all season... It's
+  great that he did it and it's why we wanted to hold, but man, it's so unpredictable."*
+- **Charles Bassey**: Draymond back, Santos to the bench, **Bassey stayed starting**. Kerr said
+  he wants to keep the lineup *"for the foreseeable future"*; Lloyd calls that *"the ultimate
+  Steve Kerr kiss of death"* and still says *"Just add Charles Bassie."* 26 min, 13-9, 3 steals.
+- **Buddy Hield 33 pts, 7 threes** starting with Norman Powell out (hamstring) — Lloyd prices
+  the real level at *"probably a 17 point player"*, not this.
+- **Ty Jerome**: no mention Sunday (Memphis idle), but his return is already logged 21 Nov.
+- **Schedule note:** Atlanta play **zero games** in the next three days; 15 teams play two.
+
+## Mon 23 Nov 2026 — RECAP SHOW (10 games)
+Transcript: `fantasy/transcripts/2026-11-23_recap-monday.txt` (72,549 chars, local only).
+
+### ⚠ THE AMEN THOMPSON ANSWER — LLOYD NAMES THE KNEE
+Verbatim, greps clean, subject named in the same breath:
+> "And a man Thompson started the game slowly. Only played 28 minutes. **I I do have to think that
+> his knee is bothering him a bit.** 20 and four, four assists, a block, 75%."
+This is MECHANISM, which is what rule 3 still lets him be followed on, and it **corroborates the
+independent Rotoworld/NBC note of 18 Nov** (left knee soreness, one game missed, "minutes will not
+be restricted"). Two sources, same body part, arrived separately. The minutes run 31 (18 Nov) ->
+26 (20 Nov) -> 28 (23 Nov) now has a named cause and it is medical, not rotational.
+He also gives the forward read: "Obviously nowhere near where I expected him to be, but he's 45th
+now over the last two weeks, so it's getting a little bit better." (Rank is his format, not ours —
+do not carry the number, only the direction.)
+
+### WEMBANYAMA — RESTED, AND THE RETURN DATE IS PUBLISHED
+> "They rested both Wemanyama back issue and Fox leg issue uh in this one and that meant that Luke
+> Cornet got the start."
+ESPN news column (not in the API): "Wembanyama (back) won't play Monday against the Kings, Jeff
+McDonald of the San Antonio Express-News reports. **Spin:** Wembanyama is dealing with some back
+pain and will sit out Monday's game against the 1-14 Kings, but **he's expected to return for
+Wednesday's NBA Cup game in Portland.** Luka Kornet will likely get the start with Wembanyama
+unavailable, and Stephon Castle should see a sizeable uptick in usage." ESPN flag: DAY_TO_DAY.
+
+### MY OTHER PLAYERS
+- **Lillard** — "Damen Lillard continues to be below expectation. He's better than he was earlier in
+  the season, but it's still not where we want it to be. Only 29 minutes in a comfortable victory.
+  um 183 and five on 27% shooting... returning from Achilles injuries is going to take time and
+  you're going to be lower in your field goal percentage usually, but it should improve as the
+  season goes on. So, I'm not bailing on Lillard." Consistent with rule 32: the ramp, not a rotation
+  squeeze. 29 minutes in a blowout win is the scoreboard.
+- **Buzelis** — 27 min, 15 and 6, four threes. "It does appear that Thiago split up whether it's at
+  the behest of management or not... 27 minutes, 15 and six with four threes. Again, it's pretty
+  passable for Matas and you like that considering how bad it was early in the season." Caleb Wilson
+  still out; the trigger has NOT fired.
+- **Brandon Miller** — "he had 20 points with five assists and four threes and three blocks. It
+  would have been an absolute banger of a line had he not shot 31%. Again, I am holding. I am buying
+  low. I am not massively worried." ESPN news adds a NEW detail the API does not carry:
+  **"Miller (knee) is available for Monday's game against Memphis."** A knee tag on Miller is new.
+- **Edey** — not discussed. 23 minutes again; the cap has not moved.
+- **Murray-Boyles** — "He played only 24 minutes. It is definitely frustrating... He had 10 rebounds,
+  which had been lacking the last couple of games. He had three steals. That's all still good...
+  his expected field goal for the season is 57. He's at 45... I'm not dropping him."
+
+### LEAGUE-WIDE ONE-LINERS
+- Cam Boozer (WSS) **out at least four weeks, ankle sprain**. Lloyd on the fallout: "If someone gets
+  injured, that does not mean there is an ad... The answer is nobody."
+- Ty Jerome 29 pts in 29 min, seven threes, 39% usage — **third straight game back**. The Coward
+  counter continues (Coward 16 and change, "probably would have hoped for a little bit more").
+- Jaden McDaniels 79, the night's top line. Lloyd: "Sell high. It's gigantically open... He's
+  probably about two to three points above expectation based just on shooting variance."
+- Scottie Barnes 74 on 38 min / 32% usage. Lloyd: "a bit of a sell high maybe."
+- Ryan Rollins — "only playing 22 minutes... I think I think I think he's droppable."
