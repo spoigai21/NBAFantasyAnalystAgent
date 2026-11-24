@@ -53,7 +53,7 @@
       rgba(255, 255, 255, 0.015) 32%,
       rgba(0, 0, 0, 0.2) 100%);
 
-  --max: 84rem;
+  --max: 88rem;
   --font-body: "Instrument Sans", system-ui, -apple-system, sans-serif;
   --font-display: "Syne", var(--font-body);
   --radius: 1.125rem;
@@ -181,7 +181,7 @@ h1 {
 
 .defs li,
 .controls,
-.table-scroll {
+.table-card {
   position: relative;
   background: var(--slab), var(--glass);
   border: 1px solid var(--line);
@@ -195,7 +195,7 @@ h1 {
    to a 1px ring (mask-composite), which is what makes an edge shift hue along its length
    the way a hologram does. This is the single detail doing most of the work. */
 .defs li::after,
-.table-scroll::after,
+.table-card::after,
 .controls::after {
   content: "";
   position: absolute;
@@ -213,7 +213,7 @@ h1 {
 
 /* Plus a brighter sheen across the top edge. */
 .defs li::before,
-.table-scroll::before,
+.table-card::before,
 .controls::before {
   content: "";
   position: absolute;
@@ -345,10 +345,26 @@ input[type="search"]::placeholder {
 
 /* —— Table —— */
 
+/* ⚠ THE CARD AND THE SCROLLER MUST BE TWO ELEMENTS. 24 Nov 2026 -- user: "the borders
+   overlap with numbers".
+   The 1px prismatic ring is `position:absolute; inset:0`, and an absolutely positioned
+   child of a scroll container is anchored to the SCROLLED CONTENT BOX, not to the visible
+   frame. So the instant the table was wider than its column and you scrolled sideways, the
+   ring travelled with the content and its right edge came to rest on top of the MINUTES
+   numbers. It was never a z-index or a border-width problem -- it was one element trying to
+   be both the frame and the viewport.
+   `.table-card` is now the frame (border, ring, background, shadow, blur) and never
+   scrolls; `.table-scroll` inside it does nothing but scroll. The ring cannot move again. */
+.table-card {
+  margin: 0 0 4rem;
+}
+
 .table-scroll {
   overflow-x: auto;
-  margin: 0 0 4rem;
-  padding: 0 0.5rem 0.5rem;
+  border-radius: inherit;
+  /* 1rem, not 0.5rem: at 0.5rem the right-hand MINUTES column sat ~8px off the ring and
+     read as touching it even with no overflow at all. */
+  padding: 0 1rem 0.5rem;
 }
 
 table {
@@ -544,7 +560,7 @@ footer p {
 @media (prefers-reduced-motion: reduce) {
   .defs li,
   .controls,
-  .table-scroll {
+  .table-card {
     -webkit-backdrop-filter: none;
     backdrop-filter: none;
     background: #071018;
