@@ -1,3 +1,24 @@
+## ⚠⚠ 24 NOV (late) — **WEMBANYAMA AND GIANNIS ARE BOTH QUESTIONABLE FOR WEDNESDAY, THE WEEK'S BIGGEST DAY.**
+ESPN news column, checked 22:50 PST tonight:
+- **"Wembanyama (back) is questionable for Wednesday's game in Portland."**
+- **"Antetokounmpo (groin) is questionable for Wednesday's game in Philadelphia."**
+
+⚠ **The Wemby line is a DOWNGRADE.** This morning the same column said *"he's **expected to return**
+for Wednesday's NBA Cup game in Portland."* Expected-to-return → questionable, with no new reporting
+attached to explain it. ESPN flag still DAY_TO_DAY.
+
+**Why it matters more than a normal questionable:** Wednesday is 9 NBA games and **eleven of mine**,
+the single biggest day of the matchup. These two are my **#1 (74.0/g)** and **#3 (62.7/g)** — call it
+~137 points of exposure on one night.
+
+**Giannis's absence is one game, not four.** Last played 20 Nov, sat 22 Nov vs OKC, and Miami simply
+had no game on 23 or 24. Those zeros are schedule, not absence.
+
+**No action available.** Vassell is already the hedge and already in the lineup; the bench (Keegan,
+Edey, Coby White) all play Wednesday anyway. Check the inactives before tip.
+
+---
+
 ## ⚠ 24 NOV — **AMEN'S MINUTES HAVE A NAMED CAUSE NOW: THE LEFT KNEE. THE ROLE READ IS VOID.**
 **Two independent sources, arrived separately, same body part.**
 
