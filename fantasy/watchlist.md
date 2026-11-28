@@ -1,3 +1,50 @@
+## ⚠ 24 NOV (Lloyd Tuesday recap) — **TWO PROJECTION ERRORS FOUND, ONE INJURY FLAG. NOTHING CHANGED.**
+
+### 1. ANTHONY DAVIS — WRIST RE-AGGRAVATED. The flag of the night.
+Lloyd: *"He **did hurt his wrist in this game, which he hurt a while ago, but hurt it again**. Got it
+taped up. Um, didn't miss any time. Came back in, then took the tape off. So, I think he's all right."*
+**ESPN carries no flag — he reads ACTIVE with no injury type**, the exact rule-27 blind spot. Every tell
+is good (finished, removed the tape himself, 67 fantasy points). The part worth keeping is
+**"hurt it a while ago" — this is a recurrence.** AD is the single biggest risk on this roster.
+**No action.** Washington don't play again until **Sat 28 Nov**. Read minutes and FTA that night.
+
+### 2. ALEX SARR (The Big Chin) — our projection is too HIGH. Two reads agree.
+Our board: current **30.9 (#109)**, projected **34.5 (#83)** — we're betting on a **+3.6 recovery**.
+Our usage axis says it isn't coming: **15.8% against a 25.7% projection, and falling** —
+last six games **26.9 → 16.3 → 15.3 → 10.7 → 11.0 → 10.2**.
+Lloyd, independently: *"part of the reason that George is getting so much of the ball is cuz **Sar is
+getting none of it**."* Usage is coach-controlled and the 90%-persistent signal in rule 32.
+**Recommend dropping him to ~31 or below.** Not mine — this is purely so I don't overpay TBC.
+
+### 3. AUSAR THOMPSON (Sparsh's) — our projection is too LOW, by about 11 a game.
+Our board: current **41.5 (#39)**, projected **30.0 (#116)**. He beats `proj_adj` by **+10.2/g**, the
+biggest beat of anyone in the episode. **Decomposed per rule 32, and it holds up:**
+- **It is not a usage spike.** Usage **17.5% vs 18.0% projected** — ratio 0.97. No regression due.
+- **ESPN projects a scorer; he isn't one, and doesn't need to be.** 24 Nov: **6 points on 3 attempts**
+  — 10 reb, 7 ast, 1 stl, 4 blk — **53 fantasy points.** His stocks alone are worth ~12/g at +4.
+- This is exactly the player rule 24 says generic projections underprice in our format.
+**Honest limit:** the log is volatile (83/74/58/53/46/39/30/24) and 4 blocks is spiky.
+**Mid-30s is defensible, not 41.** Trade-valuation fix only.
+
+### 4. DERRICK WHITE (SLL) — unresolved, deliberately.
+We project **+4.8 recovery** (36.0 vs 31.2) and our axes back it: minutes fine, usage 0.92, so the
+shortfall is **conversion = the reverting half**. Lloyd says it's structural — *"two years in a row…
+**even his like blocks remain down**."* The blocks point would not revert. Unverified against our data
+(we hold this season only). **No change.**
+
+### 5. CADE CUNNINGHAM (The Big Chin) — knee, while OUT.
+*"I do have a little bit of worry about Kade Cunningham's knee. They're saying that he's struggling
+through some stuff."* Our projected list has him **#7 at 50.2 with no injury discount** — correct by
+rule 32, but it means that number is blind to this. Logged for the next TBC trade talk.
+
+### 6. WEMBANYAMA — Lloyd contradicts the ESPN downgrade.
+*"Wy and Fox are questionable again. I think it's a little bit of **obfuscation**. I don't really think
+that there's a risk of them missing."* Plus the general mechanism: *"the day before a zero game day…
+don't be shocked when a bunch of strange stuff happens on Wednesday."*
+ESPN reports the label; Lloyd reads the incentive. Neither is data. **No action** — Vassell is the hedge.
+
+---
+
 ## ⚠⚠ 24 NOV (late) — **WEMBANYAMA AND GIANNIS ARE BOTH QUESTIONABLE FOR WEDNESDAY, THE WEEK'S BIGGEST DAY.**
 ESPN news column, checked 22:50 PST tonight:
 - **"Wembanyama (back) is questionable for Wednesday's game in Portland."**
